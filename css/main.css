@@ -8,3 +8,8 @@ body {
     background-attachment: fixed;
     background: linear-gradient(40deg,#2096ff,#05ffa3);
 }
+#title {
+    color: var(--white);
+    text-align: center;
+    padding-top: 20%;
+}
