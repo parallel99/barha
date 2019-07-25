@@ -11,5 +11,5 @@ body {
 #title {
     color: var(--white);
     text-align: center;
-    padding-top: 20%;
+    padding-top: 20vh;
 }
