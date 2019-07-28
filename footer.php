@@ -10,7 +10,7 @@ new autoComplete({
         // User search query
         const query = document.querySelector("#autoComplete").value;
         // Fetch External Data Source
-        const source = await fetch(`https://www.food2fork.com/api/search?key=${token}&q=${query}`);
+        const source = await fetch(`https://tarekraafat.github.io/autoComplete.js/demo/db/generic.json`);
         // Format data into JSON
         const data = await source.json();
         // Return Fetched data
