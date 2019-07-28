@@ -18,5 +18,14 @@ body {
     line-height: 95%;
 }
 .ingredients {
-    
+
+}
+form {
+    width: 400px;
+    margin: auto;
+    padding-top:25px;
+    font-family: 'Kalam', cursive;
+}
+form button {
+    width: 400px;
 }
