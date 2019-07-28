@@ -6,6 +6,22 @@
 </head>
 <body>
     <h1 id="title">Mi van a hűtőben?</h1>
+
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="ingredients1" class="ingredients" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="ingredients2" class="ingredients" placeholder="">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="ingredients3" class="ingredients" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+
+    </script>
 </body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 </html>
