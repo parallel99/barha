@@ -9,8 +9,9 @@ body {
     background: linear-gradient(40deg,#2096ff,#05ffa3);
 }
 #title {
+    font-family: 'Kalam', cursive;
     color: var(--white);
     text-align: center;
     padding-top: 20vh;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, .35);
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
