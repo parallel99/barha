@@ -13,5 +13,7 @@ body {
     color: var(--white);
     text-align: center;
     padding-top: 20vh;
-    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+    text-shadow: 3px 2px 0px rgb(75, 75, 75);
+    font-size: 400%;
+    line-height: 95%;
 }
