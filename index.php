@@ -9,10 +9,15 @@
 
         <form>
             <div class="form-group">
-                <input type="text" class="form-control" id="ingredients" placeholder="">
+                <input type="text" class="form-control" id="ingredients" placeholder="Hozzávalók">
             </div>
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
+        <script>
+        $( "#ingredients" ).keypress(function() {
+          console.log( "Handler for .keypress() called." );
+        });
+        </script>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 </html>
