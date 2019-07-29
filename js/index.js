@@ -109,7 +109,7 @@ window.addEventListener("load", function() {
 });*/
 
 // Toggle results list and other elements
-const action = function(action) {
+/*const action = function(action) {
   const github = document.querySelector(".github-corner");
   const title = document.querySelector("h1");
   const mode = document.querySelector(".mode");
@@ -127,7 +127,7 @@ const action = function(action) {
     selection.style.opacity = 0.1;
     footer.style.opacity = 0.1;
   }
-};
+};*/
 
 // Toggle event for search input
 // showing & hidding results list onfocus / blur
