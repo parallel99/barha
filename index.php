@@ -16,14 +16,15 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-        $('.ingredients-group').on('input', function(event) {
-            if($("div.ingredients-group div:last-child > input").val() != "") {
-                var length = $(".ingredients-group > div").length
-                $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
+            $('.ingredients-group').on('input', function (event) {
+                if ($("div.ingredients-group div:last-child > input").val() != "") {
+                    var length = $(".ingredients-group > div").length
+                    $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
                     $("#ingredients" + length + 1).autocomplete({
-                      source: ingredients
+                        source: ingredients
                     });
-                });
+                }
+                ;
             });
         </script>
     </body>
