@@ -20,9 +20,10 @@
         </form>
         <script>
         $('.ingredients-group').on('keydown', function(event) {
-            console.log(event.keyCode);
-            console.log($("div.ingredients-group div:last-child > input").html());
             console.log($("div.ingredients-group div:last-child > input").val());
+            if($("div.ingredients-group div:last-child > input").val() != "") {
+                $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients2\" placeholder=\"Hozzávalók\"></div>');
+            }
          });
         </script>
     </body>
