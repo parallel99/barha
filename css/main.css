@@ -42,6 +42,6 @@ form button {
     }
 }
 
-.ingredients-group:last-child {
+.ingredients-group:last-of-type {
     background-color: red;
 }
