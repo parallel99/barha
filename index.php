@@ -9,7 +9,7 @@
 
     <form>
       <div class="form-group">
-             <input type="text" class="form-control" id="autoComplete" class="ingredients" placeholder="" tabindex="1">
+             <input type="text" class="form-control" id="tags" class="ingredients" placeholder="" tabindex="1">
       </div>
       <button type="submit" class="btn btn-primary">Keresés</button>
     </form>
