@@ -9,16 +9,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-startup-image" href="/images/touch-icon-iphone.png"/>
-<meta name="apple-mobile-web-app-title" content="Timetable"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#666">
-<link rel="shortcut icon" href="/images/icon.png">
-<meta name="msapplication-TileColor" content="#fafafa">
-<meta name="msapplication-config" content="/images/browserconfig.xml">
-<meta name="theme-color" content="#343a40">
+
 
 <!-- Open Graph -->
 <meta property="og:title" content=""/>
