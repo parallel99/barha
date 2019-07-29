@@ -56,16 +56,13 @@
       "Scala",
       "Scheme"
     ];
-    $("#ingredients").autocomplete({
-      source: ingredients
-    });
-    var i;
-    for (i = 0; i <= $(".ingredients-group > div").length; i++) {
+
+    for (var i = 0; i <= $(".ingredients-group > div").length; i++) {
         $("#ingredients" + i).autocomplete({
           source: ingredients
         });
     }
-  } );
+  });
   </script>
 
 <?php
