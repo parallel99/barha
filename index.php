@@ -21,8 +21,8 @@
         <script>
         $('.ingredients-group').on('keydown', function(event) {
             console.log(event.keyCode);
-            console.log($(".ingredients-group:last-child input").html());
-            console.log($(".ingredients-group:last-child input").val());
+            console.log($(".ingredients-group:last-child").html());
+            console.log($(".ingredients-group:last-child").val());
          });
         </script>
     </body>
