@@ -56,7 +56,7 @@
       "Scala",
       "Scheme"
     ];
-    $(".ingredients").autocomplete({
+    $("#ingredients").autocomplete({
       source: ingredients
     });
   } );

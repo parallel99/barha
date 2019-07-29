@@ -9,7 +9,7 @@
 
     <form>
       <div class="form-group">
-             <input type="text" class="form-control" class="ingredients" placeholder="" tabindex="1">
+             <input type="text" class="form-control" id="ingredients" placeholder="" tabindex="1">
       </div>
       <button type="submit" class="btn btn-primary">Keresés</button>
     </form>
