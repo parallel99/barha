@@ -14,7 +14,10 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-        $( "#ingredients" ).keypress(function() {
+        $("#ingredients").keypress(function() {
+            if($("#ingredients").val() != ""){
+                $("form").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients\" placeholder=\"Hozzávalók\"></div>');
+            }
           console.log( "Handler for .keypress() called." );
         });
         </script>
