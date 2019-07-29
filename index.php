@@ -10,10 +10,10 @@
         <form>
             <div class="ingredients-group">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="ingredients" placeholder="Hozzávalók">
+                    <input type="text" class="form-control" id="ingredients1" placeholder="Hozzávalók">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="ingredients" placeholder="Hozzávalók">
+                    <input type="text" class="form-control" id="ingredients2" placeholder="Hozzávalók">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Keresés</button>
