@@ -35,8 +35,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <!-- autoComplete.js -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@6.1.0/dist/css/autoComplete.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@6.1.0/dist/js/autoComplete.min.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="./css/autoComplete.css">
 
 <?php
 date_default_timezone_set("Europe/Budapest");
