@@ -1,15 +1,15 @@
 html {
     height: 100%;
+    font-family: 'Kalam', cursive;
 }
 body {
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background: linear-gradient(40deg,#2096ff,#05ffa3);
+    background: linear-gradient(40deg, #2096ff, #05ffa3);
 }
 #title {
-    font-family: 'Kalam', cursive;
     color: var(--white);
     text-align: center;
     padding-top: 20vh;
@@ -17,20 +17,13 @@ body {
     font-size: 400%;
     line-height: 95%;
 }
-.ingredients {
-
-}
 form {
     width: 400px;
     margin: auto;
     padding-top:25px;
-    font-family: 'Kalam', cursive;
 }
 form button {
     width: 400px;
-}
-.ui-menu-item {
-    font-family: 'Kalam', cursive;
 }
 
 @media (max-width: 410px) {
