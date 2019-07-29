@@ -22,7 +22,7 @@
         $('.ingredients-group').on('keydown', function(event) {
             console.log($("div.ingredients-group div:last-child > input").val());
             if($("div.ingredients-group div:last-child > input").val() != "") {
-                $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients2\" placeholder=\"Hozzávalók\"></div>');
+                $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients' + ($(".ingredients-group > div").length + 1) + '\" placeholder=\"Hozzávalók\"></div>');
             }
          });
         </script>
