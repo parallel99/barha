@@ -9,16 +9,20 @@
 
         <form>
             <div class="ingredients-group">
-                <input type="text" class="form-control" id="ingredients1" placeholder="Hozzávalók">
-                <input type="text" class="form-control" id="ingredients2" placeholder="Hozzávalók">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ingredients1" placeholder="Hozzávalók">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ingredients2" placeholder="Hozzávalók">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
         $('.ingredients-group').on('keydown', function(event) {
             console.log(event.keyCode);
-            console.log($(".ingredients-group div:last-child").html());
-            console.log($(".ingredients-group div:last-child").val());
+            console.log($(".ingredients-group:last").html());
+            console.log($(".ingredients-group:last").val());
          });
         </script>
     </body>
