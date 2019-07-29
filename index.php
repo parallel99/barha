@@ -16,11 +16,11 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-        $('.ingredients-group').on('change', function(event) {
+        $('.ingredients-group').on('input', function(event) {
             console.log($("div.ingredients-group div:last-child > input").val());
             if($("div.ingredients-group div:last-child > input").val() != "") {
                 $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients\" placeholder=\"Hozzávalók\"></div>');
-                console.log("i: " + $(".ingredients-group > div").length);
+                console.log("length: " + $(".ingredients-group > div").length);
             }
          });
         </script>
