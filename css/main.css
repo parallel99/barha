@@ -1,6 +1,5 @@
 html {
     height: 100%;
-    font-family: 'Kalam', cursive;
 }
 body {
     height: 100%;
@@ -8,6 +7,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background: linear-gradient(40deg, #2096ff, #05ffa3);
+}
+body, input {
+    font-family: 'Kalam', cursive;
 }
 #title {
     color: var(--white);
