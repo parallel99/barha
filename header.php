@@ -32,7 +32,7 @@
 
 <script>
   $( function() {
-    var availableTags = [
+    var ingredients = [
       "ActionScript",
       "AppleScript",
       "Asp",
@@ -56,8 +56,8 @@
       "Scala",
       "Scheme"
     ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
+    $(".ingredients").autocomplete({
+      source: ingredients
     });
   } );
   </script>
