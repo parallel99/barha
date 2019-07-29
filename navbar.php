@@ -8,7 +8,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Kezdőlap</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Receptek</a>
             </li>
             <li class="nav-item">
