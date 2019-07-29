@@ -23,6 +23,8 @@
             console.log(event.keyCode);
             console.log($(".ingredients-group:last-child").html());
             console.log($(".ingredients-group:last-child").val());
+            console.log($(".ingredients-group:last-child > input").html());
+            console.log($(".ingredients-group:last-child > input").val());
          });
         </script>
     </body>
