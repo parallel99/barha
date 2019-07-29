@@ -42,6 +42,6 @@ form button {
     }
 }
 
-div.ingredients-group div:last-child {
+div.ingredients-group div:last-child > input {
     background-color: red;
 }
