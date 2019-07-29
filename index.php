@@ -20,7 +20,7 @@
             console.log($("div.ingredients-group div:last-child > input").val());
             if($("div.ingredients-group div:last-child > input").val() != "") {
                 $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients\" placeholder=\"Hozzávalók\"></div>');
-                console.log($(".ingredients-group > div").length);
+                console.log("i: " + $(".ingredients-group > div").length);
             }
          });
         </script>
