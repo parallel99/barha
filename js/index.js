@@ -14,7 +14,7 @@ const autoCompletejs = new autoComplete({
       // Returns Fetched data
       return data;
     },
-    key: ["food", "cities", "animals"],
+    key: ["food"],
   },
   sort: function(a, b) {
     if (a.match < b.match) {
@@ -30,7 +30,7 @@ const autoCompletejs = new autoComplete({
       return query.replace("@pizza", "burger");
     }
   },
-  placeHolder: "Food & Drinks",
+  placeHolder: "",
   selector: "#autoComplete",
   threshold: 0,
   debounce: 0,
@@ -91,7 +91,7 @@ window.addEventListener("load", function() {
 });
 
 // Toggle Search Engine Type/Mode
-document.querySelector(".toggeler").addEventListener("click", function() {
+/*document.querySelector(".toggeler").addEventListener("click", function() {
   // Holdes the toggle buttin alignment
   const toggele = document.querySelector(".toggele").style.justifyContent;
 
@@ -106,7 +106,7 @@ document.querySelector(".toggeler").addEventListener("click", function() {
     document.querySelector(".toggeler").innerHTML = "Strict";
     autoCompletejs.searchEngine = "strict";
   }
-});
+});*/
 
 // Toggle results list and other elements
 const action = function(action) {
