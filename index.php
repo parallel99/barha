@@ -16,7 +16,7 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-        $('.ingredients-group').on('keypress', function(event) {
+        $('.ingredients-group').on('change', function(event) {
             console.log($("div.ingredients-group div:last-child > input").val());
             if($("div.ingredients-group div:last-child > input").val() != "") {
                 $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients\" placeholder=\"Hozzávalók\"></div>');
