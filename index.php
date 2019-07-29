@@ -7,10 +7,10 @@
     <body>
         <h1 id="title">Mi van a hűtőben?</h1>
 
-        <form>
+        <form method="get">
             <div class="ingredients-group">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="ingredients1" placeholder="Hozzávalók">
+                    <input type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="Hozzávalók">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Keresés</button>
@@ -19,8 +19,8 @@
             $('.ingredients-group').on('input', function (event) {
                 if ($("div.ingredients-group div:last-child > input").val() != "") {
                     var length = $(".ingredients-group > div").length
-                    $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
-                    
+                    $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
+
                     $("#ingredients" + (length + 1)).autocomplete({
                         source: ingredients
                     });
