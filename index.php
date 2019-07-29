@@ -17,10 +17,10 @@
         </form>
         <script>
         $('.ingredients-group').on('input', function(event) {
-            console.log($("div.ingredients-group div:last-child > input").val());
             if($("div.ingredients-group div:last-child > input").val() != "") {
-                $(".ingredients-group").append('<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients\" placeholder=\"Hozzávalók\"></div>');
-                console.log("length: " + $(".ingredients-group > div").length);
+                var length = $(".ingredients-group > div").length
+                $(".ingredients-group").append("<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"ingredients" + length + "\" placeholder=\"Hozzávalók\"></div>");
+                console.log("length: " + length);
             }
          });
         </script>
