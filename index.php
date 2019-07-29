@@ -23,9 +23,8 @@
                     $("#ingredients" + length + 1).autocomplete({
                       source: ingredients
                     });
-                }
-            }
-         });
+                });
+            });
         </script>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
