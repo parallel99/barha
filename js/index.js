@@ -117,13 +117,11 @@ const action = function(action) {
   const footer = document.querySelector(".footer");
 
   if (action === "dim") {
-    github.style.opacity = 1;
     title.style.opacity = 1;
     mode.style.opacity = 1;
     selection.style.opacity = 1;
     footer.style.opacity = 1;
   } else if ("light") {
-    github.style.opacity = 0.1;
     title.style.opacity = 0.3;
     mode.style.opacity = 0.2;
     selection.style.opacity = 0.1;
