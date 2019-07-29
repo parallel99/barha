@@ -57,11 +57,9 @@
       "Scheme"
     ];
 
-    for (var i = 0; i <= $(".ingredients-group > div").length; i++) {
-        $("#ingredients" + i).autocomplete({
+        $("#ingredients1").autocomplete({
           source: ingredients
         });
-    }
   });
   </script>
 

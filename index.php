@@ -20,7 +20,10 @@
             if($("div.ingredients-group div:last-child > input").val() != "") {
                 var length = $(".ingredients-group > div").length
                 $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
-                console.log("length: " + length);
+                    $("#ingredients" + length + 1).autocomplete({
+                      source: ingredients
+                    });
+                }
             }
          });
         </script>
