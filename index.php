@@ -17,8 +17,8 @@
         <script>
         $('.ingredients-group').on('keydown', function(event) {
             console.log(event.keyCode);
-            console.log($(".ingredients-group:last-of-type").html());
-            console.log($(".ingredients-group:last-of-type").val());
+            console.log($(".ingredients-group div:last-child").html());
+            console.log($(".ingredients-group div:last-child").val());
          });
         </script>
     </body>
