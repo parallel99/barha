@@ -59,7 +59,7 @@
     $("#ingredients").autocomplete({
       source: ingredients
     });
-    console.log($(".ingredients-group").length);
+    console.log($(".ingredients-group > div").length);
   } );
   </script>
 
