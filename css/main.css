@@ -29,3 +29,6 @@ form {
 form button {
     width: 400px;
 }
+.ui-menu-item {
+    font-family: 'Kalam', cursive;
+}
