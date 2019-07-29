@@ -19,7 +19,10 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-
+        $('.ingredients-group').on('keydown', function(event) {
+            console.log(event.keyCode);
+            console.log($(".ingredients-group").last().val());
+         });
         </script>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
