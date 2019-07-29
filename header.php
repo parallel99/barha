@@ -31,32 +31,31 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
+var ingredients = [
+  "ActionScript",
+  "AppleScript",
+  "Asp",
+  "BASIC",
+  "C",
+  "C++",
+  "Clojure",
+  "COBOL",
+  "ColdFusion",
+  "Erlang",
+  "Fortran",
+  "Groovy",
+  "Haskell",
+  "Java",
+  "JavaScript",
+  "Lisp",
+  "Perl",
+  "PHP",
+  "Python",
+  "Ruby",
+  "Scala",
+  "Scheme"
+];
   $( function() {
-    var ingredients = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-
         $("#ingredients1").autocomplete({
           source: ingredients
         });
