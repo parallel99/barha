@@ -32,3 +32,12 @@ form button {
 .ui-menu-item {
     font-family: 'Kalam', cursive;
 }
+
+@media (max-width: 410px) {
+    form {
+        width: 300px;
+    }
+    form button {
+        width: 300px;
+    }
+}
