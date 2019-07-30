@@ -19,7 +19,7 @@
         <script>
         jQuery(window).resize(function () {
             console.log("set background");
-            $("body").css("background": "linear-gradient(40deg, #2096ff, #05ffa3)"));
+            $("body").css("background", "linear-gradient(40deg, #2096ff, #05ffa3)");
         });
 
             $('.ingredients-group').on('input', function (event) {
