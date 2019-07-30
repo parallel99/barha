@@ -17,6 +17,11 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
+        jQuery(window).resize(function () {
+            console.log("set background");
+            $("body").css("background", "linear-gradient(40deg, #2096ff, #05ffa3)");
+        });
+
             $('.ingredients-group').on('input', function (event) {
                 if ($("div.ingredients-group div:last-child > input").val() != "") {
                     var length = $(".ingredients-group > div").length
