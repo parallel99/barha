@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     background: linear-gradient(40deg, #2096ff, #05ffa3);
 }
 body, input {
