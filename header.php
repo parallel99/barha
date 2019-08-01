@@ -58,6 +58,7 @@ var ingredients = [
         });
   });
   </script>
+  <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 
 <?php
 date_default_timezone_set("Europe/Budapest");
