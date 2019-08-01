@@ -35,7 +35,7 @@ form {
 }
 form button {
     margin-top: 15px;
-    width: 100%;
+    width: 100%!important;
 }
 
 @media (max-width: 410px) {
