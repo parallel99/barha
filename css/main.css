@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background: #05ffa3;
     background: linear-gradient(40deg, #2096ff, #05ffa3);
+    overflow-y: scroll;
 }
 body, input {
     font-family: 'Kalam', cursive;
