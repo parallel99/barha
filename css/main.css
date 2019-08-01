@@ -13,7 +13,7 @@ body {
     background: linear-gradient(40deg, #2096ff, #05ffa3);
     overflow-y: scroll;
 }
-body, input, ui-menu-item {
+body, input, ui-menu-item-wrapper {
     font-family: 'Kalam', cursive;
 }
 #title {
