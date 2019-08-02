@@ -58,7 +58,6 @@ var ingredients = [
         });
   });
   </script>
-  <a href="https://seal.beyondsecurity.com/vulnerability-scanner-verification/etel-seged.herokuapp.com"><img src="https://seal.beyondsecurity.com/verification-images/etel-seged.herokuapp.com/vulnerability-scanner-2.gif" alt="Website Security Test" border="0"></a>
 
 <?php
 date_default_timezone_set("Europe/Budapest");
