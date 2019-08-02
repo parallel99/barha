@@ -7,7 +7,7 @@
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/navbar.php'; ?>
         <?php
-            $ingredients = array_filter($_GET);
+            $ingredients = array_unique(array_filter($_GET));
             print_r($ingredients);
         ?>
     </body>
