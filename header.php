@@ -34,7 +34,7 @@
     });
     $.ajax({
         url: 'getIngredients.php',
-        type: 'post'
+        type: 'post',
         success: function (response) {
             $("body").append(response);
         },
