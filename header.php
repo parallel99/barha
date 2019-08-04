@@ -37,7 +37,7 @@
         type: 'post',
         success: function (response) {
             //$("body").append(response);
-            ingredients.push(response);
+            ingredients = response.split(";");
         },
         error: function (data) {
             ingredients.push("Hiba");
