@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
-
-
 <!-- Open Graph -->
 <meta property="og:title" content=""/>
 <meta property="og:description" content=""/>
@@ -36,12 +34,14 @@
     });
     $.ajax({
         url: 'getIngredients.php',
-        type: 'post',
-        data: {},
+        type: 'post'
         success: function (response) {
-            $("body").append(response);
+            //$("body").append(response);
+            ingredients.push(response);
         },
-        error: function (data) {}
+        error: function (data) {
+            ingredients.push("Hiba");
+        }
     });
 </script>
 
