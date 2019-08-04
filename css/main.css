@@ -37,6 +37,9 @@ form button {
     margin-top: 15px;
     width: 100%!important;
 }
+.form-group label {
+    margin-bottom: .1rem;
+}
 
 @media (max-width: 410px) {
     form {

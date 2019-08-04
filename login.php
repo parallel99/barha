@@ -6,15 +6,21 @@
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/navbar.php'; ?>
-        <form method="post" class="shadow">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                </div>
-            <button type="submit" class="btn btn-primary">Bejelentkezés</button>
-        </form>
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <form method="post" class="shadow">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+                </form>
+            </div>
+        </div>
         <?php
             if(isset($_POST['submit'])) {
 
