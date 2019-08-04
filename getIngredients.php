@@ -6,4 +6,5 @@ $stmt = $pdo->prepare("SELECT name FROM ingredients");
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo "<script>console.log(\"" . $row . "\")</script>";
+}
 ?>
