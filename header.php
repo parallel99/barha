@@ -28,36 +28,45 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
 
 <script>
-var ingredients = [
-  "ActionScript",
-  "AppleScript",
-  "Asp",
-  "BASIC",
-  "C",
-  "C++",
-  "Clojure",
-  "COBOL",
-  "ColdFusion",
-  "Erlang",
-  "Fortran",
-  "Groovy",
-  "Haskell",
-  "Java",
-  "JavaScript",
-  "Lisp",
-  "Perl",
-  "PHP",
-  "Python",
-  "Ruby",
-  "Scala",
-  "Scheme"
-];
-  $( function() {
+    var ingredients = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+    $(function () {
         $("#ingredients1").autocomplete({
-          source: ingredients
+            source: ingredients
         });
-  });
-  </script>
+    });
+    $.ajax({
+        url: 'getIngredients.php',
+        type: 'post',
+        data: {},
+        success: function (response) {
+            $("body").append(response);
+        },
+        error: function (data) {}
+    });
+</script>
 
 <?php
 date_default_timezone_set("Europe/Budapest");
