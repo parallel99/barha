@@ -13,8 +13,8 @@
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <label for="password">Jelszó</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
                 </div>
                 <button type="submit" class="btn btn-primary">Bejelentkezés</button>
             </form>
