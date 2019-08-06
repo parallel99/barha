@@ -17,9 +17,7 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
                 </div>
                 <button type="submit" class="btn btn-primary">Bejelentkezés</button>
-                <div class="form-group">
-                    Még nincs fiókod? <a href="registration">Regisztráció</a>
-                </div>
+                <a href="#">Elfelejtetted a jelszavad?</a>
             </form>
         </div>
         <?php
