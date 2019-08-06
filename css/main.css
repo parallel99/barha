@@ -50,6 +50,7 @@ form button {
 }
 #loginForm a {
     text-align: center;
+    display: block;
 }
 .form-container {
     display: flex;
