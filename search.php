@@ -2,10 +2,10 @@
 <html lang="hu" role="main">
     <head>
         <title></title>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
         <div class="container">
             <?php
                 $ingredients = array_unique(array_filter($_GET));
@@ -13,5 +13,5 @@
             ?>
         </div>
     </body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>

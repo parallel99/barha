@@ -2,10 +2,10 @@
 <html lang="hu" role="main">
     <head>
         <title></title>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
         <div class="form-container">
             <form method="post" class="shadow" id="loginForm">
                 <div class="form-group">
@@ -13,8 +13,8 @@
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <label for="password">Jelszó</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
                 </div>
                 <button type="submit" class="btn btn-primary">Bejelentkezés</button>
                 <div class="form-group">
@@ -28,5 +28,5 @@
             }
         ?>
     </body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
