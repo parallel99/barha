@@ -26,6 +26,12 @@ body, input, .ui-widget, .ui-autocomplete.ui-widget {
     line-height: 95%;
     margin-bottom: 15px
 }
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
 form {
     background-color: var(--white);
     border-radius: 10px;
