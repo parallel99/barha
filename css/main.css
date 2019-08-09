@@ -74,6 +74,9 @@ form button {
 #registrationForm button {
     margin: 0 0 15px 0;
 }
+#registrationForm button {
+    margin-bottom: 10px;
+}
 
 .form-container {
     display: flex;

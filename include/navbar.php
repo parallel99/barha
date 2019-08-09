@@ -12,7 +12,7 @@
                 <a class="nav-link" href="#">Receptek</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Regisztráció</a>
+                <a class="nav-link" href="registration">Regisztráció</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">Bejelentkezés</a>

@@ -27,7 +27,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf">
                     <label class="form-check-label" for="aszf">
-                        Elfogadom <a href="#">Felhasználási feltételeket</a>.
+                        Elfogadom <a href="#">felhasználási feltételeket</a>.
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Regisztráció</button>
