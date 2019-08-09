@@ -6,9 +6,8 @@
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
-        <h1 id="title">Mi van a hűtőben?</h1>
-
         <div class="shadow">
+           <h1>404</h1>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
