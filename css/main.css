@@ -67,6 +67,14 @@ form button {
     margin: 0 0 15px 0;
 }
 
+#registrationForm {
+    margin-top: 5px;
+}
+
+#registrationForm button {
+    margin: 0 0 15px 0;
+}
+
 .form-container {
     display: flex;
     align-items: center;
