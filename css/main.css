@@ -74,7 +74,7 @@ form button {
 #registrationForm button {
     margin: 0 0 15px 0;
 }
-#registrationForm form-check {
+#registrationForm > div.form-check {
     margin-bottom: 10px;
 }
 
