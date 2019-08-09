@@ -7,7 +7,7 @@
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
         <div class="shadow errorpage">
-           <h1>404</h1>
+           <h1>Az oldal nem található!</h1>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
