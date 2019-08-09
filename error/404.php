@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>404</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
-        <div class="shadow">
+        <div class="shadow errorpage">
            <h1>404</h1>
         </div>
     </body>
