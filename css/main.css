@@ -58,6 +58,15 @@ form button {
     text-align: center;
     display: block;
 }
+
+#forgottenPasswordForm {
+    margin-top: 5px;
+}
+
+#forgottenPasswordForm button {
+    margin: 0 0 15px 0;
+}
+
 .form-container {
     display: flex;
     align-items: center;

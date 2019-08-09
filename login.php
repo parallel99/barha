@@ -17,7 +17,7 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
                 </div>
                 <button type="submit" class="btn btn-primary">Bejelentkezés</button>
-                <a href="#" class="small">Elfelejtetted a jelszavad?</a>
+                <a href="forgotten_password.php" class="small">Elfelejtetted a jelszavad?</a>
             </form>
         </div>
         <?php
