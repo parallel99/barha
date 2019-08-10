@@ -6,9 +6,11 @@
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
-        <div class="shadow errorpage">
-           <h1>Hozzáférési hiba!</h1>
-           Nincs hozzáférési jogosultsága ehhez a könyvtárhoz vagy fájlhoz!
+        <div class="error-container">
+            <div class="shadow error-page">
+                <h1>Hozzáférési hiba!</h1>
+                Nincs hozzáférési jogosultsága ehhez a könyvtárhoz vagy fájlhoz!
+            </div>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>

@@ -83,8 +83,13 @@ form button {
     align-items: center;
     min-height: calc(100vh - 56px);
 }
+.error-container {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 56px);
+}
 
-.errorpage{
+.error-page {
     margin: auto;
     margin-top: 15px;
     padding: 15px;
