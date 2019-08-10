@@ -84,11 +84,24 @@ form button {
     min-height: calc(100vh - 56px);
 }
 
+.errorpage{
+    margin: auto;
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px 5px 5px;
+}
+
 @media (max-width: 410px) {
     form {
         width: 300px;
     }
     form button {
         width: 300px;
+    }
+    .errorpage{
+        width: 90%;
     }
 }
