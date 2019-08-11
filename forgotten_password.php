@@ -17,17 +17,17 @@
         </div>
         <?php
             if(isset($_POST['submit'])) {
+                try {
                 require 'vendor/autoload.php';
                 // Comment out the above line if not using Composer
                 $email = new \SendGrid\Mail\Mail();
-                $email->setFrom("test@example.com", "Étel segéd");
+                $email->setFrom("mateb06@gmail.com", "Étel segéd");
                 $email->setSubject("Étel segéd teszt");
                 $email->addTo($_POST['email'], "teszt");
                 $email->addContent(
                     "text/html", "<strong>Étel segéd</strong> teszt"
                 );
-                $sendgrid = new \SendGrid(getenv('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'));
-                try {
+                $sendgrid = new \SendGrid('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');
                     $response = $sendgrid->send($email);
                     print $response->statusCode() . "\n";
                     print_r($response->headers());
