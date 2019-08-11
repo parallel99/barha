@@ -17,6 +17,7 @@
         </div>
         <?php
             if(isset($_POST['submit'])) {
+                require 'vendor/autoload.php';
                 // Comment out the above line if not using Composer
                 $email = new \SendGrid\Mail\Mail();
                 $email->setFrom("test@example.com", "Étel segéd");
