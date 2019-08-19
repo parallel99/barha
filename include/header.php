@@ -47,4 +47,5 @@
 
 <?php
 date_default_timezone_set("Europe/Budapest");
+ob_start();
 ?>
