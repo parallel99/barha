@@ -9,5 +9,5 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     array_push($tomb, $row['name']);
     //echo "<script>ingredients.push(\"" . $row['name'] . "\")</script>";
 }
-echo "<script>ingredients.push(\"" . json_encode($tomb) . "\")</script>";
+echo "<script>ingredients.push(\"" . $tomb . "\")</script>";
 ?>
