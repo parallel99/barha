@@ -5,7 +5,10 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; ?>
+        <?php
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            menu("registration");
+        ?>
         <div class="form-container">
             <form method="post" class="shadow" id="registrationForm">
                 <div class="form-group">
