@@ -7,7 +7,7 @@ $stmt->execute();
 $tomb = array();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     array_push($tomb, $row['name']);
-    echo "<script>ingredients.push(\"" . $row['name'] . "\")</script>";
+    //echo "<script>ingredients.push(\"" . $row['name'] . "\")</script>";
 }
-print $tomb[2];
+echo "<script>ingredients.push(\"" . json_encode($tomb) . "\")</script>";
 ?>
