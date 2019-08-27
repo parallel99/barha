@@ -11,7 +11,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
 echo "<script>ingredients.push(";
 foreach ($tomb as $hozzavalok) {
-  echo '"$hozzavalok,"';
+  echo '"{$hozzavalok}",';
 }
 echo ")</script>";
 ?>
