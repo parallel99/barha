@@ -30,7 +30,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf">
                     <label class="form-check-label" for="aszf">
-                        Elfogadom <a data-toggle="modal" data-target="#myModal">felhasználási feltételeket</a>.
+                        Elfogadom <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Regisztráció</button>
@@ -44,28 +44,15 @@
                     <h4 class="modal-title">Felhasználási feltételek</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body" id="modal-body" onLoad="loadDoc()">
-                    <p>Some text in the modal.</p>
+                <div class="modal-body">
+                    <p>PLS ez legyen a felhasználói feltételek helye.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Bezár</button>
                 </div>
             </div>
         </div>
-  </div>
-        <script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("modal-body").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("POST", "aszf.pdf", true);
-  xhttp.send();
-}
-</script>
+        </div>
         <?php
             if(isset($_POST['submit'])) {
 
