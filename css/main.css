@@ -101,6 +101,7 @@ form button {
 .aszf{
     color: blue;
     font-style: italic;
+    display: inline-block;
 }
 
 .modal-dialog,
