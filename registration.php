@@ -30,12 +30,29 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf">
                     <label class="form-check-label" for="aszf">
-                        Elfogadom <a href="#">felhasználási feltételeket</a>.
+                        Elfogadom <a data-toggle="modal" data-target="#myModal">felhasználási feltételeket</a>.
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Regisztráció</button>
             </form>
         </div>
+        <!-- felhasználási feltételek ablak-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Felhasználási feltételek</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Bezár</button>
+                </div>
+            </div>
+        </div>
+  </div>
         <?php
             if(isset($_POST['submit'])) {
 
