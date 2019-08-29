@@ -98,6 +98,11 @@ form button {
     border-radius: 10px;
 }
 
+.aszf{
+    color: blue;
+    font-style: italic;
+}
+
 .modal-dialog,
 .modal-content {
     height: 90%;
