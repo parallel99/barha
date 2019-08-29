@@ -102,6 +102,7 @@ form button {
     color: blue;
     font-style: italic;
     display: inline-block;
+    cursor: pointer;
 }
 
 .modal-dialog,
