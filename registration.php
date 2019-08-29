@@ -44,7 +44,7 @@
                     <h4 class="modal-title">Felhasználási feltételek</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" onLoad="loadDoc()">
                     <p>Some text in the modal.</p>
                 </div>
                 <div class="modal-footer">
@@ -53,6 +53,19 @@
             </div>
         </div>
   </div>
+        <script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("POST", "aszf.pdf", true);
+  xhttp.send();
+}
+</script>
         <?php
             if(isset($_POST['submit'])) {
 
