@@ -73,7 +73,7 @@
               if ($password1 != $password2) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
                   $ok = false;
-                  echo "<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>";
+                  echo '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
               }
 
               if (mb_strlen($name) < 4 || mb_strlen($name) > 255) {
