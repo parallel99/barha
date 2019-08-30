@@ -102,9 +102,9 @@
               $getemail = $pdo->prepare("SELECT * FROM users WHERE email = :email;");
               $getemail->bindValue(':email', $email, PDO::PARAM_STR);
               $getemail->execute();
-              $row = $getemail->fetch(PDO::FETCH_ASSOC);
+              $row = $getemail->fetchColumn();
 
-              if(count($row) > 0){
+              if($row > 0){
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Evvel az email-el regisztráltak már!</div>';
                   $ok = false;
               }
