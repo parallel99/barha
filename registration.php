@@ -104,7 +104,7 @@
               $getemail->execute();
               $row = $getemail->fetchAll(PDO::FETCH_OBJ);
 
-              if($row->num_rows > 0){
+              if(count($row) > 0){
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Evvel az email-el regisztráltak már!</div>';
                   $ok = false;
               }
