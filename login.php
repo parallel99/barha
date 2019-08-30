@@ -6,10 +6,17 @@
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("login");
         ?>
         <div class="form-container">
+          <?php
+            if(isset($_POST['submit'])) {
+                $msg = login();
+                echo $msg;
+                unset($msg);
+            }
+          ?>
             <form method="post" class="shadow" id="loginForm">
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -19,14 +26,47 @@
                     <label for="password">Jelszó</label>
                     <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
                 </div>
-                <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+                <input type="submit" value="Bejelentkezés" class="btn btn-primary" name="submit">
                 <a href="forgotten_password.php" class="small">Elfelejtetted a jelszavad?</a>
             </form>
         </div>
         <?php
-            if(isset($_POST['submit'])) {
+            function login() {
+              include (ROOT_PATH.BASE_URL.'include/db.php');
 
+              $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+              $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+              $password = hash('sha512', $password1);
+
+              $stmt = $db->prepare("SELECT * FROM `users` WHERE `email`= :email and `password`= :password");
+              $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+              $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+              $stmt->execute();
+              $row = $stmt->fetchColumn();
+
+              $find_user = false;
+              $valid = false;
+
+              if ($row == 1) {
+                  $find_user = true;
+              }
+
+              if ($sor->active == 1 && $find_user) {
+                  $user = $stmt->fetch(PDO::FETCH_OBJ);
+                  $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
+                  $valid = true;
+              }
+
+              $db->close();
+
+              if (!$find_user) {
+                  $msg = '<div class="rsikertelen" id="loginmeret">Hibás email vagy jelszó!</div>';
+              } elseif (!$valid) {
+                  $msg = '<div class="rsikertelen" id="loginmeret">Még nem rősítette meg az email címét!</div>';
+              }
             }
+            echo $_SESSION['user']['name'];
         ?>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
