@@ -8,6 +8,11 @@
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("registration");
+
+            if(isset($msg) || $msg != ""){
+                echo $msg;
+                unset($msg);
+            }
         ?>
         <div class="form-container">
             <form method="post" class="shadow" id="registrationForm">
@@ -55,7 +60,40 @@
         </div>
         <?php
             if(isset($_POST['submit'])) {
-                echo "Jó -e?";
+
+              $msg = "";
+              $ok = true;
+
+              $name      = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+              $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+              $password1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
+              $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+
+
+              if ($password1 != $password2) {
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
+                  $ok = false;
+              }
+
+              if (mb_strlen($name) < 4 || mb_strlen($name) > 255) {
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">A névnek minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
+                  $ok = false;
+              }
+
+              if (mb_strlen($email) < 4 || mb_strlen($email) > 512) {
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">Az email-nek minimum 4 karakternek, maximum 512 karakternek kell lennie!</div>';
+                  $ok = false;
+              }
+
+              if (mb_strlen($password1) < 4 || mb_strlen($password1) > 255) {
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">A jelszónak minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
+                  $ok = false;
+              }
+
+              if($ok){
+                  $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
+              }
+
             }
         ?>
     </body>
