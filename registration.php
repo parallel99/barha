@@ -9,7 +9,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("registration");
 
-            if(isset($msg)){
+            function message($msg){
                 echo $msg;
                 unset($msg);
             }
@@ -73,29 +73,43 @@
               if ($password1 != $password2) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
                   $ok = false;
-                  echo '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
               }
 
-              if (mb_strlen($name) < 4 || mb_strlen($name) > 255) {
+              if (strlen($name) < 4 || strlen($name) > 255) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A névnek minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
                   $ok = false;
               }
 
-              if (mb_strlen($email) < 4 || mb_strlen($email) > 512) {
+              if (strlen($email) < 4 || strlen($email) > 512) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Az email-nek minimum 4 karakternek, maximum 512 karakternek kell lennie!</div>';
                   $ok = false;
               }
 
-              if (mb_strlen($password1) < 4 || mb_strlen($password1) > 255) {
+              if (strlen($password1) < 4 || strlen($password1) > 255) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A jelszónak minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
                   $ok = false;
               }
 
               if($ok){
+                  include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                  $random   = mt_rand(10, 1000);
+                  $ticket   = $email . $random;
+                  $password = hash('sha512', $password1);
+                  $token    = hash('sha512', $ticket);
+
+                  $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active) VALUES (:name, :email, :password, :token, '1')");
+                  $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+                  $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                  $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+                  $stmt->bindParam(':token', $token, PDO::PARAM_STR);
+                  $stmt->execute();
+
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
               }
 
-            }
+              message($msg);
+          }
         ?>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
