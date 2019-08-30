@@ -53,13 +53,13 @@ $user =
                   $find_user = true;
               }
 
-              if ($user->active == 1 && $find_user) {
+              if ($user->active && $find_user) {
 
                   $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
                   $valid = true;
               }
 
-              $db->close();
+              $pdo->close();
 
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
