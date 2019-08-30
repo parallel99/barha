@@ -15,6 +15,7 @@
                 $msg = registration();
                 echo $msg;
                 unset($msg);
+                unset($_POST['submit']);
             }
           ?>
             <form method="post" class="shadow" id="registrationForm">
@@ -96,8 +97,19 @@
                   $ok = false;
               }
 
+              include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+              $getemail = $pdo->prepare("SELECT `id` FROM `users` WHERE `email` = :email");
+              $getemail->bindParam(':email', $email, PDO::PARAM_STR);
+              $getemail->execute();
+              $row = $getemail->fetchAll(PDO::FETCH_OBJ);
+
+              if($row->num_rows > 0){
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">Evvel az email-el regisztráltak már!</div>';
+                  $ok = false;
+              }
+
               if($ok){
-                  include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
                   $random   = mt_rand(10, 1000);
                   $ticket   = $email . $random;
