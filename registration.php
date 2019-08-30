@@ -71,7 +71,7 @@
               $password1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
               $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
 
-              if(filter_has_var(INPUT_POST, 'aszf')){
+              if(!filter_has_var(INPUT_POST, 'aszf')){
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem fogadtad el a felhasználói feltételeket!</div>';
                   $ok = false;
               }
