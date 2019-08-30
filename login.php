@@ -39,7 +39,7 @@
 
               $password = hash('sha512', $password1);
 
-              $stmt = $pdo->prepare("SELECT * FROM `users` WHERE `email`= :email and `password`= :password");
+              $stmt = $pdo->prepare("SELECT * FROM users WHERE email= :email AND password = :password");
               $stmt->bindValue(':email', $email, PDO::PARAM_STR);
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
