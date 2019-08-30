@@ -32,7 +32,7 @@
         </div>
         <?php
             function login() {
-              include (ROOT_PATH.BASE_URL.'include/db.php');
+              include ($_SERVER['DOCUMENT_ROOT'].'include/db.php');
 
               $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
               $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
@@ -61,9 +61,9 @@
               $db->close();
 
               if (!$find_user) {
-                  $msg = '<div class="rsikertelen" id="loginmeret">Hibás email vagy jelszó!</div>';
+                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
               } elseif (!$valid) {
-                  $msg = '<div class="rsikertelen" id="loginmeret">Még nem rősítette meg az email címét!</div>';
+                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem rősítette meg az email címét!</div>';
               }
             }
             echo $_SESSION['user']['name'];
