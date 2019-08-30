@@ -11,7 +11,8 @@
         ?>
         <div class="form-container">
           <?php
-            function message($msg){
+            if(isset($_POST['submit'])) {
+                $msg = registration();
                 echo $msg;
                 unset($msg);
             }
@@ -60,8 +61,8 @@
         </div>
         </div>
         <?php
-            if(isset($_POST['submit'])) {
 
+        function registration(){
               $msg = "";
               $ok = true;
 
@@ -109,7 +110,7 @@
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
               }
 
-              message($msg);
+              return $msg;
           }
         ?>
     </body>
