@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf">
-                    <label class="form-check-label" for="aszf">
+                    <label class="form-check-label small" for="aszf">
                         Elfogadom <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
                 </div>
