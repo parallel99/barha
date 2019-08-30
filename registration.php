@@ -99,7 +99,7 @@
 
               include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-              $getemail = $pdo->prepare("SELECT `id` FROM `users` WHERE `email` = :email");
+              $getemail = $pdo->prepare("SELECT `id` FROM `users` WHERE `email` LIKE ':email'");
               $getemail->bindParam(':email', $email, PDO::PARAM_STR);
               $getemail->execute();
               $row = $getemail->fetchAll(PDO::FETCH_OBJ);
