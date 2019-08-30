@@ -59,10 +59,7 @@
         </div>
         </div>
         <?php
-        echo "izi";
             if(isset($_POST['submit'])) {
-              echo "hello";
-              die();
 
               $msg = "";
               $ok = true;
