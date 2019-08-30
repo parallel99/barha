@@ -38,7 +38,7 @@
                         Elfogadom a <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
                 </div>
-                <input type="submit" value="Regisztráció" class="btn btn-primary">
+                <input type="submit" name="submit" value="Regisztráció" class="btn btn-primary">
             </form>
         </div>
         <!-- felhasználási feltételek ablak-->
@@ -61,8 +61,6 @@
         <?php
             if(isset($_POST['submit'])) {
 
-              echo "hi";
-              die();
               $msg = "";
               $ok = true;
 
