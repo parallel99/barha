@@ -32,14 +32,14 @@
         </div>
         <?php
             function login() {
-              include ($_SERVER['DOCUMENT_ROOT'].'include/db.php');
+              include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
 
               $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
               $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
               $password = hash('sha512', $password1);
 
-              $stmt = $db->prepare("SELECT * FROM `users` WHERE `email`= :email and `password`= :password");
+              $stmt = $pdo->prepare("SELECT * FROM `users` WHERE `email`= :email and `password`= :password");
               $stmt->bindValue(':email', $email, PDO::PARAM_STR);
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
