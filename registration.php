@@ -9,7 +9,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("registration");
 
-            if(isset($msg) || $msg != ""){
+            if(isset($msg)){
                 echo $msg;
                 unset($msg);
             }
@@ -38,7 +38,7 @@
                         Elfogadom a <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Regisztráció</button>
+                <input value="Regisztráció" type="submit" class="btn btn-primary">
             </form>
         </div>
         <!-- felhasználási feltételek ablak-->
