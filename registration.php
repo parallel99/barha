@@ -100,7 +100,7 @@
               include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
               $getemail = $pdo->prepare("SELECT id FROM users WHERE email = :email;");
-              $getemail->bindParam(':email', $email, PDO::PARAM_STR);
+              $getemail->bindValue(':email', $email, PDO::PARAM_STR);
               $getemail->execute();
               $row = $getemail->get_result();
 
