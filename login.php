@@ -43,8 +43,9 @@
               $stmt->bindValue(':email', $email, PDO::PARAM_STR);
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
+              $stmt->fetch(PDO::FETCH_OBJ);
               $row = $stmt->fetchColumn();
-
+$user =
               $find_user = false;
               $valid = false;
 
@@ -52,8 +53,8 @@
                   $find_user = true;
               }
 
-              if ($sor->active == 1 && $find_user) {
-                  $user = $stmt->fetch(PDO::FETCH_OBJ);
+              if ($user->active == 1 && $find_user) {
+
                   $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
                   $valid = true;
               }
