@@ -61,6 +61,8 @@
         <?php
             if(isset($_POST['submit'])) {
 
+              echo "hi";
+              die();
               $msg = "";
               $ok = true;
 
