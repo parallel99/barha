@@ -43,9 +43,9 @@
               $stmt->bindValue(':email', $email, PDO::PARAM_STR);
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
-              $stmt->fetch(PDO::FETCH_OBJ);
+              $user = $stmt->fetch(PDO::FETCH_OBJ);
               $row = $stmt->fetchColumn();
-$user =
+
               $find_user = false;
               $valid = false;
 
@@ -54,12 +54,10 @@ $user =
               }
 
               if ($user->active && $find_user) {
-
                   $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
                   $valid = true;
               }
 
-              $pdo->close();
 
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
