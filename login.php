@@ -43,7 +43,7 @@
               $stmt->bindValue(':email', $email, PDO::PARAM_STR);
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
-              $user = $stmt->fetchAll(PDO::FETCH_OBJ);
+              $user = $stmt->fetch(PDO::FETCH_OBJ);
               $row = $stmt->fetchColumn();
 
               $find_user = false;
@@ -53,7 +53,7 @@
                   $find_user = true;
               }
 
-              if ($user[0]->active == 1 && $find_user) {
+              if ($user->active == 1 && $find_user) {
                   $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
                   $valid = true;
               }
@@ -65,7 +65,6 @@
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem rősítette meg az email címét!</div>';
               }
             }
-            echo $_SESSION['user']['name'];
         ?>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
