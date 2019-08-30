@@ -15,17 +15,16 @@
                 $msg = registration();
                 echo $msg;
                 unset($msg);
-                unset($_POST['submit']);
             }
           ?>
             <form method="post" class="shadow" id="registrationForm">
                 <div class="form-group">
                     <label for="name">Név</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Név">
+                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" value="<?php echo $_POST["email"] ?? "";?>" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="password1">Jelszó</label>
@@ -124,6 +123,7 @@
                   $stmt->execute();
 
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
+                  $_POST = array();
               }
 
               return $msg;
