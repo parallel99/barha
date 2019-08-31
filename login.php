@@ -52,7 +52,7 @@
               if ($row == 1) {
                   $find_user = true;
               }
-
+              print_r($user);
               if ($user->active == 1 && $find_user) {
                   $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
                   $valid = true;
