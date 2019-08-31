@@ -12,7 +12,7 @@ $stmt->bindValue(':token', $_GET["id"], PDO::PARAM_STR);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 $row = $stmt->fetchColumn();
-
+print_r($user->active);
 if($row == 1){
   if ($user->active == 1) {
       $volt = true;
