@@ -12,7 +12,7 @@
             Az alábbi linken tudod megerősíteni a regisztrációdat: <a href="https://etel-seged.herokuapp.com/activation?id=<?php echo $tokenid;?>">Kattintson ide!</a>
             Ha nem te regisztráltál akkor hagyd figyelmen kívül ezt az email-t!(Máté ezt még fejleszteni kell)
           </body>
-        </html>'
+        </html>';
 
         return $message;
     }
