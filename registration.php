@@ -122,9 +122,7 @@
                   $stmt->bindParam(':token', $token, PDO::PARAM_STR);
                   $stmt->execute();
 
-                  include $_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php';
-                  $Mail = new Mail($name, $email, "<strong>Béna vagy!</strong>");
-                  $Mail->Send();
+                  
 
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
                   $_POST = array();
