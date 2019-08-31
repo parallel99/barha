@@ -16,7 +16,7 @@ class Mail {
       $email = new \SendGrid\Mail\Mail();
       $email->setFrom("etel@seged.com", "étel-segéd");
       $email->setSubject("Ez a cím!");
-      $email->addTo($this->$emailaddress, $this->$name);
+      $email->addTo($this->emailaddress, $this->name);
       //$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
       $email->addContent("text/html", $this->message);
 
