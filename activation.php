@@ -51,10 +51,10 @@ if($row == 1){
                     echo "<h1>Sikeres megerősítés</h1>";
                     echo "<div>Érvénytelen link!</div>";
                   }
-                  <div>
-                    Visszalépés a főoldalra: <a href="/" class="btn btn-primary">Főoldal</a>
-                  </div>
                 ?>
+                <div>
+                  Visszalépés a főoldalra: <a href="/" class="btn btn-primary">Főoldal</a>
+                </div>
             </div>
         </div>
     </body>
