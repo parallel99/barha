@@ -5,7 +5,7 @@
           <head>
           </head>
           <dody>
-          <h2>Kedves '.$username.'>!</h2>
+          <h2>Kedves '.$username.'!</h2>
           <strong>
             Mivel regisztráltál nálunk, ezért automatán generáltunk neked egy megerősítő email-t!
           </strong>

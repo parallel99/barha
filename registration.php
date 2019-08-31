@@ -115,7 +115,7 @@
                   $password = hash('sha512', $password1);
                   $token    = hash('sha512', $ticket);
 
-                  $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active) VALUES (:name, :email, :password, :token, '1')");
+                  $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active) VALUES (:name, :email, :password, :token, '0')");
                   $stmt->bindParam(':name', $name, PDO::PARAM_STR);
                   $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                   $stmt->bindParam(':password', $password, PDO::PARAM_STR);
