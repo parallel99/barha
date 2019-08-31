@@ -40,7 +40,7 @@
                         Elfogadom a <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
                 </div>
-                <input type="submit" name="submit" value="Regisztráció" class="btn btn-primary">
+                <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
         </div>
         <!-- felhasználási feltételek ablak-->
