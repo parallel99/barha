@@ -40,7 +40,7 @@ form {
     padding: 25px;
     margin-bottom: 25px;
 }
-form button {
+form input[type=text] {
     margin-top: 15px;
     width: 100%!important;
 }
@@ -51,7 +51,7 @@ form button {
     margin-top: 5px;
 }
 
-#loginForm button {
+#loginForm input[type=text] {
     margin: 0 0 15px 0;
 }
 #loginForm a {
@@ -71,7 +71,7 @@ form button {
     margin-top: 5px;
 }
 
-#registrationForm button {
+#registrationForm input[type=text] {
     margin: 0 0 15px 0;
 }
 #registrationForm > div.form-check {
