@@ -10,7 +10,7 @@ include ($_SERVER['DOCUMENT_ROOT']. '/include/db.php');
 $stmt = $pdo->prepare("SELECT * FROM users WHERE token = :token");
 $stmt->bindValue(':token', $_GET["id"], PDO::PARAM_STR);
 $stmt->execute();
-$row = $stmt->fetchColumn();
+$row = $stmt->rowCount();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 echo ($row);
 
