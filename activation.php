@@ -34,5 +34,5 @@ if (isset($volt)) {
 } else {
     echo "<script>alert('Érvénytelen link!');</script>";
 }
-
+die();
 header("Location: /");
