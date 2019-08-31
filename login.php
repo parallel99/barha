@@ -62,6 +62,8 @@
               } elseif (!$valid) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem rősítette meg az email címét!</div>';
               }
+
+              return $msg;
             }
         ?>
     </body>

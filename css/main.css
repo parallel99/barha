@@ -51,7 +51,7 @@ form input[type=text] {
     margin-top: 5px;
 }
 
-#loginForm input[type=text] {
+#loginForm input[type="submit"] {
     margin: 0 0 15px 0;
 }
 #loginForm a {
@@ -71,7 +71,7 @@ form input[type=text] {
     margin-top: 5px;
 }
 
-#registrationForm input[type=text] {
+#registrationForm input[type="submit"] {
     margin: 0 0 15px 0;
 }
 #registrationForm > div.form-check {
