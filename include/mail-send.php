@@ -2,12 +2,12 @@
 class Mail {
 
   public $name;
-  public $email;
+  public $emailaddress;
   public $message;
 
-  public function __construct($name, $email, $message) {
+  public function __construct($name, $emailaddress, $message) {
       $this->name = $name;
-      $this->$emailaddress = $email;
+      $this->emailaddress = $emailaddress;
       $this->message = $message;
   }
 
@@ -16,7 +16,7 @@ class Mail {
       $email = new \SendGrid\Mail\Mail();
       $email->setFrom("etel@seged.com", "étel-segéd");
       $email->setSubject("Ez a cím!");
-      $email->addTo($this->$emailaddress, $name);
+      $email->addTo($this->$emailaddress, $this->$name);
       //$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
       $email->addContent("text/html", $this->message);
 
