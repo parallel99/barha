@@ -20,22 +20,22 @@
             <form method="post" class="shadow" id="registrationForm">
                 <div class="form-group">
                     <label for="name">Név</label>
-                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név">
+                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" value="<?php echo $_POST["email"] ?? "";?>" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" value="<?php echo $_POST["email"] ?? "";?>" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <label for="password1">Jelszó</label>
-                    <input type="password" class="form-control" name="password1" id="password1" placeholder="Jelszó">
+                    <input type="password" class="form-control" name="password1" id="password1" placeholder="Jelszó" required>
                 </div>
                 <div class="form-group">
                     <label for="password2">Jelszó megerősítése</label>
-                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése">
+                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf">
+                    <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf" required>
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                     </label>
@@ -122,7 +122,10 @@
                   $stmt->bindParam(':token', $token, PDO::PARAM_STR);
                   $stmt->execute();
 
-                  
+                  require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
+                  require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mailconfirm.php');
+                  $Mail = new Mail($name, $email, "E-mail megerősítés", confirm($name, $token));
+                  $Mail->Send();
 
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
                   $_POST = array();
