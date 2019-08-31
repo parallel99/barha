@@ -12,7 +12,6 @@ $stmt->bindValue(':token', $_GET["id"], PDO::PARAM_STR);
 $stmt->execute();
 $row = $stmt->rowCount();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
-echo ($row);
 
 if($row == 1){
   if ($user->active == 1) {
