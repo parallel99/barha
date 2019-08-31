@@ -24,16 +24,39 @@ if($row == 1){
       $activate->execute();
   }
 }
-
-
-if (isset($volt)) {
-    if ($volt) {
-        echo "<script>alert('Evvel a felhasználóval már megerősítették a regisztrációt!');</script>";
-    } else {
-        echo "<script>alert('Sikeresen megerősítette a regisztrációt!');</script>";
-    }
-} else {
-    echo "<script>alert('Érvénytelen link!');</script>";
-}
-die();
-header("Location: /");
+?>
+<!DOCTYPE html>
+<html lang="hu" role="main">
+    <head>
+        <title>E-mail megerősítése</title>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    </head>
+    <body>
+        <?php
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
+            menu("none");
+        ?>
+        <div class="form-container">
+            <div class="shadow email-confirm">
+                <?php
+                  if (isset($volt)) {
+                      if ($volt) {
+                        echo "<h1>Sikertelen megerősítés</h1>";
+                        echo "<div>Evvel a felhasználóval már megerősítették a regisztrációt!</div>";
+                      } else {
+                        echo "<h1>Sikeres megerősítés</h1>";
+                        echo "<div>Sikeresen megerősítette a regisztrációt!</div>";
+                      }
+                  } else {
+                    echo "<h1>Sikeres megerősítés</h1>";
+                    echo "<div>Érvénytelen link!</div>";
+                  }
+                  <div>
+                    Visszalépés a főoldalra: <a href="/" class="btn btn-primary">Főoldal</a>
+                  </div>
+                ?>
+            </div>
+        </div>
+    </body>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+</html>

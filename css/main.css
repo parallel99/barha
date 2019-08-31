@@ -7,11 +7,11 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    background: linear-gradient(40deg, #2096ff, #05ffa3);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background: #05ffa3;
-    background: linear-gradient(40deg, #2096ff, #05ffa3);
     overflow-y: scroll;
 }
 body, input, .ui-widget, .ui-autocomplete.ui-widget {
@@ -88,6 +88,10 @@ form button {
     min-height: calc(100vh - 56px);
 }
 
+.email-confirm{
+    width: 400px;
+}
+
 .error-page {
     margin: auto;
     padding: 15px;
@@ -150,5 +154,11 @@ form button {
     }
     .errorpage{
         width: 90%;
+    }
+    .alert-success{
+        max-width: 300px;
+    }
+    .alert-danger{
+        max-width: 300px;
     }
 }
