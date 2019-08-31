@@ -51,13 +51,11 @@
 
               if ($row == 1) {
                   $find_user = true;
+                  if ($user->active == 1 && $find_user) {
+                      $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
+                      $valid = true;
+                  }
               }
-              print_r($user);
-              if ($user->active == 1 && $find_user) {
-                  $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
-                  $valid = true;
-              }
-
 
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
