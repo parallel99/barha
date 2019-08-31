@@ -82,6 +82,7 @@ form button {
     align-items: center;
     min-height: calc(100vh - 56px);
 }
+
 .error-container {
     display: flex;
     align-items: center;
@@ -89,8 +90,6 @@ form button {
 }
 
 .email-confirm{
-    display: flex;
-    align-items: center;
     margin: auto;
     padding: 15px;
     background: var(--white);
