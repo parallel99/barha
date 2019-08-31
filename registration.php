@@ -104,7 +104,7 @@
               $row = $getemail->fetchColumn();
 
               if($row > 0){
-                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">Evvel az email-el regisztráltak már!</div>';
+                  $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ez az email cím már foglalt!</div>';
                   $ok = false;
               }
 
