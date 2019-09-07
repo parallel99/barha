@@ -20,11 +20,11 @@
             <form method="post" class="shadow" id="loginForm">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó" required>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
                 <a href="forgotten_password.php" class="small">Elfelejtetted a jelszavad?</a>
