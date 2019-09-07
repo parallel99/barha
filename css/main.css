@@ -90,8 +90,8 @@ form button {
 }
 
 .email-confirm{
-    margin: 5px;
     margin: auto;
+    margin-top: 5px;
     padding: 15px;
     background: var(--white);
     width: 80%;
