@@ -19,7 +19,9 @@ if(isset($_SESSION['user'])){
           <?php
             if(isset($_POST['submit'])) {
                 $msg = login();
-                echo $msg;
+                if($msg != ""){
+                  echo $msg;
+                }
                 unset($msg);
             }
           ?>
@@ -62,6 +64,8 @@ if(isset($_SESSION['user'])){
                       $valid = true;
                   }
               }
+
+              $msg = "";
 
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';

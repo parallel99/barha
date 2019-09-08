@@ -44,7 +44,7 @@ function menu($active) {
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  <?php echo $_SESSION['user']['name'];?>
                </a>
-               <form class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <form class="dropdown-menu" method="post" aria-labelledby="navbarDropdown">
                  <a class="dropdown-item" href="#">Profil</a>
                  <a class="dropdown-item" href="#">Valami</a>
                <div class="dropdown-divider"></div>
