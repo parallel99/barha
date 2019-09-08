@@ -44,7 +44,7 @@
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
               $user = $stmt->fetch(PDO::FETCH_OBJ);
-              $row = $stmt->fetchColumn();
+              $row = $stmt->rowCount();
 
               $find_user = false;
               $valid = false;

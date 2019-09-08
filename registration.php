@@ -101,7 +101,7 @@
               $getemail = $pdo->prepare("SELECT * FROM users WHERE email = :email;");
               $getemail->bindValue(':email', $email, PDO::PARAM_STR);
               $getemail->execute();
-              $row = $getemail->fetchColumn();
+              $row = $getemail->rowCount();
 
               if($row > 0){
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ez az email cím már foglalt!</div>';
