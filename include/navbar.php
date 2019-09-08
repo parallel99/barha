@@ -44,17 +44,24 @@ function menu($active) {
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  <?php echo $_SESSION['user']['name'];?>
                </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <form class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <a class="dropdown-item" href="#">Profil</a>
                  <a class="dropdown-item" href="#">Valami</a>
                <div class="dropdown-divider"></div>
-                 <a class="dropdown-item" href="#">Kijelentkez</a>
-               </div>
+                 <button type="submit" name="logout" class="dropdown-item">Kijelentkez</button>
+               </form>
             </li>
         </ul>
     </div>
 </nav>
 <?php
   }
+
+  if(isset($_POST["logout"])){
+    unset($_SESSION['user']);
+    header("Refresh: 0");
+    die();
+  }
+
 }
 ?>
