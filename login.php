@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION['user'])){
+    header("Location: /");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
@@ -13,7 +19,12 @@
           <?php
             if(isset($_POST['submit'])) {
                 $msg = login();
-                echo $msg;
+                if($msg != ""){
+                  echo $msg;
+                } else {
+                  header("Refresh: 0");
+                  die();
+                }
                 unset($msg);
             }
           ?>
@@ -44,7 +55,7 @@
               $stmt->bindValue(':password', $password, PDO::PARAM_STR);
               $stmt->execute();
               $user = $stmt->fetch(PDO::FETCH_OBJ);
-              $row = $stmt->fetchColumn();
+              $row = $stmt->rowCount();
 
               $find_user = false;
               $valid = false;
@@ -56,6 +67,8 @@
                       $valid = true;
                   }
               }
+
+              $msg = "";
 
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
