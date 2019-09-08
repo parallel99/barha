@@ -1,5 +1,12 @@
 <?php
 function menu($active) {
+
+  if(isset($_POST["logout"])){
+    unset($_SESSION['user']);
+    header("Refresh: 0");
+    die();
+  }
+  
   if(!isset($_SESSION['user'])){
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,12 +63,5 @@ function menu($active) {
 </nav>
 <?php
   }
-
-  if(isset($_POST["logout"])){
-    unset($_SESSION['user']);
-    header("Refresh: 0");
-    die();
-  }
-
 }
 ?>

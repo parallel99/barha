@@ -21,6 +21,9 @@ if(isset($_SESSION['user'])){
                 $msg = login();
                 if($msg != ""){
                   echo $msg;
+                } else {
+                  header("Refresh: 0");
+                  die();
                 }
                 unset($msg);
             }
