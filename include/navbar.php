@@ -55,7 +55,7 @@ function menu($active) {
                  <a class="dropdown-item fa fa-user-o" href="#">Profil</a>
                  <a class="dropdown-item fa fa-sliders" href="#">Valami</a>
                <div class="dropdown-divider"></div>
-                 <button type="submit" name="logout" class="dropdown-item material-icons">Kijelentkez</button>
+                 <button type="submit" name="logout" class="dropdown-item fa fa-sign-out">Kijelentkez</button>
                </form>
             </li>
         </ul>
