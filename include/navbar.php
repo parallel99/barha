@@ -52,10 +52,10 @@ function menu($active) {
                  <?php echo $_SESSION['user']['name'];?>
                </a>
                <form class="dropdown-menu" method="post" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="#">Profil</a>
-                 <a class="dropdown-item" href="#">Valami</a>
+                 <a class="dropdown-item fa fa-user-o" href="#">Profil</a>
+                 <a class="dropdown-item fa fa-sliders" href="#">Valami</a>
                <div class="dropdown-divider"></div>
-                 <button type="submit" name="logout" class="dropdown-item">Kijelentkez</button>
+                 <button type="submit" name="logout" class="dropdown-item material-icons">Kijelentkez</button>
                </form>
             </li>
         </ul>
