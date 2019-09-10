@@ -41,7 +41,7 @@ if($row == 1){
                   if (isset($volt)) {
                       if ($volt) {
                         echo "<h1>Sikertelen megerősítés</h1><hr>";
-                        echo "<p>A megerősítés már megtörtént</p>";
+                        echo "<p>A megerősítés már megtörtént!</p>";
                       } else {
                         echo "<h1>Sikeres megerősítés</h1><hr>";
                         echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
