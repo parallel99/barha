@@ -40,19 +40,20 @@ if($row == 1){
                 <?php
                   if (isset($volt)) {
                       if ($volt) {
-                        echo "<h1>Sikertelen megerősítés</h1>";
-                        echo "<div>Evvel a felhasználóval már megerősítették a regisztrációt!</div>";
+                        echo "<h1>Sikertelen megerősítés</h1><hr>";
+                        echo "<p>A megerősítés már megtörtént</p>";
                       } else {
-                        echo "<h1>Sikeres megerősítés</h1>";
-                        echo "<div>Sikeresen megerősítette a regisztrációt!</div>";
+                        echo "<h1>Sikeres megerősítés</h1><hr>";
+                        echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
                       }
                   } else {
-                    echo "<h1>Sikeres megerősítés</h1>";
-                    echo "<div>Érvénytelen link!</div>";
+                    echo "<h1>Sikeres megerősítés</h1><hr>";
+                    echo "<p>Érvénytelen link!</p>";
                   }
                 ?>
+                <hr>
                 <div>
-                  Visszalépés a főoldalra: <a href="/" class="btn btn-primary">Főoldal</a>
+                  <a href="/" class="btn btn-primary">Főoldal</a>
                 </div>
             </div>
         </div>
