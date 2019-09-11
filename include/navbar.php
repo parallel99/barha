@@ -58,9 +58,6 @@ function menu($active) {
                  <div class="fa fa-sign-out"><button type="submit" name="logout" class="dropdown-item">Kijelentkez</button></div>
                </form>
             </li>
-            <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Logout</a>
-    </div>
         </ul>
     </div>
 </nav>
