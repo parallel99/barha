@@ -91,12 +91,17 @@ form button {
 
 .email-confirm{
     margin: auto;
-    margin-top: 5px;
-    padding: 15px;
+    margin-top: 20vh;
+    padding: 25px;
     background: var(--white);
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+    text-align: center;
+}
+
+.email-confirm h1 {
+    text-align: center;
 }
 
 .error-page {
