@@ -47,7 +47,7 @@ if ($row == 1) {
                         echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
                     }
                 } else {
-                    echo "<h1>Sikeres megerősítés</h1><hr>";
+                    echo "<h1>Sikertelen megerősítés</h1><hr>";
                     echo "<p>Érvénytelen link!</p>";
                 }
                 ?>
