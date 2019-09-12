@@ -52,7 +52,7 @@ function menu($active) {
               Cuccaim
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Recept feltöltés</a>
+              <a class="dropdown-item" href="upload_recipe.php">Recept feltöltés</a>
               <a class="dropdown-item" href="#">Feltöltött recepteim</a>
               <a class="dropdown-item" href="#">Kedvenceim</a>
             </div>
