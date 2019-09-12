@@ -166,6 +166,12 @@ form button {
     background: #555;
 }
 
+@media (max-width: 991px) {
+    .profile-menu{
+        width: 100%;
+    }
+}
+
 @media (max-width: 410px) {
     form {
         width: 300px;
