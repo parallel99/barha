@@ -73,7 +73,7 @@ if(isset($_SESSION['user'])){
               if (!$find_user) {
                   $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
               } elseif (!$valid) {
-                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem rősítette meg az email címét!</div>';
+                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem erősítette meg az email címét!</div>';
               }
 
               return $msg;
