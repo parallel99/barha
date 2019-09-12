@@ -1,5 +1,5 @@
 <?php
-if(isset(!$_SESSION['user'])){
+if(!isset($_SESSION['user'])){
     header("Location: /");
     die();
 }
@@ -47,7 +47,7 @@ if(isset(!$_SESSION['user'])){
                         ;
                     });
                 </script>
-                
+
                 <button type="submit" name="submit" class="btn btn-primary">Küld</button>
             </form>
         </div>
