@@ -47,6 +47,19 @@ function menu($active) {
           <li class="nav-item <?php if($active == "recipe"){ echo "active";}?>">
              <a class="nav-link" href="#">Receptek</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cuccaim
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Recept feltöltés</a>
+              <a class="dropdown-item" href="#">Feltöltött recepteim</a>
+              <a class="dropdown-item" href="#">Kedvenceim</a>
+            </div>
+          </li>
+          <li class="nav-item <?php if($active == "recipe-upload"){ echo "active";}?>">
+             <a class="nav-link" href="#"></a>
+          </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
@@ -55,7 +68,7 @@ function menu($active) {
             </a>
             <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#"><span class="fa fa-user-o"></span>Profil</a>
-              <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Valami</a>
+              <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Beállítások</a>
             <div class="dropdown-divider"></div>
               <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkez</button>
             </form>
