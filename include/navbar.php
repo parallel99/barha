@@ -53,11 +53,11 @@ function menu($active) {
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo $_SESSION['user']['name'];?>
             </a>
-            <form class="dropdown-menu" method="post" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#"><span class="fa fa-user-o"><span>Profil</a>
-              <a class="dropdown-item" href="#"><span class="fa fa-sliders"><span>Valami</a>
+            <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"><span class="fa fa-user-o"></span>Profil</a>
+              <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Valami</a>
             <div class="dropdown-divider"></div>
-              <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"><span>Kijelentkez</button>
+              <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkez</button>
             </form>
           </li>
         </ul>

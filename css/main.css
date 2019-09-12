@@ -78,6 +78,15 @@ form button {
     margin-bottom: 10px;
 }
 
+.fa{
+    padding: 10px;
+}
+
+.profile-menu{
+    left: -90px;
+    width: 100px;
+}
+
 .form-container {
     align-items: center;
     min-height: calc(100vh - 56px);
