@@ -46,6 +46,8 @@
     });
 </script>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
