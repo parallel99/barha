@@ -98,9 +98,14 @@ form button {
     min-height: calc(100vh - 56px);
 }
 
-.email-confirm {
+.activation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activation {
     margin: auto;
-    margin-top: 20vh;
     padding: 25px;
     background: var(--white);
     width: 80%;
@@ -109,7 +114,7 @@ form button {
     text-align: center;
 }
 
-.email-confirm h1 {
+.activation h1 {
     text-align: center;
 }
 
