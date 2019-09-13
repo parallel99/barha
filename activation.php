@@ -35,8 +35,8 @@ if ($row == 1) {
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("none");
         ?>
-        <div class="form-container">
-            <div class="shadow email-confirm">
+        <div class="form-container activation-container">
+            <div class="shadow activation">
                 <?php
                 if (isset($volt)) {
                     if ($volt) {
