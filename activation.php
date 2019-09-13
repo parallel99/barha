@@ -30,7 +30,7 @@ if ($row == 1) {
         <title>E-mail megerősítés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
-    <body>
+    <body class="activation-body">
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("none");
