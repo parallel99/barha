@@ -131,17 +131,17 @@ form button {
     border-radius: 10px;
 }
 
-.alert-danger{
+.alert-danger {
   margin: 10px auto;
   max-width: 400px;
 }
 
-.alert-success{
+.alert-success {
   margin: 10px auto;
   max-width: 400px;
 }
 
-.aszf{
+.aszf {
     color: blue;
     font-style: italic;
     display: inline-block;
@@ -179,7 +179,7 @@ form button {
 }
 
 @media (max-width: 992px) {
-    .profile-menu{
+    .profile-menu {
         width: 100%;
     }
 }
@@ -191,16 +191,16 @@ form button {
     form button {
         width: 300px;
     }
-    .errorpage{
+    .errorpage {
         width: 90%;
     }
-    .alert-success{
+    .alert-success {
         max-width: 300px;
     }
-    .alert-danger{
+    .alert-danger {
         max-width: 300px;
     }
-    .email-confirm{
+    .email-confirm {
         width: 300px;
     }
 }

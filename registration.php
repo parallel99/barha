@@ -40,6 +40,9 @@ if(isset($_SESSION['user'])){
                     <label for="password2">Jelszó megerősítése</label>
                     <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
                 </div>
+                <div class="form-group" style="text-align: center">
+                    <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
+                </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf" required>
                     <label class="form-check-label small" for="aszf">
@@ -79,6 +82,18 @@ if(isset($_SESSION['user'])){
               $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
               $password1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
               $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+
+              if (isset($_POST['g-recaptcha-response'])) {
+                    $captcha = $_POST['g-recaptcha-response'];
+                }
+                $secretKey = "6LfJWrgUAAAAACD9V-GcW1nXwxwYQtIlpImmKbyo";
+                $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
+                $response = file_get_contents($url);
+                $responseKeys = json_decode($response, true);
+                if (!$responseKeys["success"]) {
+                    $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>'
+                    $ok = false;
+                }
 
               if(!filter_has_var(INPUT_POST, 'aszf')){
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem fogadtad el a felhasználói feltételeket!</div>';
