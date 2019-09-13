@@ -98,6 +98,10 @@ form button {
     min-height: calc(100vh - 56px);
 }
 
+.activation-body {
+    overflow: hidden;
+}
+
 .activation-container {
     display: flex;
     flex-direction: column;
