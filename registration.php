@@ -7,7 +7,7 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>Regisztráció</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
@@ -45,7 +45,7 @@ if(isset($_SESSION['user'])){
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a
                     </label>
-                    <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
+                    <div class="aszf small" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
