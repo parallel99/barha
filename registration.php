@@ -91,7 +91,7 @@ if(isset($_SESSION['user'])){
                 $response = file_get_contents($url);
                 $responseKeys = json_decode($response, true);
                 if (!$responseKeys["success"]) {
-                    $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>'
+                    $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>';
                     $ok = false;
                 }
 
