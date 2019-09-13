@@ -43,8 +43,9 @@ if(isset($_SESSION['user'])){
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="aszf" name="aszf" required>
                     <label class="form-check-label small" for="aszf">
-                        Elfogadom a <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
+                        Elfogadom a
                     </label>
+                    <div class="aszf" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
