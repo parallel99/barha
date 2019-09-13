@@ -45,13 +45,13 @@ if(isset($_SESSION['user'])){
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a
                     </label>
-                    <div class="aszf small" data-toggle="modal" data-target="#myModal">felhasználási feltételeket</div>.
+                    <div class="aszf small" data-toggle="modal" data-target="#aszfModal">felhasználási feltételeket</div>.
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
         </div>
         <!-- felhasználási feltételek ablak-->
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="aszfModal" role="dialog">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -59,7 +59,9 @@ if(isset($_SESSION['user'])){
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>PLS ez legyen a felhasználói feltételek helye.</p>
+                    <p>PLS ez legyen a felhasználói feltételek helye.<br></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu magna tellus. Duis ac lectus ac diam placerat vehicula id at neque. Suspendisse et consequat leo, vel euismod tortor. Phasellus sagittis purus vel nibh laoreet aliquam. Quisque lacinia, ipsum vel finibus fringilla, orci nunc vulputate leo, et faucibus arcu magna a orci. Donec aliquam nunc dolor. Sed erat quam, tempor quis maximus vel, vestibulum tristique nisl. Fusce finibus, leo ut venenatis bibendum, enim justo dictum sapien, at vehicula augue massa a purus. Nam pretium lacus sed nunc posuere, sed lacinia neque sodales. Sed efficitur dui et nulla vestibulum dapibus. Sed fringilla elit porta leo euismod tincidunt. Sed consectetur suscipit nisi, quis viverra eros egestas luctus. Etiam vel ornare velit, non tincidunt risus. Cras a velit quam. Curabitur gravida urna in fermentum sagittis. Praesent dignissim et quam sagittis euismod.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu magna tellus. Duis ac lectus ac diam placerat vehicula id at neque. Suspendisse et consequat leo, vel euismod tortor. Phasellus sagittis purus vel nibh laoreet aliquam. Quisque lacinia, ipsum vel finibus fringilla, orci nunc vulputate leo, et faucibus arcu magna a orci. Donec aliquam nunc dolor. Sed erat quam, tempor quis maximus vel, vestibulum tristique nisl. Fusce finibus, leo ut venenatis bibendum, enim justo dictum sapien, at vehicula augue massa a purus. Nam pretium lacus sed nunc posuere, sed lacinia neque sodales. Sed efficitur dui et nulla vestibulum dapibus. Sed fringilla elit porta leo euismod tincidunt. Sed consectetur suscipit nisi, quis viverra eros egestas luctus. Etiam vel ornare velit, non tincidunt risus. Cras a velit quam. Curabitur gravida urna in fermentum sagittis. Praesent dignissim et quam sagittis euismod.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Bezár</button>

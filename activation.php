@@ -30,13 +30,13 @@ if ($row == 1) {
         <title>E-mail megerősítés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
-    <body class="activation-body">
+    <body class="activation">
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("none");
         ?>
-        <div class="form-container activation-container">
-            <div class="shadow activation">
+        <div class="form-container">
+            <div class="shadow email-confirm">
                 <?php
                 if (isset($volt)) {
                     if ($volt) {
