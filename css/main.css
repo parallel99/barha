@@ -48,7 +48,7 @@ form button {
     margin-bottom: .1rem;
 }
 #loginForm {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 #loginForm button {
@@ -60,7 +60,7 @@ form button {
 }
 
 #forgottenPasswordForm {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 #forgottenPasswordForm button {
@@ -68,7 +68,7 @@ form button {
 }
 
 #registrationForm {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 #registrationForm button {
