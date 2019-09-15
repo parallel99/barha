@@ -67,15 +67,11 @@
                         $user = $stmt->fetch(PDO::FETCH_OBJ);
                         $row = $stmt->rowCount();
 
-                        echo "email: " . $email;
-                        echo "pass" . $password;
-
                         if ($row == 1) {
-                            echo "<script> $('#deleteConfirmModal').modal('show');</script>";
+                            echo "<script>$('#deleteConfirmModal').modal('show');</script>";
                         } else {
                             echo "hibas jelszo";
                         }
-                        echo "rc: " . $row;
                     }
                 ?>
             </div>
