@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>Étel segéd</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
