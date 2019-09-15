@@ -15,7 +15,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("profile");
         ?>
-            <div class="account shadow">
+            <div class="account shadow container">
                 <form method="POST" class="account-password-change-form">
                     <h3>Change password</h3>
                     <div class="form-group">
