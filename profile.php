@@ -17,24 +17,24 @@
         ?>
             <div class="account shadow container">
                 <form method="POST" class="account-password-change-form">
-                    <h3>Change password</h3>
+                    <h3>Jelszó váltás</h3>
                     <div class="form-group">
-                        <label for="passwordCurrent">Current password</label>
+                        <label for="passwordCurrent">Jelenlegi jelszó</label>
                         <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Current password">
                     </div>
                     <div class="form-group">
-                        <label for="passwordNew1">New password</label>
+                        <label for="passwordNew1">Új jelszó</label>
                         <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="New password">
                     </div>
                     <div class="form-group">
-                        <label for="passwordNew2">Confirm new password</label>
+                        <label for="passwordNew2">Új jelszó megerősítése</label>
                         <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Confirm new password">
                     </div>
-                    <button type="submit" name="account-password-change" class="btn btn-primary">Change password</button>
+                    <button type="submit" name="account-password-change" class="btn btn-primary">Jelszó váltás</button>
                 </form>
                 <hr>
                 <form method="POST" class="account-username-change-form">
-                    <h3>Change username</h3>
+                    <h3>Change username(nincs is username)</h3>
                     <div class="form-group">
                         <label for="usernameNew">New username</label>
                         <input required type="text" name="usernameNew" id="usernameNew" minlength="4" maxlength="255" class="form-control" autocomplete="username" placeholder="New username">
@@ -47,12 +47,12 @@
                 </form>
                 <hr>
                 <form method="POST" class="account-delete-form">
-                    <h3>Delete account</h3>
+                    <h3>Fiók törlése</h3>
                     <div class="form-group">
                         <label for="password">Jelszó</label>
                         <input required type="password" name="password" id="passwordDA" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Password">
                     </div>
-                    <button type="submit" name="account-delete" class="btn btn-danger">Delete account</button>
+                    <button type="submit" name="account-delete" class="btn btn-danger">Fiók törlése</button>
                 </form>
             </div>
     </body>
