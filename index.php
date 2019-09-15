@@ -6,12 +6,12 @@
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("index");
         ?>
         <h1 id="title">Mi van a hűtőben?</h1>
 
-        <form method="get" class="shadow" action="search.php">
+        <form method="get" class="shadow" id="mainForm" action="search.php">
             <div class="ingredients-group">
                 <div class="form-group">
                     <input type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="Hozzávalók">

@@ -40,7 +40,7 @@ input,
 	overflow-x: hidden;
 }
 
-#registrationForm, #loginForm {
+#registrationForm, #loginForm, #mainForm {
 	background-color: var(--white);
 	border-radius: 10px;
 	width: 400px;
@@ -54,6 +54,10 @@ input,
 	width: 100%!important;
 }
 #loginForm button {
+	margin-top: 15px;
+	width: 100%!important;
+}
+#mainForm button {
 	margin-top: 15px;
 	width: 100%!important;
 }
@@ -229,13 +233,16 @@ input,
 }
 
 @media (max-width: 410px) {
-	#registrationForm, #loginForm {
+	#registrationForm, #loginForm, #mainForm {
 		width: 342px;
 	}
 	#loginForm button {
 		width: 300px;
 	}
     #registrationForm button {
+        width: 300px;
+    }
+    #mainForm button {
         width: 300px;
     }
 	#registrationForm {
