@@ -57,7 +57,7 @@
                 <?php
                     if(isset($_POST['account-delete'])) {
                         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-                        $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+                        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
                         $password = hash('sha512', filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
 
                         $stmt = $pdo->prepare("SELECT * FROM users WHERE email= :email AND password = :password");
@@ -66,6 +66,9 @@
                         $stmt->execute();
                         $user = $stmt->fetch(PDO::FETCH_OBJ);
                         $row = $stmt->rowCount();
+
+                        echo "email: " . $email;
+                        echo "pass" . $password;
 
                         if ($row == 1) {
                             echo "jo jelszo";
