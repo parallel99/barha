@@ -75,6 +75,7 @@
                         } else {
                             echo "nem jo";
                         }
+                        echo "rc: " . $row;
                     }
                 ?>
             </div>
