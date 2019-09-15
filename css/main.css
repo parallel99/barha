@@ -202,9 +202,9 @@ input,
 
 .account {
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--white);
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .account input, label {
@@ -213,6 +213,13 @@ input,
 
 .account h3 {
     margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .account {
+        margin: 20px 10px;
+        width: auto;
+    }
 }
 
 @media (max-width: 992px) {
