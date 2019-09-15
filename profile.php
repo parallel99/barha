@@ -15,8 +15,7 @@ if(!isset($_SESSION['user'])){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("profile");
         ?>
-        <div class="container shadow">
-            <div class="account">
+            <div class="account shadow">
                 <form method="POST" class="account-password-change-form">
                     <h3>Change password</h3>
                     <div class="form-group">
@@ -56,7 +55,6 @@ if(!isset($_SESSION['user'])){
                     <button type="submit" name="account-delete" class="btn btn-danger">Delete account</button>
                 </form>
             </div>
-        </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
