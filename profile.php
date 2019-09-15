@@ -54,6 +54,26 @@
                     </div>
                     <button type="submit" name="account-delete" class="btn btn-danger">Fiók törlése</button>
                 </form>
+                <?php
+                    if(isset($_POST['account-delete'])) {
+                        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                        $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+                        $password = hash('sha512', filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
+
+                        $stmt = $pdo->prepare("SELECT * FROM users WHERE email= :email AND password = :password");
+                        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+                        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+                        $stmt->execute();
+                        $user = $stmt->fetch(PDO::FETCH_OBJ);
+                        $row = $stmt->rowCount();
+
+                        if ($row == 1) {
+                            echo "jo jelszo";
+                        } else {
+                            echo "nem jo";
+                        }
+                    }
+                ?>
             </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
