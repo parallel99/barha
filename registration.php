@@ -41,7 +41,7 @@ if(isset($_SESSION['user'])){
                     <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
                 </div>
                 <div class="form-group" style="text-align: center">
-                    <div class="g-recaptcha" data-size="" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
+                    <div class="g-recaptcha" data-size="compact" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="compact" id="aszf" name="aszf" required>
