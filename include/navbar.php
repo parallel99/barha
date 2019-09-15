@@ -67,7 +67,7 @@ function menu($active) {
               <?php echo $_SESSION['user']['name'];?>
             </a>
             <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#"><span class="fa fa-user-o"></span>Profil</a>
+              <a class="dropdown-item" href="profile.php"><span class="fa fa-user-o"></span>Profil</a>
               <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Beállítások</a>
             <div class="dropdown-divider"></div>
               <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkezés</button>
