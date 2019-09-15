@@ -33,17 +33,17 @@
                     <button type="submit" name="account-password-change" class="btn btn-primary">Jelszó váltás</button>
                 </form>
                 <hr>
-                <form method="POST" class="account-username-change-form">
-                    <h3>Change username(nincs is username)</h3>
+                <form method="POST" class="account-email-change-form">
+                    <h3>Email cím váltás</h3>
                     <div class="form-group">
-                        <label for="usernameNew">New username</label>
-                        <input required type="text" name="usernameNew" id="usernameNew" minlength="4" maxlength="255" class="form-control" autocomplete="username" placeholder="New username">
+                        <label for="emailNew">Új email cím</label>
+                        <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="email" placeholder="Új email cím">
                     </div>
                     <div class="form-group">
                         <label for="password">Jelszó</label>
-                        <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Password">
+                        <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Jelszó">
                     </div>
-                    <button type="submit" name="account-username-change" class="btn btn-primary">Change username</button>
+                    <button type="submit" name="account-email-change" class="btn btn-primary">Email cím váltás</button>
                 </form>
                 <hr>
                 <form method="POST" class="account-delete-form">
