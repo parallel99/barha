@@ -37,6 +37,7 @@
     $.ajax({
         url: 'getIngredients.php',
         type: 'post',
+        cache: true,
         success: function (response) {
             $("body").append(response);
         },
