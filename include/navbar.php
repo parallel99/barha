@@ -10,7 +10,7 @@ function menu($active) {
   if(!isset($_SESSION['user'])){
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Navbar</a>
+    <a class="navbar-brand" href="/index.php">Étel-segéd</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,7 +35,7 @@ function menu($active) {
 } else {
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Étel-segéd</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,7 +70,7 @@ function menu($active) {
               <a class="dropdown-item" href="#"><span class="fa fa-user-o"></span>Profil</a>
               <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Beállítások</a>
             <div class="dropdown-divider"></div>
-              <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkez</button>
+              <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkezés</button>
             </form>
           </li>
         </ul>
