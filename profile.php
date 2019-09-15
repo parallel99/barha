@@ -73,7 +73,7 @@
                         if ($row == 1) {
                             echo "<script> $('#deleteConfirmModal').modal('show');</script>";
                         } else {
-                            echo "hibas jelszo"
+                            echo "hibas jelszo";
                         }
                         echo "rc: " . $row;
                     }
