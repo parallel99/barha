@@ -6,12 +6,13 @@
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
         ?>
         <div class="error-container">
             <div class="shadow error-page">
-                <h1>Hozzáférési hiba!</h1>
+                <h2>Hozzáférési hiba!</h2>
+                <hr>
                 Nincs hozzáférési jogosultsága ehhez a könyvtárhoz vagy fájlhoz!
             </div>
         </div>

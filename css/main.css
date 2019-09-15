@@ -1,213 +1,227 @@
 html {
-    height: fit-content;
-    min-height: 100%;
+	height: fit-content;
+	min-height: 100%;
 }
+
 body {
-    height: fit-content;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #05ffa3;
-    background: linear-gradient(40deg, #2096ff, #05ffa3);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    overflow-y: scroll;
+	height: fit-content;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #05ffa3;
+	background: linear-gradient(40deg, #2096ff, #05ffa3);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	overflow-y: scroll;
 }
-body, input, .ui-widget, .ui-autocomplete.ui-widget {
-    font-family: 'Kalam', cursive;
+
+body,
+input,
+.ui-widget,
+.ui-autocomplete.ui-widget {
+	font-family: 'Kalam', cursive;
 }
+
 #title {
-    color: var(--white);
-    text-align: center;
-    padding-top: 20vh;
-    text-shadow: 2px 2px 2px rgb(80, 80, 80);
-    font-size: 400%;
-    line-height: 95%;
-    margin-bottom: 15px
+	color: var(--white);
+	text-align: center;
+	padding-top: 20vh;
+	text-shadow: 2px 2px 2px rgb(80, 80, 80);
+	font-size: 400%;
+	line-height: 95%;
+	margin-bottom: 15px
 }
+
 .ui-autocomplete {
-    max-height: 200px;
-    overflow-y: auto;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
+	max-height: 200px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
 }
+
 form {
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 400px;
-    margin: auto;
-    padding: 25px;
-    margin-bottom: 25px;
+	background-color: var(--white);
+	border-radius: 10px;
+	width: 400px;
+	margin: auto;
+	padding: 25px;
+	margin-bottom: 25px;
 }
+
 form button {
-    margin-top: 15px;
-    width: 100%!important;
+	margin-top: 15px;
+	width: 100%!important;
 }
+
 .form-group label {
-    margin-bottom: .1rem;
+	margin-bottom: .1rem;
 }
+
 #loginForm {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 #loginForm button {
-    margin: 0 0 15px 0;
+	margin: 0 0 15px 0;
 }
+
 #loginForm a {
-    text-align: center;
-    display: block;
+	text-align: center;
+	display: block;
 }
 
 #forgottenPasswordForm {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 #forgottenPasswordForm button {
-    margin: 0 0 15px 0;
+	margin: 0 0 15px 0;
 }
 
 #registrationForm {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 #registrationForm button {
-    margin: 0 0 15px 0;
-}
-#registrationForm > div.form-check {
-    margin-bottom: 10px;
+	margin: 0 0 15px 0;
 }
 
-.fa{
-    padding-right: 10px;
+#registrationForm>div.form-check {
+	margin-bottom: 10px;
 }
 
-.profile-menu{
-    left: -90px;
-    width: 100px;
+.fa {
+	padding-right: 10px;
+}
+
+.profile-menu {
+	left: -90px;
+	width: 100px;
 }
 
 .form-container {
-    align-items: center;
-    min-height: calc(100vh - 56px);
+	align-items: center;
+	min-height: calc(100vh - 56px);
 }
 
 .error-container {
-    display: flex;
-    align-items: center;
-    min-height: calc(100vh - 56px);
+	display: flex;
+	align-items: center;
+	min-height: calc(100vh - 56px);
 }
 
 .activation-body {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .activation-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .activation {
-    margin: auto;
-    padding: 25px;
-    background: var(--white);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: center;
+	margin: auto;
+	padding: 25px;
+	background: var(--white);
+	width: 80%;
+	max-width: 600px;
+	border-radius: 10px;
+	text-align: center;
 }
 
 .activation h1 {
-    text-align: center;
+	text-align: center;
 }
 
 .error-page {
-    margin: auto;
-    padding: 15px;
-    background: var(--white);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
+	margin: auto;
+	padding: 25px;
+	background: var(--white);
+	width: 85%;
+	max-width: 600px;
+	border-radius: 10px;
 }
 
 .alert-danger {
-  margin: 10px auto;
-  max-width: 400px;
+	margin: 10px auto;
+	max-width: 400px;
 }
 
 .alert-success {
-  margin: 10px auto;
-  max-width: 400px;
+	margin: 10px auto;
+	max-width: 400px;
 }
 
 .aszf {
-    color: blue;
-    font-style: italic;
-    display: inline-block;
-    cursor: pointer;
+	color: blue;
+	font-style: italic;
+	display: inline-block;
+	cursor: pointer;
 }
+
 #aszfModal .modal-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .g-recaptcha {
-    display: inline-block;
+	display: inline-block;
 }
 
 .modal-dialog,
 .modal-content {
-    height: 90%;
+	height: 90%;
 }
 
 .modal-body {
-    max-height: calc(100% - 120px);
-    overflow-y: scroll;
-    width: calc(100% - 1px)
+	max-height: calc(100% - 120px);
+	overflow-y: scroll;
+	width: calc(100% - 1px)
 }
 
 .modal-body::-webkit-scrollbar {
-    width: 12px;
+	width: 12px;
 }
 
 .modal-body::-webkit-scrollbar-track {
-    background: #f1f1f1;
+	background: #f1f1f1;
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-    background: #888;
+	background: #888;
 }
 
 .modal-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
+	background: #555;
 }
 
 @media (max-width: 992px) {
-    .profile-menu {
-        width: 100%;
-    }
+	.profile-menu {
+		width: 100%;
+	}
 }
 
 @media (max-width: 410px) {
-    form {
-        width: 342px;
-    }
-    form button {
-        width: 300px;
-    }
-    #registrationForm {
-        padding: 20px;
-    }
-    .errorpage {
-        width: 90%;
-    }
-    .alert-success {
-        max-width: 300px;
-    }
-    .alert-danger {
-        max-width: 300px;
-    }
-    .email-confirm {
-        width: 300px;
-    }
+	form {
+		width: 342px;
+	}
+	form button {
+		width: 300px;
+	}
+	#registrationForm {
+		padding: 20px;
+	}
+	.errorpage {
+		width: 90%;
+	}
+	.alert-success {
+		max-width: 300px;
+	}
+	.alert-danger {
+		max-width: 300px;
+	}
+	.email-confirm {
+		width: 300px;
+	}
 }

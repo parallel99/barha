@@ -6,13 +6,14 @@
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
         ?>
-        <div class="shadow error-page">
             <div class="error-container">
                 <div class="shadow error-page">
-                   <h1>500</h1>
+                   <h2>500</h2>
+                   <hr>
+                   <p>Internal Server Error</p>
                 </div>
             </div>
     </body>

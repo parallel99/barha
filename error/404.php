@@ -6,13 +6,14 @@
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
         ?>
         <div class="error-container">
             <div class="shadow error-page">
-               <h1>Az oldal nem található!</h1>
-               Úgynézki valami hiba történt! Az oldal már nem létezik vagy nem is létezett!
+               <h2>Az oldal nem található!</h2>
+               <hr>
+               Úgy néz ki valami hiba történt! Az oldal már nem létezik vagy nem is létezett!
             </div>
         </div>
     </body>
