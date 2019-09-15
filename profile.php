@@ -20,15 +20,15 @@
                     <h3>Jelszó váltás</h3>
                     <div class="form-group">
                         <label for="passwordCurrent">Jelenlegi jelszó</label>
-                        <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Current password">
+                        <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Jelenlegi jelszó">
                     </div>
                     <div class="form-group">
                         <label for="passwordNew1">Új jelszó</label>
-                        <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="New password">
+                        <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Új jelszó">
                     </div>
                     <div class="form-group">
                         <label for="passwordNew2">Új jelszó megerősítése</label>
-                        <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Confirm new password">
+                        <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Új jelszó megerősítése">
                     </div>
                     <button type="submit" name="account-password-change" class="btn btn-primary">Jelszó váltás</button>
                 </form>
@@ -50,7 +50,7 @@
                     <h3>Fiók törlése</h3>
                     <div class="form-group">
                         <label for="password">Jelszó</label>
-                        <input required type="password" name="password" id="passwordDA" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Password">
+                        <input required type="password" name="password" id="passwordDA" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Jelszó">
                     </div>
                     <button type="submit" name="account-delete" class="btn btn-danger">Fiók törlése</button>
                 </form>
