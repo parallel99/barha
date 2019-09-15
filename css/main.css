@@ -207,8 +207,12 @@ input,
 .account {
     border-radius: 10px;
     background-color: var(--white);
-    padding: 20px;
+    padding: 25px;
     margin: 20px auto;
+}
+
+.account form {
+    padding: 5px;
 }
 
 .account input, label {
