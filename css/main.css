@@ -190,10 +190,13 @@ form button {
 
 @media (max-width: 410px) {
     form {
-        width: 300px;
+        width: 342px;
     }
     form button {
         width: 300px;
+    }
+    #registrationForm {
+        padding: 20px;
     }
     .errorpage {
         width: 90%;
