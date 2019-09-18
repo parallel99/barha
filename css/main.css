@@ -40,7 +40,7 @@ input,
 	overflow-x: hidden;
 }
 
-#registrationForm, #loginForm, #mainForm {
+#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
 	background-color: var(--white);
 	border-radius: 10px;
 	width: 400px;
@@ -58,6 +58,10 @@ input,
 	width: 100%!important;
 }
 #mainForm button {
+	margin-top: 15px;
+	width: 100%!important;
+}
+#forgottenPasswordForm button {
 	margin-top: 15px;
 	width: 100%!important;
 }
@@ -237,7 +241,7 @@ input,
 }
 
 @media (max-width: 410px) {
-	#registrationForm, #loginForm, #mainForm {
+	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
 		width: 342px;
 	}
 	#loginForm button {
@@ -248,7 +252,10 @@ input,
     }
     #mainForm button {
         width: 300px;
-    }
+	}
+	#forgottenPasswordForm button {
+		width: 300px;
+	}
 	#registrationForm {
 		padding: 20px;
 	}

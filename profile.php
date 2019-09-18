@@ -68,15 +68,10 @@
                         $row = $stmt->rowCount();
 
                         if ($row == 1) {
-                            $_SESSION['formSubmitted'] = true;
+                            echo "<script>$('#deleteConfirmModal').modal('toggle');</script>";
                         } else {
                             echo "hibas jelszo";
                         }
-                    }
-
-                    if(isset($_SESSION['formSubmitted'])) {
-                        echo "<script>$('#deleteConfirmModal').modal('show');</script>";
-                        unset($_SESSION['formSubmitted']);
                     }
                 ?>
             </div>
