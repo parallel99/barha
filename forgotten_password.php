@@ -15,8 +15,9 @@ if(isset($_SESSION['user'])){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("login");
         ?>
-        <div class="form-container">
+        <div class="form-container forgotten-password-container">
             <form method="post" class="shadow" id="forgottenPasswordForm">
+                <h1>Elfelejtett jelszó</h1>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
@@ -28,7 +29,6 @@ if(isset($_SESSION['user'])){
             if(isset($_POST['submit'])) {
                 try {
                 require 'vendor/autoload.php';
-                // Comment out the above line if not using Composer
                 $email = new \SendGrid\Mail\Mail();
                 $email->setFrom("mateb06@gmail.com", "Étel segéd");
                 $email->setSubject("Étel segéd teszt");
@@ -38,9 +38,6 @@ if(isset($_SESSION['user'])){
                 );
                 $sendgrid = new \SendGrid('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');
                     $response = $sendgrid->send($email);
-                    print $response->statusCode() . "\n";
-                    print_r($response->headers());
-                    print $response->body() . "\n";
                 } catch (Exception $e) {
                     echo 'Caught exception: ',  $e->getMessage(), "\n";
                 }

@@ -65,6 +65,16 @@ input,
 	margin-top: 15px;
 	width: 100%!important;
 }
+#forgottenPasswordForm h1 {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.forgotten-password-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 .form-group label {
 	margin-bottom: .1rem;
