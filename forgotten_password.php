@@ -20,7 +20,7 @@ if(isset($_SESSION['user'])){
                 <h1>Elfelejtett jelszó</h1>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="email">
                 </div>
                 <button type="submit" class="btn btn-primary">Elfelejtettem a jelszavam</button>
             </form>
