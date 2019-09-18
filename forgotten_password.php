@@ -27,20 +27,7 @@ if(isset($_SESSION['user'])){
         </div>
         <?php
             if(isset($_POST['submit'])) {
-                try {
-                require 'vendor/autoload.php';
-                $email = new \SendGrid\Mail\Mail();
-                $email->setFrom("mateb06@gmail.com", "Étel segéd");
-                $email->setSubject("Étel segéd teszt");
-                $email->addTo($_POST['email'], "teszt");
-                $email->addContent(
-                    "text/html", "<strong>Étel segéd</strong> teszt"
-                );
-                $sendgrid = new \SendGrid('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');
-                    $response = $sendgrid->send($email);
-                } catch (Exception $e) {
-                    echo 'Caught exception: ',  $e->getMessage(), "\n";
-                }
+                
             }
         ?>
     </body>
