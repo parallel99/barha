@@ -116,8 +116,7 @@ input,
 .recipe_area{
 	width: 100%;
 	min-height: 50px;
-	border: 1px solid #ced4da;
-	border-radius: .25rem;
+	height: 100%;
 }
 
 .fa {
