@@ -113,6 +113,13 @@ input,
 	margin-bottom: 10px;
 }
 
+.recipe_area{
+	width: 100%;
+	min-height: 50px;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+
 .fa {
 	padding-right: 10px;
 }
