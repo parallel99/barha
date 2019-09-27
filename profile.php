@@ -14,7 +14,7 @@
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("profile");
-        echo "<h1 style=\"display: none\" id=\"email\">" . $_SESSION['user']['email'] . "</h1>";
+        echo "<h6 style=\"display: none\" id=\"email\">" . $_SESSION['user']['email'] . "</h6>";
         ?>
         <div class="account shadow container">
             <form method="POST" class="account-password-change-form">
@@ -56,17 +56,17 @@
                 <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
                 <script>
                     $("#account-delete").click(function() {
-                        var email = $('.email').text();
+                        var email = $('#email').text();
                         alert(email);
                         $.ajax({
                         url: 'include/accountDeletePasswordCheck.php',
                                 type: 'post',
                                 data: {
                                     "email": email,
-                                    "password": $("#passwordDA").val()
+                                    "password": $("#passwordDA").val();
                                 },
                                 success: function (response) {
-                                    $('html').append(response)
+                                    $('html').append(response);
                                 },
                                 error: function (data) {}
                         });
