@@ -42,7 +42,7 @@ function menu($active) {
     <div id="navbarNavDropdown" class="navbar-collapse collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <?php if($active == "index"){ echo "active";}?>">
-             <a class="nav-link" href="index.php">Kezdőlap</a>
+             <a class="nav-link" href="index">Kezdőlap</a>
           </li>
           <li class="nav-item <?php if($active == "recipe"){ echo "active";}?>">
              <a class="nav-link" href="#">Receptek</a>
