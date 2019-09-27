@@ -57,16 +57,15 @@
                 <script>
                     $("#account-delete").click(function() {
                         var email = $('#email').text();
-                        alert(email);
                         $.ajax({
                         url: 'include/accountDeletePasswordCheck.php',
                                 type: 'post',
                                 data: {
                                     "email": email,
-                                    "password": $("#passwordDA").val();
+                                    "password": $("#passwordDA").val()
                                 },
                                 success: function (response) {
-                                    $('html').append(response);
+                                    $('html').append(response)
                                 },
                                 error: function (data) {}
                         });
