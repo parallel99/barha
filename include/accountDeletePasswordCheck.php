@@ -11,10 +11,6 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 $row = $stmt->rowCount();
 
-echo $email;
-echo $password;
-echo $row;
-
 if ($row == 1) {
     echo "<script>$('#deleteConfirmModal').modal('toggle');</script>";
 } else {

@@ -89,8 +89,8 @@
                         Biztos benne hogy törölni szeretne a fiókját? Ezek után a fiók soha többé nem lesz visszaállítható.
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
-                        <button type="button" class="btn btn-danger">Igen</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem (ez se teljesen)</button>
+                        <button type="button" class="btn btn-danger">Igen (meg nem jo)</button>
                     </div>
                 </div>
             </div>
