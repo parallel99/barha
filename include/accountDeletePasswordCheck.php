@@ -11,13 +11,13 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 $row = $stmt->rowCount();
 
+echo $email;
+echo $password;
+
 if ($row == 1) {
     echo "<script>$('#deleteConfirmModal').modal('toggle');</script>";
 } else {
-    echo "<script>alert(Hibás jelszó!)</script>";
+    echo "<script>alert(Hibás jelszó!);</script>";
 }
-
-echo $email;
-echo $password;
 
 ?>
