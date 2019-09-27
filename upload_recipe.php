@@ -47,7 +47,12 @@ if(!isset($_SESSION['user'])){
                         ;
                     });
                 </script>
+                <div class="form-group">
+                    <label for="name">A recept elkészítésének módja</label>
+                    <div contenteditable="true" class="form-control recipe_area">
 
+                    </div>
+                </div>
                 <button type="submit" name="submit" class="btn btn-primary">Küld</button>
             </form>
         </div>
