@@ -86,7 +86,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Biztos benne hogy törölni szeretne a fiókját? Ezek után a fiók soha többé nem lesz visszaállítható.
+                        Biztos benne hogy törölni szeretné a fiókját? Ezek után a fiók soha többé nem lesz visszaállítható.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem (ez se teljesen)</button>
