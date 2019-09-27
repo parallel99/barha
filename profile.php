@@ -57,6 +57,7 @@
                 <script>
                     $("#account-delete").click(function() {
                         var email = $('.email').text();
+                        alert(email);
                         $.ajax({
                         url: 'include/accountDeletePasswordCheck.php',
                                 type: 'post',
