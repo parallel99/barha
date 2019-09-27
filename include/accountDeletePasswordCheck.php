@@ -13,11 +13,12 @@ $row = $stmt->rowCount();
 
 echo $email;
 echo $password;
+echo $row;
 
 if ($row == 1) {
     echo "<script>$('#deleteConfirmModal').modal('toggle');</script>";
 } else {
-    echo "<script>alert(Hibás jelszó!);</script>";
+    echo "<h1>Hibás jelszó!</h1>";
 }
 
 ?>
