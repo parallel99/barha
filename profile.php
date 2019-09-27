@@ -56,8 +56,8 @@
                 <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
                 <script>
                     $("#account-delete").click(function() {
-                        $.ajax({
                         var email = $('.email').text();
+                        $.ajax({
                         url: 'include/accountDeletePasswordCheck.php',
                                 type: 'post',
                                 data: {
@@ -69,7 +69,7 @@
                                 },
                                 error: function (data) {}
                         });
-                    }
+                    });
                 </script>
             </form>
             <?php
