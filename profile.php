@@ -49,51 +49,12 @@
             <hr>
             <form method="POST" class="account-delete-form">
                 <h3>Fiók törlése</h3>
-                <script>
-                    $("#account-delete").click(function() {
-                        var email = $('#email').text();
-                        alert("asd");
-                        $.ajax({
-                        url: 'include/accountDeletePasswordCheck.php',
-                                type: 'post',
-                                data: {
-                                    "email": email,
-                                    "password": $("#passwordDA").val()
-                                },
-                                success: function (response) {
-                                    $('html').append(response)
-                                },
-                                error: function (data) {}
-                        });
-                    });
-
-                    $("#modal-delete-cancel").click(function() {
-                        $("#passwordDA").val("");
-                    });
-
-                    $("#modal-delete").click(function() {
-                        $.ajax({
-                        url: 'include/deleteAccount.php',
-                                type: 'post',
-                                data: {
-                                    "email": email,
-                                    "password": $("#passwordDA").val()
-                                },
-                                success: function (response) {
-                                    $('html').append(response)
-                                },
-                                error: function (data) {}
-                        });
-                    });
-                </script>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
                     <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó">
                 </div>
                 <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
             </form>
-            <?php
-            ?>
         </div>
         <!-- deleteConfirmModal -->
         <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,6 +76,43 @@
                 </div>
             </div>
         </div>
+        <script>
+            $("#account-delete").click(function() {
+                var email = $('#email').text();
+                alert("asd");
+                $.ajax({
+                url: 'include/accountDeletePasswordCheck.php',
+                        type: 'post',
+                        data: {
+                            "email": email,
+                            "password": $("#passwordDA").val()
+                        },
+                        success: function (response) {
+                            $('html').append(response)
+                        },
+                        error: function (data) {}
+                });
+            });
+
+            $("#modal-delete-cancel").click(function() {
+                $("#passwordDA").val("");
+            });
+
+            $("#modal-delete").click(function() {
+                $.ajax({
+                url: 'include/deleteAccount.php',
+                        type: 'post',
+                        data: {
+                            "email": email,
+                            "password": $("#passwordDA").val()
+                        },
+                        success: function (response) {
+                            $('html').append(response)
+                        },
+                        error: function (data) {}
+                });
+            });
+        </script>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
