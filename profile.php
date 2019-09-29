@@ -49,11 +49,6 @@
             <hr>
             <form method="POST" class="account-delete-form">
                 <h3>Fiók törlése</h3>
-                <div class="form-group">
-                    <label for="password">Jelszó</label>
-                    <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó">
-                </div>
-                <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
                 <script>
                     $("#account-delete").click(function() {
                         var email = $('#email').text();
@@ -70,7 +65,30 @@
                                 error: function (data) {}
                         });
                     });
+                    $("#modal-delete-cancel").click(function() {
+                        $("#passwordDA").val("");
+                    });
+
+                    $("#modal-delete").click(function() {
+                        $.ajax({
+                        url: 'include/deleteAccount.php',
+                                type: 'post',
+                                data: {
+                                    "email": email,
+                                    "password": $("#passwordDA").val()
+                                },
+                                success: function (response) {
+                                    $('html').append(response)
+                                },
+                                error: function (data) {}
+                        });
+                    });
                 </script>
+                <div class="form-group">
+                    <label for="password">Jelszó</label>
+                    <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó">
+                </div>
+                <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
             </form>
             <?php
             ?>
@@ -92,26 +110,6 @@
                         <button type="button" id="modal-delete-cancel" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
                         <button type="button" id="modal-delete" class="btn btn-danger">Igen (meg nem jo)</button>
                     </div>
-                    <script>
-                        $("#modal-delete-cancel").click(function() {
-                            $("#passwordDA").val("");
-                        });
-
-                        $("#modal-delete").click(function() {
-                            $.ajax({
-                            url: 'include/deleteAccount.php',
-                                    type: 'post',
-                                    data: {
-                                        "email": email,
-                                        "password": $("#passwordDA").val()
-                                    },
-                                    success: function (response) {
-                                        $('html').append(response)
-                                    },
-                                    error: function (data) {}
-                            });
-                        });
-                    </script>
                 </div>
             </div>
         </div>
