@@ -52,6 +52,7 @@
                 <script>
                     $("#account-delete").click(function() {
                         var email = $('#email').text();
+                        alert("asd");
                         $.ajax({
                         url: 'include/accountDeletePasswordCheck.php',
                                 type: 'post',
@@ -65,6 +66,7 @@
                                 error: function (data) {}
                         });
                     });
+
                     $("#modal-delete-cancel").click(function() {
                         $("#passwordDA").val("");
                     });
