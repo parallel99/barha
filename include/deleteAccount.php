@@ -15,8 +15,7 @@ if ($stmt->rowCount() == 0) {
     echo "<div class=\"alert alert-danger\">Na-na!</div>";
 } else {
     session_destroy();
-
-    header("Location: /");
+    echo "<script>document.location.href=\"/\";</script>";
     die();
 }
 

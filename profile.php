@@ -105,7 +105,7 @@
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {
-                            $('html').append(response)
+                            $('html').append(response);
                         },
                         error: function (data) {}
                 });
