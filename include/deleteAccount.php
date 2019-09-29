@@ -15,7 +15,6 @@ if ($stmt->rowCount() == 0) {
     echo "<div class=\"alert alert-danger\">Na-na!</div>";
 } else {
     include 'logout.php';
-    echo "<h1>Törölve</h1>";
 }
 
 
