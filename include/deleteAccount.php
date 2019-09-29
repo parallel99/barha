@@ -14,7 +14,7 @@ $details = $stmt->fetch();
 if ($stmt->rowCount() == 0) {
     echo "<div class=\"alert alert-danger\">Na-na!</div>";
 } else {
-    include '/include/logout.php';
+    include '../include/logout.php';
 }
 
 
