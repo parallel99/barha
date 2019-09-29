@@ -78,13 +78,11 @@
         </div>
         <script>
             $("#account-delete").click(function() {
-                var email = $('#email').text();
-                alert("asd");
                 $.ajax({
                 url: 'include/accountDeletePasswordCheck.php',
                         type: 'post',
                         data: {
-                            "email": email,
+                            "email": $('#email').text(),
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {
@@ -103,7 +101,7 @@
                 url: 'include/deleteAccount.php',
                         type: 'post',
                         data: {
-                            "email": email,
+                            "email": $('#email').text(),
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {
