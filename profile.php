@@ -89,9 +89,28 @@
                         Biztos benne hogy törölni szeretné a fiókját? Ezek után a fiók soha többé nem lesz visszaállítható.
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem (ez se teljesen)</button>
-                        <button type="button" class="btn btn-danger">Igen (meg nem jo)</button>
+                        <button type="button" id="model-delete-cancel" class="btn btn-secondary" data-dismiss="modal">Mégsem (ez se teljesen)</button>
+                        <button type="button" id="modal-delete" class="btn btn-danger">Igen (meg nem jo)</button>
                     </div>
+                    <script>
+                        $("#model-delete-cancel").click(function() {
+                            $("#passwordDA").val("");
+                        });
+                        $("#model-delete-cancel").click(function() {
+                            $.ajax({
+                            url: 'include/deleteAccount.php',
+                                    type: 'post',
+                                    data: {
+                                        "email": email,
+                                        "password": $("#passwordDA").val()
+                                    },
+                                    success: function (response) {
+                                        $('html').append(response)
+                                    },
+                                    error: function (data) {}
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </div>
