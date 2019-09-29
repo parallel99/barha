@@ -71,7 +71,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="modal-delete-cancel" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
-                        <button type="button" id="modal-delete" class="btn btn-danger">Igen (meg nem jo)</button>
+                        <button type="button" id="modal-delete" class="btn btn-danger">Igen</button>
                     </div>
                 </div>
             </div>
