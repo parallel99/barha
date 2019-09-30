@@ -7,6 +7,7 @@
     <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php';
             menu("index");
         ?>
         <h1 id="title">Mi van a hűtőben?</h1>
@@ -24,7 +25,6 @@
                 var length = $(".ingredients-group > div").length
                 if ($("div.ingredients-group div:last-child > input").val() != "" && length < 25) {
                     $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
-                    $("body").css("background", "linear-gradient(40deg, #2096ff, #05ffa3)");
                     $("#ingredients" + (length + 1)).autocomplete({
                         source: ingredients
                     });
