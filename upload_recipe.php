@@ -28,6 +28,16 @@ if(!isset($_SESSION['user'])){
                     <label for="name">A recept neve</label>
                     <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
                 </div>
+                <div class="form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                      aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
                 <div class="ingredients-group">
                     <div class="form-group">
                         <label for="name">Hozzávalók</label>

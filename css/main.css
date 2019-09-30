@@ -119,6 +119,11 @@ input,
 	height: 100%;
 }
 
+.custom-file-label::after{
+	 background: #007bff;
+	 color: white;
+}
+
 .fa {
 	padding-right: 10px;
 }
