@@ -9,6 +9,8 @@ if(isset($_SESSION['user'])){
     <head>
         <title>Regisztráció</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+        <!-- recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
         <?php
