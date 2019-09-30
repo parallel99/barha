@@ -202,30 +202,29 @@ input,
 	display: inline-block;
 }
 
-.modal-dialog,
-.modal-content {
+#aszfModal .modal-dialog, #aszfModal .modal-content {
 	height: 90%;
 }
 
-.modal-body {
+#aszfModal .modal-body {
 	max-height: calc(100% - 120px);
 	overflow-y: scroll;
 	width: calc(100% - 1px)
 }
 
-.modal-body::-webkit-scrollbar {
+#aszfModal .modal-body::-webkit-scrollbar {
 	width: 12px;
 }
 
-.modal-body::-webkit-scrollbar-track {
+#aszfModal .modal-body::-webkit-scrollbar-track {
 	background: #f1f1f1;
 }
 
-.modal-body::-webkit-scrollbar-thumb {
+#aszfModal .modal-body::-webkit-scrollbar-thumb {
 	background: #888;
 }
 
-.modal-body::-webkit-scrollbar-thumb:hover {
+#aszfModal .modal-body::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
 

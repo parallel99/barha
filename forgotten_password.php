@@ -13,7 +13,7 @@ if(isset($_SESSION['user'])){
     <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
-            menu("login");
+            menu("none");
         ?>
         <div class="form-container forgotten-password-container">
             <form method="post" class="shadow" id="forgottenPasswordForm">
@@ -27,7 +27,7 @@ if(isset($_SESSION['user'])){
         </div>
         <?php
             if(isset($_POST['submit'])) {
-                
+
             }
         ?>
     </body>
