@@ -26,26 +26,6 @@
 <!-- jqueryui -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
 
-<script>
-    var ingredients = [];
-    $(function () {
-        $("#ingredients1").autocomplete({
-            source: ingredients
-        });
-    });
-    $.ajax({
-        url: 'getIngredients.php',
-        type: 'post',
-        cache: true,
-        success: function (response) {
-            $("body").append(response);
-        },
-        error: function (data) {
-            ingredients.push("Hiba");
-        }
-    });
-</script>
-
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
