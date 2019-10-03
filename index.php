@@ -15,7 +15,7 @@
         <form method="get" class="shadow" id="mainForm" action="search.php">
             <div class="ingredients-group">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="Hozzávalók">
+                    <input autofocus type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="Hozzávalók">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Keresés</button>
