@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>404</title>
+        <title>BárHA | 404</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>

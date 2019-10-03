@@ -1,13 +1,13 @@
 <?php
-/* if(!isset($_SESSION['user'])){
-  header("Location: /");
-  die();
-  } */
+if(!isset($_SESSION['user'])){
+    header("Location: /");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>Étel-segéd | Profil</title>
+        <title>BárHA | Profil</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>

@@ -7,7 +7,7 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>Regisztráció</title>
+        <title>BárHA | Regisztráció</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
         <!-- recaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>

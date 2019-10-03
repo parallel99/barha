@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
 <!-- Open Graph -->
-<meta property="og:title" content=""/>
+<meta property="og:title" content="BárHA"/>
 <meta property="og:description" content=""/>
 <meta property="og:image" content="/images/og.png"/>
 <meta property="og:image:width" content="1200" />
