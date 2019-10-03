@@ -27,7 +27,7 @@ if(!isset($_SESSION['user'])){
             <form method="post" class="shadow" id="registrationForm">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
-                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
                 </div>
                 <div class="ingredients-group">
                     <div class="form-group">
