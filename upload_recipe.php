@@ -9,6 +9,7 @@ if(!isset($_SESSION['user'])){
     <head>
         <title>BárHA</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
     </head>
     <body>
         <?php
