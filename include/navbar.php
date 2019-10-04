@@ -3,6 +3,8 @@ function menu($active) {
 
   if(isset($_POST["logout"])){
     unset($_SESSION['user']);
+    setcookie('name', '');
+    setcookie('email', '');
     header("Refresh: 0");
     die();
   }
