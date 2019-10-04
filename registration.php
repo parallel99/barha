@@ -50,7 +50,10 @@ if(isset($_SESSION['user'])){
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a
                     </label>
-                    <div class="aszf small" data-toggle="modal" data-target="#aszfModal">felhasználási feltételeket</div>.
+                    <div class="aszf small" data-toggle="modal" data-target="#aszfModal">felhasználási feltételeket</div>
+                    <label class="form-check-label small" for="aszf">
+                        .
+                    </label>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>

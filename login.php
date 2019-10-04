@@ -64,6 +64,8 @@ if(isset($_SESSION['user'])){
                   $find_user = true;
                   if ($user->active == 1 && $find_user) {
                       $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
+                      setcookie('name', $user->name);
+                      setcookie('email', $user->email);
                       $valid = true;
                   }
               }
