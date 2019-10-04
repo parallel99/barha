@@ -27,7 +27,7 @@ if ($row == 1) {
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHA | E-mail megerősítés</title>
+        <title>BárHa | E-mail megerősítés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body class="activation">

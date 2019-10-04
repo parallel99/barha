@@ -7,7 +7,7 @@ if(!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHA | Profil</title>
+        <title>BárHa | Profil</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
