@@ -144,12 +144,12 @@ if(isset($_SESSION['user'])){
                   $password = hash('sha512', $password1);
                   $token    = hash('sha512', $ticket);
 
-                  $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, registrationTime) VALUES (:name, :email, :password, :token, '0', :registrationTime)");
+                  $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time) VALUES (:name, :email, :password, :token, '0', :reg_time)");
                   $stmt->bindParam(':name', $name, PDO::PARAM_STR);
                   $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                   $stmt->bindParam(':password', $password, PDO::PARAM_STR);
                   $stmt->bindParam(':token', $token, PDO::PARAM_STR);
-                  $stmt->bindParam(':registrationTime', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+                  $stmt->bindParam(':reg_time', date('Y-m-d H:i:s'), PDO::PARAM_STR);
                   $stmt->execute();
 
                   require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
