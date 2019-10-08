@@ -253,6 +253,13 @@ input,
     padding: 25px;
     margin: 20px auto;
 }
+.recipe-container img {
+	float: right;
+}
+
+.recipe-container .recipe p {
+	text-align: justify;
+}
 
 @media (max-width: 600px) {
     .account {
