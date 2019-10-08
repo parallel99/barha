@@ -12,7 +12,7 @@
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h1>Recept: <?php echo $_GET['id'] ?></h1>
+                    <h1>Recept: <?php echo $_GET['name'] ?></h1>
                     <div class="ingredients">
                         <ul>
                             <li>Lorem ipsum</li>
