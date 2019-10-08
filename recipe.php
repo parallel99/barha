@@ -13,6 +13,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h1><?php echo $_GET['name'] ?></h1>
+                    <hr>
                     <h3>Hozzávalók</h3>
                     <div class="ingredients">
                         <ul>
@@ -29,8 +30,8 @@
                 </div>
             </div>
             <div class="row">
-                <h3>Elkészítés</h3>
                 <div class="recipe">
+                    <h3>Elkészítés</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper sem nec purus condimentum facilisis. Ut sollicitudin turpis at dolor gravida, vitae aliquam lorem accumsan. Aenean efficitur mollis convallis. Nam fringilla ligula arcu, quis interdum justo blandit non. Donec semper, ipsum eu malesuada ornare, turpis quam volutpat turpis, id iaculis diam nulla vel lectus. Vivamus suscipit venenatis orci sit amet vestibulum. Mauris semper sollicitudin orci, eget tincidunt mi facilisis a. Quisque vitae ultricies arcu. Sed at lacinia sem, non consectetur risus.</p>
 
                     <p>Donec gravida, magna in aliquam facilisis, enim dolor tempus ex, a sagittis elit erat vitae magna. Proin volutpat feugiat augue nec tempus. Fusce faucibus elementum elit vitae aliquam. Fusce ultricies eu dolor luctus suscipit. Aliquam vel iaculis lacus, sit amet laoreet nibh. Duis tristique lectus sed justo blandit, in feugiat nisi porta. Nunc vel pellentesque velit. Pellentesque condimentum nisi sed ex commodo, quis commodo ligula euismod. Sed accumsan eu mi eu tincidunt. Curabitur risus nunc, volutpat ultricies consectetur eu, mollis accumsan neque. Phasellus iaculis auctor orci in congue. Sed laoreet tortor non dui pretium viverra. Nunc at varius eros. Phasellus posuere diam eget lectus ultrices elementum.</p>
