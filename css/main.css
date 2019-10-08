@@ -254,7 +254,12 @@ input,
     margin: 20px auto;
 }
 .recipe-container img {
-	float: right;
+	width: 100%;
+	padding: 5px;
+}
+
+.recipe-container .recipe {
+	margin-top: 15px;
 }
 
 .recipe-container .recipe p {

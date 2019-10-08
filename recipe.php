@@ -11,7 +11,7 @@
         ?>
         <div class="container recipe-container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <h1>Recept: <?php echo $_GET['id'] ?></h1>
                     <div class="ingredients">
                         <ul>
@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <img src="/images/test-recipe.jpg">
                 </div>
             </div>
