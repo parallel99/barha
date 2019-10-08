@@ -278,6 +278,10 @@ input,
         margin: 20px 10px;
         width: auto;
     }
+	.recipe-container {
+		width: 95%
+		padding: 10px;
+	}
 }
 
 @media (max-width: 992px) {
