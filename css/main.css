@@ -255,11 +255,14 @@ input,
 }
 .recipe-container img {
 	width: 100%;
+	height: auto;
 	padding: 5px;
+	border-radius: 10px;
 }
 
 .recipe-container .recipe {
 	margin-top: 15px;
+	padding: 20px;
 }
 
 .recipe-container .recipe p {
