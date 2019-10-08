@@ -10,16 +10,20 @@
             menu("none");
         ?>
         <div class="container recipe-container">
-            <h1>Recept: <?php echo $_GET['id'] ?></h1>
-            <img src="/images/test-recipe.jpg">
-            <div class="ingredients">
-                <ul>
-                    <li>Lorem ipsum</li>
-                    <li>Donec gravida</li>
-                    <li>Nunc mattis malesuada</li>
-                    <li>Curabitur risus nunc</li>
-                    <li>Vestibulum</li>
-                </ul>
+            <div class="col-sm-6">
+                <h1>Recept: <?php echo $_GET['id'] ?></h1>
+                <div class="ingredients">
+                    <ul>
+                        <li>Lorem ipsum</li>
+                        <li>Donec gravida</li>
+                        <li>Nunc mattis malesuada</li>
+                        <li>Curabitur risus nunc</li>
+                        <li>Vestibulum</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="/images/test-recipe.jpg">
             </div>
             <div class="recipe">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper sem nec purus condimentum facilisis. Ut sollicitudin turpis at dolor gravida, vitae aliquam lorem accumsan. Aenean efficitur mollis convallis. Nam fringilla ligula arcu, quis interdum justo blandit non. Donec semper, ipsum eu malesuada ornare, turpis quam volutpat turpis, id iaculis diam nulla vel lectus. Vivamus suscipit venenatis orci sit amet vestibulum. Mauris semper sollicitudin orci, eget tincidunt mi facilisis a. Quisque vitae ultricies arcu. Sed at lacinia sem, non consectetur risus.</p>
