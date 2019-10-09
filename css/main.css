@@ -133,7 +133,7 @@ textarea {
 
 .alert.alert-primary.cookie-alert {
     width: 80%;
-    position: absolute;
+    position: fixed;
     left: 10%;
     bottom: 10px;
 }
@@ -302,7 +302,7 @@ textarea {
 	}
 	.alert.alert-primary.cookie-alert {
     width: 95%;
-    position: absolute;
+    position: fixed;
     left: 2.5%;
     bottom: 10px;
 	}
