@@ -7,7 +7,7 @@ if(!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHa | </title>
+        <title>BárHa | Recept feltöltés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
     </head>
