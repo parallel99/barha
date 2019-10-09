@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("recipe-upload");
         ?>
-        <div class="form-container container recipe-container">
+        <div class="form-container container recipe-container recipe-height">
           <?php
             if(isset($_POST['submit'])) {
                 $msg = registration();
