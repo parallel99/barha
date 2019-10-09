@@ -58,7 +58,7 @@ if(!isset($_SESSION['user'])){
                     <label for="name">A recept elkészítésének módja</label>
                     <textarea class="form-control" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10"></textarea>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary btn-upload">Küld</button>
+                <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>
         </div>
         <?php
