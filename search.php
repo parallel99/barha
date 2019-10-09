@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>BárHa</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php'; 
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("index");
         ?>
         <div class="container">

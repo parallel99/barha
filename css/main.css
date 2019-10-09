@@ -247,11 +247,46 @@ input,
     margin-top: 10px;
 }
 
+.alert {
+	border-radius: 10px;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.recipe-container {
+	border-radius: 10px;
+    background-color: var(--white);
+    padding: 25px;
+    margin: 20px auto;
+}
+.recipe-container img {
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.recipe-container .recipe {
+	margin-top: 15px;
+	padding: 20px 20px 0 20px;
+}
+
+.recipe-container .recipe p {
+	text-align: justify;
+}
+
+.recipe-container .recipe p:last-child {
+	margin: 0;
+}
+
 @media (max-width: 600px) {
     .account {
         margin: 20px 10px;
         width: auto;
     }
+	.recipe-container {
+		width: 95%;
+		padding: 10px;
+	}
 }
 
 @media (max-width: 992px) {

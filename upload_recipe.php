@@ -7,8 +7,9 @@ if(!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>BárHa | </title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
     </head>
     <body>
         <?php
@@ -26,7 +27,7 @@ if(!isset($_SESSION['user'])){
             <form method="post" class="shadow" id="registrationForm">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
-                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
                 </div>
                 <div class="form-group">
                   <div class="input-group-prepend">

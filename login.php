@@ -7,7 +7,7 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title></title>
+        <title>BárHa | Bejelentkezés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
@@ -64,6 +64,8 @@ if(isset($_SESSION['user'])){
                   $find_user = true;
                   if ($user->active == 1 && $find_user) {
                       $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
+                      setcookie('name', $user->name);
+                      setcookie('email', $user->email);
                       $valid = true;
                   }
               }
