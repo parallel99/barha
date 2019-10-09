@@ -39,6 +39,10 @@
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
+if (isset($_POST["cookie-OK"])) {
+    setcookie("cookieok", true, time() + (2592000 * 12), "/");
+    header("Refresh: 0");
+}
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

@@ -127,8 +127,15 @@ textarea {
 }
 
 .profile-menu {
-	left: -90px;
+	left: -30px;
 	width: 100px;
+}
+
+.alert.alert-primary.cookie-alert {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    bottom: 10px;
 }
 
 .form-container {
@@ -285,13 +292,19 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    .account {
-        margin: 20px 10px;
-        width: auto;
-    }
+  .account {
+    margin: 20px 10px;
+    width: auto;
+  }
 	.recipe-container {
 		width: 95%;
 		padding: 10px;
+	}
+	.alert.alert-primary.cookie-alert {
+    width: 95%;
+    position: absolute;
+    left: 2.5%;
+    bottom: 10px;
 	}
 }
 
