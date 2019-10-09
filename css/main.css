@@ -23,6 +23,10 @@ input,
 	font-family: 'Kalam', cursive;
 }
 
+textarea {
+    resize: none;
+}
+
 #title {
 	color: var(--white);
 	text-align: center;
@@ -186,6 +190,11 @@ input,
 	font-style: italic;
 	display: inline-block;
 	cursor: pointer;
+}
+
+.btn-upload{
+	width: 150px;
+	float: right;
 }
 
 #aszfModal .modal-body {
