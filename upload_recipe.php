@@ -35,7 +35,6 @@ if(!isset($_SESSION['user'])){
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
-                </div>
                 <div class="ingredients-group">
                     <div class="form-group">
                         <label for="name">Hozzávalók</label>
