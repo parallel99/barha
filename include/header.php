@@ -40,7 +40,7 @@
 date_default_timezone_set("Europe/Budapest");
 ob_start();
 if (isset($_POST["cookie-OK"])) {
-    setcookie("cookieok", true, time() + (2592000 * 12), "/");
+    setcookie("cookieok", 1, time() + (2592000 * 12), "/");
     header("Refresh: 0");
 }
 ?>
