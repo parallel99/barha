@@ -139,7 +139,7 @@ textarea {
     width: 80%;
     position: fixed;
     left: 10%;
-    bottom: 10px;
+    bottom: 0;
 }
 
 .form-container {
@@ -305,10 +305,9 @@ textarea {
 		padding: 10px;
 	}
 	.alert.alert-primary.cookie-alert {
-    width: 95%;
-    position: fixed;
-    left: 2.5%;
-    bottom: 10px;
+    	width: 95%;
+    	position: fixed;
+    	left: 2.5%;
 	}
 }
 
