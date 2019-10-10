@@ -1,4 +1,4 @@
-<meta name="author" content=""/>
+<meta name="author" content="Hajas Erik, Baranyai Máté"/>
 <meta name="description" content="">
 <meta name="keywords" content="">
 
@@ -6,10 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
+<link href="https://fonts.googleapis.com/css?family=Kalam:400,700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
+<!-- Favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -29,13 +33,6 @@
 <meta property="og:type" content="website"/>
 
 <meta name="referrer" content="origin">
-
-<link href="https://fonts.googleapis.com/css?family=Kalam:400,700&display=swap" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-<!-- jqueryui -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
 
 <?php
 date_default_timezone_set("Europe/Budapest");
