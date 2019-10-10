@@ -23,6 +23,14 @@ input,
 	font-family: 'Kalam', cursive;
 }
 
+textarea {
+    resize: none;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Választ";
+}
+
 #title {
 	color: var(--white);
 	text-align: center;
@@ -113,10 +121,9 @@ input,
 	margin-bottom: 10px;
 }
 
-.recipe_area{
-	width: 100%;
-	min-height: 50px;
-	height: 100%;
+.custom-file-label::after{
+	 background: #007bff;
+	 color: white;
 }
 
 .fa {
@@ -124,8 +131,15 @@ input,
 }
 
 .profile-menu {
-	left: -90px;
+	left: -30px;
 	width: 100px;
+}
+
+.alert.alert-primary.cookie-alert {
+    width: 80%;
+    position: fixed;
+    left: 10%;
+    bottom: 10px;
 }
 
 .form-container {
@@ -187,6 +201,14 @@ input,
 	font-style: italic;
 	display: inline-block;
 	cursor: pointer;
+}
+
+.btn-upload{
+	width: 150px;
+}
+
+.recipe-height{
+	min-height: calc(100vh - 110px);
 }
 
 #aszfModal .modal-body {
@@ -274,13 +296,19 @@ input,
 }
 
 @media (max-width: 600px) {
-    .account {
-        margin: 20px 10px;
-        width: auto;
-    }
+  .account {
+    margin: 20px 10px;
+    width: auto;
+  }
 	.recipe-container {
 		width: 95%;
 		padding: 10px;
+	}
+	.alert.alert-primary.cookie-alert {
+    width: 95%;
+    position: fixed;
+    left: 2.5%;
+    bottom: 10px;
 	}
 }
 

@@ -7,7 +7,7 @@ if(!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHa | </title>
+        <title>BárHa | Recept feltöltés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
     </head>
@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("recipe-upload");
         ?>
-        <div class="form-container">
+        <div class="form-container container recipe-container recipe-height">
           <?php
             if(isset($_POST['submit'])) {
                 $msg = registration();
@@ -24,10 +24,16 @@ if(!isset($_SESSION['user'])){
                 unset($msg);
             }
           ?>
-            <form method="post" class="shadow" id="registrationForm">
+            <form method="post">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
                     <input type="text" class="form-control" name="name" autocomplete="off" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
+                </div>
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Válassz képet</label>
+                  </div>
                 </div>
                 <div class="ingredients-group">
                     <div class="form-group">
@@ -50,11 +56,9 @@ if(!isset($_SESSION['user'])){
                 </script>
                 <div class="form-group">
                     <label for="name">A recept elkészítésének módja</label>
-                    <div contenteditable="true" class="form-control recipe_area">
-
-                    </div>
+                    <textarea class="form-control" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10"></textarea>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Küld</button>
+                <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>
         </div>
         <?php
@@ -63,3 +67,10 @@ if(!isset($_SESSION['user'])){
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
+<script>
+// A nevet változtatja a div-ben a fájl feltöltésnél
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>

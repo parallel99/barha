@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -39,6 +40,10 @@
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
+if (isset($_POST["cookie-OK"])) {
+    setcookie("cookieok", 1, time() + (2592000 * 12), "/");
+    header("Refresh: 0");
+
 if (isset($_COOKIE['email'])) {
     $_SESSION['user']['email'] = $_COOKIE['email'];
 }
