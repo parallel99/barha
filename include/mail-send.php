@@ -16,7 +16,7 @@ class Mail {
   public function Send() {
       require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
       $email = new \SendGrid\Mail\Mail();
-      $email->setFrom(getenv('SENDGRID_USERNAME'), "Étel segéd");
+      $email->setFrom(getenv('SENDGRID_USERNAME'), "BárHa");
       $email->setSubject($this->title);
       $email->addTo($this->emailaddress, $this->name);
       $email->addContent("text/html", $this->message);
