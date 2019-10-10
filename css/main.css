@@ -27,6 +27,10 @@ textarea {
     resize: none;
 }
 
+.custom-file-input ~ .custom-file-label::after {
+    content: "Választ";
+}
+
 #title {
 	color: var(--white);
 	text-align: center;
