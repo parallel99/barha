@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(".cookie-alert").hide(300, "swing");
     var now = new Date();
     var time = now.getTime();
-    var expireTime = time + 3600*24*365*25;
+    var expireTime = time + 3600*576*7*30*300;
     now.setTime(expireTime);
     document.cookie = 'cookieok=1;expires='+now.toGMTString()+';path=/';
   });
