@@ -319,6 +319,13 @@ textarea {
 	margin: 0;
 }
 
+@media (max-width: 660px) {
+	.alert.alert-primary.cookie-alert {
+		width: 80%;
+		left: 10%;
+	}
+}
+
 @media (max-width: 600px) {
   .account {
     margin: 20px 10px;
@@ -332,10 +339,6 @@ textarea {
     	width: 95%;
     	position: fixed;
     	left: 2.5%;
-	}
-	.alert.alert-primary.cookie-alert {
-		width: 80%;
-		left: 10%;
 	}
 }
 
