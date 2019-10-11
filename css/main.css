@@ -208,7 +208,7 @@ textarea {
 }
 
 .recipe-height{
-	min-height: calc(100vh - 110px);
+	min-height: 600px;
 }
 
 #aszfModal .modal-body {
@@ -292,13 +292,13 @@ textarea {
 	color: var(--secondary);
 }
 
-
 .recipe-container {
 	border-radius: 10px;
     background-color: var(--white);
     padding: 25px;
     margin: 20px auto;
 }
+
 .recipe-container img {
 	width: 100%;
 	height: auto;
@@ -317,6 +317,23 @@ textarea {
 
 .recipe-container .recipe p:last-child {
 	margin: 0;
+}
+
+.upload-ingredients-db, .upload-ingredients-name, .upload-ingredients-unit{
+	display: inline-block;
+}
+
+.upload-ingredients-name{
+	width: 500px;
+}
+
+.upload-ingredients-db{
+	width: 150px;
+}
+
+.upload-ingredients-unit{
+	width: 220px;
+	padding: 1px;
 }
 
 @media (max-width: 660px) {
