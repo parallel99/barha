@@ -64,8 +64,8 @@ if(isset($_SESSION['user'])){
                   $find_user = true;
                   if ($user->active == 1 && $find_user) {
                       $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
-                      setcookie('name', $user->name, time()+3000000, "/", "barha.herokuapp.com", 1, 1);
-                      setcookie('email', $user->email, time()+3000000, "/", "barha.herokuapp.com", 1, 1);
+                      setcookie('name', $user->name, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                      setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                       $valid = true;
                   }
               }
