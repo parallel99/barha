@@ -7,7 +7,11 @@
 $(document).ready(function(){
   $(".cookie").click(function(){
     $(".cookie-alert").hide(300, "swing");
-    document.cookie = "cookieok=89";
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000*36000;
+    now.setTime(expireTime);
+    document.cookie = 'cookieok=1;expires='+now.toGMTString()+';path=/';
   });
 });
 </script>
