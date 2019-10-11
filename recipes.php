@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-sm-9">
                     <h3>Almás pite</h3>
-                    <h5>Feltöltés: 2019. szeptember 20.</h5>
+                    <h6>Feltöltés: 2019. szeptember 20.</h6>
                 </div>
             </div>
         </div>

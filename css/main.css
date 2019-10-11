@@ -276,9 +276,23 @@ textarea {
     margin: 20px auto;
 }
 
-.recipe-list-container .row {
-	height: 120px;
+.recipe-list-container .col-sm-3 {
+	height: 100%;
 }
+.recipe-list-container img {
+	max-width: 100%;
+    max-height: 100%;
+	border-radius: 10px;
+}
+
+.recipe-list-container .row {
+	height: 100px;
+}
+
+.recipe-list-container .row h6 {
+	color: var(--secondary);
+}
+
 
 .recipe-container {
 	border-radius: 10px;
