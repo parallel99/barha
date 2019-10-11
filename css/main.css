@@ -270,10 +270,6 @@ textarea {
 }
 
 .recipe-list-container {
-	border-radius: 10px;
-    background-color: var(--white);
-    padding: 25px;
-    margin: 20px auto;
 }
 
 .recipe-list-container .col-sm-3 {
@@ -290,6 +286,10 @@ textarea {
 
 .recipe-list-container .row {
 	height: 125px;
+	border-radius: 10px;
+	background-color: var(--white);
+	padding: 25px;
+	margin: 20px auto;
 }
 
 .recipe-list-container .row h6 {
