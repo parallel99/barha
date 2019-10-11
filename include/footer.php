@@ -6,7 +6,8 @@
 <script>
 $(document).ready(function(){
   $(".cookie").click(function(){
-    $("cookie-alert").hide(300, "swing");
+    $(".cookie-alert").hide(300, "swing");
+    document.cookie = "cookieok=89";
   });
 });
 </script>
