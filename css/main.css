@@ -279,6 +279,9 @@ textarea {
 .recipe-list-container .col-sm-3 {
 	height: 100%;
 }
+.recipe-list-container .col-sm-9 {
+	padding-left: 0;
+}
 .recipe-list-container img {
 	max-width: 100%;
     max-height: 100%;
@@ -286,7 +289,7 @@ textarea {
 }
 
 .recipe-list-container .row {
-	height: 100px;
+	height: 125px;
 }
 
 .recipe-list-container .row h6 {
