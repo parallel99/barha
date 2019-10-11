@@ -136,10 +136,10 @@ textarea {
 }
 
 .alert.alert-primary.cookie-alert {
-    width: 80%;
-    position: fixed;
-    left: 10%;
-    bottom: 0;
+	position: fixed;
+	left: calc(50% - 300px);
+	bottom: 0;
+	max-width: 600px;
 }
 
 .form-container {
@@ -332,6 +332,10 @@ textarea {
     	width: 95%;
     	position: fixed;
     	left: 2.5%;
+	}
+	.alert.alert-primary.cookie-alert {
+		width: 80%;
+		left: 10%;
 	}
 }
 
