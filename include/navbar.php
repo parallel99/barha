@@ -21,7 +21,7 @@ function menu($active) {
              <li class="nav-item <?php if($active == "index"){ echo "active";}?>">
                 <a class="nav-link" href="/">Kezdőlap</a>
              </li>
-             <li class="nav-item <?php if($active == "recipe"){ echo "active";}?>">
+             <li class="nav-item <?php if($active == "recipes"){ echo "active";}?>">
                 <a class="nav-link" href="#">Receptek</a>
              </li>
              <li class="nav-item <?php if($active == "registration"){ echo "active";}?>">
