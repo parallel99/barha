@@ -11,19 +11,13 @@
         ?>
         <div class="container recipe-list-container">
             <div class="row">
-                <h3>Almás pite</h3>
-                <img src="/images/test-recipe.jpg">
-                <h5>Feltöltés: 2019. szeptember 20.</h5>
-            </div>
-            <div class="row">
-                <h3>Almás pite</h3>
-                <img src="/images/test-recipe.jpg">
-                <h5>Feltöltés: 2019. szeptember 20.</h5>
-            </div>
-            <div class="row">
-                <h3>Almás pite</h3>
-                <img src="/images/test-recipe.jpg">
-                <h5>Feltöltés: 2019. szeptember 20.</h5>
+                <div class="col-sm-3">
+                    <img src="/images/test-recipe.jpg">
+                </div>
+                <div class="col-sm-9">
+                    <h3>Almás pite</h3>
+                    <h5>Feltöltés: 2019. szeptember 20.</h5>
+                </div>
             </div>
         </div>
     </body>

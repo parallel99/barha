@@ -269,6 +269,17 @@ textarea {
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
+.recipe-list-container {
+	border-radius: 10px;
+    background-color: var(--white);
+    padding: 25px;
+    margin: 20px auto;
+}
+
+.recipe-list-container .row {
+	height: 120px;
+}
+
 .recipe-container {
 	border-radius: 10px;
     background-color: var(--white);
