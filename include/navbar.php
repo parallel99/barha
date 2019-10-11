@@ -22,7 +22,7 @@ function menu($active) {
                 <a class="nav-link" href="/">Kezdőlap</a>
              </li>
              <li class="nav-item <?php if($active == "recipes"){ echo "active";}?>">
-                <a class="nav-link" href="#">Receptek</a>
+                <a class="nav-link" href="recipes">Receptek</a>
              </li>
              <li class="nav-item <?php if($active == "registration"){ echo "active";}?>">
                 <a class="nav-link" href="registration">Regisztráció</a>
