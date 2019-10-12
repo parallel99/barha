@@ -34,6 +34,11 @@
 
 <meta name="referrer" content="origin">
 
+<!-- PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-startup-image" href="/images/apple-touch-icon.png">
+
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
