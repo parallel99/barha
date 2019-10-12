@@ -367,6 +367,9 @@ textarea {
 	.profile-menu {
 		width: 100%;
 	}
+	.recipe-list-container {
+		max-width: 600px;
+	}
 }
 
 @media (max-width: 410px) {
