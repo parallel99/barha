@@ -357,6 +357,9 @@ textarea {
     	position: fixed;
     	left: 2.5%;
 	}
+	.recipe-list-container .media {
+		margin: 15px auto;
+	}
 }
 
 @media (max-width: 992px) {
