@@ -269,6 +269,10 @@ textarea {
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
+.recipe-list-container {
+	max-width: 800px;
+}
+
 .recipe-list-container img {
 	max-width: 150px;
 	border-radius: 10px;
