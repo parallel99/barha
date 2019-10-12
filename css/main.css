@@ -367,18 +367,19 @@ textarea {
 
 @media (max-width: 410px) {
 	.recipe-list-container img {
-		max-width: 150px;
+		max-width: 125px;
 		margin: 10px;
 	}
 
-	.recipe-list-container .media {
-		margin: 25px auto;
-	}
 	.recipe-list-container .media-body {
 		margin: 10px 10px 10px 0;
 	}
 
-	.recipe-list-container .media h6 {
+	.recipe-list-container .media h3 {
+		font-size: 1.5rem;
+	}
+	.recipe-list-container .media strong::before {
+		content: '\A';
 	}
 
 	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
