@@ -3,7 +3,7 @@
 <meta name="keywords" content="">
 
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
 <link href="https://fonts.googleapis.com/css?family=Kalam:400,700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 <link rel="shortcut icon" href="/images/favicon.ico">
 <meta name="msapplication-TileColor" content="#f8f8f8">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f8f9fa">
 
 <!-- Open Graph -->
 <meta property="og:title" content="BárHa"/>
@@ -37,7 +37,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-icon.png">
+<link href="/apple-touch-icon.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="/apple-touch-icon.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="BárHa">
 
