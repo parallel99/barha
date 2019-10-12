@@ -18,7 +18,7 @@
               </div>
               <div class="media-body">
                   <h3>Almás pite</h3>
-                  <h6>Feltöltés: 2019. szeptember 20.</h6>
+                  <h6>Elkészítési idő: <strong>30 perc</strong></h6>
               </div>
             </div>
             <div class="media">
@@ -29,7 +29,7 @@
               </div>
               <div class="media-body">
                   <h3>Almás pite</h3>
-                  <h6>Feltöltés: 2019. szeptember 20.</h6>
+                  <h6>Elkészítési idő: <strong>30 perc</strong></h6>
               </div>
             </div>
             <div class="media">
@@ -40,7 +40,7 @@
               </div>
               <div class="media-body">
                   <h3>Almás pite</h3>
-                  <h6>Feltöltés: 2019. szeptember 20.</h6>
+                  <h6>Elkészítési idő: <strong>30 perc</strong></h6>
               </div>
             </div>
             <div class="media">
@@ -51,7 +51,7 @@
               </div>
               <div class="media-body">
                   <h3>Almás pite</h3>
-                  <h6>Feltöltés: 2019. szeptember 20.</h6>
+                  <h6>Elkészítési idő: <strong>30 perc</strong></h6>
               </div>
             </div>
             <div class="media">
@@ -62,7 +62,7 @@
               </div>
               <div class="media-body">
                   <h3>Almás pite</h3>
-                  <h6>Feltöltés: 2019. szeptember 20.</h6>
+                  <h6>Elkészítési idő: <strong>30 perc</strong></h6>
               </div>
             </div>
         </div>

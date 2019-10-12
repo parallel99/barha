@@ -269,9 +269,6 @@ textarea {
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
-.recipe-list-container {
-}
-
 .recipe-list-container img {
 	max-width: 150px;
 	border-radius: 10px;
@@ -369,6 +366,21 @@ textarea {
 }
 
 @media (max-width: 410px) {
+	.recipe-list-container img {
+		max-width: 150px;
+		margin: 10px;
+	}
+
+	.recipe-list-container .media {
+		margin: 25px auto;
+	}
+	.recipe-list-container .media-body {
+		margin: 10px 10px 10px 0;
+	}
+
+	.recipe-list-container .media h6 {
+	}
+
 	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
 		width: 342px;
 	}
