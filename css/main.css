@@ -8,13 +8,13 @@ body {
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	background: #05ffa3;
 	background: linear-gradient(40deg, #2096ff, #05ffa3);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	overflow-y: scroll;
 	-webkit-tap-highlight-color: transparent;
+	background-color: #f8f9fa;
 }
 
 body,
