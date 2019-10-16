@@ -55,6 +55,10 @@ if(isset($_SESSION['user'])){
                         .
                     </label>
                 </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                </div>
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
         </div>
