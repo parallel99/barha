@@ -33,7 +33,7 @@ if(!isset($_SESSION['user'])){
                 </div>
                 <div class="ingredients-group">
                     <div class="form-group">
-                        <label for="name" class="newLine">Hozzávalók</label>
+                        <label class="newLine">Hozzávalók</label>
                         <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávaló" autocomplete="off">
                         <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                         <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off">
@@ -72,7 +72,10 @@ if(!isset($_SESSION['user'])){
             </form>
         </div>
         <?php
-
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
+            if(isset($_POST["submit"])){
+              Save();
+            }
         ?>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
