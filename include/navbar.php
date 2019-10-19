@@ -1,5 +1,14 @@
 <?php
 function menu($active) {
+
+  if(isset($_POST["logout"])){
+      unset($_SESSION['user']);
+      setcookie("name", "", time() - 1, "/");
+      setcookie("email", "", time() - 1, "/");
+      print "lefut";
+      //header("Refresh: 0");
+      die();
+  }
 if(!isset($_SESSION['user'])){
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

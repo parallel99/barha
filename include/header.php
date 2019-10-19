@@ -59,14 +59,6 @@ if (isset($_COOKIE['email'])) {
 if (isset($_COOKIE['name'])) {
     $_SESSION['user']['name'] = $_COOKIE['name'];
 }
-
-if(isset($_POST["logout"])){
-    unset($_SESSION['user']);
-    setcookie("name", "", time() - 1, "/");
-    setcookie("email", "", time() - 1, "/");
-    header("Refresh: 0");
-    die();
-}
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
