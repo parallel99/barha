@@ -46,7 +46,10 @@ if(isset($_SESSION['user'])){
                     <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="compact" id="aszf" name="aszf" required>
+                    <div class="custom-control custom-checkbox form-check-input">
+                      <input type="checkbox" class="custom-control-input" id="aszf" name="aszf">
+                      <label class="custom-control-label" for="customCheck1"></label>
+                    </div>
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a
                     </label>
@@ -55,10 +58,7 @@ if(isset($_SESSION['user'])){
                         .
                     </label>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-                </div>
+
                 <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
             </form>
         </div>
