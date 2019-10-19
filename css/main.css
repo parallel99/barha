@@ -359,7 +359,7 @@ textarea {
 	.upload-ingredients-name{
 		width: 250px;
 	}
-	.upload-ingredients-name, .upload-ingredients-unit{
+	.upload-ingredients-db, .upload-ingredients-unit{
 		width: 110px;
 	}
 }
