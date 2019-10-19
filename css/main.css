@@ -347,6 +347,15 @@ textarea {
 	}
 }
 
+@media (max-width: 768px) {
+	.upload-ingredients-name{
+		width: 250px;
+	}
+	.upload-ingredients-name, .upload-ingredients-unit{
+		width: 110px;
+	}
+}
+
 @media (max-width: 600px) {
   .account {
     margin: 20px 10px;
@@ -372,6 +381,12 @@ textarea {
 	}
 	.recipe-list-container {
 		max-width: 600px;
+	}
+	.upload-ingredients-name{
+		width: 300px;
+	}
+	.upload-ingredients-db{
+		width: 120px;
 	}
 }
 
