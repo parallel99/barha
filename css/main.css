@@ -342,6 +342,8 @@ textarea {
 
 .custom-checkbox{
 	margin-top: 0px;
+	display: inline-block;
+	left: 5px;
 }
 
 @media (max-width: 992px) {

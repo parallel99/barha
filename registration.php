@@ -48,7 +48,7 @@ if(isset($_SESSION['user'])){
                 <div class="form-check">
                     <div class="custom-control custom-checkbox form-check-input">
                       <input type="checkbox" class="custom-control-input" id="aszf" name="aszf">
-                      <label class="custom-control-label" for="customCheck1"></label>
+                      <label class="custom-control-label" for="aszf"></label>
                     </div>
                     <label class="form-check-label small" for="aszf">
                         Elfogadom a
