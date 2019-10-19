@@ -320,6 +320,9 @@ textarea {
 	margin: 0;
 }
 
+.newLine{
+	display: block;
+}
 .upload-ingredients-db, .upload-ingredients-name, .upload-ingredients-unit{
 	display: inline-block;
 }
