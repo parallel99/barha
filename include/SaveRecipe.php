@@ -1,16 +1,16 @@
 <?php
 function Save(){
-      $msg = "";
-      $ok = true;
+      $ingredients = array();
 
       for($i = 1; $i < 26; $i++){
-          $ingredients_name = 'ingredients'+$i;
+          $ingredients_name = 'ingredients' . $i;
           if(filter_has_var(INPUT_POST, $ingredients_name) && $ingredients_name != ""){
               $ingredients = array_push(filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
           }
       }
 
       print_r($ingredients);
+
       /*
       $name      = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
       $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
@@ -89,5 +89,4 @@ function Save(){
           $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
           $_POST = array();
       }*/
-
 }
