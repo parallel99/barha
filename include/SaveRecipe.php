@@ -5,7 +5,7 @@ function Save(){
       for($i = 1; $i < 26; $i++){
           $ingredients_name = 'ingredients' . $i;
           if(filter_has_var(INPUT_POST, $ingredients_name) && $ingredients_name != ""){
-              $ingredients = array_push(filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
+              array_push($ingredients, filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
           }
       }
 
