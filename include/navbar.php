@@ -1,15 +1,6 @@
 <?php
 function menu($active) {
-
-  if(isset($_POST["logout"])){
-    unset($_SESSION['user']);
-    setcookie('name', '');
-    setcookie('email', '');
-    header("Refresh: 0");
-    die();
-  }
-
-  if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user'])){
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/"><img src="\images\navbar-logo.png" height="30"></a>
