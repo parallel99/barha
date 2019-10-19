@@ -75,7 +75,7 @@ if(!isset($_SESSION['user'])){
                 </script>
                 <div class="form-group">
                     <label for="name">A recept elkészítésének módja</label>
-                    <textarea class="form-control" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10"></textarea>
+                    <textarea class="form-control" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" required></textarea>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>
