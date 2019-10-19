@@ -388,6 +388,13 @@ textarea {
 	.recipe-list-container .media {
 		margin: 15px auto;
 	}
+	.upload-ingredients-name{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.upload-ingredients-db, .upload-ingredients-unit{
+		width: 130px;
+	}
 }
 
 @media (max-width: 410px) {
