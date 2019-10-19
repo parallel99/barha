@@ -41,10 +41,10 @@ if(!isset($_SESSION['user'])){
                         <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávalók" autocomplete="off">
                         <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                         <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
+                          <option>db</option>
+                          <option>g</option>
+                          <option>dkg</option>
+                          <option>kg</option>
                         </select>
                     </div>
                 </div>
@@ -52,7 +52,15 @@ if(!isset($_SESSION['user'])){
                     $('.ingredients-group').on('input', function (event) {
                         var length = $(".ingredients-group > div").length
                         if ($("div.ingredients-group div:last-child > input").val() != "" && length < 25) {
-                            $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'><input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'>");
+                            var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'>";
+                            inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'>";
+                            inputs += "<select class='form-control ui-autocomplete-input upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off'>";
+                            inputs += "<option>db</option>";
+                            inputs += "<option>g</option>";
+                            inputs += "<option>dkg</option>";
+                            inputs += "<option>kg</option>";
+                            inputs += "</select></div>";
+                            $(".ingredients-group").append(inputs);
                             $("#ingredients" + (length + 1)).autocomplete({
                                 source: ingredients
                             });
