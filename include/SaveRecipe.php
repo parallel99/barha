@@ -90,5 +90,4 @@ function Save(){
           $_POST = array();
       }*/
 
-      return $msg;
 }
