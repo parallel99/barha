@@ -1,59 +1,27 @@
 <?php
 function Save(){
+      $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+      $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
       $ingredients = array();
+      $quantity    = array();
+      $unit        = array();
 
       for($i = 1; $i < 26; $i++){
           $ingredients_name = 'ingredients' . $i;
-          if(filter_has_var(INPUT_POST, $ingredients_name) && $ingredients_name != ""){
+          $num_name         = 'db' . $i;
+          $unit_name        = 'unit' . $i;
+          if(filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != ""){
               array_push($ingredients, filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
+              array_push($quantity, filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING));
+              array_push($unit, filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING));
           }
       }
 
+
       print_r($ingredients);
-
+      print_r($quantity);
+      print_r($unit);
       /*
-      $name      = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-      $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-      $password1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
-      $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
-
-      if (isset($_POST['g-recaptcha-response'])) {
-            $captcha = $_POST['g-recaptcha-response'];
-        }
-        $secretKey = "6LfJWrgUAAAAACD9V-GcW1nXwxwYQtIlpImmKbyo";
-        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
-        $response = file_get_contents($url);
-        $responseKeys = json_decode($response, true);
-        if (!$responseKeys["success"]) {
-            $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>';
-            $ok = false;
-        }
-
-      if(!filter_has_var(INPUT_POST, 'aszf')){
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem fogadtad el a felhasználói feltételeket!</div>';
-          $ok = false;
-      }
-
-      if ($password1 != $password2) {
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
-          $ok = false;
-      }
-
-      if (strlen($name) < 4 || strlen($name) > 255) {
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">A névnek minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
-          $ok = false;
-      }
-
-      if (strlen($email) < 4 || strlen($email) > 512) {
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">Az email-nek minimum 4 karakternek, maximum 512 karakternek kell lennie!</div>';
-          $ok = false;
-      }
-
-      if (strlen($password1) < 4 || strlen($password1) > 255) {
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">A jelszónak minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
-          $ok = false;
-      }
-
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       $getemail = $pdo->prepare("SELECT * FROM users WHERE email = :email;");
