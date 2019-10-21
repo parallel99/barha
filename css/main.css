@@ -171,6 +171,7 @@ textarea {
 	max-width: 600px;
 	border-radius: 10px;
 	text-align: center;
+	margin-top: 15px;
 }
 
 .activation h1 {
@@ -320,6 +321,9 @@ textarea {
 	margin: 0;
 }
 
+.newLine{
+	display: block;
+}
 .upload-ingredients-db, .upload-ingredients-name, .upload-ingredients-unit{
 	display: inline-block;
 }
@@ -335,6 +339,36 @@ textarea {
 .upload-ingredients-unit{
 	width: 220px;
 	padding: 1px;
+}
+
+.custom-checkbox{
+	margin-top: 0px;
+	display: inline-block;
+	left: 5px;
+}
+
+@media (max-width: 992px) {
+	.profile-menu {
+		width: 100%;
+	}
+	.recipe-list-container {
+		max-width: 600px;
+	}
+	.upload-ingredients-name{
+		width: 300px;
+	}
+	.upload-ingredients-db{
+		width: 120px;
+	}
+}
+
+@media (max-width: 768px) {
+	.upload-ingredients-name{
+		width: 250px;
+	}
+	.upload-ingredients-db, .upload-ingredients-unit{
+		width: 110px;
+	}
 }
 
 @media (max-width: 660px) {
@@ -361,14 +395,12 @@ textarea {
 	.recipe-list-container .media {
 		margin: 15px auto;
 	}
-}
-
-@media (max-width: 992px) {
-	.profile-menu {
+	.upload-ingredients-name{
 		width: 100%;
+		margin-bottom: 5px;
 	}
-	.recipe-list-container {
-		max-width: 600px;
+	.upload-ingredients-db, .upload-ingredients-unit{
+		width: 130px;
 	}
 }
 
