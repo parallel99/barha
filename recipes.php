@@ -13,7 +13,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -24,7 +24,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -35,7 +35,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -46,7 +46,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -57,7 +57,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -68,7 +68,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -79,7 +79,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -90,7 +90,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -101,7 +101,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -112,7 +112,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -123,7 +123,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -134,7 +134,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -145,7 +145,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -156,7 +156,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -167,7 +167,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -178,7 +178,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -189,7 +189,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -200,7 +200,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -211,7 +211,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -222,7 +222,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -233,7 +233,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -244,7 +244,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -255,7 +255,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -266,7 +266,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -277,7 +277,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -288,7 +288,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -299,7 +299,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
@@ -310,7 +310,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img src="/images/test-recipe.jpg">
+                  <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </a>
               </div>
               <div class="media-body">
