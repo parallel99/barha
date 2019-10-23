@@ -284,6 +284,10 @@ textarea {
 	padding: 15px;
 }
 
+.recipe-list-container .search input {
+	margin-right: 15px;
+}
+
 .recipe-list-container img {
 	max-width: 150px;
 	border-radius: 10px;
