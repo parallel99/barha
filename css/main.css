@@ -279,7 +279,19 @@ textarea {
 	border-radius: 10px;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 	margin-top: 25px;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 15px;
 }
+
+.recipe-list-container .search .col-sm-10 {
+	padding-left: 0;
+}
+
+.recipe-list-container .search {
+	padding-right: 0;
+}
+
 
 .recipe-list-container .search button {
 	width: 100%;
