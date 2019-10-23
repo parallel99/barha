@@ -284,19 +284,6 @@ textarea {
 	padding: 15px;
 }
 
-.recipe-list-container .search .col-sm-10 {
-	padding-left: 0;
-}
-
-.recipe-list-container .search {
-	padding-right: 0;
-}
-
-
-.recipe-list-container .search button {
-	width: 100%;
-}
-
 .recipe-list-container img {
 	max-width: 150px;
 	border-radius: 10px;
