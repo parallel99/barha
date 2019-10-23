@@ -12,7 +12,7 @@
         <div class="container recipe-list-container">
             <div class="row search">
                 <div class="input-group">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" placeholder="Keresés">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="button">Keresés</button>
                     </span>
