@@ -10,7 +10,7 @@
             menu("recipes");
         ?>
         <div class="container recipe-list-container">
-            <div class="search">
+            <div class="row search">
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="Keresés" name="search" aria-label="Keresés">
                 </div>
