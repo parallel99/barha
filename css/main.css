@@ -286,7 +286,7 @@ textarea {
 
 .recipe-list-container .search input {
 	margin-right: 15px;
-	border-radius: .25rem;
+	border-radius: .25rem!important;
 }
 
 .recipe-list-container img {
