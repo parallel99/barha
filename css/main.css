@@ -281,6 +281,7 @@ textarea {
 }
 
 .recipe-list-container .media {
+	text-decoration: none;
 	border-radius: 10px;
 	background-color: var(--white);
 	margin: 25px auto;
@@ -292,6 +293,9 @@ textarea {
 
 .recipe-list-container .media h6 {
 	color: var(--secondary);
+}
+.recipe-list-container .media h3 {
+	color: black;
 }
 
 .recipe-container {
