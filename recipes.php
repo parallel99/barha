@@ -15,7 +15,7 @@
                     <input class="form-control" type="text" placeholder="Keresés" name="search" aria-label="Keresés">
                 </div>
                 <div class="col-sm-2">
-                    <button type="submit" value="Keresés" name="submit" class="btn btn-primary">
+                    <button type="submit" name="submit" class="btn btn-primary">Keresés</button>
                 </div>
             </div>
             <a class="media" href="recipe?name=Almás%20pite">

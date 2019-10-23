@@ -274,6 +274,13 @@ textarea {
 	max-width: 800px;
 }
 
+.recipe-list-container .media {
+	background-color: var(--white);
+	border-radius: 10px;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+	margin-top: 25px;
+}
+
 .recipe-list-container img {
 	max-width: 150px;
 	border-radius: 10px;
