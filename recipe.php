@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <img src="/images/test-recipe.jpg">
+                    <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo($_GET['name']); ?>">
                 </div>
             </div>
             <div class="row">
