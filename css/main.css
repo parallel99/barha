@@ -126,6 +126,11 @@ textarea {
 	 color: white;
 }
 
+.navbar .name {
+	display: inline-block;
+	margin: 3px 0 0 3px;
+}
+
 .fa {
 	padding-right: 10px;
 }
