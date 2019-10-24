@@ -21,13 +21,13 @@ if(!isset($_SESSION['user'])){
                 <a class="nav-link" href="/">Kezdőlap</a>
              </li>
              <li class="nav-item <?php if($active == "recipes"){ echo "active";}?>">
-                <a class="nav-link" href="recipes">Receptek</a>
+                <a class="nav-link" href="/recipes">Receptek</a>
              </li>
              <li class="nav-item <?php if($active == "registration"){ echo "active";}?>">
-                <a class="nav-link" href="registration">Regisztráció</a>
+                <a class="nav-link" href="/registration">Regisztráció</a>
             </li>
             <li class="nav-item <?php if($active == "login"){ echo "active";}?>">
-                <a class="nav-link" href="login">Bejelentkezés</a>
+                <a class="nav-link" href="/login">Bejelentkezés</a>
             </li>
         </ul>
     </div>
@@ -46,14 +46,14 @@ if(!isset($_SESSION['user'])){
              <a class="nav-link" href="/">Kezdőlap</a>
           </li>
           <li class="nav-item <?php if($active == "recipes"){ echo "active";}?>">
-             <a class="nav-link" href="recipes">Receptek</a>
+             <a class="nav-link" href="/recipes">Receptek</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Receptek kezelése
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="upload_recipe">Recept feltöltés</a>
+              <a class="dropdown-item" href="/upload_recipe">Recept feltöltés</a>
               <a class="dropdown-item" href="#">Feltöltött recepteim</a>
               <a class="dropdown-item" href="#">Kedvenceim</a>
             </div>
