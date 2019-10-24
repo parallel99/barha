@@ -16,6 +16,8 @@ ErrorDocument 404 /error/404
 ErrorDocument 403 /error/403
 ErrorDocument 500 /error/500
 
+RewriteRule ^recipe/([-_0-9a-z]+) recipe.php?name=$1
+
 <ifModule mod_gzip.c>
     mod_gzip_on Yes
     mod_gzip_dechunk Yes

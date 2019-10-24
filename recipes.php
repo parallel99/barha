@@ -18,7 +18,7 @@
                     </span>
                 </div>
             </div>
-            <a class="media" href="recipe?name=Almás%20pite">
+            <a class="media" href="recipe/Almás%20pite">
                 <div class="media-left">
                     <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </div>
@@ -27,7 +27,7 @@
                     <h6>Elkészítési idő: <strong>30 perc</strong></h6>
                 </div>
             </a>
-            <a class="media" href="recipe?name=Almás%20pite">
+            <a class="media" href="recipe/Almás%20pite">
                 <div class="media-left">
                     <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
                 </div>

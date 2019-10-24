@@ -6,6 +6,7 @@ function Save(){
     $quantity    = array();
     $unit        = array();
     $msg         = "";
+    $ok          = true;
 
     for($i = 1; $i < 26; $i++){
         $ingredients_name = 'ingredients' . $i;
@@ -18,31 +19,22 @@ function Save(){
               array_push($unit, filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING));
             } else {
               $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
+              $ok = false;
             }
         }
     }
 
     if (mb_strlen($recipe_name) < 3 || mb_strlen($recipe_name) > 255) {
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept nevének minimum 3 karakternek, maximum 255 karakternek kell lennie!</div>';
+        $ok = false;
     }
 
     print_r($ingredients);
     print_r($quantity);
     print_r($unit);
-      /*
-      include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-      $getemail = $pdo->prepare("SELECT * FROM users WHERE email = :email;");
-      $getemail->bindValue(':email', $email, PDO::PARAM_STR);
-      $getemail->execute();
-      $row = $getemail->rowCount();
-
-      if($row > 0){
-          $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ez az email cím már foglalt!</div>';
-          $ok = false;
-      }
-
-      if($ok){
+    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+    if($ok){
           $random   = mt_rand(10, 1000);
           $ticket   = $email . $random;
           $password = hash('sha512', $password1);
@@ -64,5 +56,5 @@ function Save(){
 
           $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
           $_POST = array();
-      }*/
+      }
 }
