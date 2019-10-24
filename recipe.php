@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHa | <?php $_GET['name']?></title>
+        <title>BárHa | <?php echo($_GET['name']); ?></title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
