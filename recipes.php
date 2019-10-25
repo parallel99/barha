@@ -8,6 +8,10 @@
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("recipes");
+        if (!isset($_GET['search'])) {
+            header("Location: recipes.php?search=");
+            die();
+        }
         ?>
         <div class="container recipe-list-container">
             <form method="get" class="row search">
