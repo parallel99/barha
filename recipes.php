@@ -18,6 +18,20 @@
                     </span>
                 </div>
             </div>
+            <?php
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+            
+            $sql = "SELECT * FROM recipe-test";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $details = $stmt->fetch();
+            $id = $details->id;
+            $name = $details->name;
+            
+            echo id;
+            echo name;
+            
+            ?>
             <a class="media" href="recipe/Almás%20pite">
                 <div class="media-left">
                     <img src="/images/test-recipe.jpg" loading="lazy" alt="almás pite">
