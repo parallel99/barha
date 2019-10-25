@@ -11,24 +11,44 @@
         ?>
         <div class="container recipe-list-container">
             <div class="row search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Keresés">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">Keresés</button>
-                    </span>
-                </div>
+                <form method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Keresés">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" name="search">Keresés</button>
+                        </span>
+                    </div>
+                </form>
             </div>
             <?php
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            function getContent() {
-                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-                $sql = "SELECT * FROM ingredients;";
+            if (isset($_GET['submit'])) {
+                $sql = "SELECT * FROM ingredients WHERE name LIKE %:search%;";
                 $stmt = $pdo->prepare($sql);
+                $stmt->bindValue(':search', $_GET['search'], PDO::PARAM_STR);
                 $stmt->execute();
-                return $stmt->fetchAll();
-            }
+                $data = $stmt->fetchAll();
 
-            $data = getContent();
+                foreach($data as $row) {?>
+                    <a class="media" href="recipe/<?php echo $row->name; ?>">
+                        <div class="media-left">
+                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                        </div>
+                        <div class="media-body">
+                            <h3><?php echo $row->name; ?></h3>
+                            <h6>Elkészítési idő: <strong>30 perc</strong></h6>
+                        </div>
+                    </a>
+                <?php
+                }
+            } else {
+
+            $sql = "SELECT * FROM ingredients;";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $data = $stmt->fetchAll();
+
             foreach($data as $row) {?>
                 <a class="media" href="recipe/<?php echo $row->name; ?>">
                     <div class="media-left">
@@ -41,6 +61,7 @@
                 </a>
             <?php
             }
+        }
             ?>
         </div>
     </body>
