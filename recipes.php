@@ -10,16 +10,14 @@
         menu("recipes");
         ?>
         <div class="container recipe-list-container">
-            <div class="row search">
-                <form method="get">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Keresés">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit" name="search">Keresés</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
+            <form method="get" class="row search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Keresés">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" name="search">Keresés</button>
+                    </span>
+                </div>
+            </form>
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
@@ -30,7 +28,8 @@
                 $stmt->execute();
                 $data = $stmt->fetchAll();
 
-                foreach($data as $row) {?>
+                foreach ($data as $row) {
+                    ?>
                     <a class="media" href="recipe/<?php echo $row->name; ?>">
                         <div class="media-left">
                             <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
@@ -40,30 +39,30 @@
                             <h6>Elkészítési idő: <strong>30 perc</strong></h6>
                         </div>
                     </a>
-                <?php
+                    <?php
                 }
             } else {
+                $sql = "SELECT * FROM ingredients;";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $data = $stmt->fetchAll();
 
-            $sql = "SELECT * FROM ingredients;";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute();
-            $data = $stmt->fetchAll();
-
-            foreach($data as $row) {?>
-                <a class="media" href="recipe/<?php echo $row->name; ?>">
-                    <div class="media-left">
-                        <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
-                    </div>
-                    <div class="media-body">
-                        <h3><?php echo $row->name; ?></h3>
-                        <h6>Elkészítési idő: <strong>30 perc</strong></h6>
-                    </div>
-                </a>
-            <?php
+                foreach ($data as $row) {
+                    ?>
+                    <a class="media" href="recipe/<?php echo $row->name; ?>">
+                        <div class="media-left">
+                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                        </div>
+                        <div class="media-body">
+                            <h3><?php echo $row->name; ?></h3>
+                            <h6>Elkészítési idő: <strong>30 perc</strong></h6>
+                        </div>
+                    </a>
+                    <?php
+                }
             }
-        }
             ?>
         </div>
     </body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
