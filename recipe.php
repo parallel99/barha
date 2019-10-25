@@ -13,6 +13,11 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h1><?php echo $_GET['name'] ?></h1>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        echo "<img class=\"favourite-star\" src=\"/images/favourite.svg\" alt=\"Hozzáadas a kedvencekhez\" loading=\"lazy\">";
+                    }
+                    ?>
                     <hr>
                     <h3>Hozzávalók</h3>
                     <div class="ingredients">
