@@ -437,6 +437,9 @@ textarea {
 	.recipe-list-container .search {
 		margin: 15px auto;
 	}
+	.recipe-list-container .no-result {
+		margin: 15px auto;
+	}
 	.upload-ingredients-name{
 		width: 100%;
 		margin-bottom: 5px;
