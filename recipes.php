@@ -30,9 +30,8 @@
 
             $data = getContent();
             foreach($data as $row) {
-                echo $row->id;
+                echo $row->id . ": " . $row->name;
                 echo '<br>';
-                echo $row->name;    
             }
             
             ?>
