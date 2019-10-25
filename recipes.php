@@ -27,6 +27,10 @@
                 $stmt->execute();
                 $data = $stmt->fetchAll();
 
+                if ($stmt->rowCount() == 0) {
+                    echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
+                }
+
                 foreach ($data as $row) {
                     ?>
                     <a class="media" href="recipe/<?php echo $row->name; ?>">
