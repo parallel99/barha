@@ -22,7 +22,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
             if (isset($_GET['submit']) || isset($_GET['search'])) {
-                $sql = "SELECT * FROM ingredients WHERE name LIKE '%" . $_GET['search'] . "%';";
+                $sql = "SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $_GET['search'] . "%');";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
