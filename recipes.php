@@ -19,18 +19,21 @@
                 </div>
             </div>
             <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
             
-            $sql = "SELECT * FROM recipe_test;";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute();
-            $details = $stmt->fetch();
-            $id = $details->id;
-            $name = $details->name;
-            
-            echo $id;
-            echo '<br>';
-            echo $name;
+            function getContent() {
+                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                $sql = "SELECT * FROM recipe_test;";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll();
+            }
+
+            data = getContent();
+            foreach($data as $row) {
+                echo $row['id'];
+                echo '<br>';
+                echo $row['name'];    
+            }
             
             ?>
             <a class="media" href="recipe/Almás%20pite">
