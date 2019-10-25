@@ -29,8 +29,8 @@
             $id = $details->id;
             $name = $details->name;
             
-            echo id;
-            echo name;
+            echo $id;
+            echo $name;
             
             ?>
             <a class="media" href="recipe/Almás%20pite">
