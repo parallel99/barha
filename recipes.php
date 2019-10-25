@@ -23,7 +23,7 @@
 
             if (isset($_GET['submit']) || isset($_GET['search'])) {
                 echo "search";
-                $sql = "SELECT * FROM ingredients WHERE name LIKE \'%:search%\';";
+                $sql = "SELECT * FROM ingredients WHERE name LIKE '%:search%';";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindValue(':search', $_GET['search'], PDO::PARAM_STR);
                 $stmt->execute();
