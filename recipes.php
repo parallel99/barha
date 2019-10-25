@@ -21,7 +21,7 @@
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
             
-            $sql = "SELECT * FROM 'recipe-test'";
+            $sql = "SELECT * FROM 'recipe_test';";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $details = $stmt->fetch();
