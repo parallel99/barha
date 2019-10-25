@@ -12,7 +12,7 @@
         <div class="container recipe-list-container">
             <form method="get" class="row search">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" placeholder="Keresés" value="<?php echo $_GET["search"] ?? "";?>">
+                    <input type="text" class="form-control" name="search" placeholder="Keresés" value="<?php echo trim($_GET["search"]) ?? "";?>">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit">Keresés</button>
                     </span>
@@ -22,9 +22,9 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
             if (isset($_GET['submit']) || isset($_GET['search'])) {
-                $_GET['search'] = trim($_GET['search']);
-                
-                $sql = "SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $_GET['search'] . "%');";
+                $search = trim($_GET['search']);
+
+                $sql = "SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $search . "%');";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
