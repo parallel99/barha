@@ -386,10 +386,16 @@ textarea {
 	left: 5px;
 }
 
+.recipe-container .favourite {
+	display:flex;
+	align-items: center;
+}
+
 .recipe-container .favourite-star {
-	height: 40px;
-	width: auto;
-	background-image: url("/images/favourite.svg");
+	height: 35px;
+	width: 35px;
+	background-image: url(/images/favourite.svg);
+	background-size: contain;
 }
 
 .recipe-container .favourite-star:hover {

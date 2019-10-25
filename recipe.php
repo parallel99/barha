@@ -16,7 +16,7 @@
                     <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
-                        echo "<div class=\"favourite-star\"></div><h5>Hozzáadas a kedvencekhez</h5>";
+                        echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadas a kedvencekhez</h5></div>";
                     }
                     ?>
                     <hr>
