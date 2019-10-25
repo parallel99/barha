@@ -389,6 +389,7 @@ textarea {
 .recipe-container .favourite {
 	display:flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .recipe-container .favourite-star {
@@ -400,7 +401,6 @@ textarea {
 
 .recipe-container .favourite:hover .favourite-star {
 	background-image: url("/images/favourite2.svg");
-	cursor: pointer;
 }
 
 .recipe-container .favourite h5 {
