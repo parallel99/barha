@@ -21,7 +21,8 @@
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            if (isset($_GET['submit'])) {
+            if (isset($_GET['submit']) || isset($_GET['search'])) {
+                echo "search";
                 $sql = "SELECT * FROM ingredients WHERE name LIKE \'%:search%\';";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindValue(':search', $_GET['search'], PDO::PARAM_STR);
@@ -42,6 +43,7 @@
                     <?php
                 }
             } else {
+                echo "no search";
                 $sql = "SELECT * FROM ingredients;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
