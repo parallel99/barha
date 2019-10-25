@@ -398,8 +398,9 @@ textarea {
 	background-size: contain;
 }
 
-.recipe-container .favourite:hover + .recipe-container .favourite-star{
+.recipe-container .favourite:hover .favourite-star {
 	background-image: url("/images/favourite2.svg");
+	cursor: pointer;
 }
 
 .recipe-container .favourite h5 {
