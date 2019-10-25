@@ -394,18 +394,18 @@ textarea {
 .recipe-container .favourite-star {
 	height: 35px;
 	width: 35px;
-	background-image: url(/images/favourite.svg);
+	background-image: url("/images/favourite.svg");
 	background-size: contain;
 }
 
-.recipe-container .favourite-star:hover {
+.recipe-container .favourite:hover + .recipe-container .favourite-star{
 	background-image: url("/images/favourite2.svg");
 }
 
-.recipe-container h5 {
+.recipe-container .favourite h5 {
     display: inline-block;
     vertical-align: middle;
-    margin: 4px 0 0 0;
+    margin: 4px 0 0 5px;
 }
 
 @media (max-width: 992px) {
