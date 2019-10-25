@@ -16,7 +16,7 @@
                     <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
-                        echo "<img class=\"favourite-star\" src=\"/images/favourite.svg\" alt=\"Hozzáadas a kedvencekhez\" loading=\"lazy\">Hozzáadas a kedvencekhez";
+                        echo "<div class=\"favourite-star\"></div><h5>Hozzáadas a kedvencekhez</h5>";
                     }
                     ?>
                     <hr>
