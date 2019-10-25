@@ -28,7 +28,7 @@
                 return $stmt->fetchAll();
             }
 
-            data = getContent();
+            $data = getContent();
             foreach($data as $row) {
                 echo $row['id'];
                 echo '<br>';
