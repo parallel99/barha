@@ -14,7 +14,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="search" placeholder="Keresés">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit" name="submit">Keresés</button>
+                        <button class="btn btn-primary" type="submit">Keresés</button>
                     </span>
                 </div>
             </form>
@@ -22,7 +22,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
             if (isset($_GET['submit'])) {
-                $sql = "SELECT * FROM ingredients WHERE name LIKE %:search%;";
+                $sql = "SELECT * FROM ingredients WHERE name LIKE \'%:search%\';";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindValue(':search', $_GET['search'], PDO::PARAM_STR);
                 $stmt->execute();
