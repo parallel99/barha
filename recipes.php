@@ -12,9 +12,9 @@
         <div class="container recipe-list-container">
             <form method="get" class="row search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Keresés">
+                    <input type="text" class="form-control" name="search" placeholder="Keresés">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit" name="search">Keresés</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Keresés</button>
                     </span>
                 </div>
             </form>
