@@ -39,9 +39,9 @@
                         <h6>Elkészítési idő: <strong>30 perc</strong></h6>
                     </div>
                 </a>
-                
-                echo '<br>';
-            <?php}?>
+            <?php
+            }
+            ?>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
