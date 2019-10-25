@@ -25,8 +25,7 @@
                 echo "search";
                 $sql = "SELECT * FROM ingredients WHERE name LIKE '%:search%';";
                 $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':search', $_GET['search'], PDO::PARAM_STR);
-                $stmt->execute();
+                $stmt->execute(array(':search' => $_GET['search']));
                 $data = $stmt->fetchAll();
 
                 foreach ($data as $row) {
