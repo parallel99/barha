@@ -13,9 +13,10 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h1><?php echo $_GET['name'] ?></h1>
+                    <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
-                        echo "<img class=\"favourite-star\" src=\"/images/favourite.svg\" alt=\"Hozzáadas a kedvencekhez\" loading=\"lazy\">";
+                        echo "<img class=\"favourite-star\" src=\"/images/favourite.svg\" alt=\"Hozzáadas a kedvencekhez\" loading=\"lazy\">Hozzáadas a kedvencekhez";
                     }
                     ?>
                     <hr>
