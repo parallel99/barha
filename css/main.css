@@ -310,6 +310,9 @@ textarea {
 .recipe-list-container .media-body {
 	margin: 15px 15px 15px 0;
 }
+.recipe-list-container .media-left {
+	margin: auto;
+
 
 .recipe-list-container .media h6 {
 	color: var(--secondary);

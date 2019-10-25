@@ -19,10 +19,10 @@
                 </div>
             </div>
             <?php
-            
+
             function getContent() {
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-                $sql = "SELECT * FROM recipe_test;";
+                $sql = "SELECT * FROM ingredients;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll();
@@ -30,12 +30,12 @@
 
             $data = getContent();
             foreach($data as $row) {?>
-                <a class="media" href="recipe/<?php echo $row->id . ": " . $row->name; ?>">
+                <a class="media" href="recipe/<?php echo $row->name; ?>">
                     <div class="media-left">
-                        <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->id . ": " . $row->name; ?>">
+                        <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
                     </div>
                     <div class="media-body">
-                        <h3><?php echo $row->id . ": " . $row->name; ?></h3>
+                        <h3><?php echo $row->name; ?></h3>
                         <h6>Elkészítési idő: <strong>30 perc</strong></h6>
                     </div>
                 </a>
