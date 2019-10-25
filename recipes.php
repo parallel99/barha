@@ -25,11 +25,11 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $details = $stmt->fetch();
-            print_r($details);
             $id = $details->id;
             $name = $details->name;
             
             echo $id;
+            echo '<br>';
             echo $name;
             
             ?>
