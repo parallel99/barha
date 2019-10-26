@@ -79,4 +79,9 @@
         </div>
     </body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+<script>
+    $("#more-recipe-btn").click(function() {
+        alert("Majd egyszer ez is készen lesz.");
+    });
+</script>
 </html>
