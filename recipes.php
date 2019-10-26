@@ -28,7 +28,7 @@
             if (isset($_GET['submit']) || isset($_GET['search'])) {
                 $search = trim($_GET['search']);
 
-                $sql = "SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $search . "%');";
+                $sql = "SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $search . "%') LIMIT 50;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
