@@ -50,6 +50,11 @@
                     </a>
                     <?php
                 }
+
+                if ($stmt->rowCount() == 50) {
+                    echo "<div class=\"more-recipe\"><button class=\"btn btn-primary\" id=\"more-recipe-btn\">Tovább</button></div>";
+                }
+
             } else {
                 $sql = "SELECT * FROM ingredients;";
                 $stmt = $pdo->prepare($sql);

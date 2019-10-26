@@ -333,6 +333,14 @@ textarea {
 	margin-bottom: 0;
 }
 
+.recipe-list-container .more-recipe {
+	padding: 15px;
+	border-radius: 10px;
+	background-color: var(--white);
+	margin: 25px auto;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
 .recipe-container {
 	border-radius: 10px;
     background-color: var(--white);
