@@ -340,6 +340,9 @@ textarea {
 	margin: 25px auto;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
+.recipe-list-container .more-recipe button {
+	width: 100%;
+}
 
 .recipe-container {
 	border-radius: 10px;
@@ -469,6 +472,9 @@ textarea {
 		margin: 15px auto;
 	}
 	.recipe-list-container .no-result {
+		margin: 15px auto;
+	}
+	.recipe-list-container .more-recipe {
 		margin: 15px auto;
 	}
 	.upload-ingredients-name{
