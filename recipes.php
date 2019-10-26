@@ -82,6 +82,7 @@
 <script>
     $("#more-recipe-btn").click(function() {
         alert("Majd egyszer ez is készen lesz.");
+        // TODO: load 50 more recipe
     });
 </script>
 </html>
