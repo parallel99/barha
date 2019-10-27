@@ -97,5 +97,6 @@
                 error: function (data) {}
         });
     });
+    alert(count);
 </script>
 </html>
