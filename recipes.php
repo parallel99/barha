@@ -81,7 +81,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 <script>
     $("#more-recipe-btn").click(function() {
-        alert("Majd egyszer ez is készen lesz.");
         count = 0;
         count++;
         $.ajax({
