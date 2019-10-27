@@ -22,6 +22,7 @@
                     </span>
                 </div>
             </form>
+            <div class="recipes">
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
@@ -52,7 +53,7 @@
                 }
 
                 if ($stmt->rowCount() == 50) {
-                    echo "<div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
+                    echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
                 }
 
             } else {
@@ -83,7 +84,6 @@
     count = 0;
     $(".more-recipe").on("click",".more-recipe-btn", function(){
         count++;
-        //$(".more-recipe").remove();
         $.ajax({
         url: 'include/loadMoreRecipe.php',
                 type: 'post',
@@ -92,7 +92,7 @@
                     "search": $("#search").val()
                 },
                 success: function (response) {
-                    $('.recipe-list-container').append(response)
+                    $('.recipes').append(response)
                 },
                 error: function (data) {}
         });
