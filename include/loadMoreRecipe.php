@@ -9,7 +9,10 @@ $stmt->bindValue(':offset', $count * 50, PDO::PARAM_STR);
 $stmt->execute();
 $data = $stmt->fetchAll();
 
+$i = 0;
+
 foreach ($data as $row) {
+    $i++;
     ?>
     <a class="media" href="recipe/<?php echo $row->name; ?>">
         <div class="media-left">
@@ -21,6 +24,7 @@ foreach ($data as $row) {
         </div>
     </a>
     <?php
+    echo $i;
 }
 
 ?>
