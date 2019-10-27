@@ -13,25 +13,6 @@
             die();
         }
         ?>
-        <script>
-            count = 0;
-            $(".more-recipe").on("click",".more-recipe-btn", function(){
-                count++;
-                $(".more-recipe").remove();
-                $.ajax({
-                url: 'include/loadMoreRecipe.php',
-                        type: 'post',
-                        data: {
-                            "count": count,
-                            "search": $("#search").val()
-                        },
-                        success: function (response) {
-                            $('.recipe-list-container').append(response)
-                        },
-                        error: function (data) {}
-                });
-            });
-        </script>
         <div class="container recipe-list-container">
             <form method="get" class="row search">
                 <div class="input-group">
@@ -98,4 +79,23 @@
         </div>
     </body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+<script>
+    count = 0;
+    $(".more-recipe").on("click",".more-recipe-btn", function(){
+        count++;
+        $(".more-recipe").remove();
+        $.ajax({
+        url: 'include/loadMoreRecipe.php',
+                type: 'post',
+                data: {
+                    "count": count,
+                    "search": $("#search").val()
+                },
+                success: function (response) {
+                    $('.recipe-list-container').append(response)
+                },
+                error: function (data) {}
+        });
+    });
+</script>
 </html>
