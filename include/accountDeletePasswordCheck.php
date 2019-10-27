@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+$stmt = $pdo->prepare("SELECT * FROM ingredients WHERE LOWER(name) LIKE LOWER('%" . $search . "%') LIMIT 50;");
 $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->bindValue(':password', hash("sha512", $password), PDO::PARAM_STR);
 $stmt->execute();

@@ -16,7 +16,7 @@
         <div class="container recipe-list-container">
             <form method="get" class="row search">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" placeholder="Keresés" value="<?php echo trim($_GET["search"]) ?? "";?>">
+                    <input type="text" class="form-control" name="search" id="search" placeholder="Keresés" value="<?php echo trim($_GET["search"]) ?? "";?>">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit">Keresés</button>
                     </span>
@@ -82,7 +82,20 @@
 <script>
     $("#more-recipe-btn").click(function() {
         alert("Majd egyszer ez is készen lesz.");
-        // TODO: load 50 more recipe
+        count = 0;
+        count++;
+        $.ajax({
+        url: 'include/loadMoreRecipe.php',
+                type: 'post',
+                data: {
+                    "count": count,
+                    "search": $("#search").val()
+                },
+                success: function (response) {
+                    $('.recipe-list-container').append(response)
+                },
+                error: function (data) {}
+        });
     });
 </script>
 </html>
