@@ -81,7 +81,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 <script>
     count = 0;
-    $('.more-recipe-btn').live('click', function(){  
+    $(document).on('click', '.more-recipe-btn', function() {
         count++;
         $(".more-recipe").remove();
         $.ajax({
