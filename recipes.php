@@ -83,7 +83,8 @@
     count = 0;
     $("#more-recipe-btn").click(function() {
         count++;
-        $("#more-recipe").remove();
+        //$("#more-recipe").remove();
+        $("#more-recipe").css("display", "none");
         $.ajax({
         url: 'include/loadMoreRecipe.php',
                 type: 'post',
