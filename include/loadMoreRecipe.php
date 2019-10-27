@@ -25,6 +25,7 @@ foreach ($data as $row) {
     </a>
     <?php
     echo $i;
+    echo "Offset: " . $count * 50;
 }
 
 ?>
