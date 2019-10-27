@@ -95,6 +95,7 @@
                 },
                 error: function (data) {}
         });
+        $("#more-recipe").remove();
     });
 </script>
 </html>
