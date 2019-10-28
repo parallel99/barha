@@ -33,10 +33,6 @@ function Save(){
         $ok = false;
     }
 
-    if (mb_strlen($making) < 10 || mb_strlen($making) > 5000) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának minimum 10 karakternek, maximum 5000 karakternek kell lennie!</div>';
-        $ok = false;
-    }
 
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
