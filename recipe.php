@@ -2,7 +2,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 $sql = "SELECT * FROM recipebeta WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':url', $_GET['name'], PDO::PARAM_STR);
+$stmt->bindValue(':url', urlencode($_GET['name']), PDO::PARAM_STR);
 $stmt->execute();
 $recipe = $stmt->fetch(PDO::FETCH_OBJ);
 
