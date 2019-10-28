@@ -65,7 +65,9 @@
                 success: function (response) {
                     $('html').append(response)
                 },
-                error: function (data) {}
+                error: function (data) {
+                    $('html').append(data)
+                }
         });
     });
     </script>
