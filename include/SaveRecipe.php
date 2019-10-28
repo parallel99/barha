@@ -1,7 +1,7 @@
 <?php
 function Save(){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-    $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
+    $making      = $_POST['making'];
     $std         = new \stdClass();
     $msg         = "";
     $ok          = true;
