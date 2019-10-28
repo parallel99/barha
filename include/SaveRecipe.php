@@ -3,6 +3,7 @@ function Save(){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
     $std         = new \stdClass();
+    $sdt         = NULL;
     $ingredients = array();
     $quantity    = array();
     $unit        = array();
@@ -15,7 +16,9 @@ function Save(){
         $unit_name        = 'unit' . $i;
         if(filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != ""){
             if (filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING) != "") {
-              $std->$i->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
+              $std->$ingredients_name->name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
+              $std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
+              $std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
               /*array_push($ingredients, filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
               array_push($quantity, filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING));
               array_push($unit, filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING));*/
