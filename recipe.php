@@ -7,7 +7,7 @@ $row = $stmt->fetchAll();
 
 if ($stmt->rowCount() != 1) {
     include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
-    die()
+    die();
 }
 ?>
 <!DOCTYPE html>
