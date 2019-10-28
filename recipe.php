@@ -12,7 +12,7 @@
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h1><?php echo $_GET['name'] ?></h1>
+                    <h1 id="title"><?php echo $_GET['name'] ?></h1>
                     <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
@@ -52,4 +52,17 @@
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+    <script>
+    $(".favourite").click(function() {
+        $.ajax({
+        url: 'include/addToFavourite.php',
+                type: 'post',
+                data: {
+                    "name": $("#title").text()
+                },
+                success: function (response) {},
+                error: function (data) {}
+        });
+    });
+    </script>
 </html>
