@@ -33,11 +33,16 @@ function Save(){
         $ok = false;
     }
 
+    if (mb_strlen($making) < 10 || mb_strlen($making) > 5000) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának minimum 10 karakternek, maximum 5000 karakternek kell lennie!</div>';
+        $ok = false;
+    }
+
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
           $upload_time = date('Y-m-d H:i:s');
-          $url = urlencode("/"."recipe/".$recipe_name);
+          $url = urlencode($recipe_name) . "-" . date(ymdgis);
 
           $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, :uploadtime, :url)");
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);

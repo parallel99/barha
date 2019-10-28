@@ -1,21 +1,21 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-$sql = "SELECT * FROM recipebeta WHERE name = :name;";
+$sql = "SELECT * FROM recipebeta WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':name', $_GET['name'], PDO::PARAM_STR);
+$stmt->bindValue(':url', $_GET['name'], PDO::PARAM_STR);
 $stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_OBJ);
-print $_GET['name'] . "\n";
-print($row->name);
+$recipe = $stmt->fetch(PDO::FETCH_OBJ);
+
 if ($stmt->rowCount() != 1) {
     include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
     die();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHa | <?php echo($_GET['name']); ?></title>
+        <title>BárHa | <?php echo($recipe->name); ?></title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
@@ -27,7 +27,7 @@ if ($stmt->rowCount() != 1) {
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h1 id="name"><?php echo $_GET['name'] ?></h1>
+                    <h1 id="name"><?php echo $recipe->name ?></h1>
                     <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
@@ -38,6 +38,12 @@ if ($stmt->rowCount() != 1) {
                     <h3>Hozzávalók</h3>
                     <div class="ingredients">
                         <ul>
+                            <?php
+                                $ingredients = json_decode($recipe->ingredients);
+                                foreach ($ingredients as $key => $value) {
+                                    print_r($value);
+                                }
+                            ?>
                             <li>Lorem ipsum</li>
                             <li>Donec gravida</li>
                             <li>Nunc mattis malesuada</li>

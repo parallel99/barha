@@ -40,7 +40,7 @@
 
                 foreach ($data as $row) {
                     ?>
-                    <a class="media" href="recipe/<?php echo $row->name; ?>">
+                    <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
                             <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
                         </div>
@@ -64,7 +64,7 @@
 
                 foreach ($data as $row) {
                     ?>
-                    <a class="media" href="recipe/<?php echo $row->name; ?>">
+                    <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
                             <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
                         </div>
