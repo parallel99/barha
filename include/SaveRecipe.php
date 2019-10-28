@@ -1,5 +1,6 @@
 <?php
-function Save(){
+function Save($units){
+
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = $_POST['making'];
     $std         = new \stdClass();
@@ -17,10 +18,30 @@ function Save(){
               $std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
               $std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
             } else {
-              $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
+              $msg = '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
               $ok = false;
             }
         }
+    }
+
+    $letezik_unit = true;
+
+    foreach ($units as $unit) {
+        $van = false;
+        for($j = 1; $j < 26; $j++){
+          $ingredients_name = 'ingredients' . $j;
+          if($std->$ingredients_name->unit == $unit){
+              $van = true;
+          }
+        }
+        if(!$van){
+           $letezik_unit = false;
+        }
+    }
+
+    if(!$letezik_unit){
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
+        $ok = false;
     }
 
     if (mb_strlen($recipe_name) < 3 || mb_strlen($recipe_name) > 255) {
