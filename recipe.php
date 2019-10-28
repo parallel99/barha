@@ -28,7 +28,9 @@ if ($stmt->rowCount() != 1) {
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
-            echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
+            if(isset($_SESSION['user'])){
+              echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
+            }
         ?>
         <div class="container recipe-container">
             <div class="row">
