@@ -115,17 +115,17 @@ if(isset($_SESSION['user'])){
                   $ok = false;
               }
 
-              if (strlen($name) < 4 || strlen($name) > 255) {
+              if (mb_strlen($name) < 4 || mb_strlen($name) > 255) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A névnek minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
                   $ok = false;
               }
 
-              if (strlen($email) < 4 || strlen($email) > 512) {
+              if (mb_strlen($email) < 4 || mb_strlen($email) > 512) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">Az email-nek minimum 4 karakternek, maximum 512 karakternek kell lennie!</div>';
                   $ok = false;
               }
 
-              if (strlen($password1) < 4 || strlen($password1) > 255) {
+              if (mb_strlen($password1) < 4 || mb_strlen($password1) > 255) {
                   $msg .= '<div class="alert alert-danger alert-dismissible fade show">A jelszónak minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
                   $ok = false;
               }
