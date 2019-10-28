@@ -8,6 +8,8 @@ $stmt = $pdo->prepare("UPDATE users SET favourite = favourite || ':name' WHERE e
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
-$data = $stmt->fetchAll();
+$data = $stmt->fetch();
+
+print_r($data);
 
 ?>
