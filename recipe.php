@@ -41,14 +41,9 @@ if ($stmt->rowCount() != 1) {
                             <?php
                                 $ingredients = json_decode($recipe->ingredients);
                                 foreach ($ingredients as $key => $value) {
-                                    print($value->name);
+                                    echo "<li>". $value->name . "($value->quantity $value->unit)" . "</li>";
                                 }
                             ?>
-                            <li>Lorem ipsum</li>
-                            <li>Donec gravida</li>
-                            <li>Nunc mattis malesuada</li>
-                            <li>Curabitur risus nunc</li>
-                            <li>Vestibulum</li>
                         </ul>
                     </div>
                 </div>
