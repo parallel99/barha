@@ -29,7 +29,7 @@ function Save(){
     }
 
     if (mb_strlen($making) < 10 || mb_strlen($making) > 5000) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának 10 minimum karakternek, maximum 5000 karakternek kell lennie!</div>';
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának minimum 10 karakternek, maximum 5000 karakternek kell lennie!</div>';
         $ok = false;
     }
 
@@ -50,6 +50,7 @@ function Save(){
 
           $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
           $_POST = array();
+          unset($_POST);
       }
 
       return $msg;
