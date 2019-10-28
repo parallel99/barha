@@ -1,3 +1,15 @@
+<?php
+$sql = "SELECT * FROM recipebeta WHERE name = :name;";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':name', $_GET['name'], PDO::PARAM_STR);
+$stmt->execute();
+$row = $stmt->fetchAll();
+
+if ($stmt->rowCount() != 1) {
+    include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
+    die()
+}
+?>
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>

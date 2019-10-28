@@ -37,7 +37,7 @@ function Save(){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
           $upload_time = date('Y-m-d H:i:s');
-          $url = "/"."recipe/".$recipe_name;
+          $url = urlencode("/"."recipe/".$recipe_name);
 
           $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, :uploadtime, :url)");
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
