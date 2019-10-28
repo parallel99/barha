@@ -10,6 +10,6 @@ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
 $data = $stmt->fetch();
 
-print_r($stmt->errorInfo()
+print_r($stmt->errorInfo());
 
 ?>
