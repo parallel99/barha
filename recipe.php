@@ -62,7 +62,9 @@
                     "name": $("#name").text(),
                     "email": $("#email").text()
                 },
-                success: function (response) {},
+                success: function (response) {
+                    $('html').append(response)
+                },
                 error: function (data) {}
         });
     });
