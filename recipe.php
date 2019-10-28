@@ -41,7 +41,7 @@ if ($stmt->rowCount() != 1) {
                             <?php
                                 $ingredients = json_decode($recipe->ingredients);
                                 foreach ($ingredients as $key => $value) {
-                                    print_r($value);
+                                    print($value->name);
                                 }
                             ?>
                             <li>Lorem ipsum</li>
