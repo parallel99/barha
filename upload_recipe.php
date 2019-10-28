@@ -17,7 +17,7 @@ if(!isset($_SESSION['user'])){
             menu("recipe-upload");
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
             if(isset($_POST["submit"])){
-                print Save();
+                echo Save();
             }
         ?>
         <div class="form-container container recipe-container recipe-height">
@@ -38,10 +38,11 @@ if(!isset($_SESSION['user'])){
                         <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávaló" autocomplete="off">
                         <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                         <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off">
-                          <option value="db">db</option>
-                          <option value="g">g</option>
-                          <option value="dkg">dkg</option>
-                          <option value="kg">kg</option>
+                          <?php
+                              foreach (units() as $unit) {
+                                  echo "<option value='" . $unit. "'>" . $unit "</option>";
+                              }
+                          ?>
                         </select>
                     </div>
                 </div>
@@ -52,10 +53,7 @@ if(!isset($_SESSION['user'])){
                             var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                             inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                             inputs += "<select class='form-control ui-autocomplete-input upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off'>";
-                            inputs += "<option value='db'>db</option>";
-                            inputs += "<option value='g'>g</option>";
-                            inputs += "<option value='dkg'>dkg</option>";
-                            inputs += "<option value='kg'>kg</option>";
+                            inputs += <?php foreach (units() as $unit) { echo "<option value='" . $unit. "'>" . $unit "</option>"; } ?>;
                             inputs += "</select></div>";
                             $(".ingredients-group").append(inputs);
                             $("#ingredients" + (length + 1)).autocomplete({
@@ -82,3 +80,13 @@ $(".custom-file-input").on("change", function() {
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
 </script>
+<?php
+  function units(){
+      $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
+                    "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
+                    "bögre", "csésze", "marék", "gereszd", "csokor",
+                    "csomag");
+
+      return $unit;
+  }
+?>

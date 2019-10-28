@@ -1,5 +1,11 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+if(!isset($_GET['name'])){
+    header("Location: /recipes");
+    die();
+}
+
 $sql = "SELECT * FROM recipebeta WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':url', urlencode($_GET['name']), PDO::PARAM_STR);
