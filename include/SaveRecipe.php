@@ -36,13 +36,15 @@ function Save(){
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
-          $url = "'/recipe/'".$recipe_name;
+          $upload_time = date('Y-m-d H:i:s');
+          $url = "/recipe//".$recipe_name;
 
-          $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, 'CURRENT_TIMESTAMP', :url)");
+          $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, :uploadtime, :url)");
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
           $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
           $stmt->bindParam(':making', $making, PDO::PARAM_STR);
           $stmt->bindParam(':uploader', $_SESSION['user']['name'], PDO::PARAM_STR);
+          $stmt->bindParam(':uploadtime', $upload_time, PDO::PARAM_STR);
           $stmt->bindParam(':url', $url, PDO::PARAM_STR);
           $stmt->execute();
 
