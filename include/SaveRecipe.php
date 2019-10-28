@@ -2,7 +2,7 @@
 function Save(){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
-    $std         = new stdClass;
+    $std         = new \stdClass();
     $ingredients = array();
     $quantity    = array();
     $unit        = array();
