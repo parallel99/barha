@@ -2,6 +2,7 @@
 function Save(){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
+    $std         = new stdClass;
     $ingredients = array();
     $quantity    = array();
     $unit        = array();
@@ -14,9 +15,10 @@ function Save(){
         $unit_name        = 'unit' . $i;
         if(filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != ""){
             if (filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING) != "") {
-              array_push($ingredients, filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
+              $std->$i->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
+              /*array_push($ingredients, filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING));
               array_push($quantity, filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING));
-              array_push($unit, filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING));
+              array_push($unit, filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING));*/
             } else {
               $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
               $ok = false;
@@ -29,11 +31,12 @@ function Save(){
         $ok = false;
     }
 
-    print_r($ingredients);
+    print_r($std);
+    /*print_r($ingredients);
     print_r($quantity);
-    print_r($unit);
+    print_r($unit);*/
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+    /*include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
     if($ok){
           $random   = mt_rand(10, 1000);
           $ticket   = $email . $random;
@@ -56,5 +59,5 @@ function Save(){
 
           $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
           $_POST = array();
-      }
+      }*/
 }
