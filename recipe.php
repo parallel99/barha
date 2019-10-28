@@ -4,7 +4,7 @@ $sql = "SELECT * FROM recipebeta WHERE name = :name;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':name', $_GET['name'], PDO::PARAM_STR);
 $stmt->execute();
-$row = $stmt->fetchAll();
+$row = $stmt->fetch(PDO::FETCH_OBJ);
 print $_GET['name'] . "\n";
 print($row->name);
 if ($stmt->rowCount() != 1) {
