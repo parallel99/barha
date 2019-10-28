@@ -10,6 +10,10 @@ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
 $data = $stmt->fetch();
 
+print_r($stmt);
+
+echo "<br>" . $stmt->rowCount() . "<br>";
+
 print_r($data);
 
 ?>
