@@ -38,7 +38,7 @@ function Save(){
           $ingredients = json_encode($std);
           $url = "'/recipe/'".$recipe_name;
 
-          $stmt = $pdo->prepare("INSERT INTO recipe-beta(name, ingredients, making, uploader, upload-time, url) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url)");
+          $stmt = $pdo->prepare("INSERT INTO recipeBeta(name, ingredients, making, uploader, uploadTime, url) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url)");
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
           $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
           $stmt->bindParam(':making', $making, PDO::PARAM_STR);
