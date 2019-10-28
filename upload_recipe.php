@@ -53,7 +53,7 @@ if(!isset($_SESSION['user'])){
                             var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                             inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                             inputs += "<select class='form-control ui-autocomplete-input upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off'>";
-                            <?php foreach (units() as $unit) { echo "inputs +=" . "\"\t\t\t<option value='" . $unit. "'>" . $unit . "</option>\";\r\n"; } ?>
+                            <?php foreach (units() as $unit) { echo "\t\t\t\t\tinputs +=" . "\"<option value='" . $unit. "'>" . $unit . "</option>\";\r\n"; } ?>
                             inputs += "</select></div>";
                             $(".ingredients-group").append(inputs);
                             $("#ingredients" + (length + 1)).autocomplete({
