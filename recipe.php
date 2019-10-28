@@ -8,11 +8,12 @@
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
+            echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
         ?>
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h1 id="title"><?php echo $_GET['name'] ?></h1>
+                    <h1 id="name"><?php echo $_GET['name'] ?></h1>
                     <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
@@ -58,7 +59,8 @@
         url: 'include/addToFavourite.php',
                 type: 'post',
                 data: {
-                    "name": $("#title").text()
+                    "name": $("#name").text(),
+                    "email": $("#email").text()
                 },
                 success: function (response) {},
                 error: function (data) {}
