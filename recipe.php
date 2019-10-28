@@ -41,7 +41,7 @@ if ($stmt->rowCount() != 1) {
                             <?php
                                 $ingredients = json_decode($recipe->ingredients);
                                 foreach ($ingredients as $key => $value) {
-                                    echo "<li>". $value->name . "($value->quantity $value->unit)" . "</li>";
+                                    echo "<li>". $value->quantity . " " . $value->unit ." ". $value->name . "</li>";
                                 }
                             ?>
                         </ul>
@@ -54,15 +54,9 @@ if ($stmt->rowCount() != 1) {
             <div class="row">
                 <div class="recipe">
                     <h3>Elkészítés</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper sem nec purus condimentum facilisis. Ut sollicitudin turpis at dolor gravida, vitae aliquam lorem accumsan. Aenean efficitur mollis convallis. Nam fringilla ligula arcu, quis interdum justo blandit non. Donec semper, ipsum eu malesuada ornare, turpis quam volutpat turpis, id iaculis diam nulla vel lectus. Vivamus suscipit venenatis orci sit amet vestibulum. Mauris semper sollicitudin orci, eget tincidunt mi facilisis a. Quisque vitae ultricies arcu. Sed at lacinia sem, non consectetur risus.</p>
-
-                    <p>Donec gravida, magna in aliquam facilisis, enim dolor tempus ex, a sagittis elit erat vitae magna. Proin volutpat feugiat augue nec tempus. Fusce faucibus elementum elit vitae aliquam. Fusce ultricies eu dolor luctus suscipit. Aliquam vel iaculis lacus, sit amet laoreet nibh. Duis tristique lectus sed justo blandit, in feugiat nisi porta. Nunc vel pellentesque velit. Pellentesque condimentum nisi sed ex commodo, quis commodo ligula euismod. Sed accumsan eu mi eu tincidunt. Curabitur risus nunc, volutpat ultricies consectetur eu, mollis accumsan neque. Phasellus iaculis auctor orci in congue. Sed laoreet tortor non dui pretium viverra. Nunc at varius eros. Phasellus posuere diam eget lectus ultrices elementum.</p>
-
-                    <p>Nunc mattis malesuada iaculis. Duis facilisis ullamcorper ante et iaculis. Sed fringilla dui a erat aliquam, ac posuere enim scelerisque. Pellentesque vitae dolor quis justo rutrum elementum id quis leo. Fusce blandit velit dui, et auctor turpis malesuada ac. Nullam sagittis id nisl a sollicitudin. In hac habitasse platea dictumst. Phasellus quis sodales ex. Ut nisl leo, fringilla sollicitudin neque id, venenatis egestas diam. Cras eget iaculis tellus. Phasellus porta placerat diam. Nam consectetur cursus malesuada. Ut molestie est quam, eu hendrerit enim pellentesque at. Integer ultricies sem a congue facilisis.</p>
-
-                    <p>Curabitur risus nunc, rutrum at quam vitae, mollis gravida massa. Integer augue arcu, dictum id imperdiet eget, imperdiet in sapien. Proin ultrices fringilla orci, finibus ultrices mi. Morbi elit metus, fringilla sit amet semper vel, consequat euismod nisi. Aliquam sed augue et nisi pretium ultricies. Duis ipsum diam, ullamcorper eu egestas ac, porta sed nisl. Integer molestie felis non ullamcorper blandit. Nulla lectus ipsum, aliquet non nisi non, aliquet bibendum nunc. Nulla vel dapibus nulla. Nullam molestie libero quis tellus dapibus, a tempus ante laoreet. Phasellus urna justo, tristique ullamcorper ipsum vel, lacinia faucibus libero. Nulla eget magna sit amet nunc bibendum tempus. Etiam in orci in enim tempor efficitur nec id mauris. Vivamus et varius purus, et consequat neque.</p>
-
-                    <p>Vestibulum suscipit ornare nibh, non dignissim augue hendrerit sodales. Vestibulum aliquet porta nibh, et hendrerit est vulputate non. Sed tincidunt luctus blandit. Vestibulum maximus malesuada urna, nec pellentesque augue tincidunt vitae. Sed in orci nibh. Donec et sem id lacus porta tempor sed nec mauris. Curabitur tincidunt tristique orci, id fringilla libero consectetur vel. Morbi maximus erat ex, pretium euismod ex fringilla in. Nunc sit amet tristique mauris. Morbi et odio tristique, feugiat velit nec, rhoncus augue.</p>
+                    <?php
+                      echo $recipe->making;
+                    ?>
                 </div>
             </div>
         </div>
