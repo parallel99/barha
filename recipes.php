@@ -29,7 +29,7 @@
             if (isset($_GET['submit']) || isset($_GET['search'])) {
                 $search = trim($_GET['search']);
 
-                $sql = "SELECT * FROM recipebeta WHERE LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime LIMIT 50;";
+                $sql = "SELECT * FROM recipebeta WHERE LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime DESC LIMIT 50;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
@@ -57,7 +57,7 @@
                 }
 
             } else {
-                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime;";
+                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
