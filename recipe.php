@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 $sql = "SELECT * FROM recipebeta WHERE name = :name;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':name', $_GET['name'], PDO::PARAM_STR);
