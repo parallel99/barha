@@ -74,7 +74,7 @@ if(!isset($_SESSION['user'])){
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
             if(isset($_POST["submit"])){
-              Save();
+              print Save();
             }
         ?>
     </body>

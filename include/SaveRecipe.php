@@ -28,33 +28,27 @@ function Save(){
         $ok = false;
     }
 
-    print json_encode($std);
-    /*print_r($ingredients);
-    print_r($quantity);
-    print_r($unit);*/
+    if (mb_strlen($making) < 10 || mb_strlen($making) > 5000) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának 10 minimum karakternek, maximum 5000 karakternek kell lennie!</div>';
+        $ok = false;
+    }
 
-    /*include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
     if($ok){
-          $random   = mt_rand(10, 1000);
-          $ticket   = $email . $random;
-          $password = hash('sha512', $password1);
-          $token    = hash('sha512', $ticket);
-          $reg_time = date('Y-m-d H:i:s');
+          include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+          $ingredients = json_encode($std);
+          $url = "'/recipe/'".$recipe_name;
 
-          $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time) VALUES (:name, :email, :password, :token, '0', :reg_time)");
-          $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-          $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-          $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-          $stmt->bindParam(':token', $token, PDO::PARAM_STR);
-          $stmt->bindParam(':reg_time', $reg_time, PDO::PARAM_STR);
+          $stmt = $pdo->prepare("INSERT INTO recipe-beta(name, ingredients, making, uploader, upload-time, url) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url)");
+          $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
+          $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
+          $stmt->bindParam(':making', $making, PDO::PARAM_STR);
+          $stmt->bindParam(':uploader', $_SESSION['user']['name'], PDO::PARAM_STR);
+          $stmt->bindParam(':url', $url, PDO::PARAM_STR);
           $stmt->execute();
 
-          require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
-          require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mailconfirm.php');
-          $Mail = new Mail($name, $email, "E-mail megerősítés", confirm($name, $token));
-          $Mail->Send();
-
-          $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
+          $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
           $_POST = array();
-      }*/
+      }
+
+      return $msg;
 }
