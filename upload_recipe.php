@@ -15,11 +15,12 @@ if(!isset($_SESSION['user'])){
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("recipe-upload");
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
+            if(isset($_POST["submit"])){
+                print Save();
+            }
         ?>
         <div class="form-container container recipe-container recipe-height">
-          <?php
-
-          ?>
             <form method="post">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
@@ -71,12 +72,6 @@ if(!isset($_SESSION['user'])){
                 <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>
         </div>
-        <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
-            if(isset($_POST["submit"])){
-              print Save();
-            }
-        ?>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
