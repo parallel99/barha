@@ -39,7 +39,9 @@ if(!isset($_SESSION['user'])){
                         <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                         <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off">
                           <?php
-                              foreach (units() as $unit) {
+                              $units = array();
+                              array_push($units, units());
+                              foreach ($units as $unit) {
                                   echo "<option value='" . $unit. "'>" . $unit "</option>";
                               }
                           ?>
@@ -53,7 +55,7 @@ if(!isset($_SESSION['user'])){
                             var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                             inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                             inputs += "<select class='form-control ui-autocomplete-input upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off'>";
-                            inputs += <?php foreach (units() as $unit) { echo "<option value='" . $unit. "'>" . $unit "</option>"; } ?>;
+                            inputs += <?php foreach ($units as $unit) { echo "<option value='" . $unit. "'>" . $unit "</option>"; } ?>;
                             inputs += "</select></div>";
                             $(".ingredients-group").append(inputs);
                             $("#ingredients" + (length + 1)).autocomplete({
