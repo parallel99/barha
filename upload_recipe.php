@@ -44,6 +44,11 @@ if(!isset($_SESSION['user'])){
                               }
                           ?>
                         </select>
+                        <select class="selectpicker" data-live-search="true">
+                          <option data-tokens="ketchup mustard">valami</option>
+                          <option data-tokens="mustard">123</option>
+                          <option data-tokens="frosting">Áskál</option>
+                        </select>
                     </div>
                 </div>
                 <script>
