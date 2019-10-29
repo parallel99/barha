@@ -37,10 +37,9 @@
                 if ($stmt->rowCount() == 0) {
                     echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
                 }
-
-                $time = preg_split("/:/", $row->makingtime);
-
+              
                 foreach ($data as $row) {
+                    $time = preg_split("/:/", $row->makingtime);
                     ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
