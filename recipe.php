@@ -77,7 +77,7 @@ if ($stmt->rowCount() != 1) {
         email = $("#email").text();
 
         $.ajax({
-        url: 'include/addToFavourite.php',
+        url: 'include/loadMoreRecipe.php',
                 type: 'post',
                 data: {
                     "name": name,
