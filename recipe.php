@@ -43,20 +43,13 @@ if ($stmt->rowCount() != 1) {
                         $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
                         $stmt->execute();
                         $data = $stmt->fetch();
-
-                        print_r($data);
-
-                        $rows = $stmt->rowCount();
-
+                        
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
                         } else {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
-                            $rows++;
                         }
-
-                        echo "<h6 id=\"rows\">" . $rows . "</h6>";
                     }
                     ?>
                     <hr>
