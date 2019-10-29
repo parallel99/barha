@@ -6,7 +6,7 @@ if(!isset($_GET['name'])){
     die();
 }
 
-/*$sql = "SELECT * FROM recipebeta WHERE url = :url;";
+$sql = "SELECT * FROM recipebeta WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':url', urlencode($_GET['name']), PDO::PARAM_STR);
 $stmt->execute();
@@ -15,7 +15,7 @@ $recipe = $stmt->fetch(PDO::FETCH_OBJ);
 if ($stmt->rowCount() != 1) {
     include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
     die();
-}*/
+}
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +75,8 @@ if ($stmt->rowCount() != 1) {
 
         name = $("#name").text();
         email = $("#email").text();
+
+        //// TODO: kitalálni hogy ez a szar miert nem mukodik
 
         $.ajax({
         url: 'include/addToFavourite.php',
