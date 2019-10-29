@@ -34,8 +34,9 @@ function Save($units){
                 $unit_number = $unit_number+1;
                 print "hello";
               }
-              print $input_unit->$ingredients_name->unit;
+
           }
+          print $input_unit->$ingredients_name->unit;
         }
     }
 
