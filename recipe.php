@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-if(!isset($_GET['name'])){
+if (!isset($_GET['name'])) {
     header("Location: /recipes");
     die();
 }
@@ -28,18 +28,35 @@ if ($stmt->rowCount() != 1) {
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
-            if(isset($_SESSION['user'])){
-              echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
+            if (isset($_SESSION['user'])) {
+                echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
             }
         ?>
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
                     <h1 id="name"><?php echo $recipe->name ?></h1>
-                    <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
-                        echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                        $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
+                        $stmt->execute();
+                        $data = $stmt->fetch();
+
+                        print_r($data);
+
+                        $rows = $stmt->rowCount();
+
+                        echo "<hr>";
+                        if ($stmt->rowCount() == 0) {
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
+                            $rows++;
+                        } else {
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
+                        }
+
+                        echo "<h6 id=\"rows\">" . $rows . "</h6>";
                     }
                     ?>
                     <hr>
@@ -63,7 +80,7 @@ if ($stmt->rowCount() != 1) {
                 <div class="recipe">
                     <h3>Elkészítés</h3>
                     <?php
-                      echo $recipe->making;
+                      echo "<p>" . $recipe->making . "</p>";
                     ?>
                 </div>
             </div>
@@ -72,24 +89,29 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
+        alert($('#rows').text());
+        if ($('#rows').text() == 0) {
+            $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
+            $(".favourite-text").text('Hozzáadva a kedvencekhez');
 
-        name = $("#name").text();
-        email = $("#email").text();
+            name = $("#name").text();
+            email = $("#email").text();
 
-        // TODO: kitatalni hogy miert nem mukodik ez a szar
-
-        $.ajax({
-        url: '../include/addToFavourite.php',
-                type: 'post',
-                data: {
-                    "name": name,
-                    "email": email
-                },
-                success: function (response) {
-                    $('.recipe-container').append(response)
-                },
-                error: function (data) {}
-        });
+            $.ajax({
+            url: '../include/addToFavourite.php',
+                    type: 'post',
+                    data: {
+                        "name": name,
+                        "email": email
+                    },
+                    success: function (response) {
+                        $('.recipe-container').append(response)
+                    },
+                    error: function (data) {}
+            });
+        } else {
+            alert('ki kene szedni');
+        }
     });
     </script>
 </html>
