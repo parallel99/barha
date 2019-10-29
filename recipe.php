@@ -85,8 +85,8 @@ if ($stmt->rowCount() != 1) {
                     "name": name,
                     "email": email
                 },
-                success: function (response) {
-                    $('html').append(response)
+                success: function (responseNa) {
+                    $('.recipe-container').append(responseNa)
                 },
                 error: function (data) {}
         });
