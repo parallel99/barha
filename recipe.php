@@ -87,6 +87,8 @@ if ($stmt->rowCount() != 1) {
     <script>
     $(".favourite").click(function() {
 
+        $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
+
         name = $("#name").text();
         email = $("#email").text();
 
