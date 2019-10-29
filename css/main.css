@@ -147,6 +147,12 @@ textarea {
 	max-width: 600px;
 }
 
+.time-input{
+	cursor: pointer;
+	width: 100px;
+	text-align: center;
+}
+
 .form-container {
 	align-items: center;
 	min-height: calc(100vh - 56px);

@@ -56,7 +56,6 @@ function Save($units){
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
-          $upload_time = date('Y-m-d H:i:s');
           $url = urlencode($recipe_name) . "-" . date('ymdgis');
 
           $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url)");
@@ -64,7 +63,6 @@ function Save($units){
           $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
           $stmt->bindParam(':making', $making, PDO::PARAM_STR);
           $stmt->bindParam(':uploader', $_SESSION['user']['name'], PDO::PARAM_STR);
-          //$stmt->bindParam(':uploadtime', $upload_time, PDO::PARAM_STR);
           $stmt->bindParam(':url', $url, PDO::PARAM_STR);
           $stmt->execute();
 

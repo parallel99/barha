@@ -32,6 +32,10 @@ if(!isset($_SESSION['user'])){
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
+                <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                    <label for="makingtime">Elkészítési idő</label>
+                    <input required type="time" value="00:00" name="makingtime" class="form-control time-input">
+                </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
                     <div class="form-group">
@@ -80,6 +84,8 @@ $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
+// Az elkészítési idő ablak bezárása
+$('.clockpicker').clockpicker();
 </script>
 <?php
   function units(){
