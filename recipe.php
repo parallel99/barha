@@ -44,7 +44,7 @@ if ($stmt->rowCount() != 1) {
 
                     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                    $stmt = $pdo->prepare("SELECT * FROM users WHERE '" . $recipe->name . "' = ANY(favourite);");
+                    $stmt = $pdo->prepare("SELECT * FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
                     $stmt->execute();
                     $data = $stmt->fetch();
 
