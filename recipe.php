@@ -38,18 +38,19 @@ if ($stmt->rowCount() != 1) {
                     <h1 id="name"><?php echo $recipe->name ?></h1>
                     <hr>
                     <?php
-                    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                    if (isset($_SESSION['user'])) {
+                        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                    $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
-                    $stmt->execute();
-                    $data = $stmt->fetch();
+                        $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
+                        $stmt->execute();
+                        $data = $stmt->fetch();
 
-                    if ($stmt->rowCount() <= 1) {
-                        echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
-                    } else {
-                        echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        if ($stmt->rowCount() <= 1) {
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
+                        } else {
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        }
                     }
-
                     ?>
                     <hr>
                     <h3>Hozzávalók</h3>
