@@ -413,6 +413,9 @@ textarea {
 .recipe-container .favourite:hover .favourite-star {
 	background-image: url("/images/favourite2.svg");
 }
+.recipe-container .favourite .active .favourite-star {
+	background-image: url("/images/favourite2.svg");
+}
 
 .recipe-container .favourite h5 {
     display: inline-block;

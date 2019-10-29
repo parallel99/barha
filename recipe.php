@@ -38,15 +38,17 @@ if ($stmt->rowCount() != 1) {
                     <h1 id="name"><?php echo $recipe->name ?></h1>
                     <hr>
                     <?php
-                    if (isset($_SESSION['user'])) {
-                        echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
-                    }
-
                     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
                     $stmt = $pdo->prepare("SELECT * FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
                     $stmt->execute();
                     $data = $stmt->fetch();
+
+                    if ($stmt->rowCount() <= 1) {
+                        echo "<div class=\"favourite\"><div class=\"favourite-star active\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                    } else {
+                        echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                    }
 
                     print_r($data);
 
