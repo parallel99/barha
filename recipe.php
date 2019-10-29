@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-if(!isset($_GET['name'])){
+if (!isset($_GET['name'])) {
     header("Location: /recipes");
     die();
 }
@@ -28,8 +28,8 @@ if ($stmt->rowCount() != 1) {
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("none");
-            if(isset($_SESSION['user'])){
-              echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
+            if (isset($_SESSION['user'])) {
+                echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
             }
         ?>
         <div class="container recipe-container">
@@ -49,10 +49,10 @@ if ($stmt->rowCount() != 1) {
                         echo $stmt->rowCount();
 
                         echo "<hr>";
-                        if ($stmt->rowCount() <= 1) {
-                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
-                        } else {
+                        if ($stmt->rowCount() == 0) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        } else {
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
                         }
                     }
                     ?>
