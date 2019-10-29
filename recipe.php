@@ -46,6 +46,8 @@ if ($stmt->rowCount() != 1) {
 
                         print_r($data);
 
+                        echo $stmt->rowCount();
+
                         echo "<hr>";
                         if ($stmt->rowCount() <= 1) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
