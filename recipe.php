@@ -76,7 +76,7 @@ if ($stmt->rowCount() != 1) {
         name = $("#name").text();
         email = $("#email").text();
 
-        //// TODO: kitalálni hogy ez a szar miert nem mukodik
+        // TODO: kitatalni hogy miert nem mukodik ez a szar
 
         $.ajax({
         url: 'include/addToFavourite.php',
