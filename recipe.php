@@ -79,16 +79,10 @@ if ($stmt->rowCount() != 1) {
         $.ajax({
         url: 'include/loadMoreRecipe.php',
                 type: 'post',
-                data: {
-                    "name": name,
-                    "email": email
-                },
                 success: function (response) {
                     $('.recipe-container').append(response)
                 },
-                error: function (data) {
-                    alert(data);
-                }
+                error: function (data) {}
         });
         /*$.ajax({
         url: 'include/loadMoreRecipe.php',
