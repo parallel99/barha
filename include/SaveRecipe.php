@@ -28,9 +28,9 @@ function Save($units){
 
     foreach ($units as $unit) {
         $van = false;
-        for($j = 1; $j < 26; $j++){
+        for($std as $input_unit){
           $ingredients_name = 'ingredients' . $j;
-          if($std->$ingredients_name->unit == $unit){
+          if($input_unit->$ingredients_name->unit == $unit){
               $van = true;
           }
         }
