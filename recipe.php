@@ -51,9 +51,9 @@ if ($stmt->rowCount() != 1) {
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
-                            $rows++;
                         } else {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
+                            $rows++;
                         }
 
                         echo "<h6 id=\"rows\">" . $rows . "</h6>";
@@ -89,8 +89,7 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
-        alert($('#rows').text());
-        if ($('#rows').text() == 0) {
+        if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
             $(".favourite-text").text('Hozzáadva a kedvencekhez');
 
