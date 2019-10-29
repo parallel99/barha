@@ -45,9 +45,9 @@ if ($stmt->rowCount() != 1) {
                     $data = $stmt->fetch();
 
                     if ($stmt->rowCount() <= 1) {
-                        echo "<div class=\"favourite\"><div class=\"favourite-star active\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        echo "<div class=\"favourite\"><div style=\"background-image: url(\"/images/favourite2.svg\");\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
                     } else {
-                        echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                        echo "<div class=\"favourite\"><div style=\"background-image: url(\"/images/favourite.svg\");\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
                     }
 
                     print_r($data);
