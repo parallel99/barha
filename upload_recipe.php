@@ -32,9 +32,10 @@ if(!isset($_SESSION['user'])){
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
-                <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                    <label for="makingtime">Elkészítési idő</label>
-                    <input required type="time" value="00:00" name="makingtime" class="form-control time-input">
+                <div class="form-group">
+                  <label for="makingtime">Elkészítési idő</label>
+                  <input required type="time" value="00:00" name="makingtime" class="form-control time-input">
+                </div>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">

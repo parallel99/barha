@@ -3,7 +3,9 @@ function Save($units){
 
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = $_POST['making'];
-    $std         = new \stdClass();
+    $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
+    print $making_time;
+    /*$std         = new \stdClass();
     $msg         = "";
     $ok          = true;
 
@@ -71,5 +73,5 @@ function Save($units){
           unset($_POST);
       }
 
-      return $msg;
+      return $msg;*/
 }
