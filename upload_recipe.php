@@ -32,6 +32,7 @@ if(!isset($_SESSION['user'])){
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
+                <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
                     <div class="form-group">
                         <label class="newLine">Hozzávalók</label>
