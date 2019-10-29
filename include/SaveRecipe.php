@@ -29,14 +29,12 @@ function Save($units){
     foreach ($units as $unit) {
         for($i = 1; $i < 26; $i++){
           $ingredients_name = 'ingredients' . $i;
-          if(isset($input_unit->$ingredients_name->unit)){
-              if($input_unit->$ingredients_name->unit == $unit){
+          if(isset($std->$ingredients_name->unit)){
+              if($std->$ingredients_name->unit == $unit){
                 $unit_number = $unit_number+1;
                 print "hello";
               }
-
           }
-          print $input_unit->$ingredients_name->unit;
         }
     }
 
