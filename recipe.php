@@ -44,14 +44,14 @@ if ($stmt->rowCount() != 1) {
                         $stmt->execute();
                         $data = $stmt->fetch();
 
+                        print_r($data);
+
                         echo "<hr>";
                         if ($stmt->rowCount() <= 1) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
                         } else {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
                         }
-
-                        print_r($data);
                     }
                     ?>
                     <hr>
