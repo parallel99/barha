@@ -40,6 +40,16 @@
 
                 foreach ($data as $row) {
                     $time = preg_split("/:/", $row->makingtime);
+                    if(((int) $time[0]) != 0){
+                      $hour = ((int) $time[0]) . " óra";
+                    } else {
+                      $hour = "";
+                    }
+                    if(((int) $time[1]) != 0){
+                      $minute = ((int) $time[1]) . " perc";
+                    } else {
+                      $minute = "";
+                    }
                     ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
@@ -47,7 +57,11 @@
                         </div>
                         <div class="media-body">
                             <h3><?php echo $row->name; ?></h3>
-                            <h6>Elkészítési idő: <strong><?php echo (int) $time[0]; ?> óra <?php echo (int) $time[1]; ?> perc</strong></h6>
+                            <h6>Elkészítési idő:
+                              <strong>
+                                <?php echo $hour, " ", $minute; ?>
+                              </strong>
+                            </h6>
                         </div>
                     </a>
                     <?php
