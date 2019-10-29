@@ -89,12 +89,12 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
+        name = $("#name").text();
+        email = $("#email").text();
         if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
+
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
             $(".favourite-text").text('Hozzáadva a kedvencekhez');
-
-            name = $("#name").text();
-            email = $("#email").text();
 
             $.ajax({
             url: '../include/addToFavourite.php',
@@ -103,13 +103,24 @@ if ($stmt->rowCount() != 1) {
                         "name": name,
                         "email": email
                     },
-                    success: function (response) {
-                        $('.recipe-container').append(response)
-                    },
+                    success: function (response) {},
                     error: function (data) {}
             });
         } else {
-            alert('ki kene szedni');
+
+            $(".favourite-star").css('background-image', 'url(\'/images/favourite.svg\')');
+            $(".favourite-text").text('Hozzáadás a kedvencekhez');
+
+            $.ajax({
+            url: '../include/removeFromFavourite.php',
+                    type: 'post',
+                    data: {
+                        "name": name,
+                        "email": email
+                    },
+                    success: function (response) {},
+                    error: function (data) {}
+            });
         }
     });
     </script>
