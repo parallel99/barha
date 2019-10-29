@@ -73,7 +73,7 @@ if ($stmt->rowCount() != 1) {
                 <div class="recipe">
                     <h3>Elkészítés</h3>
                     <?php
-                      echo $recipe->making;
+                      echo "<p>" . $recipe->making . "</p>";
                     ?>
                 </div>
             </div>
