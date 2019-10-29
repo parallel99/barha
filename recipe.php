@@ -86,7 +86,9 @@ if ($stmt->rowCount() != 1) {
                 success: function (response) {
                     $('.recipe-container').append(response)
                 },
-                error: function (data) {}
+                error: function (data) {
+                    alert(data);
+                }
         });
         /*$.ajax({
         url: 'include/loadMoreRecipe.php',
