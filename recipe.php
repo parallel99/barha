@@ -79,7 +79,7 @@ if ($stmt->rowCount() != 1) {
         // TODO: kitatalni hogy miert nem mukodik ez a szar
 
         $.ajax({
-        url: 'https://barha.herokuapp.com/include/addToFavourite.php',
+        url: '../include/addToFavourite.php',
                 type: 'post',
                 data: {
                     "name": name,
