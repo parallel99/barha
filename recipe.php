@@ -41,6 +41,15 @@ if ($stmt->rowCount() != 1) {
                     if (isset($_SESSION['user'])) {
                         echo "<div class=\"favourite\"><div class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
                     }
+
+                    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                    $stmt = $pdo->prepare("SELECT * FROM users WHERE '" . $recipe->name . "' = ANY(favourite);");
+                    $stmt->execute();
+                    $data = $stmt->fetch();
+
+                    print_r($data);
+
                     ?>
                     <hr>
                     <h3>Hozzávalók</h3>
@@ -75,8 +84,6 @@ if ($stmt->rowCount() != 1) {
 
         name = $("#name").text();
         email = $("#email").text();
-
-        // TODO: kitatalni hogy miert nem mukodik ez a szar
 
         $.ajax({
         url: '../include/addToFavourite.php',
