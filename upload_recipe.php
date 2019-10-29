@@ -36,7 +36,6 @@ if(!isset($_SESSION['user'])){
                   <label for="makingtime">Elkészítési idő</label>
                   <input required type="time" value="00:00" name="makingtime" class="form-control time-input">
                 </div>
-                </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
                     <div class="form-group">
