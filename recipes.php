@@ -38,6 +38,8 @@
                     echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
                 }
 
+                $time = preg_split("/:/", $row->makingtime);
+
                 foreach ($data as $row) {
                     ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
@@ -46,7 +48,7 @@
                         </div>
                         <div class="media-body">
                             <h3><?php echo $row->name; ?></h3>
-                            <h6>Elkészítési idő: <strong><?php echo rand(10, 60); ?> perc</strong></h6>
+                            <h6>Elkészítési idő: <strong><?php echo $time[0]; ?> óra <?php echo $time[1]; ?> perc</strong></h6>
                         </div>
                     </a>
                     <?php

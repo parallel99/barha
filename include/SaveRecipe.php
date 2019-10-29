@@ -4,8 +4,8 @@ function Save($units){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = $_POST['making'];
     $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
-    print $making_time;
-    /*$std         = new \stdClass();
+    $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $making_time);
+    $std         = new \stdClass();
     $msg         = "";
     $ok          = true;
 
@@ -54,18 +54,23 @@ function Save($units){
         $ok = false;
     }
 
+    if(!$time_ok){
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Rossz az elkészítési idő formátuma!</div>';
+        $ok = false;
+    }
 
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
           $url = urlencode($recipe_name) . "-" . date('ymdgis');
 
-          $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url)");
+          $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
           $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
           $stmt->bindParam(':making', $making, PDO::PARAM_STR);
           $stmt->bindParam(':uploader', $_SESSION['user']['name'], PDO::PARAM_STR);
           $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+          $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
           $stmt->execute();
 
           $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
@@ -73,5 +78,5 @@ function Save($units){
           unset($_POST);
       }
 
-      return $msg;*/
+      return $msg;
 }
