@@ -50,6 +50,8 @@ if ($stmt->rowCount() != 1) {
                         } else {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
                         }
+
+                        print_r($data);
                     }
                     ?>
                     <hr>
