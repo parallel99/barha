@@ -77,22 +77,26 @@ if ($stmt->rowCount() != 1) {
         email = $("#email").text();
 
         $.ajax({
-        url: 'include/loadMoreRecipe.php',
+        url: 'include/accountDeletePasswordCheck.php',
                 type: 'post',
+                data: {
+                    "password": name,
+                    "email": email
+                },
                 success: function (response) {
                     $('.recipe-container').append(response)
                 },
                 error: function (data) {}
         });
         /*$.ajax({
-        url: 'include/loadMoreRecipe.php',
+        url: 'include/accountDeletePasswordCheck.php',
                 type: 'post',
                 data: {
-                    "count": count,
-                    "search": $("#search").val()
+                    "email": $('#email').text(),
+                    "password": $("#passwordDA").val()
                 },
                 success: function (response) {
-                    $('.recipes').append(response)
+                    $('html').append(response)
                 },
                 error: function (data) {}
         });*/
