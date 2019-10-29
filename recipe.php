@@ -76,8 +76,6 @@ if ($stmt->rowCount() != 1) {
         name = $("#name").text();
         email = $("#email").text();
 
-        alert(name + "\n" + email);
-
         $.ajax({
         url: 'include/addToFavourite.php',
                 type: 'post',
@@ -85,8 +83,8 @@ if ($stmt->rowCount() != 1) {
                     "name": name,
                     "email": email
                 },
-                success: function (responseNa) {
-                    $('.recipe-container').append(responseNa)
+                success: function (response) {
+                    $('.recipe-container').append(response)
                 },
                 error: function (data) {}
         });
