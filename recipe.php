@@ -88,6 +88,7 @@ if ($stmt->rowCount() != 1) {
     $(".favourite").click(function() {
 
         $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
+        $(".favourite-star h5").text('Hozzáadva a kedvencekhez');
 
         name = $("#name").text();
         email = $("#email").text();
