@@ -50,9 +50,9 @@ if ($stmt->rowCount() != 1) {
 
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
-                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5>Hozzáadás a kedvencekhez</h5></div>";
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
                         } else {
-                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
                         }
                     }
                     ?>
@@ -88,7 +88,7 @@ if ($stmt->rowCount() != 1) {
     $(".favourite").click(function() {
 
         $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
-        $(".favourite-star h5").text('Hozzáadva a kedvencekhez');
+        $(".favourite-text").text('Hozzáadva a kedvencekhez');
 
         name = $("#name").text();
         email = $("#email").text();
