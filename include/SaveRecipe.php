@@ -32,19 +32,15 @@ function Save($units){
           if(isset($std->$ingredients_name->unit)){
               if($std->$ingredients_name->unit == $unit){
                 $unit_number = $unit_number+1;
-                print "hello";
               }
           }
         }
     }
 
-    print $unit_number;
-    print count((array) $std);
-
-    /*if(count((array) $std)){
+    if(count((array) $std) != $unit_number){
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
         $ok = false;
-    }*/
+    }
 
     if (mb_strlen($recipe_name) < 3 || mb_strlen($recipe_name) > 255) {
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept nevének minimum 3 karakternek, maximum 255 karakternek kell lennie!</div>';
