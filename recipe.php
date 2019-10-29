@@ -6,7 +6,7 @@ if(!isset($_GET['name'])){
     die();
 }
 
-$sql = "SELECT * FROM recipebeta WHERE url = :url;";
+/*$sql = "SELECT * FROM recipebeta WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':url', urlencode($_GET['name']), PDO::PARAM_STR);
 $stmt->execute();
@@ -15,7 +15,7 @@ $recipe = $stmt->fetch(PDO::FETCH_OBJ);
 if ($stmt->rowCount() != 1) {
     include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
     die();
-}
+}*/
 
 ?>
 <!DOCTYPE html>
@@ -77,10 +77,10 @@ if ($stmt->rowCount() != 1) {
         email = $("#email").text();
 
         $.ajax({
-        url: 'include/accountDeletePasswordCheck.php',
+        url: 'include/addToFavourite.php',
                 type: 'post',
                 data: {
-                    "password": name,
+                    "name": name,
                     "email": email
                 },
                 success: function (response) {
@@ -88,18 +88,6 @@ if ($stmt->rowCount() != 1) {
                 },
                 error: function (data) {}
         });
-        /*$.ajax({
-        url: 'include/accountDeletePasswordCheck.php',
-                type: 'post',
-                data: {
-                    "email": $('#email').text(),
-                    "password": $("#passwordDA").val()
-                },
-                success: function (response) {
-                    $('html').append(response)
-                },
-                error: function (data) {}
-        });*/
     });
     </script>
 </html>
