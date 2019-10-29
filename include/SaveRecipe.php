@@ -24,27 +24,26 @@ function Save($units){
         }
     }
 
-    $letezik_unit = true;
+    $unit_number = 0;
 
     foreach ($units as $unit) {
-        $van = false;
         for($i = 1; $i < 26; $i++){
           $ingredients_name = 'ingredients' . $i;
           if(isset($input_unit->$ingredients_name->unit)){
               if($input_unit->$ingredients_name->unit == $unit){
-                $van = true;
+                $unit_number++;
               }
           }
         }
-        if(!$van){
-           $letezik_unit = false;
-        }
     }
 
-    if(!$letezik_unit){
+    print $unit_number;
+    print count((array) $std);
+
+    /*if(count((array) $std)){
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
         $ok = false;
-    }
+    }*/
 
     if (mb_strlen($recipe_name) < 3 || mb_strlen($recipe_name) > 255) {
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept nevének minimum 3 karakternek, maximum 255 karakternek kell lennie!</div>';
