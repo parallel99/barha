@@ -36,7 +36,6 @@ if ($stmt->rowCount() != 1) {
             <div class="row">
                 <div class="col-sm-5">
                     <h1 id="name"><?php echo $recipe->name ?></h1>
-                    <hr>
                     <?php
                     if (isset($_SESSION['user'])) {
                         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
@@ -45,6 +44,7 @@ if ($stmt->rowCount() != 1) {
                         $stmt->execute();
                         $data = $stmt->fetch();
 
+                        echo "<hr>";
                         if ($stmt->rowCount() <= 1) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5>Hozzáadva a kedvencekhez</h5></div>";
                         } else {
