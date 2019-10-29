@@ -46,7 +46,7 @@ if ($stmt->rowCount() != 1) {
 
                         print_r($data);
 
-                        echo $stmt->rowCount();
+                        echo "<h6 id=\"rows\">" . $stmt->rowCount() . "</h6>";
 
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
@@ -86,25 +86,28 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
+        if ($('#rows').text() == 0) {
+            $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
+            $(".favourite-text").text('Hozzáadva a kedvencekhez');
 
-        $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
-        $(".favourite-text").text('Hozzáadva a kedvencekhez');
+            name = $("#name").text();
+            email = $("#email").text();
 
-        name = $("#name").text();
-        email = $("#email").text();
-
-        $.ajax({
-        url: '../include/addToFavourite.php',
-                type: 'post',
-                data: {
-                    "name": name,
-                    "email": email
-                },
-                success: function (response) {
-                    $('.recipe-container').append(response)
-                },
-                error: function (data) {}
-        });
+            $.ajax({
+            url: '../include/addToFavourite.php',
+                    type: 'post',
+                    data: {
+                        "name": name,
+                        "email": email
+                    },
+                    success: function (response) {
+                        $('.recipe-container').append(response)
+                    },
+                    error: function (data) {}
+            });
+        } else {
+            alert('ki kene szedni');
+        }
     });
     </script>
 </html>
