@@ -28,10 +28,12 @@ function Save($units){
 
     foreach ($units as $unit) {
         $van = false;
-        for($std as $input_unit){
-          $ingredients_name = 'ingredients' . $j;
-          if($input_unit->$ingredients_name->unit == $unit){
-              $van = true;
+        for($i = 1; $i < 26; $i++){
+          $ingredients_name = 'ingredients' . $i;
+          if(isset($input_unit->$ingredients_name->unit)){
+              if($input_unit->$ingredients_name->unit == $unit){
+                $van = true;
+              }
           }
         }
         if(!$van){
