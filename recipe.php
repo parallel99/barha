@@ -72,20 +72,36 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
+
+        name = $("#name").text();
+        email = $("#email").text();
+
+        alert(name + "\n" + email);
+
         $.ajax({
         url: 'include/addToFavourite.php',
                 type: 'post',
                 data: {
-                    "name": $("#name").text(),
-                    "email": $("#email").text()
+                    "name": name,
+                    "email": email
                 },
                 success: function (response) {
                     $('html').append(response)
                 },
-                error: function (data) {
-                    $('html').append(data)
-                }
+                error: function (data) {}
         });
+        /*$.ajax({
+        url: 'include/loadMoreRecipe.php',
+                type: 'post',
+                data: {
+                    "count": count,
+                    "search": $("#search").val()
+                },
+                success: function (response) {
+                    $('.recipes').append(response)
+                },
+                error: function (data) {}
+        });*/
     });
     </script>
 </html>
