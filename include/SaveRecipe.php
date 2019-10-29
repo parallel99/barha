@@ -32,7 +32,9 @@ function Save($units){
           if(isset($input_unit->$ingredients_name->unit)){
               if($input_unit->$ingredients_name->unit == $unit){
                 $unit_number = $unit_number+1;
+                print "hello";
               }
+              print $input_unit->$ingredients_name->unit;
           }
         }
     }
