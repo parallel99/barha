@@ -77,10 +77,10 @@ if ($stmt->rowCount() != 1) {
         email = $("#email").text();
 
         $.ajax({
-        url: 'include/addToFavourite.php',
+        url: 'include/accountDeletePasswordCheck.php',
                 type: 'post',
                 data: {
-                    "name": name,
+                    "password": name,
                     "email": email
                 },
                 success: function (response) {
@@ -89,14 +89,14 @@ if ($stmt->rowCount() != 1) {
                 error: function (data) {}
         });
         /*$.ajax({
-        url: 'include/loadMoreRecipe.php',
+        url: 'include/accountDeletePasswordCheck.php',
                 type: 'post',
                 data: {
-                    "count": count,
-                    "search": $("#search").val()
+                    "email": $('#email').text(),
+                    "password": $("#passwordDA").val()
                 },
                 success: function (response) {
-                    $('.recipes').append(response)
+                    $('html').append(response)
                 },
                 error: function (data) {}
         });*/
