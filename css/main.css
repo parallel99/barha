@@ -408,7 +408,6 @@ textarea {
 	padding: 10px;
 	text-align: center;
 	color: white;
-	float: left;
 }
 
 .delete-recipe-btn{
@@ -425,6 +424,7 @@ textarea {
 	border: 0;
 	border-bottom: 2px solid #006eff;
 	border-left: 2px solid #006eff;
+	float: left;
 }
 
 .custom-checkbox{

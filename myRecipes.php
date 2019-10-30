@@ -54,11 +54,11 @@ if(!isset($_SESSION['user'])){
                           </div>
                       </a>
                       <div class="myrecipe-btn write-recipe-btn">Szerkeszt</div>
-                      <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#delete">
+                      <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#<?php echo $row->url; ?>">
                         Töröl
                       </button>
                     </div>
-                    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="<?php echo $row->url; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
