@@ -53,9 +53,8 @@ if(!isset($_SESSION['user'])){
                               </h6>
                           </div>
                       </a>
-                      <div style="width: 50%; display: inline-block; background: #00a2ff; float: left; border-radius: 0 0 0 10px; padding: 10px; border-bottom: 2px solid #006eff;border-left: 2px solid #006eff; text-align: center; color: white">Szerkeszt</div>
-                      <div>Töröl</div>
-                      <button type="button" style="width: 50%; display: inline-block; background: #ff2655; border-radius: 0 0 10px 0;  padding: 10px; border: 0; border-bottom: 2px solid #b80000; border-right: 2px solid #b80000; text-align: center;  color: white" data-toggle="modal" data-target="delete">
+                      <div class="myrecipe-btn write-recipe-btn">Szerkeszt</div>
+                      <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#delete">
                         Töröl
                       </button>
                     </div>
@@ -72,8 +71,8 @@ if(!isset($_SESSION['user'])){
                             Biztosan törölni kívánja ezt a receptet: <?php echo $row->name; ?>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
+                            <button type="submit" class="btn btn-danger">Törlés</button>
                           </div>
                         </div>
                       </div>
