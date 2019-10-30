@@ -70,10 +70,10 @@ if(!isset($_SESSION['user'])){
                           <div class="modal-body">
                             Biztosan törölni kívánja ezt a receptet: <?php echo $row->name; ?>
                           </div>
-                          <div class="modal-footer">
+                          <form class="modal-footer" method="post">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
                             <button type="submit" name="recipe<?php echo $row->id; ?>" class="btn btn-danger">Törlés</button>
-                          </div>
+                          </form>
                         </div>
                       </div>
                     </div>
