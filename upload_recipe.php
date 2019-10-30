@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("recipe-upload");
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
-            if(isset($_POST["submit"])){
+            if (isset($_POST["submit"])) {
                 echo Save(units());
             }
         ?>
@@ -34,7 +34,7 @@ if(!isset($_SESSION['user'])){
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input required type="time" value="00:00" step="5" name="makingtime" class="form-control time-input">
+                  <input required type="time" value="00:00" step="300" name="makingtime" class="form-control time-input">
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
@@ -58,7 +58,9 @@ if(!isset($_SESSION['user'])){
                             var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                             inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                             inputs += "<select class='form-control upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off' data-live-search='true'>";
-                            <?php foreach (units() as $unit) { echo "inputs +=" . "\"<option value='" . $unit. "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t"; } ?>
+                            <?php foreach (units() as $unit) {
+                              echo "inputs +=" . "\"<option value='" . $unit. "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t";
+                          } ?>
                             inputs += "</select></div>";
                             $(".ingredients-group").append(inputs);
                             $("#ingredients" + (length + 1)).autocomplete({
@@ -88,7 +90,8 @@ $(".custom-file-input").on("change", function() {
 $('.clockpicker').clockpicker();
 </script>
 <?php
-  function units(){
+  function units()
+  {
       $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
                     "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
                     "bögre", "csésze", "marék", "gereszd", "csokor",
