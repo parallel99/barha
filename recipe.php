@@ -43,7 +43,7 @@ if ($stmt->rowCount() != 1) {
                         $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
                         $stmt->execute();
                         $data = $stmt->fetch();
-                        
+
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
                             echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
@@ -72,6 +72,25 @@ if ($stmt->rowCount() != 1) {
             <div class="row">
                 <div class="recipe">
                     <h3>Elkészítés</h3>
+                    <h6>Elkészítési idő:
+                      <strong>
+                        <?php
+                            $time = preg_split("/:/", $recipe->makingtime);
+                            if(intval($time[0]) != 0){
+                              $hour = intval($time[0]) . " óra";
+                            } else {
+                              $hour = "";
+                            }
+                            if(intval($time[1]) != 0){
+                              $minute = intval($time[1]) . " perc";
+                            } else {
+                              $minute = "";
+                            }
+
+                            echo $hour, " ", $minute;
+                          ?>
+                      </strong>
+                    </h6>
                     <?php
                       echo "<p>" . $recipe->making . "</p>";
                     ?>

@@ -73,7 +73,7 @@ function Save($units){
           $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
           $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
           $stmt->bindParam(':making', $making, PDO::PARAM_STR);
-          $stmt->bindParam(':uploader', $_SESSION['user']['name'], PDO::PARAM_STR);
+          $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
           $stmt->bindParam(':url', $url, PDO::PARAM_STR);
           $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
           $stmt->execute();
