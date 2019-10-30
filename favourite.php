@@ -9,7 +9,7 @@
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("favourite");
         ?>
-        <div class="container favourite-list-container">
+        <div class="container recipe-list-container">
             <div class="favourite">
                 <?php
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
