@@ -79,7 +79,16 @@ if(!isset($_SESSION['user'])){
                     </div>
                     <?php
                         if(isset($_POST["recipe". $row->id])){
-                            echo "Delete: ", $row->name;
+                          include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
+                          try {
+                            $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
+                            $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                            $stmt->bindValue(':id', $row->id, PDO::PARAM_STR);
+                            $stmt->execute();
+                            echo "Sikeresen törölte: " . $row->name;
+                          }catch(Exception $e) {
+                            echo 'Hiba: ' .$e->getMessage();
+                          }
                         }
                     ?>
                     <?php
