@@ -53,9 +53,44 @@ if(!isset($_SESSION['user'])){
                               </h6>
                           </div>
                       </a>
-                      <div style="width: 50%; display: inline-block; background: #00a2ff; float: left; border-radius: 0 0 0 10px; padding: 10px; border-bottom: 2px solid #006eff;border-left: 2px solid #006eff; text-align: center; color: white">Szerkeszt</div>
-                      <div style="width: 50%; display: inline-block; background: #ff2655; border-radius: 0 0 10px 0;  padding: 10px; border-bottom: 2px solid #b80000; border-right: 2px solid #b80000; text-align: center;  color: white">Töröl</div>
+                      <div class="myrecipe-btn write-recipe-btn">Szerkeszt</div>
+                      <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#recipe<?php echo $row->id; ?>">
+                        Töröl
+                      </button>
                     </div>
+                    <div class="modal fade" id="recipe<?php echo $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Figyelem!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Biztosan törölni kívánja ezt a receptet: <?php echo $row->name; ?>
+                          </div>
+                          <form class="modal-footer" method="post">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
+                            <button type="submit" name="recipe<?php echo $row->id; ?>" class="btn btn-danger">Törlés</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <?php
+                        if(isset($_POST["recipe". $row->id])){
+                          include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
+                          try {
+                            $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
+                            $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                            $stmt->bindValue(':id', $row->id, PDO::PARAM_STR);
+                            $stmt->execute();
+                            echo "Sikeresen törölte: " . $row->name;
+                          }catch(Exception $e) {
+                            echo 'Hiba: ' .$e->getMessage();
+                          }
+                        }
+                    ?>
                     <?php
                 }
             ?>

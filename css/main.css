@@ -402,6 +402,31 @@ textarea {
 	padding: 1px;
 }
 
+.myrecipe-btn{
+	width: 50%;
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	color: white;
+}
+
+.delete-recipe-btn{
+	background: #ff2655;
+	border-radius: 0 0 10px 0;
+	border: 0;
+	border-bottom: 2px solid #b80000;
+	border-right: 2px solid #b80000;
+}
+
+.write-recipe-btn{
+	background: #00a2ff;
+	border-radius: 0 0 0 10px;
+	border: 0;
+	border-bottom: 2px solid #006eff;
+	border-left: 2px solid #006eff;
+	float: left;
+}
+
 .custom-checkbox{
 	margin-top: 0px;
 	display: inline-block;
@@ -419,7 +444,7 @@ textarea {
 	width: 35px;
 	background-size: contain;
 	background-position: center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 }
 
 .recipe-container .favourite:hover .favourite-star {
