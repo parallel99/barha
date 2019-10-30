@@ -72,7 +72,7 @@ if ($stmt->rowCount() != 1) {
             <div class="row">
                 <div class="recipe">
                     <h3>Elkészítés</h3>
-                    <h6>Elkészítési idő:
+                    <h6 class="gray">Elkészítési idő:
                       <strong>
                         <?php
                             $time = preg_split("/:/", $recipe->makingtime);
@@ -90,7 +90,7 @@ if ($stmt->rowCount() != 1) {
                             echo $hour, " ", $minute;
                           ?>
                       </strong>
-                    </h6>
+                    </h6><hr>
                     <?php
                       echo "<p>" . $recipe->making . "</p>";
                     ?>

@@ -320,7 +320,7 @@ textarea {
 	margin: auto;
 }
 
-.recipe-list-container .media h6 {
+.recipe-list-container .media h6, .gray {
 	color: var(--secondary);
 }
 .recipe-list-container .media h3 {
@@ -367,6 +367,7 @@ textarea {
 .recipe-container .recipe {
 	margin-top: 15px;
 	padding: 20px 20px 0 20px;
+	width: 100%;
 }
 
 .recipe-container h1 {
