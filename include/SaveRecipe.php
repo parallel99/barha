@@ -4,7 +4,7 @@ function Save($units){
     $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $making      = $_POST['making'];
     $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
-    $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $making_time);
+    $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $making_time);
     $std         = new \stdClass();
     $msg         = "";
     $ok          = true;
