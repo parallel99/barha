@@ -418,6 +418,8 @@ textarea {
 	height: 35px;
 	width: 35px;
 	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat; 
 }
 
 .recipe-container .favourite:hover .favourite-star {
