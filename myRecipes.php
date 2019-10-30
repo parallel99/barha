@@ -14,6 +14,10 @@ if(!isset($_SESSION['user'])){
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("none");
+        if(isset($_SESSION["msg"])){
+          echo $_SESSION["msg"];
+          unset($_SESSION["msg"]);
+        }
         ?>
         <div class="container recipe-list-container">
             <div class="recipes">
@@ -83,11 +87,15 @@ if(!isset($_SESSION['user'])){
                           try {
                             $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
                             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
-                            $stmt->bindValue(':id', $row->id, PDO::PARAM_STR);
+                            $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
                             $stmt->execute();
-                            echo "Sikeresen törölte: " . $row->name;
+                            $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name'</div>';
+                            header("Refresh: 1");
+                            die();
                           }catch(Exception $e) {
-                            echo 'Hiba: ' .$e->getMessage();
+                            $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage()'</div>';
+                            header("Refresh: 1");
+                            die();
                           }
                         }
                     ?>
