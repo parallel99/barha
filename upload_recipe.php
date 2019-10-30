@@ -72,7 +72,7 @@ if (!isset($_SESSION['user'])) {
                 </script>
                 <div class="form-group">
                     <label for="name">A recept elkészítésének módja</label>
-                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" value="<?php echo $_POST["making"] ?? "";?>" required></textarea>
+                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" required><?php echo $_POST["making"] ?? "";?></textarea>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>

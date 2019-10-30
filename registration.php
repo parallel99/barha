@@ -164,6 +164,7 @@ if(isset($_SESSION['user'])){
 
                   $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
                   $_POST = array();
+                  unset($_POST);
               }
 
               return $msg;
