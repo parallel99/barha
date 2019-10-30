@@ -40,13 +40,13 @@
 
                 foreach ($data as $row) {
                     $time = preg_split("/:/", $row->makingtime);
-                    if(((int) $time[0]) != 0){
-                      $hour = ((int) $time[0]) . " óra";
+                    if(intval($time[0]) != 0){
+                      $hour = intval($time[0]) . " óra";
                     } else {
                       $hour = "";
                     }
-                    if(((int) $time[1]) != 0){
-                      $minute = ((int) $time[1]) . " perc";
+                    if(intval($time[1]) != 0){
+                      $minute = intval($time[1]) . " perc";
                     } else {
                       $minute = "";
                     }
