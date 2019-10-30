@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -20,7 +20,7 @@ if(!isset($_SESSION['user'])){
                 <?php
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";//még nem jó, meg kell egy WHERE ami nem lezs tul egyszerű
+                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";//még nem jó, meg kell egy WHERE ami nem lesz tul egyszerű
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
