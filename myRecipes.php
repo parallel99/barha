@@ -14,17 +14,10 @@
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            if (isset($_GET['submit']) || isset($_GET['search'])) {
-                $search = trim($_GET['search']);
-
-                $sql = "SELECT * FROM recipebeta WHERE LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime DESC LIMIT 50;";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $data = $stmt->fetchAll();
-
-                if ($stmt->rowCount() == 0) {
-                    echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
-                }
+            $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $data = $stmt->fetchAll();
 
                 foreach ($data as $row) {
                     $time = preg_split("/:/", $row->makingtime);
@@ -58,31 +51,6 @@
                     </div>
                     <?php
                 }
-
-                if ($stmt->rowCount() == 50) {
-                    echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
-                }
-
-            } else {
-                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $data = $stmt->fetchAll();
-
-                foreach ($data as $row) {
-                    ?>
-                    <a class="media" href="recipe/<?php echo $row->url; ?>">
-                        <div class="media-left">
-                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
-                        </div>
-                        <div class="media-body">
-                            <h3><?php echo $row->name; ?></h3>
-                            <h6>Elkészítési idő: <strong><?php echo rand(10, 60); ?> perc</strong></h6>
-                        </div>
-                    </a>
-                    <?php
-                }
-            }
             ?>
         </div>
     </body>
