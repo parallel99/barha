@@ -12,17 +12,21 @@ $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!'
     <body>
         <h1>S3 upload example</h1>
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name']) && $_FILES['userfile']['size'] <= 1000 * 1000) {
-    // FIXME: add more validation, e.g. using ext/fileinfo
-    try {
-        // FIXME: do not use 'name' for upload (that's the original filename from the user's computer)
-        $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read'); ?>
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+    if ($_FILES['userfile']['size'] <= 1000 * 1000) {
+        // FIXME: add more validation, e.g. using ext/fileinfo
+        try {
+            // FIXME: do not use 'name' for upload (that's the original filename from the user's computer)
+            $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read'); ?>
         <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
 <?php
-    } catch (Exception $e) {
-        ?>
+        } catch (Exception $e) {
+            ?>
         <p>Upload error :(<br><?php echo $e->getMessage(); ?></p>
 <?php
+        }
+    } else {
+        echo "tul nagy file (tobb mint 1mb)";
     }
 } ?>
         <h2>Upload a file</h2>
