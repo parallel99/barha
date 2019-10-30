@@ -46,9 +46,9 @@ if ($stmt->rowCount() != 1) {
 
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
-                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite.svg'); background-repeat: no-repeat;\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadás a kedvencekhez</h5></div>";
                         } else {
-                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg');\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
+                            echo "<div class=\"favourite\"><div style=\"background-image: url('/images/favourite2.svg'); background-repeat: no-repeat;\" class=\"favourite-star\"></div><h5 class=\"favourite-text\">Hozzáadva a kedvencekhez</h5></div>";
                         }
                     }
                     ?>
