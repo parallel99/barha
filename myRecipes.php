@@ -14,8 +14,9 @@
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
+            $sql = "SELECT * FROM recipebeta WHERE uploader = :email ORDER BY uploadtime DESC;";
             $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetchAll();
 
