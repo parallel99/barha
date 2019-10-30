@@ -33,7 +33,7 @@
                     }
                     ?>
                     <div>
-                      <a class="media" href="recipe/<?php echo $row->url; ?>" style="margin-bottom: 0;">
+                      <a class="media" href="recipe/<?php echo $row->url; ?>" style="margin-bottom: 0; border-radius: 10px 10px 0 0">
                           <div class="media-left">
                               <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
                           </div>
@@ -46,8 +46,8 @@
                               </h6>
                           </div>
                       </a>
-                      <div style="width: 50%; display: inline-block; background: blue;">Szerkeszt</div>
-                      <div style="width: 50%; display: inline-block; background: red;">Töröl</div>
+                      <div style="width: 50%; display: inline-block; background: #00a2ff; float: left; border-radius: 0 0 0 10px; padding: 10px; border-bottom: 2px solid #006eff;border-left: 2px solid #006eff; text-align: center; color: white">Szerkeszt</div>
+                      <div style="width: 50%; display: inline-block; background: #ff2655; border-radius: 0 0 10px 0;  padding: 10px; border-bottom: 2px solid #b80000; border-right: 2px solid #b80000; text-align: center;  color: white">Töröl</div>
                     </div>
                     <?php
                 }
