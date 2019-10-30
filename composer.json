@@ -2,6 +2,7 @@
   "require": {
   	"ext-mbstring": "*",
     "php": "*",
-    "sendgrid/sendgrid": "*"
+    "sendgrid/sendgrid": "*",
+    "aws/aws-sdk-php": "~3.0"
   }
 }
