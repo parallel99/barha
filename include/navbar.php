@@ -72,7 +72,7 @@ function menu($active)
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/upload_recipe">Recept feltöltés</a>
-              <a class="dropdown-item" href="#">Feltöltött recepteim</a>
+              <a class="dropdown-item" href="/myRecipes">Feltöltött recepteim</a>
               <a class="dropdown-item" href="/favourite">Kedvenceim</a>
             </div>
           </li>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu" role="main">
+    <head>
+        <title>BárHa | Receptek</title>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    </head>
+    <body>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
+        menu("none");
+        ?>
+        <div class="container recipe-list-container">
+            <div class="recipes">
+            <?php
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+            if (isset($_GET['submit']) || isset($_GET['search'])) {
+                $search = trim($_GET['search']);
+
+                $sql = "SELECT * FROM recipebeta WHERE LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime DESC LIMIT 50;";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $data = $stmt->fetchAll();
+
+                if ($stmt->rowCount() == 0) {
+                    echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
+                }
+
+                foreach ($data as $row) {
+                    $time = preg_split("/:/", $row->makingtime);
+                    if(intval($time[0]) != 0){
+                      $hour = intval($time[0]) . " óra";
+                    } else {
+                      $hour = "";
+                    }
+                    if(intval($time[1]) != 0){
+                      $minute = intval($time[1]) . " perc";
+                    } else {
+                      $minute = "";
+                    }
+                    ?>
+                    <div>
+                      <a class="media" href="recipe/<?php echo $row->url; ?>" style="margin-bottom: 0;">
+                          <div class="media-left">
+                              <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                          </div>
+                          <div class="media-body">
+                              <h3><?php echo $row->name; ?></h3>
+                              <h6>Elkészítési idő:
+                                <strong>
+                                  <?php echo $hour, " ", $minute; ?>
+                                </strong>
+                              </h6>
+                          </div>
+                      </a>
+                      <div style="width: 50%; display: inline-block; background: blue;">Szerkeszt</div>
+                      <div style="width: 50%; display: inline-block; background: red;">Töröl</div>
+                    </div>
+                    <?php
+                }
+
+                if ($stmt->rowCount() == 50) {
+                    echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
+                }
+
+            } else {
+                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $data = $stmt->fetchAll();
+
+                foreach ($data as $row) {
+                    ?>
+                    <a class="media" href="recipe/<?php echo $row->url; ?>">
+                        <div class="media-left">
+                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                        </div>
+                        <div class="media-body">
+                            <h3><?php echo $row->name; ?></h3>
+                            <h6>Elkészítési idő: <strong><?php echo rand(10, 60); ?> perc</strong></h6>
+                        </div>
+                    </a>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+<script>
+    count = 0;
+    $(".more-recipe").on("click",".more-recipe-btn", function(){
+        count++;
+        $.ajax({
+        url: 'include/loadMoreRecipe.php',
+                type: 'post',
+                data: {
+                    "count": count,
+                    "search": $("#search").val()
+                },
+                success: function (response) {
+                    $('.recipes').append(response)
+                },
+                error: function (data) {}
+        });
+    });
+</script>
+</html>
