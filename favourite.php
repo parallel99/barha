@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu" role="main">
     <head>
-        <title>BárHa | kedvencek</title>
+        <title>BárHa | Kedvencek</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
     <body>
@@ -12,8 +12,9 @@
         <div class="container favourite-list-container">
             <div class="favourite">
                 <?php
+                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";//meg nem jó
+                $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";//még nem jó
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
