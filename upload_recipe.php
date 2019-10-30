@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
             <form method="post">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
-                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" value="<?php echo $_POST["name"] ?? "";?>" placeholder="Név" required>
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $_POST["name"] ?? "";?>" required>
                 </div>
                 <div class="form-group">
                   <div class="custom-file">
@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input required type="time" value="00:00" step="300" name="makingtime" class="form-control time-input">
+                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $_POST["makingtime"] ?? "00:00";?>" required>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
@@ -72,7 +72,7 @@ if (!isset($_SESSION['user'])) {
                 </script>
                 <div class="form-group">
                     <label for="name">A recept elkészítésének módja</label>
-                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10"></textarea>
+                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" value="<?php echo $_POST["making"] ?? "";?>" required></textarea>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>

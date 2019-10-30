@@ -59,6 +59,11 @@ function Save($units){
         $ok = false;
     }
 
+    if($making_time == "00:00"){
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg elkészíttési időt!</div>';
+        $ok = false;
+    }
+
     if($ok){
           include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
           $ingredients = json_encode($std);
