@@ -54,7 +54,29 @@ if(!isset($_SESSION['user'])){
                           </div>
                       </a>
                       <div style="width: 50%; display: inline-block; background: #00a2ff; float: left; border-radius: 0 0 0 10px; padding: 10px; border-bottom: 2px solid #006eff;border-left: 2px solid #006eff; text-align: center; color: white">Szerkeszt</div>
-                      <div style="width: 50%; display: inline-block; background: #ff2655; border-radius: 0 0 10px 0;  padding: 10px; border-bottom: 2px solid #b80000; border-right: 2px solid #b80000; text-align: center;  color: white">Töröl</div>
+                      <div>Töröl</div>
+                      <button type="button" style="width: 50%; display: inline-block; background: #ff2655; border-radius: 0 0 10px 0;  padding: 10px; border: 0; border-bottom: 2px solid #b80000; border-right: 2px solid #b80000; text-align: center;  color: white" data-toggle="modal" data-target="delete">
+                        Töröl
+                      </button>
+                    </div>
+                    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Figyelem!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Biztosan törölni kívánja ezt a receptet: <?php echo $row->name; ?>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <?php
                 }
