@@ -72,11 +72,16 @@ if(!isset($_SESSION['user'])){
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
-                            <button type="submit" class="btn btn-danger">Törlés</button>
+                            <button type="submit" name="recipe<?php echo $row->id; ?>" class="btn btn-danger">Törlés</button>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <?php
+                        if(isset($_POST["recipe". $row->id])){
+                            echo "Delete: ", $row->name;
+                        }
+                    ?>
                     <?php
                 }
             ?>
