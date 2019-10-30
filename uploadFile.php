@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILE
 <?php
     } catch (Exception $e) {
         ?>
-        <p>Upload error :(</p>
+        <p>Upload error :(<br><?php echo $e->getMessage(); ?></p>
 <?php
     }
 } ?>
