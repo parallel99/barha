@@ -9,10 +9,11 @@ require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
 ));
 
 if (isset($_POST["submit"])) {
-    print_r("Files: " . $_FILES["fileToUpload"]);
+    echo "files:";
+    print_r($_FILES["fileToUpload"]);
     $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
-    echo "<br>";
-    print_r("upload: " . $cloudUpload);
+    echo "<br>upload: ";
+    print_r($cloudUpload);
 }
 
 ?>
