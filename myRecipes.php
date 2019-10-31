@@ -57,9 +57,9 @@ if(!isset($_SESSION['user'])){
                               </h6>
                           </div>
                       </a>
-                      <div class="myrecipe-btn write-recipe-btn">Szerkeszt</div>
+                      <div class="myrecipe-btn write-recipe-btn"><i class="fa fa-edit"></i>Szerkeszt</div>
                       <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#recipe<?php echo $row->id; ?>">
-                        Töröl
+                        <i class="fa fa-trash-o"></i>Töröl
                       </button>
                     </div>
                     <div class="modal fade" id="recipe<?php echo $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
