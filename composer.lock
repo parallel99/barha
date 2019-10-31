@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9236b12d6ebeff820ca011f54df85bc3",
+    "content-hash": "1be44dad472a947dabfb8f6192e0958a",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -88,6 +88,58 @@
                 "sdk"
             ],
             "time": "2019-10-29T18:07:59+00:00"
+        },
+        {
+            "name": "cloudinary/cloudinary_php",
+            "version": "1.15.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudinary/cloudinary_php.git",
+                "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/d3ff05f2436a5322b70a00782c1d4b1656b043e9",
+                "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ],
+                "files": [
+                    "src/Helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cloudinary",
+                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+                }
+            ],
+            "description": "Cloudinary PHP SDK",
+            "homepage": "https://github.com/cloudinary/cloudinary_php",
+            "keywords": [
+                "cdn",
+                "cloud",
+                "cloudinary",
+                "image management",
+                "sdk"
+            ],
+            "time": "2019-10-30T15:43:32+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

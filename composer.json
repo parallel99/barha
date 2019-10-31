@@ -3,6 +3,7 @@
   	"ext-mbstring": "*",
     "php": "*",
     "sendgrid/sendgrid": "*",
-    "aws/aws-sdk-php": "~3.0"
+    "aws/aws-sdk-php": "~3.0",
+    "cloudinary/cloudinary_php": "^1.15"
   }
 }

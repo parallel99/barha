@@ -1,37 +1,57 @@
-<?php
-require('vendor/autoload.php');
-// this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
-$s3 = new Aws\S3\S3Client([
-    'version'  => '2006-03-01',
-    'region'   => 'eu-west-2',
-]);
-$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
-?>
-<html>
-    <head><meta charset="UTF-8"></head>
-    <body>
-        <h1>S3 upload example</h1>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-    if ($_FILES['userfile']['size'] <= 5 * 1000 * 1000) {
-        // FIXME: add more validation, e.g. using ext/fileinfo
-        try {
-            // FIXME: do not use 'name' for upload (that's the original filename from the user's computer)
-            $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read'); ?>
-        <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
-<?php
-        } catch (Exception $e) {
-            ?>
-        <p>Upload error :(<br><?php echo $e->getMessage(); ?></p>
-<?php
-        }
-    } else {
-        echo "tul nagy file (tobb mint 5mb)";
-    }
-} ?>
-        <h2>Upload a file</h2>
-        <form enctype="multipart/form-data" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-            <input name="userfile" type="file"><input type="submit" value="Upload">
-        </form>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload with PHP</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        Upload a File:
+        <input type="file" name="myfile" id="fileToUpload">
+        <input type="submit" name="submit" value="Upload File Now" >
+    </form>
+</body>
 </html>
+
+<?php
+    $currentDir = getcwd();
+    $uploadDirectory = "/uploads/";
+
+    $errors = []; // Store all foreseen and unforseen errors here
+
+    $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
+
+    $fileName = $_FILES['myfile']['name'];
+    $fileSize = $_FILES['myfile']['size'];
+    $fileTmpName  = $_FILES['myfile']['tmp_name'];
+    $fileType = $_FILES['myfile']['type'];
+    $fileExtension = strtolower(end(explode('.', $fileName)));
+
+    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+
+    if (isset($_POST['submit'])) {
+        if (! in_array($fileExtension, $fileExtensions)) {
+            $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+        }
+
+        if ($fileSize > 2000000) {
+            $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
+        }
+
+        if (empty($errors)) {
+            $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+            if ($didUpload) {
+                echo "The file " . basename($fileName) . " has been uploaded";
+            } else {
+                echo "An error occurred somewhere. Try again or contact the admin";
+            }
+        } else {
+            foreach ($errors as $error) {
+                echo $error . "These are the errors" . "\n";
+            }
+        }
+    }
+
+
+?>
