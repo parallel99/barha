@@ -1,14 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-    <body>
-        <form method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
-        </form>
-    </body>
-</html>
-
 <?php
 require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
 require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
@@ -20,10 +9,25 @@ require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
 ));
 
 if (isset($_POST["submit"])) {
+    print_r("Files: " . $_FILES["fileToUpload"]);
     $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
-    echo "URL: " . $cloudUpload->url;
     echo "<br>";
-    echo "Secure URL: " . $cloudUpload->secure_url;
+    print_r("upload: " . $cloudUpload);
 }
 
 ?>
+<!DOCTYPE HTML>
+  <html>
+    <head>
+  </head>
+
+  <body>
+
+<form method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+  </body>
+</html>
