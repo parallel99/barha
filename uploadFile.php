@@ -14,6 +14,17 @@ if (isset($_POST["submit"])) {
     $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
     echo "<br>upload: ";
     print_r($cloudUpload);
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo $cloudUpload['url'];
+    echo "<br>";
+    echo $cloudUpload['secure_url'];
 }
 
 ?>
