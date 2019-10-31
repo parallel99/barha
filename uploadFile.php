@@ -14,22 +14,22 @@
 </html>
 
 <?php
-    $currentDir = getcwd();
-    $uploadDirectory = "/uploads/";
-
-    $errors = []; // Store all foreseen and unforseen errors here
-
-    $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
-
-    $fileName = $_FILES['myfile']['name'];
-    $fileSize = $_FILES['myfile']['size'];
-    $fileTmpName  = $_FILES['myfile']['tmp_name'];
-    $fileType = $_FILES['myfile']['type'];
-    $fileExtension = strtolower(end(explode('.', $fileName)));
-
-    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
-
     if (isset($_POST['submit'])) {
+        $currentDir = getcwd();
+        $uploadDirectory = "/uploads/";
+
+        $errors = []; // Store all foreseen and unforseen errors here
+
+        $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
+
+        $fileName = $_FILES['myfile']['name'];
+        $fileSize = $_FILES['myfile']['size'];
+        $fileTmpName  = $_FILES['myfile']['tmp_name'];
+        $fileType = $_FILES['myfile']['type'];
+        $fileExtension = strtolower(end(explode('.', $fileName)));
+
+        $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+
         if (! in_array($fileExtension, $fileExtensions)) {
             $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
         }
