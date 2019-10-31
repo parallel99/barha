@@ -1,57 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>File Upload with PHP</title>
-</head>
-<body>
-    <form method="post" enctype="multipart/form-data">
-        Upload a File:
-        <input type="file" name="myfile" id="fileToUpload">
-        <input type="submit" name="submit" value="Upload File Now" >
-    </form>
-</body>
+<!DOCTYPE HTML>
+<html>
+	<body>
+		<form method="post" enctype="multipart/form-data">
+			Select image to upload:
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<input type="submit" value="Upload Image" name="submit">
+		</form>
+	</body>
 </html>
 
 <?php
-    if (isset($_POST['submit'])) {
-        $currentDir = getcwd();
-        $uploadDirectory = "/uploads/";
+require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
 
-        $errors = []; // Store all foreseen and unforseen errors here
+\Cloudinary::config(array(
+    "cloud_name" => "htmfraf8s",
+    "api_key" => "445362577878397",
+    "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+));
 
-        $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
-
-        $fileName = $_FILES['myfile']['name'];
-        $fileSize = $_FILES['myfile']['size'];
-        $fileTmpName  = $_FILES['myfile']['tmp_name'];
-        $fileType = $_FILES['myfile']['type'];
-        $fileExtension = strtolower(end(explode('.', $fileName)));
-
-        $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
-
-        if (! in_array($fileExtension, $fileExtensions)) {
-            $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
-        }
-
-        if ($fileSize > 2000000) {
-            $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
-        }
-
-        if (empty($errors)) {
-            $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
-
-            if ($didUpload) {
-                echo "The file " . basename($fileName) . " has been uploaded";
-            } else {
-                echo "An error occurred somewhere. Try again or contact the admin";
-            }
-        } else {
-            foreach ($errors as $error) {
-                echo $error . "These are the errors" . "\n";
-            }
-        }
-    }
-
+if (isset($_POST["submit"])) {
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
+    echo "URL: " . $cloudUpload['secure_url'];
+}
 
 ?>
