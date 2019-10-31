@@ -8,6 +8,7 @@ function Save($units){
     $std         = new \stdClass();
     $msg         = "";
     $ok          = true;
+    $ingredients_ok = false;
 
     for($i = 1; $i < 26; $i++){
         $ingredients_name = 'ingredients' . $i;
@@ -19,6 +20,7 @@ function Save($units){
               $std->$ingredients_name->name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
               $std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
               $std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
+              $ingredients_ok = true;
             } else {
               $msg = '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
               $ok = false;
@@ -61,6 +63,11 @@ function Save($units){
 
     if($making_time == "00:00"){
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg elkészíttési időt!</div>';
+        $ok = false;
+    }
+
+    if(!$ingredients_ok){
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg hozzávalót!</div>';
         $ok = false;
     }
 
