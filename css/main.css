@@ -376,6 +376,7 @@ textarea {
 
 .recipe-container .recipe p {
 	text-align: justify;
+	word-break: break-word;
 }
 
 .recipe-container .recipe p:last-child {
