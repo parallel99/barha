@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 class SaveRecipe {
 
   public $msg = "";
@@ -10,18 +9,11 @@ class SaveRecipe {
   public $std         = new \stdClass();
 
   function Check($units){
-=======
-function Save($units)
-{
-    $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-    $making      = $_POST['making'];
-    $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
->>>>>>> ade4d23f1541fde2be08685e367fa777505bdf40
     $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $making_time);
     $ingredients_ok = false;
 
     //<-------------------- Kép feltöltés -------------------->
-    require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+    /*require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
     require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
 
     \Cloudinary::config(array(
@@ -30,7 +22,7 @@ function Save($units)
         "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
     ));
 
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);*/
     //<------------------ Kép feltölté vége ------------------>
 
     for ($i = 1; $i < 26; $i++) {
@@ -95,7 +87,6 @@ function Save($units)
     }
   }
 
-<<<<<<< HEAD
   function Save(){
       if($ok){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
@@ -118,27 +109,4 @@ function Save($units)
 
         return $msg;
   }
-=======
-    if ($ok) {
-        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-        $ingredients = json_encode($std);
-        $url = urlencode($recipe_name) . "-" . date('ymdgis');
-
-        $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime, image) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime, :image)");
-        $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
-        $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
-        $stmt->bindParam(':making', $making, PDO::PARAM_STR);
-        $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
-        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
-        $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
-        $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
-        $stmt->execute();
-
-        $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
-        $_POST = array();
-        unset($_POST);
-    }
-
-    return $msg;
->>>>>>> ade4d23f1541fde2be08685e367fa777505bdf40
 }
