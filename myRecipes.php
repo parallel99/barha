@@ -57,7 +57,9 @@ if(!isset($_SESSION['user'])){
                               </h6>
                           </div>
                       </a>
-                      <div class="myrecipe-btn write-recipe-btn"><i class="fa fa-edit"></i>Szerkeszt</div>
+                      <button onclick="location.href='/changeRecipe?id=<?php echo $row->id; ?>';" class="myrecipe-btn write-recipe-btn">
+                        <i class="fa fa-edit"></i>Szerkeszt
+                      </button>
                       <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#recipe<?php echo $row->id; ?>">
                         <i class="fa fa-trash-o"></i>Töröl
                       </button>

@@ -1,6 +1,20 @@
 <?php
-if (!isset($_SESSION['user'])) {
-    header("Location: /");
+if (!isset($_SESSION['user']) || !isset($_GET['id'])) {
+    header("Location: /recipes");
+    die();
+}
+
+include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+$sql = "SELECT * FROM recipebeta WHERE id = :id AND uploader = :email;";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $_POST['id'], PDO::PARAM_INT);
+$stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+$stmt->execute();
+$recipe = $stmt->fetch(PDO::FETCH_OBJ);
+
+if ($stmt->rowCount() != 1) {
+    header("Location: /recipes");
     die();
 }
 ?>
@@ -17,14 +31,14 @@ if (!isset($_SESSION['user'])) {
             menu("recipe-upload");
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
             if (isset($_POST["submit"])) {
-                echo Save(units());
+                //echo Save(units());
             }
         ?>
         <div class="form-container container recipe-container recipe-height">
             <form method="post">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
-                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $_POST["name"] ?? "";?>" required>
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php $recipe->name; ?>" required>
                 </div>
                 <div class="form-group">
                   <div class="custom-file">
@@ -34,7 +48,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $_POST["makingtime"] ?? "00:00";?>" required>
+                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php $recipe->makingtime; ?>" required>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
@@ -74,7 +88,7 @@ if (!isset($_SESSION['user'])) {
                 </script>
                 <div class="form-group">
                     <label for="name">A recept elkészítésének módja</label>
-                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" required><?php echo $_POST["making"] ?? "";?></textarea>
+                    <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" required><?php echo $recipe->making; ?></textarea>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
             </form>
