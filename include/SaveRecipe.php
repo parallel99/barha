@@ -142,8 +142,9 @@ class SaveRecipe {
 
       $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
 
-      $stmt = $pdo->prepare("UPDATE recipebeta SET image = :image WHERE url = :url");
+      $stmt = $pdo->prepare("UPDATE recipebeta SET image = :image, imagename = :imagename WHERE url = :url");
       $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
+      $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
   }
@@ -160,10 +161,10 @@ class SaveRecipe {
       ));
 
 
-      $stmt = $pdo->prepare("SELECT image FROM recipebeta WHERE url = :url");
+      $stmt = $pdo->prepare("SELECT imagename FROM recipebeta WHERE url = :url");
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
       $image = $stmt->fetch(PDO::FETCH_OBJ);
-      \Cloudinary\Uploader::destroy($image->image);
+      \Cloudinary\Uploader::destroy($image->imagename);
   }
 }
