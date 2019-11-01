@@ -6,7 +6,7 @@ class SaveRecipe {
   public $recipe_name = "";
   public $making      = "";
   public $making_time = "";
-  public $std         = new \stdClass();
+  public $std         = "";
 
   function Check($units){
     $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $making_time);
