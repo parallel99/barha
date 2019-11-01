@@ -165,7 +165,6 @@ class SaveRecipe {
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
       $image = $stmt->fetch(PDO::FETCH_OBJ);
-      print $image->imagename;
-      \Cloudinary\Uploader::destroy($image->imagename);
+      print_r(\Cloudinary\Uploader::destroy($image->imagename));
   }
 }
