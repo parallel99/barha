@@ -43,7 +43,12 @@ if (!isset($_SESSION['user'])) {
                     } ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
-                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                            <?php
+                                if (empty($row->image)) {
+                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
+                                } else {
+                                    echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
+                                } ?>
                         </div>
                         <div class="media-body">
                             <h3><?php echo $row->name; ?></h3>
