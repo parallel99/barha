@@ -3,9 +3,9 @@ class SaveRecipe {
 
   public $msg = "";
   public $ok = true;
-  public $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-  public $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
-  public $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
+  public $recipe_name = "";
+  public $making      = "";
+  public $making_time = "";
   public $std         = new \stdClass();
 
   function Check($units){
