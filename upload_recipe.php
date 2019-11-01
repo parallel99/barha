@@ -18,7 +18,9 @@ if (!isset($_SESSION['user'])) {
             include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
             menu("recipe-upload");
             if (isset($_POST["submit"])) {
-                echo Save(units());
+                $upload = new SaveRecipe();
+                $upload->Check(units());
+                echo $upload->Save();
             }
         ?>
         <div class="form-container container recipe-container recipe-height">

@@ -1,13 +1,15 @@
 <?php
-function Save($units){
+class SaveRecipe {
 
-    $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-    $making      = $_POST['making'];
-    $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
+  public $msg = "";
+  public $ok = true;
+  public $recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+  public $making      = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
+  public $making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
+  public $std         = new \stdClass();
+
+  function Check($units){
     $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $making_time);
-    $std         = new \stdClass();
-    $msg         = "";
-    $ok          = true;
     $ingredients_ok = false;
 
     for($i = 1; $i < 26; $i++){
@@ -70,25 +72,28 @@ function Save($units){
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg hozzávalót!</div>';
         $ok = false;
     }
+  }
 
-    if($ok){
-          include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-          $ingredients = json_encode($std);
-          $url = urlencode($recipe_name) . "-" . date('ymdgis');
+  function Save(){
+      if($ok){
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+            $ingredients = json_encode($std);
+            $url = urlencode($recipe_name) . "-" . date('ymdgis');
 
-          $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
-          $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
-          $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
-          $stmt->bindParam(':making', $making, PDO::PARAM_STR);
-          $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
-          $stmt->bindParam(':url', $url, PDO::PARAM_STR);
-          $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
-          $stmt->execute();
+            $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
+            $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
+            $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
+            $stmt->bindParam(':making', $making, PDO::PARAM_STR);
+            $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
+            $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+            $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
+            $stmt->execute();
 
-          $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
-          $_POST = array();
-          unset($_POST);
-      }
+            $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
+            $_POST = array();
+            unset($_POST);
+        }
 
-      return $msg;
+        return $msg;
+  }
 }
