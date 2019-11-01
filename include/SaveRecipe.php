@@ -15,8 +15,8 @@ class SaveRecipe {
     $ingredients_ok = false;
 
     //<-------------------- Kép feltöltés -------------------->
-    /*require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-    require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/vendor/cloudinary/cloudinary_php/src/Uploader.php';
 
     \Cloudinary::config(array(
         "cloud_name" => "htmfraf8s",
@@ -24,7 +24,7 @@ class SaveRecipe {
         "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
     ));
 
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);*/
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
     //<------------------ Kép feltölté vége ------------------>
 
     for ($i = 1; $i < 26; $i++) {
@@ -127,7 +127,7 @@ class SaveRecipe {
             $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
             $stmt->execute();
 
-            $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
+            $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
             $_POST = array();
             unset($_POST);
         }
