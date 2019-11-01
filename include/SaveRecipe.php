@@ -13,14 +13,14 @@ function Save($units)
     //<-------------------- Kép feltöltés -------------------->
     require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
     require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
-    
+
     \Cloudinary::config(array(
         "cloud_name" => "htmfraf8s",
         "api_key" => "445362577878397",
         "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
     ));
 
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
     //<------------------ Kép feltölté vége ------------------>
 
     for ($i = 1; $i < 26; $i++) {
