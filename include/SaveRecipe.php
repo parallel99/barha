@@ -1,15 +1,17 @@
 <?php
 class SaveRecipe {
 
-  public $msg = "";
-  public $ok = true;
-  public $recipe_name = "";
-  public $making      = "";
-  public $making_time = "";
-  public $std         = "";
+  public function __construct() {
+      $this->msg          = "";
+      $this->ok           = true;
+      $this->recipe_name  = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);;
+      $this->making       = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);;
+      $this->making_time  = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);;
+      $this->std          = new \stdClass();
+  }
 
   function Check($units){
-    $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $making_time);
+    $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $this->making_time);
     $ingredients_ok = false;
 
     //<-------------------- Kép feltöltés -------------------->
@@ -31,14 +33,14 @@ class SaveRecipe {
         $unit_name        = 'unit' . $i;
         if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
             if (filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING) != "") {
-                $std->$ingredients_name = new \stdClass();
-                $std->$ingredients_name->name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
-                $std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
-                $std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
-                $ingredients_ok = true;
+                $this->std->$ingredients_name = new \stdClass();
+                $this->std->$ingredients_name->name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
+                $this->std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
+                $this->std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
+                $this->ingredients_ok = true;
             } else {
-                $msg = '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
-                $ok = false;
+                $this->msg = '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
+                $this->ok = false;
             }
         }
     }
@@ -48,65 +50,65 @@ class SaveRecipe {
     foreach ($units as $unit) {
         for ($i = 1; $i < 26; $i++) {
             $ingredients_name = 'ingredients' . $i;
-            if (isset($std->$ingredients_name->unit)) {
-                if ($std->$ingredients_name->unit == $unit) {
+            if (isset($this->std->$ingredients_name->unit)) {
+                if ($this->std->$ingredients_name->unit == $unit) {
                     $unit_number = $unit_number+1;
                 }
             }
         }
     }
 
-    if (count((array) $std) != $unit_number) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
-        $ok = false;
+    if (count((array) $this->std) != $unit_number) {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
+        $this->ok = false;
     }
 
-    if (mb_strlen($recipe_name) < 3 || mb_strlen($recipe_name) > 255) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept nevének minimum 3 karakternek, maximum 255 karakternek kell lennie!</div>';
-        $ok = false;
+    if (mb_strlen($this->recipe_name) < 3 || mb_strlen($this->recipe_name) > 255) {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept nevének minimum 3 karakternek, maximum 255 karakternek kell lennie!</div>';
+        $this->ok = false;
     }
 
-    if (mb_strlen($making) < 10 || mb_strlen($making) > 5000) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának minimum 10 karakternek, maximum 5000 karakternek kell lennie!</div>';
-        $ok = false;
+    if (mb_strlen($this->making) < 10 || mb_strlen($this->making) > 5000) {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A recept leírásának minimum 10 karakternek, maximum 5000 karakternek kell lennie!</div>';
+        $this->ok = false;
     }
 
     if (!$time_ok) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Rossz az elkészítési idő formátuma!</div>';
-        $ok = false;
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Rossz az elkészítési idő formátuma!</div>';
+        $this->ok = false;
     }
 
-    if ($making_time == "00:00") {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg elkészíttési időt!</div>';
-        $ok = false;
+    if ($this->making_time == "00:00") {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg elkészíttési időt!</div>';
+        $this->ok = false;
     }
 
     if (!$ingredients_ok) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg hozzávalót!</div>';
-        $ok = false;
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg hozzávalót!</div>';
+        $this->ok = false;
     }
   }
 
   function Save(){
-      if($ok){
+      if($this->ok){
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-            $ingredients = json_encode($std);
-            $url = urlencode($recipe_name) . "-" . date('ymdgis');
+            $ingredients = json_encode($this->std);
+            $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
             $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
-            $stmt->bindParam(':name', $recipe_name, PDO::PARAM_STR);
+            $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
-            $stmt->bindParam(':making', $making, PDO::PARAM_STR);
+            $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
             $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
             $stmt->bindParam(':url', $url, PDO::PARAM_STR);
-            $stmt->bindParam(':makingtime', $making_time, PDO::PARAM_STR);
+            $stmt->bindParam(':makingtime', $this->making_time, PDO::PARAM_STR);
             $stmt->execute();
 
-            $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
+            $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
             $_POST = array();
             unset($_POST);
         }
 
-        return $msg;
+        return $this->msg;
   }
 }
