@@ -48,13 +48,13 @@ if (!isset($_SESSION['user'])) {
                         <div class="media-left">
                             <?php
                                 if (empty($row->image)) {
-                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->0->name\">";
+                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row['0']['name']\">";
                                 } else {
                                     echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
                                 } ?>
                         </div>
                         <div class="media-body">
-                            <h3><?php echo $row->0->name; ?></h3>
+                            <h3><?php echo $row['0']['name']; ?></h3>
                             <h6>Elkészítési idő:
                               <strong><?php echo $hour, " ", $minute; ?></strong>
                             </h6>
