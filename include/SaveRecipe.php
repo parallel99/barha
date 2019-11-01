@@ -11,6 +11,9 @@ function Save($units)
     $ingredients_ok = false;
 
     //<-------------------- Kép feltöltés -------------------->
+    require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+    require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+    
     \Cloudinary::config(array(
         "cloud_name" => "htmfraf8s",
         "api_key" => "445362577878397",
