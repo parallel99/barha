@@ -119,7 +119,7 @@ class SaveRecipe {
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
             if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
-              $this->DeleteImage($url);
+              //$this->DeleteImage($url);
               $this->UploadImage($url);
             }
             $_POST = array();
