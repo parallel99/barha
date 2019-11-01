@@ -92,7 +92,9 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
-            $this->UploadImage($url);
+            if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
+              $this->UploadImage($url);
+            }
             $_POST = array();
             unset($_POST);
         }
@@ -116,7 +118,10 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
-            $this->UploadImage($url);
+            if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
+              $this->DeleteImage($url);
+              $this->UploadImage($url);
+            }
             $_POST = array();
             unset($_POST);
         }
@@ -125,7 +130,6 @@ class SaveRecipe {
   }
 
   function UploadImage($url){
-    if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
       require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
@@ -142,6 +146,24 @@ class SaveRecipe {
       $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
-    }
+  }
+
+  function DeleteImage($url){
+      require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+      require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+      \Cloudinary::config(array(
+          "cloud_name" => "htmfraf8s",
+          "api_key" => "445362577878397",
+          "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+      ));
+
+
+      $stmt = $pdo->prepare("SELECT image FROM recipebeta WHERE url = :url");
+      $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+      $stmt->execute();
+      $image = $stmt->fetch(PDO::FETCH_OBJ);
+      \Cloudinary\Uploader::destroy($image->image);
   }
 }
