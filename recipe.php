@@ -66,12 +66,11 @@ if ($stmt->rowCount() != 1) {
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo($_GET['name']); ?>">
                     <?php
                         if (empty($recipe->image)) {
-                            echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
+                            echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$recipe->name\">";
                         } else {
-                            echo "<img src= \"$recipe->image\" loading=\"lazy\" alt=\"$row->name\">";
+                            echo "<img src= \"$recipe->image\" loading=\"lazy\" alt=\"$recipe->name\">";
                         } ?>
                 </div>
             </div>
