@@ -130,8 +130,8 @@ class SaveRecipe {
   }
 
   function UploadImage($url){
-      require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-      require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       \Cloudinary::config(array(
@@ -150,8 +150,8 @@ class SaveRecipe {
   }
 
   function DeleteImage($url){
-      require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-      require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       \Cloudinary::config(array(
@@ -165,6 +165,6 @@ class SaveRecipe {
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
       $image = $stmt->fetch(PDO::FETCH_OBJ);
-      print_r(\Cloudinary\Uploader::destroy($image->imagename));
+      \Cloudinary\Uploader::destroy($image->imagename);
   }
 }
