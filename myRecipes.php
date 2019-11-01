@@ -46,7 +46,12 @@ if(!isset($_SESSION['user'])){
                     <div>
                       <a class="media" href="recipe/<?php echo $row->url; ?>" style="margin-bottom: 0; border-radius: 10px 10px 0 0">
                           <div class="media-left">
-                              <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                            <?php
+                                if (empty($row->image)) {
+                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
+                                } else {
+                                    echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
+                                } ?>
                           </div>
                           <div class="media-body">
                               <h3><?php echo $row->name; ?></h3>
@@ -88,8 +93,10 @@ if(!isset($_SESSION['user'])){
                           include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
                           include ($_SERVER['DOCUMENT_ROOT'].'/include/SaveRecipe.php');
                           try {
-                            $delimg = new SaveRecipe();
-                            $delimg->DeleteImage($row->url);
+                            if (empty($row->image)) {
+                              $delimg = new SaveRecipe();
+                              $delimg->DeleteImage($row->url);
+                            }
                             $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
                             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                             $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
