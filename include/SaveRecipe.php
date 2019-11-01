@@ -15,8 +15,8 @@ class SaveRecipe {
     $ingredients_ok = false;
 
     //<-------------------- Kép feltöltés -------------------->
-    require $_SERVER['DOCUMENT_ROOT'] . '/vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-    require $_SERVER['DOCUMENT_ROOT'] . '/vendor/cloudinary/cloudinary_php/src/Uploader.php';
+    require '/vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+    require '/vendor/cloudinary/cloudinary_php/src/Uploader.php';
 
     \Cloudinary::config(array(
         "cloud_name" => "htmfraf8s",

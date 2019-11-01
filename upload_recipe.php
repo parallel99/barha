@@ -31,7 +31,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="form-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <input type="file" class="custom-file-input" name="customFile" id="customFile">
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
