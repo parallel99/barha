@@ -458,6 +458,10 @@ textarea {
     margin: 4px 0 0 5px;
 }
 
+.media-body{
+	word-wrap: break-word;
+}
+
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
