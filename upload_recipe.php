@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
             }
         ?>
         <div class="form-container container recipe-container recipe-height">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
                     <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $_POST["name"] ?? "";?>" required>
