@@ -20,7 +20,7 @@ if (!isset($_SESSION['user'])) {
                 <?php
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                $sql = "SELECT * FROM recipebeta, users WHERE recipebeta.name = ANY(users.favourite) AND users.email = :email ORDER BY uploadtime DESC;";//még nem jó, meg kell egy WHERE ami nem lesz tul egyszerű
+                $sql = "SELECT recipebeta.* FROM recipebeta, users WHERE recipebeta.name = ANY(users.favourite) AND users.email = :email ORDER BY uploadtime DESC;";//még nem jó, meg kell egy WHERE ami nem lesz tul egyszerű
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                 $stmt->execute();
@@ -48,13 +48,13 @@ if (!isset($_SESSION['user'])) {
                         <div class="media-left">
                             <?php
                                 if (empty($row->image)) {
-                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row[0]->name\">";
+                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
                                 } else {
                                     echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
                                 } ?>
                         </div>
                         <div class="media-body">
-                            <h3><?php echo $row[0]->name; ?></h3>
+                            <h3><?php echo $row->name; ?></h3>
                             <h6>Elkészítési idő:
                               <strong><?php echo $hour, " ", $minute; ?></strong>
                             </h6>
