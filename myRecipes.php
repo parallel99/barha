@@ -86,12 +86,15 @@ if(!isset($_SESSION['user'])){
                     <?php
                         if(isset($_POST["recipe". $row->id])){
                           include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
+                          include ($_SERVER['DOCUMENT_ROOT'].'/include/SaveRecipe.php');
                           try {
                             $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
                             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                             $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
                             $stmt->execute();
                             $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name. '</div>';
+                            $delimg = new SaveRecipe();
+                            $delimg->DeleteImage($row->url);
                             header("Refresh: 1");
                             die();
                           }catch(Exception $e) {
