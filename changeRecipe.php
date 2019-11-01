@@ -38,14 +38,14 @@ if ($stmt->rowCount() != 1) {
             }
         ?>
         <div class="form-container container recipe-container recipe-height">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
                     <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $recipe->name; ?>" required>
                 </div>
                 <div class="form-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <input type="file" class="custom-file-input" name="customFile" id="customFile">
                     <label class="custom-file-label" for="customFile">Válassz képet</label>
                   </div>
                 </div>
