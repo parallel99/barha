@@ -92,7 +92,7 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
-            UploadImage();
+            $this->UploadImage();
             $_POST = array();
             unset($_POST);
         }
@@ -116,7 +116,7 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
-            UploadImage();
+            $this->UploadImage();
             $_POST = array();
             unset($_POST);
         }
