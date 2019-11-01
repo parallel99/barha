@@ -12,6 +12,7 @@
 <?php
 require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
 require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+require 'vendor/cloudinary/cloudinary_php/src/Error.php';
 
 \Cloudinary::config(array(
     "cloud_name" => "htmfraf8s",
