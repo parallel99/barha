@@ -111,4 +111,27 @@ class SaveRecipe {
 
         return $this->msg;
   }
+
+  function Update(){
+      if($this->ok){
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+            $ingredients = json_encode($this->std);
+            $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
+
+            $stmt = $pdo->prepare("UPDATE recipebeta SET name = :name, ingredients = :ingredients, making = :making, uploadtime = CURRENT_TIMESTAMP, url = :url, makingtime = :makingtime WHERE id = :id");
+            $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
+            $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
+            $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
+            $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+            $stmt->bindParam(':makingtime', $this->making_time, PDO::PARAM_STR);
+            $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+            $stmt->execute();
+
+            $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
+            $_POST = array();
+            unset($_POST);
+        }
+
+        return $this->msg;
+  }
 }
