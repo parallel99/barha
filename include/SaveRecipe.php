@@ -37,7 +37,7 @@ class SaveRecipe {
                 $this->std->$ingredients_name->name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
                 $this->std->$ingredients_name->quantity = filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
                 $this->std->$ingredients_name->unit = filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
-                $this->ingredients_ok = true;
+                $ingredients_ok = true;
             } else {
                 $this->msg = '<div class="alert alert-danger alert-dismissible fade show">Nem adta meg a mennyiséget a hozzávalóknál!</div>';
                 $this->ok = false;
