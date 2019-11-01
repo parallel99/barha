@@ -92,23 +92,9 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
+            UploadImage();
             $_POST = array();
             unset($_POST);
-        }
-
-        if(isset($_FILES["customFile"]['tmp_name'])){
-          //<-------------------- Kép feltöltés -------------------->
-          require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-          require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
-
-          \Cloudinary::config(array(
-              "cloud_name" => "htmfraf8s",
-              "api_key" => "445362577878397",
-              "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
-          ));
-
-          $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
-          //<------------------ Kép feltölté vége ------------------>
         }
 
         return $this->msg;
@@ -130,10 +116,26 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
+            UploadImage();
             $_POST = array();
             unset($_POST);
         }
 
         return $this->msg;
+  }
+
+  function UploadImage(){
+    if(isset($_FILES["customFile"]['tmp_name'])){
+      require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+      require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+
+      \Cloudinary::config(array(
+          "cloud_name" => "htmfraf8s",
+          "api_key" => "445362577878397",
+          "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+      ));
+
+      $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+    }
   }
 }
