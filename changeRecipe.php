@@ -28,8 +28,9 @@ if ($stmt->rowCount() != 1) {
     <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
-            menu("recipe-upload");
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
+            menu("recipe-upload");
             if (isset($_POST["submit"])) {
                 //echo Save(units());
             }
@@ -38,7 +39,7 @@ if ($stmt->rowCount() != 1) {
             <form method="post">
                 <div class="form-group">
                     <label for="name">A recept neve</label>
-                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php $recipe->name; ?>" required>
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $recipe->name; ?>" required>
                 </div>
                 <div class="form-group">
                   <div class="custom-file">
@@ -48,24 +49,34 @@ if ($stmt->rowCount() != 1) {
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php $recipe->makingtime; ?>" required>
+                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $recipe->makingtime; ?>" required>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
-                  <?php for($i = 1; $i < 5; $i++){ ?>
+                  <?php
+                  $i = 1;
+                  $ingredients = json_decode($recipe->ingredients);
+                  foreach ($ingredients as $key => $value) {
+                  ?>
                     <div class="form-group">
                         <?php if($i == 1){ echo '<label class="newLine">Hozzávalók</label>'; }?>
-                        <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $i;?>" id="ingredients<?php echo $i;?>" placeholder="Hozzávaló" autocomplete="off">
-                        <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $i;?>" id="db<?php echo $i;?>" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
+                        <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $i;?>" id="ingredients<?php echo $i;?>" placeholder="Hozzávaló" value="<?php echo $value->name; ?>" autocomplete="off">
+                        <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $i;?>" id="db<?php echo $i;?>" placeholder="Mennyiség" min="1" max="5000" value="<?php echo $value->quantity; ?>" autocomplete="off">
                         <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $i;?>" name="unit<?php echo $i;?>" autocomplete="off" data-live-search="true">
                           <?php
+                              echo "<option value='" . $value->unit. "'>" . $value->unit . "</option>";
                               foreach (units() as $unit) {
+                                if($unit != $value->unit){
                                   echo "<option value='" . $unit. "'>" . $unit . "</option>";
+                                }
                               }
                           ?>
                         </select>
                     </div>
-                  <?php } ?>
+                  <?php
+                    $i = $i+1;
+                  }
+                  ?>
                 </div>
                 <script>
                     $('.ingredients-group').on('input', function (event) {
@@ -103,14 +114,3 @@ $(".custom-file-input").on("change", function() {
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
 </script>
-<?php
-  function units()
-  {
-      $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
-                    "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
-                    "bögre", "csésze", "marék", "gereszd", "csokor",
-                    "csomag");
-
-      return $unit;
-  }
-?>

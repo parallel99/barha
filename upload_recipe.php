@@ -14,8 +14,9 @@ if (!isset($_SESSION['user'])) {
     <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
-            menu("recipe-upload");
             include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
+            menu("recipe-upload");
             if (isset($_POST["submit"])) {
                 echo Save(units());
             }
@@ -87,14 +88,3 @@ $(".custom-file-input").on("change", function() {
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
 </script>
-<?php
-  function units()
-  {
-      $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
-                    "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
-                    "bögre", "csésze", "marék", "gereszd", "csokor",
-                    "csomag");
-
-      return $unit;
-  }
-?>
