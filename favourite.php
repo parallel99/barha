@@ -30,6 +30,8 @@ if (!isset($_SESSION['user'])) {
                     echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
                 }
 
+                print_r($row);
+
                 foreach ($data as $row) {
                     $time = preg_split("/:/", $row->makingtime);
                     if (intval($time[0]) != 0) {
