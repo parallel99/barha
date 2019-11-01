@@ -459,7 +459,7 @@ textarea {
 }
 
 .media-body{
-	word-wrap: break-word;
+	word-break: break-word;
 }
 
 @media (max-width: 992px) {
