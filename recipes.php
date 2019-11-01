@@ -54,6 +54,7 @@
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
                             <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                            <img src="<?php if (empty($row->image)) { echo "/images/test-recipe.jpg" } else { echo $row->image; } ?>" loading="lazy" alt="<?php echo $row->name; ?>">
                         </div>
                         <div class="media-body">
                             <h3><?php echo $row->name; ?></h3>
