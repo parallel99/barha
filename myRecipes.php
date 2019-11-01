@@ -93,7 +93,7 @@ if(!isset($_SESSION['user'])){
                           include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
                           include ($_SERVER['DOCUMENT_ROOT'].'/include/SaveRecipe.php');
                           try {
-                            if (empty($row->image)) {
+                            if (!empty($row->image)) {
                               $delimg = new SaveRecipe();
                               $delimg->DeleteImage($row->url);
                             }
