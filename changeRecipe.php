@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
 $sql = "SELECT * FROM recipebeta WHERE id = :id AND uploader = :email;";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_POST['id'], PDO::PARAM_INT);
+$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
 $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
 $stmt->execute();
 $recipe = $stmt->fetch(PDO::FETCH_OBJ);
