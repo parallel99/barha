@@ -125,7 +125,7 @@ class SaveRecipe {
   }
 
   function UploadImage(){
-    if(file_exists($_FILES['customFile']['tmp_name'])){
+    if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
       require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
 
