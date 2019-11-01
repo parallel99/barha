@@ -14,19 +14,6 @@ class SaveRecipe {
     $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $this->making_time);
     $ingredients_ok = false;
 
-    //<-------------------- Kép feltöltés -------------------->
-    require '/vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-    require '/vendor/cloudinary/cloudinary_php/src/Uploader.php';
-
-    \Cloudinary::config(array(
-        "cloud_name" => "htmfraf8s",
-        "api_key" => "445362577878397",
-        "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
-    ));
-
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
-    //<------------------ Kép feltölté vége ------------------>
-
     for ($i = 1; $i < 26; $i++) {
         $ingredients_name = 'ingredients' . $i;
         $num_name         = 'db' . $i;
@@ -107,6 +94,21 @@ class SaveRecipe {
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
             $_POST = array();
             unset($_POST);
+        }
+
+        if(isset($_FILES["customFile"]['tmp_name'])){
+          //<-------------------- Kép feltöltés -------------------->
+          require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+          require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+
+          \Cloudinary::config(array(
+              "cloud_name" => "htmfraf8s",
+              "api_key" => "445362577878397",
+              "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+          ));
+
+          $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+          //<------------------ Kép feltölté vége ------------------>
         }
 
         return $this->msg;
