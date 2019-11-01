@@ -40,20 +40,24 @@
 
                 foreach ($data as $row) {
                     $time = preg_split("/:/", $row->makingtime);
-                    if(intval($time[0]) != 0){
-                      $hour = intval($time[0]) . " óra";
+                    if (intval($time[0]) != 0) {
+                        $hour = intval($time[0]) . " óra";
                     } else {
-                      $hour = "";
+                        $hour = "";
                     }
-                    if(intval($time[1]) != 0){
-                      $minute = intval($time[1]) . " perc";
+                    if (intval($time[1]) != 0) {
+                        $minute = intval($time[1]) . " perc";
                     } else {
-                      $minute = "";
-                    }
-                    ?>
+                        $minute = "";
+                    } ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
-                            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+                            <?php
+                                if (empty($row->image)) {
+                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
+                                } else {
+                                    echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
+                                } ?>
                         </div>
                         <div class="media-body">
                             <h3><?php echo $row->name; ?></h3>
@@ -70,7 +74,6 @@
                 if ($stmt->rowCount() == 50) {
                     echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
                 }
-
             } else {
                 $sql = "SELECT * FROM recipebeta ORDER BY uploadtime DESC;";
                 $stmt = $pdo->prepare($sql);
