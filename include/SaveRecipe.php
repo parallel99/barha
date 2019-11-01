@@ -92,7 +92,7 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
-            $this->UploadImage();
+            $this->UploadImage($url);
             $_POST = array();
             unset($_POST);
         }
@@ -116,7 +116,7 @@ class SaveRecipe {
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
-            $this->UploadImage();
+            $this->UploadImage($url);
             $_POST = array();
             unset($_POST);
         }
@@ -124,10 +124,11 @@ class SaveRecipe {
         return $this->msg;
   }
 
-  function UploadImage(){
+  function UploadImage($url){
     if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
       require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       \Cloudinary::config(array(
           "cloud_name" => "htmfraf8s",
@@ -136,6 +137,11 @@ class SaveRecipe {
       ));
 
       $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+
+      $stmt = $pdo->prepare("UPDATE recipebeta SET image = :image WHERE url = :url");
+      $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
+      $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+      $stmt->execute();
     }
   }
 }
