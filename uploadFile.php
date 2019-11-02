@@ -21,7 +21,7 @@ require 'vendor/cloudinary/cloudinary_php/src/Error.php';
 ));
 
 if (isset($_POST["submit"])) {
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name'], array("upload_preset" => "barha-preset"));
     echo "URL: " . $cloudUpload['secure_url'];
 }
 
