@@ -1,6 +1,6 @@
 <?php
 function MakingTime($mtime){
-  $time = preg_split("/:/", $mtime;
+  $time = preg_split("/:/", $mtime);
   if(intval($time[0]) != 0){
     $hour = intval($time[0]) . " óra";
   } else {
