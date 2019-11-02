@@ -11,6 +11,10 @@
         ?>
         <div class="container">
             <?php
+                if (!isset($_GET)) {
+                    echo "ez így nem jó";
+                }
+                
                 $ingredients = array_unique(array_filter($_GET));
                 print_r($ingredients);
             ?>
