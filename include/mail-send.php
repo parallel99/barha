@@ -24,7 +24,7 @@ class Mail {
       $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
       try {
-         $response = $sendgrid->send($email);
+         $sendgrid->send($email);
      } catch (Exception $e) {
          echo 'Hiba: '. $e->getMessage() ."\n";
      }
