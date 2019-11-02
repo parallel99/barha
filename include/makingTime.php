@@ -12,5 +12,5 @@ function MakingTime($mtime){
     $minute = "";
   }
 
-  return $hour, " ", $minute;
+  return $hour . " " . $minute;
 }
