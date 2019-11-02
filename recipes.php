@@ -25,6 +25,7 @@
             <div class="recipes">
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
 
             if (isset($_GET['submit']) || isset($_GET['search'])) {
                 $search = trim($_GET['search']);
@@ -39,17 +40,7 @@
                 }
 
                 foreach ($data as $row) {
-                    $time = preg_split("/:/", $row->makingtime);
-                    if (intval($time[0]) != 0) {
-                        $hour = intval($time[0]) . " óra";
-                    } else {
-                        $hour = "";
-                    }
-                    if (intval($time[1]) != 0) {
-                        $minute = intval($time[1]) . " perc";
-                    } else {
-                        $minute = "";
-                    } ?>
+                    ?>
                     <a class="media" href="recipe/<?php echo $row->url; ?>">
                         <div class="media-left">
                             <?php
@@ -63,7 +54,7 @@
                             <h3><?php echo $row->name; ?></h3>
                             <h6>Elkészítési idő:
                               <strong>
-                                <?php echo $hour, " ", $minute; ?>
+                                <?php echo MakingTime($row->makingtime); ?>
                               </strong>
                             </h6>
                         </div>

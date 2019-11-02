@@ -23,6 +23,7 @@ if(!isset($_SESSION['user'])){
             <div class="recipes">
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
 
             $sql = "SELECT * FROM recipebeta WHERE uploader = :email ORDER BY uploadtime DESC;";
             $stmt = $pdo->prepare($sql);
@@ -31,17 +32,6 @@ if(!isset($_SESSION['user'])){
             $data = $stmt->fetchAll();
 
                 foreach ($data as $row) {
-                    $time = preg_split("/:/", $row->makingtime);
-                    if(intval($time[0]) != 0){
-                      $hour = intval($time[0]) . " óra";
-                    } else {
-                      $hour = "";
-                    }
-                    if(intval($time[1]) != 0){
-                      $minute = intval($time[1]) . " perc";
-                    } else {
-                      $minute = "";
-                    }
                     ?>
                     <div>
                       <a class="media" href="recipe/<?php echo $row->url; ?>" style="margin-bottom: 0; border-radius: 10px 10px 0 0">
@@ -57,7 +47,7 @@ if(!isset($_SESSION['user'])){
                               <h3><?php echo $row->name; ?></h3>
                               <h6>Elkészítési idő:
                                 <strong>
-                                  <?php echo $hour, " ", $minute; ?>
+                                  <?php echo MakingTime($row->makingtime); ?>
                                 </strong>
                               </h6>
                           </div>
