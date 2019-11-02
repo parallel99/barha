@@ -80,7 +80,7 @@ if ($stmt->rowCount() != 1) {
                     <h3>Elkészítés</h3>
                     <h6 class="gray">Elkészítési idő:
                       <strong>
-                        <?php echo MakingTime($recipe->making); ?>
+                        <?php echo MakingTime($recipe->makingtime); ?>
                       </strong>
                     </h6><hr>
                     <?php
