@@ -15,7 +15,7 @@
                    <hr>
                    Internal Server Error
                    <hr>
-                   <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="document.location.href('/');">
+                   <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="window.location.assign('/');">
                 </div>
             </div>
     </body>
