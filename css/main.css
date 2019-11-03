@@ -12,7 +12,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	overflow-y: scroll;
+	//overflow-y: scroll; test mert nem tudom miert kell
 	background-color: #f8f9fa;
 }
 
