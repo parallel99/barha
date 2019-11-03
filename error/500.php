@@ -13,7 +13,9 @@
                 <div class="shadow error-page">
                    <h2>500</h2>
                    <hr>
-                   <p>Internal Server Error</p>
+                   Internal Server Error
+                   <hr>
+                   <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="document.location.href('/');">
                 </div>
             </div>
     </body>

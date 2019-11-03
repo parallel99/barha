@@ -14,6 +14,8 @@
                 <h2>Hozzáférési hiba!</h2>
                 <hr>
                 Nincs hozzáférési jogosultsága ehhez a könyvtárhoz vagy fájlhoz!
+                <hr>
+                <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="document.location.href('/');">
             </div>
         </div>
     </body>

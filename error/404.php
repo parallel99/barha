@@ -14,6 +14,8 @@
                <h2>Az oldal nem található!</h2>
                <hr>
                Úgy néz ki valami hiba történt! Az oldal már nem létezik vagy nem is létezett!
+               <hr>
+               <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="document.location.href('/');">
             </div>
         </div>
     </body>
