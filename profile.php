@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -21,15 +21,15 @@ if(!isset($_SESSION['user'])){
                 <h3>Jelszó váltás</h3>
                 <div class="form-group">
                     <label for="passwordCurrent">Jelenlegi jelszó</label>
-                    <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Jelenlegi jelszó">
+                    <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Jelenlegi jelszó">
                 </div>
                 <div class="form-group">
                     <label for="passwordNew1">Új jelszó</label>
-                    <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Új jelszó">
+                    <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új jelszó">
                 </div>
                 <div class="form-group">
                     <label for="passwordNew2">Új jelszó megerősítése</label>
-                    <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="new-password" placeholder="Új jelszó megerősítése">
+                    <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új jelszó megerősítése">
                 </div>
                 <button type="submit" name="account-password-change" class="btn btn-primary">Jelszó váltás</button>
             </form>
@@ -38,11 +38,11 @@ if(!isset($_SESSION['user'])){
                 <h3>Email cím váltás</h3>
                 <div class="form-group">
                     <label for="emailNew">Új email cím</label>
-                    <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="email" placeholder="Új email cím">
+                    <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új email cím">
                 </div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
-                    <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="current-password" placeholder="Jelszó">
+                    <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Jelszó">
                 </div>
                 <button type="submit" name="account-email-change" class="btn btn-primary">Email cím váltás</button>
             </form>
@@ -51,7 +51,7 @@ if(!isset($_SESSION['user'])){
                 <h3>Fiók törlése</h3>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
-                    <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó">
+                    <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó" autocomplete="off">
                 </div>
                 <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
             </form>
