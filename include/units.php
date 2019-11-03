@@ -3,7 +3,7 @@
 
       $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
                     "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
-                    "bögre", "csésze", "marék", "gereszd", "csokor",
+                    "bögre", "csésze", "csipet", "marék", "gereszd", "csokor",
                     "csomag");
 
       return $unit;

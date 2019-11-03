@@ -27,6 +27,7 @@ if ($stmt->rowCount() != 1) {
     <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
             menu("none");
             if (isset($_SESSION['user'])) {
                 echo "<h6 id=\"email\" style=\"display: none\">" . $_SESSION['user']['email'] . "</h6>";
@@ -79,21 +80,7 @@ if ($stmt->rowCount() != 1) {
                     <h3>Elkészítés</h3>
                     <h6 class="gray">Elkészítési idő:
                       <strong>
-                        <?php
-                            $time = preg_split("/:/", $recipe->makingtime);
-                            if (intval($time[0]) != 0) {
-                                $hour = intval($time[0]) . " óra";
-                            } else {
-                                $hour = "";
-                            }
-                            if (intval($time[1]) != 0) {
-                                $minute = intval($time[1]) . " perc";
-                            } else {
-                                $minute = "";
-                            }
-
-                            echo $hour, " ", $minute;
-                          ?>
+                        <?php echo MakingTime($recipe->makingtime); ?>
                       </strong>
                     </h6><hr>
                     <?php
