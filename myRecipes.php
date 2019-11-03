@@ -24,7 +24,7 @@ if(!isset($_SESSION['user'])){
             <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            $sql = "SELECT * FROM recipebeta WHERE uploader = :email ORDER BY uploadtime DESC;";
+            $sql = "SELECT * FROM recipes WHERE uploader = :email ORDER BY uploadtime DESC;";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
             $stmt->execute();
@@ -97,7 +97,7 @@ if(!isset($_SESSION['user'])){
                               $delimg = new SaveRecipe();
                               $delimg->DeleteImage($row->url);
                             }
-                            $stmt = $pdo->prepare("DELETE FROM recipebeta WHERE uploader = :email AND id = :id");
+                            $stmt = $pdo->prepare("DELETE FROM recipes WHERE uploader = :email AND id = :id");
                             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                             $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
                             $stmt->execute();

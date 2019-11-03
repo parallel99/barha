@@ -82,7 +82,7 @@ class SaveRecipe {
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("INSERT INTO recipebeta(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
+            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime)");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
@@ -108,7 +108,7 @@ class SaveRecipe {
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("UPDATE recipebeta SET name = :name, ingredients = :ingredients, making = :making, uploadtime = CURRENT_TIMESTAMP, url = :url, makingtime = :makingtime WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE recipes SET name = :name, ingredients = :ingredients, making = :making, uploadtime = CURRENT_TIMESTAMP, url = :url, makingtime = :makingtime WHERE id = :id");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
@@ -142,7 +142,7 @@ class SaveRecipe {
 
       $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
 
-      $stmt = $pdo->prepare("UPDATE recipebeta SET image = :image, imagename = :imagename WHERE url = :url");
+      $stmt = $pdo->prepare("UPDATE recipes SET image = :image, imagename = :imagename WHERE url = :url");
       $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
       $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
@@ -161,7 +161,7 @@ class SaveRecipe {
       ));
 
 
-      $stmt = $pdo->prepare("SELECT imagename FROM recipebeta WHERE url = :url");
+      $stmt = $pdo->prepare("SELECT imagename FROM recipes WHERE url = :url");
       $stmt->bindParam(':url', $url, PDO::PARAM_STR);
       $stmt->execute();
       $image = $stmt->fetch(PDO::FETCH_OBJ);

@@ -6,7 +6,7 @@ if (!isset($_SESSION['user']) || !isset($_GET['id'])) {
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-$sql = "SELECT * FROM recipebeta WHERE id = :id AND uploader = :email;";
+$sql = "SELECT * FROM recipes WHERE id = :id AND uploader = :email;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
 $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);

@@ -6,7 +6,7 @@ if (!isset($_GET['name'])) {
     die();
 }
 
-$sql = "SELECT * FROM recipebeta WHERE url = :url;";
+$sql = "SELECT * FROM recipes WHERE url = :url;";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':url', urlencode($_GET['name']), PDO::PARAM_STR);
 $stmt->execute();
