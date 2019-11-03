@@ -8,9 +8,10 @@ function menu($active)
         header("Refresh: 0");
         die();
     }
+    
     if (!isset($_SESSION['user'])) {
         ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="navbar">
+<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="navbar">
     <a class="navbar-brand" href="/" aria-label="Főoldal">
         <img src="\images\android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
         <span class="name">BárHa</span>
@@ -28,7 +29,7 @@ function menu($active)
              <li class="nav-item <?php if ($active == "recipes") {
             echo "active";
         } ?>">
-                <a class="nav-link" href="/recipes">Receptek</a>
+                <a class="nav-link" href="/recipes.php?search=">Receptek</a>
              </li>
              <li class="nav-item <?php if ($active == "registration") {
             echo "active";
@@ -46,7 +47,7 @@ function menu($active)
 <?php
     } else {
         ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="navbar">
+<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="navbar">
     <a class="navbar-brand" href="/" aria-label="Főoldal">
         <img src="\images\android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
         <span class="name">BárHa</span>
@@ -64,7 +65,7 @@ function menu($active)
           <li class="nav-item <?php if ($active == "recipes") {
             echo "active";
         } ?>">
-             <a class="nav-link" href="/recipes">Receptek</a>
+             <a class="nav-link" href="/recipes.php?search=">Receptek</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
