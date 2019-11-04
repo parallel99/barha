@@ -12,7 +12,6 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	//overflow-y: scroll; test mert nem tudom miert kell
 	background-color: #f8f9fa;
 }
 
@@ -312,6 +311,7 @@ textarea {
 	background-color: var(--white);
 	margin: 25px auto;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+	min-height: 125px;
 }
 .recipe-list-container .media-body {
 	margin: 15px 15px 15px 0;
