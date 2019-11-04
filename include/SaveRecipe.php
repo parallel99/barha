@@ -74,6 +74,38 @@ class SaveRecipe {
         $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem adott meg hozzávalót!</div>';
         $this->ok = false;
     }
+
+    $this->CheckImage();
+  }
+
+  function CheckImage(){
+    $this->ok = getimagesize($_FILES["customFile"]["tmp_name"]);
+    if($this->ok == false) {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem Képet töltött fel!</div>';
+    }
+
+    // Check file size
+    if ($_FILES["customFile"]["size"] > 500000) {
+        $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A kép nem lehet nagyobb 5MB-nál!</div>';
+        $this->ok = false;
+    }
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
   }
 
   function Save(){
@@ -130,6 +162,7 @@ class SaveRecipe {
   }
 
   function UploadImage($url){
+
       require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
