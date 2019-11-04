@@ -86,7 +86,7 @@ class SaveRecipe {
         $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem Képet töltött fel!</div>';
     }
 
-    if ($_FILES["customFile"]["size"] > 500000) {
+    if ($_FILES["customFile"]["size"] > 5000000) {
         $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A kép nem lehet nagyobb 5MB-nál!</div>';
         $this->ok = false;
     }
