@@ -148,6 +148,7 @@ class SaveRecipe {
   function UploadImage($url){
       require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Error.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       \Cloudinary::config(array(
@@ -155,22 +156,20 @@ class SaveRecipe {
           "api_key" => "445362577878397",
           "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
       ));
-      try{
-          $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
 
-          $stmt = $pdo->prepare("UPDATE recipes SET image = :image, imagename = :imagename WHERE url = :url");
-          $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
-          $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
-          $stmt->bindParam(':url', $url, PDO::PARAM_STR);
-          $stmt->execute();
-      }catch(Exception $e) {
-          $this->msg = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a kép feltöltése: '. $e->getMessage(). '</div>';
-      }
+      $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+
+      $stmt = $pdo->prepare("UPDATE recipes SET image = :image, imagename = :imagename WHERE url = :url");
+      $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
+      $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
+      $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+      $stmt->execute();
   }
 
   function DeleteImage($url){
       require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
       require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+      require_once 'vendor/cloudinary/cloudinary_php/src/Error.php';
       include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
       \Cloudinary::config(array(
