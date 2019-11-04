@@ -134,6 +134,7 @@ class SaveRecipe {
             $stmt->execute();
 
             $getimage = $pdo->prepare("SELECT imagename FROM recipes WHERE id = :id");
+            $getimage->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
             $getimage->execute();
             $getimagename = $getimage->fetch(PDO::FETCH_OBJ);
 
