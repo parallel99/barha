@@ -133,9 +133,15 @@ class SaveRecipe {
             $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
             $stmt->execute();
 
+            $getimage = $pdo->prepare("SELECT imagename FROM recipes WHERE id = :id");
+            $getimage->execute();
+            $getimagename = $getimage->fetch(PDO::FETCH_OBJ);
+
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen módosította a receptet!</div>';
             if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
-              $this->DeleteImage($url);
+              if(!empty($getimagename->imagename)){
+                  $this->DeleteImage($url);
+              }
               $this->UploadImage($url);
             }
             $_POST = array();
