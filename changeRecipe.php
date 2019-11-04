@@ -51,7 +51,7 @@ if ($stmt->rowCount() != 1) {
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $recipe->makingtime; ?>" required>
+                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo date_format(date_create($recipe->makingtime),"H:i"); ?>" required>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
