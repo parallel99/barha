@@ -75,7 +75,9 @@ class SaveRecipe {
         $this->ok = false;
     }
 
-    $this->CheckImage();
+    if(file_exists($_FILES['customFile']['tmp_name']) || is_uploaded_file($_FILES['customFile']['tmp_name'])){
+      $this->CheckImage();
+    }
   }
 
   function CheckImage(){
