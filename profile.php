@@ -28,6 +28,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
             </form>
+            <hr>
             <form method="POST" class="account-password-change-form">
                 <h3>Jelszó váltás</h3>
                 <div class="form-group">

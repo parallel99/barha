@@ -267,7 +267,7 @@ textarea {
     padding: 5px;
 }
 
-.account input, label {
+.account input, label, select {
     max-width: 350px;
 }
 
