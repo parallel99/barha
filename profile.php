@@ -27,6 +27,11 @@ if (!isset($_SESSION['user'])) {
                     </select>
                 </div>
                 <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
+                <?php
+                if (isset($_POST['account-lang-change'])) {
+                    echo "Ne nyomkodd!";
+                }
+                ?>
             </form>
             <hr>
             <form method="POST" class="account-password-change-form">
