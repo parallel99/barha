@@ -17,6 +17,17 @@ if (!isset($_SESSION['user'])) {
         echo "<h6 style=\"display: none\" id=\"email\">" . $_SESSION['user']['email'] . "</h6>";
         ?>
         <div class="account shadow container">
+            <form method="POST" class="account-lang-change-form">
+                <h3>Nyelv váltás</h3>
+                <div class="form-group">
+                    <label for="lang-select">Nyelv</label>
+                    <select class="form-control" id="lang-select">
+                        <option>Magyar</option>
+                        <option>Angol</option>
+                    </select>
+                </div>
+                <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
+            </form>
             <form method="POST" class="account-password-change-form">
                 <h3>Jelszó váltás</h3>
                 <div class="form-group">

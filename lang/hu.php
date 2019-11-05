@@ -11,5 +11,5 @@ define("_LOGOUT", "Kijelentkezés");
 define("_SEARCH", "Keresés");
 define("_REGISTER", "Regisztráció");
 define("_NAME", "Név");
-define("_USERNAME", "Felhasznalónév");
+define("_USERNAME", "Felhasználónév");
 define("_EMAIL", "E-mail");
