@@ -121,7 +121,8 @@ textarea {
 }
 
 .custom-file-label {
-	overflow: hidden;	
+	overflow: hidden;
+	line-height: 1.7;	
 }
 
 .custom-file-label::after{
