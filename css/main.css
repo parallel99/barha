@@ -603,4 +603,7 @@ textarea {
 	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
     	width: 320px;
 	}
+	.g-recaptcha {
+		margin-left: -12px;
+	}
 }
