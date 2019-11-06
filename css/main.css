@@ -120,6 +120,10 @@ textarea {
 	margin-bottom: 10px;
 }
 
+.custom-file-label {
+	overflow: hidden;	
+}
+
 .custom-file-label::after{
 	 background: #007bff;
 	 color: white;
