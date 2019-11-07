@@ -20,7 +20,7 @@ if (!isset($_SESSION['user'])) {
             <form method="POST" class="account-2-step-auth-form">
                 <h3>2 lépcsős hitelesítés</h3>
                 <div class="form-group">
-                    <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="2 lépcsős hitelesítés engedélyezése">
+                    <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="Engedélyezése">
                 </div>
                 <script>
                 $("#enable-2-step-auth").click(function() {
