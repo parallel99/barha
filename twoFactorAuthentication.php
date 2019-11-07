@@ -15,11 +15,21 @@ if(isset($_POST["s"])){
 
     if ($checkResult)
     {
-        echo 'OTP is Validated Succesfully';
+        echo '<br>OTP is Validated Succesfully';
 
     } else {
-        echo 'FAILED';
+        echo '<br>FAILED<br><br>';
     }
+
+    $cht = "qr";
+    // CHart Size
+    $chs = "300x300";
+
+    // default: UTF-8
+    $choe = "UTF-8";
+    $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=' . $secret . '&choe=' . $choe;
+
+    echo "<img src=". $qrcode ." alt='Secret key'>";
 }
 ?>
 <form method="post">
