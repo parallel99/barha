@@ -1,3 +1,7 @@
+<form method="post">
+  <input type="text" name="n">
+  <input type="submit" name="s">
+</form>
 <?php
 if(isset($_POST["s"])){
     require 'vendor/autoload.php';
@@ -27,12 +31,7 @@ if(isset($_POST["s"])){
 
     // default: UTF-8
     $choe = "UTF-8";
-    $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=' . $secret . '&choe=' . $choe;
-    $qrcode = 'https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/Example%3Aalice%40google.com%3Fsecret%' . $secret . '%26issuer%3DExample';
+    $qrcode = 'https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/BárHa?secret=' . $secret;
     echo "<img src=". $qrcode ." alt='Secret key'>";
 }
 ?>
-<form method="post">
-  <input type="text" name="n">
-  <input type="submit" name="s">
-</form>
