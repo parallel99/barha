@@ -31,7 +31,7 @@ if(isset($_POST["s"])){
 
     // default: UTF-8
     $choe = "UTF-8";
-    $qrcode = 'https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/BárHa?secret=' . $secret.'&issuer=Example';
+    $qrcode = 'https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/BárHa?secret=' . $secret.'&choe=utf-8';
     echo "<img src=". $qrcode ." alt='Secret key'>";
 }
 ?>
