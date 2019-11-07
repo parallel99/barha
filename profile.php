@@ -16,7 +16,29 @@ if (!isset($_SESSION['user'])) {
         menu("profile");
         echo "<h6 style=\"display: none\" id=\"email\">" . $_SESSION['user']['email'] . "</h6>";
         ?>
-        <div class="account shadow container">
+        <div class="account container shadow">
+            <form method="POST" class="account-2-step-auth-form">
+                <h3>2 lépcsős hitelesítés</h3>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="2 lépcsős hitelesítés engedélyezése">
+                </div>
+                <script>
+                $("#enable-2-step-auth").click(function() {
+                    $.ajax({
+                    url: 'include/twoFactorAuthentication.php',
+                            type: 'post',
+                            data: {
+                                "email": $('#email').text()
+                            },
+                            success: function (response) {
+                                $('.account-2-step-auth-form').append(response)
+                            },
+                            error: function (data) {}
+                    });
+                });
+                </script>
+            </form>
+            <hr>
             <form method="POST" class="account-lang-change-form">
                 <h3>Nyelv váltás</h3>
                 <div class="form-group">
