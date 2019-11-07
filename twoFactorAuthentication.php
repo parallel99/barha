@@ -26,11 +26,7 @@ if (isset($_POST["submit"])) {
     $chs = "300x300";
     $choe = "UTF-8";
 
-    if (isset($_COOKIE['email'])) {
-        $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa%20(' . $_COOKIE['email'] . ')?secret=' . $secret . '&choe=' . $choe;
-    } else {
-        $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
-    }
+    $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
     echo "<img src=". $qrcode ." alt='Secret key'>";
 }
