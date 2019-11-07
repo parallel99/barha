@@ -12,7 +12,7 @@ if (isset($_POST["submit"])) {
     //$secret = 'PQ3HQXIADIERWMAH';
     $otp = $_POST["text"] ;
 
-    $tolerance = 5;
+    $tolerance = 2;//2*30sec
 
     $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
 
