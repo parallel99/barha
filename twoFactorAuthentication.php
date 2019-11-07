@@ -27,11 +27,12 @@ if(isset($_POST["s"])){
 
     $cht = "qr";
     // CHart Size
-    $chs = "300x300";
+    $chs = "200x200";
 
     // default: UTF-8
     $choe = "UTF-8";
-    $qrcode = 'https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/BárHa?secret=' . $secret.'&choe=utf-8';
+
+    $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
     echo "<img src=". $qrcode ." alt='Secret key'>";
 }
 ?>
