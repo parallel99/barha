@@ -1,9 +1,10 @@
+<!--
 <form method="post">
     <input type="text" name="text">
     <input type="submit" name="submit">
 </form>
+-->
 <?php
-if (isset($_POST["submit"])) {
     require 'vendor/autoload.php';
     $authenticator = new PHPGangsta_GoogleAuthenticator();
     $secret = $authenticator->createSecret();
@@ -29,5 +30,4 @@ if (isset($_POST["submit"])) {
     $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
     echo "<img src=". $qrcode ." alt='Secret key'>";
-}
 ?>
