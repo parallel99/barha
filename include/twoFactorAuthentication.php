@@ -44,7 +44,7 @@
               echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
               echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
           ?>
-          <h4 class="download-google-authenticator-text">Még nincs letöltve?<h4>
+          <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
           <br>
           <h4 class="download-google-authenticator-text">Itt megteheted</h4>
           <div class="row">
