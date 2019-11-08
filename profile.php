@@ -27,12 +27,14 @@ if (!isset($_SESSION['user'])) {
                     $stmt = $pdo->prepare("SELECT secret_key FROM users WHERE email = :email");
                     $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                     $stmt->execute();
-                    $user = $stmt->fetch(PDO::FETCH_OBJ);
+                    $data = $stmt->fetch(PDO::FETCH_OBJ);
 
-                    echo isset($user->secret_key);
-
+                    if (isset($data->secret_key)) {
+                        echo "2 lépcsős hitelesítés engedélyezve";
+                    } else {
+                        echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezése\">";
+                    }
                     ?>
-                    <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="Engedélyezése">
                 </div>
                 <script>
                 $("#enable-2-step-auth").click(function() {
