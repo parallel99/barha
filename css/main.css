@@ -475,7 +475,16 @@ textarea {
 .auth-secret {
 	text-align: center;
 }
-
+#auth-modal .row .col-sm-6 a {
+	position: relative;
+	margin: auto;
+	width: 100%;
+}
+#auth-modal .row .col-sm-6 img {
+	position: relative;
+	margin: auto;
+	width: 100%;
+}
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
