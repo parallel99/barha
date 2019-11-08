@@ -61,4 +61,7 @@
     </div>
   </div>
 </div>
-<script>$('#auth-modal').modal('toggle');</script>
+<script>
+    $('#auth-modal').modal('toggle');
+    $("body").css("padding-right", "0");
+</script>
