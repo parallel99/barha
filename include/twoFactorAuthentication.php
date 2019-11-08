@@ -36,9 +36,10 @@
         <h5 class="modal-title">Google Authenticator</h5>
       </div>
       <div class="modal-body">
+          <!-- Ide kéne majd valami leírás -->
           <?php
               echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
-              echo "<p class=\"auth-secret small\">" . $secret . "</p>";
+              echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
           ?>
       </div>
       <div class="modal-footer">
