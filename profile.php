@@ -39,7 +39,6 @@ if (!isset($_SESSION['user'])) {
                 <script>
                 $("#enable-2-step-auth").click(function() {
                     $("#enable-2-step-auth").hide();
-                    $("body").css("padding-right", "0");
                     $.ajax({
                     url: 'include/twoFactorAuthentication.php',
                             type: 'post',
