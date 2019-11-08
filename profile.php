@@ -20,6 +20,18 @@ if (!isset($_SESSION['user'])) {
             <form method="POST" class="account-2-step-auth-form">
                 <h3>2 lépcsős hitelesítés</h3>
                 <div class="form-group">
+                    <?php
+
+                    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                    $stmt = $pdo->prepare("SELECT secret_key FROM users WHERE email = :email");
+                    $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                    $stmt->execute();
+                    $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+                    print_r($user);
+
+                    ?>
                     <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="Engedélyezése">
                 </div>
                 <script>
