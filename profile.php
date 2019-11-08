@@ -16,6 +16,7 @@ if (!isset($_SESSION['user'])) {
         menu("profile");
         echo "<h6 style=\"display: none\" id=\"email\">" . $_SESSION['user']['email'] . "</h6>";
         ?>
+        <!-- Ne felejtsed el, hogy erről az oldalról akarok valamit mondani, mert most este átnéztem jó pár dolgot és kicsit bugossá tudom tenni és nem csak itt vannak ilyen hibák hanem jó pár helyen-->
         <div class="account container shadow">
             <form method="POST" class="account-2-step-auth-form">
                 <h3>2 lépcsős hitelesítés</h3>
