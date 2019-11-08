@@ -39,12 +39,12 @@
         <h5 class="modal-title">Google Authenticator</h5>
       </div>
       <div class="modal-body">
-          Ide kéne majd valami leírás
+          Olvasd be a QR kódot a Google Authenticator alkalmazassal
           <?php
               echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
               echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
           ?>
-          Meg ide is
+          Még nincs letöltve?<br>Itt megteheted
           <div class="row">
             <div class="col-sm-6">
               <a href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Szerezd meg: Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png'/></a>
