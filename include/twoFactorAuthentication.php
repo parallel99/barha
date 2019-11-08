@@ -47,4 +47,4 @@
     </div>
   </div>
 </div>
-<script>$('auth-modal').modal('toggle')</script>
+<script>$('auth-modal').modal('show')</script>
