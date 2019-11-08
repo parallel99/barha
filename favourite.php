@@ -37,7 +37,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="media-left">
                             <?php
                                 if (empty($row->image)) {
-                                    echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$row->name\">";
+                                    echo "<img src= \"/images/no-img.png\" loading=\"lazy\" alt=\"$row->name\">";
                                 } else {
                                     echo "<img src= \"$row->image\" loading=\"lazy\" alt=\"$row->name\">";
                                 } ?>

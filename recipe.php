@@ -69,7 +69,7 @@ if ($stmt->rowCount() != 1) {
                 <div class="col-sm-7">
                     <?php
                         if (empty($recipe->image)) {
-                            echo "<img src= \"/images/test-recipe.jpg\" loading=\"lazy\" alt=\"$recipe->name\">";
+                            echo "<img src= \"/images/no-img.png\" loading=\"lazy\" alt=\"$recipe->name\">";
                         } else {
                             echo "<img src= \"$recipe->image\" loading=\"lazy\" alt=\"$recipe->name\">";
                         } ?>

@@ -30,7 +30,7 @@
         <h5 class="modal-title">Google Authenticator</h5>
       </div>
       <div class="modal-body">
-          <!-- Ide kéne majd valami leírás -->
+          Ide kéne majd valami leírás
           <a href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Szerezd meg: Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png'/></a>
           <a href='https://apps.apple.com/us/app/google-authenticator/id388497605'><img alt='Szerezd meg: App Store' src='images/download-with-app-store.svg'/></a>
           <?php

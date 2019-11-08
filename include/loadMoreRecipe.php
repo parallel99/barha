@@ -13,7 +13,7 @@ foreach ($data as $row) {
     ?>
     <a class="media" href="recipe/<?php echo $row->name; ?>">
         <div class="media-left">
-            <img src="/images/test-recipe.jpg" loading="lazy" alt="<?php echo $row->name; ?>">
+            <img src="/images/no-img.png" loading="lazy" alt="<?php echo $row->name; ?>">
         </div>
         <div class="media-body">
             <h3><?php echo $row->name; ?></h3>
