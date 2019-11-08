@@ -44,9 +44,9 @@
               echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
               echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
           ?>
-          <span class="download-google-authenticator-text">Még nincs letöltve?<span>
+          <h4 class="download-google-authenticator-text">Még nincs letöltve?<h4>
           <br>
-          <span class="download-google-authenticator-text">Itt megteheted</span>
+          <h4 class="download-google-authenticator-text">Itt megteheted</h4>
           <div class="row">
             <div class="col-sm-6">
               <a href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Szerezd meg: Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png'/></a>
