@@ -30,8 +30,8 @@ if (!isset($_SESSION['user'])) {
                       </div>
                       <div class="modal-body">
                           <?php
-                              echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
-                              echo "<p class=\"auth-secret small\">" . $secret . "</p>";
+                            /*  echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
+                              echo "<p class=\"auth-secret small\">" . $secret . "</p>";*/
                           ?>
                       </div>
                       <div class="modal-footer">
