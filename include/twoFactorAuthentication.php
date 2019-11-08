@@ -29,4 +29,22 @@
     $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
     ?>
-<script>$('auth-modal').modal('show')</script>
+<div id="auth-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Google Authenticator</h5>
+      </div>
+      <div class="modal-body">
+          <?php
+              echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
+              echo "<p class=\"auth-secret small\">" . $secret . "</p>";
+          ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Kész</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>$('#auth-modal').modal('toggle');</script>

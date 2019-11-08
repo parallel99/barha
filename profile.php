@@ -22,24 +22,6 @@ if (!isset($_SESSION['user'])) {
                 <div class="form-group">
                     <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="Engedélyezése">
                 </div>
-                <div id="auth-modal" class="modal" tabindex="-1" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Google Authenticator</h5>
-                      </div>
-                      <div class="modal-body">
-                          <?php
-                            /*  echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
-                              echo "<p class=\"auth-secret small\">" . $secret . "</p>";*/
-                          ?>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Kész</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <script>
                 $("#enable-2-step-auth").click(function() {
                     $("#enable-2-step-auth").hide();
@@ -115,7 +97,7 @@ if (!isset($_SESSION['user'])) {
             </form>
         </div>
         <!-- deleteConfirmModal -->
-        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
