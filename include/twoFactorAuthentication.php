@@ -45,7 +45,6 @@
               echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
           ?>
           <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
-          <br>
           <h4 class="download-google-authenticator-text">Itt megteheted</h4>
           <div class="row">
             <div class="col-sm-6">

@@ -467,13 +467,15 @@ textarea {
 	word-break: break-word;
 }
 
-.auth-qr-code {
+#auth-modal .auth-qr-code {
 	position: relative;
 	margin: auto;
 	display: block;
+	margin-bottom: -20px;
 }
-.auth-secret {
+#auth-modal .auth-secret {
 	text-align: center;
+	position: relative;
 }
 #auth-modal .row .col-sm-6 a {
 	position: relative;
