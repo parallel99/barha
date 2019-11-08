@@ -29,7 +29,7 @@ if (!isset($_SESSION['user'])) {
                     $stmt->execute();
                     $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-                    print_r($user);
+                    echo isset($user->secret_key);
 
                     ?>
                     <input type="button" class="btn btn-primary" id="enable-2-step-auth" value="Engedélyezése">
