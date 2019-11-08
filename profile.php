@@ -149,7 +149,6 @@ if (!isset($_SESSION['user'])) {
                         },
                         error: function (data) {}
                 });
-                ('auth-modal').modal('toggle');
             });
         </script>
     </body>

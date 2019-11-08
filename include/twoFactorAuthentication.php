@@ -10,7 +10,7 @@
     $secret = $authenticator->createSecret();
 
     //$secret = 'PQ3HQXIADIERWMAH';
-/*    $otp = $_POST["text"] ;
+    /*$otp = $_POST["text"] ;
 
     $tolerance = 2;//2*30sec
 
@@ -29,21 +29,22 @@
     $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
     ?>
-        <div id="auth-modal" class="modal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Google Authenticator</h5>
-              </div>
-              <div class="modal-body">
-                  <?php
-                      echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
-                      echo "<p class=\"auth-secret small\">" . $secret . "</p>";
-                  ?>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Kész</button>
-              </div>
-            </div>
-          </div>
-       </div>
+<div id="auth-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Google Authenticator</h5>
+      </div>
+      <div class="modal-body">
+          <?php
+              echo "<img class=\"auth-qr-code\" src=". $qrcode ." alt='Secret key'>";
+              echo "<p class=\"auth-secret small\">" . $secret . "</p>";
+          ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Kész</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>$('auth-modal').modal('toggle')</script>
