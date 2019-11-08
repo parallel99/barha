@@ -487,6 +487,15 @@ textarea {
 	width: 100%;
 	height: 100%
 }
+#auth-modal .row .col-sm-6 img {
+	position: relative;
+	margin: auto;
+	width: 100%;
+	height: 100%
+}
+#auth-modal .download-google-authenticator-text {
+	text-align: center;
+}
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
