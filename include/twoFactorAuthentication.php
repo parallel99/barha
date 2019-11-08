@@ -8,10 +8,9 @@
     require '../vendor/autoload.php';
     $authenticator = new PHPGangsta_GoogleAuthenticator();
     $secret = $authenticator->createSecret();
-    echo "Secret: ".$secret;
 
     //$secret = 'PQ3HQXIADIERWMAH';
-    $otp = $_POST["text"] ;
+/*    $otp = $_POST["text"] ;
 
     $tolerance = 2;//2*30sec
 
@@ -21,7 +20,7 @@
         echo '<br>OTP is Validated Succesfully';
     } else {
         echo '<br>FAILED<br><br>';
-    }
+    }*/
 
     $cht = "qr";
     $chs = "300x300";
@@ -30,4 +29,5 @@
     $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
     echo "<img src=". $qrcode ." alt='Secret key'>";
+    echo "Secret: ".$secret;
 ?>
