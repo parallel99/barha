@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
                     $data = $stmt->fetch(PDO::FETCH_OBJ);
 
                     if (isset($data->secret_key)) {
-                        echo "Engedélyezve";
+                        echo "Engedélyezve🎉";
                     } else {
                         echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezése\">";
                     }
@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
                             },
                             error: function (data) {}
                     });
-                    $('.account-2-step-auth-form').append("2 lépcsős hitelesítés engedélyezve");
+                    $('.account-2-step-auth-form').append("Engedélyezve🎉");
                 });
                 </script>
             </form>
