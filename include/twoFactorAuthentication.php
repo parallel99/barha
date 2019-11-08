@@ -19,7 +19,7 @@
     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
     $email = $_POST['email'];
 
-    $stmt = $pdo->prepare("UPDATE users SET secretKey = :secret WHERE email = :email");
+    $stmt = $pdo->prepare("UPDATE users SET secret_key = :secret WHERE email = :email");
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->bindValue(':secret', $secret, PDO::PARAM_STR);
     $stmt->execute();
