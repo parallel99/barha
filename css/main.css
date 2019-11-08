@@ -467,6 +467,15 @@ textarea {
 	word-break: break-word;
 }
 
+.auth-qr-code {
+	position: relative;
+	margin: auto;
+	display: block;
+}
+.auth-secret {
+	text-align: center;
+}
+
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
