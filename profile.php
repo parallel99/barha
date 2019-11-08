@@ -36,6 +36,7 @@ if (!isset($_SESSION['user'])) {
                             },
                             error: function (data) {}
                     });
+                    $('.account-2-step-auth-form').append("2 lépcsős hitelesítés engedélyezve");
                 });
                 </script>
             </form>
