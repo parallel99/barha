@@ -9,5 +9,5 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     array_push($ingredients, $row['name']);
 }
 
-echo '<script>ingredients.push("'.implode("\",\"",$arr).'")</script>';
+echo '<script>ingredients.push("'.implode("\",\"", $ingredients).'")</script>';
 ?>
