@@ -81,9 +81,9 @@ function menu($active)
             </a>
             <form class="dropdown-menu profile-menu dropdown-menu-right" method="post" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="profile"><span aria-hidden="true" class="fa fa-user-o fa-fw"></span>Profil</a>
+              <a class="dropdown-item" href="/favourite"><span aria-hidden="true" class="fa fa-heart-o fa-fw"></span>Kedvenceim</a>
               <a class="dropdown-item" href="/upload_recipe"><span aria-hidden="true" class="fa fa-upload fa-fw"></span>Recept feltöltés</a>
               <a class="dropdown-item" href="/myRecipes"><span aria-hidden="true" class="fa fa-pencil-square-o fa-fw"></span>Recepteim szerkesztése</a>
-              <a class="dropdown-item" href="/favourite"><span aria-hidden="true" class="fa fa-heart-o fa-fw"></span>Kedvenceim</a>
               <?php
               if ($_SESSION['user']['permission'] == 'admin') {
                   echo "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"/admin\"><span aria-hidden=\"true\" class=\"fa fa-lock fa-fw\"></span>Admin</a>";
