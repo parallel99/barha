@@ -20,7 +20,7 @@ if (!isset($_SESSION['two-auth-user'])) {
             if (isset($_POST['submit'])) {
                 require 'vendor/autoload.php';
                 $authenticator = new PHPGangsta_GoogleAuthenticator();
-                $secret = $_SESSION['two-auth-user']['secret_key'];
+                $secret = $_SESSION['two-auth-user']['secret'];
                 $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
 
                 $tolerance = 2;//2*30sec
