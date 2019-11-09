@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
         <title>BárHa | Bejelentkezés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
-    <body>
+    <body id="two-factor-body">
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("login");

@@ -499,6 +499,9 @@ textarea {
 	text-align: center;
 	display: block;
 }
+#two-factor-body {
+	overflow-y: hidden;
+}
 #two-factor-form {
 	margin-top: 20vh;
 }
