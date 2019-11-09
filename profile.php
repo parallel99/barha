@@ -41,9 +41,7 @@ if (!isset($_SESSION['user'])) {
                     $.ajax({
                     url: 'include/twoFactorAuthentication.php',
                             type: 'post',
-                            data: {
-                                "email": $('#email').text()
-                            },
+                            data: {},
                             success: function (response) {
                                 $('.account-2-step-auth-form').append(response)
                             },
