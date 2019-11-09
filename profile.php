@@ -103,7 +103,7 @@ if (!isset($_SESSION['user'])) {
             <hr>
             <form method="POST" class="account-delete-form">
                 <h3>Fiók törlése</h3>
-                <div class="error-container"></div>
+                <div class="account-delete-error-container"></div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
                     <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó" autocomplete="off">
@@ -140,7 +140,7 @@ if (!isset($_SESSION['user'])) {
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {
-                            $('.error-container').append(response)
+                            $('.account-delete-error-container').append(response)
                         },
                         error: function (data) {}
                 });
@@ -158,7 +158,7 @@ if (!isset($_SESSION['user'])) {
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {
-                            $('.error-container').append(response);
+                            $('.account-delete-error-container').append(response);
                         },
                         error: function (data) {}
                 });
