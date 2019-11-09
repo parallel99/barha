@@ -2,7 +2,7 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 $name = $_POST['name'];
-$email = $_POST['email'];
+$email = $_SESSION['user']['email'];
 
 $stmt = $pdo->prepare("UPDATE users SET favourite = favourite || '{" . $name . "}' WHERE email = '" . $email . "';");
 $stmt->execute();
