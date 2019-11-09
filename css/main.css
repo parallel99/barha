@@ -499,19 +499,22 @@ textarea {
 	text-align: center;
 	display: block;
 }
-#two-factor .two-step-auth-number {
+#two-factor-form {
+	margin-top: 20vh;
+}
+#two-factor-form .two-step-auth-number {
 	padding: .375rem .5rem;
 	text-align: center;
-	margin: 10px 5px;
+	margin: 20px 5px 10px 5px;
 	max-width: 30px;
 }
-#two-factor .two-step-auth-number-container {
+#two-factor-form .two-step-auth-number-container {
 	margin: auto;
 }
-#two-factor #right {
+#two-factor-form #right {
 	margin-left: 5px;
 }
-#two-factor #left {
+#two-factor-form #left {
 	margin-right: 5px;
 }
 @media (max-width: 992px) {

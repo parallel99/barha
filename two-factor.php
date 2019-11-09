@@ -10,16 +10,16 @@ if (isset($_SESSION['user'])) {
         <title>BárHa | Bejelentkezés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     </head>
-    <body id="two-factor">
+    <body>
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             menu("login");
         ?>
         <div class="form-container">
-            <form method="post" class="shadow" id="loginForm">
+            <form method="post" class="shadow" id="two-factor-form">
                 <div class="form-group">
-                    <label for="email">2 lépcsős hitelesítés</label>
-
+                    <h3 class="h3">2 lépcsős hitelesítés</h3>
+                    <hr>
                     <div class="row">
                         <div class="col-6">
                             <div class="row d-flex justify-content-end" id="left">
@@ -46,6 +46,7 @@ if (isset($_SESSION['user'])) {
                     });
                     </script>
                 </div>
+                <hr>
                 <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
             </form>
         </div>
