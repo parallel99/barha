@@ -104,8 +104,7 @@ if ($stmt->rowCount() != 1) {
             url: '../include/addToFavourite.php',
                     type: 'post',
                     data: {
-                        "name": name,
-                        "email": email
+                        "name": name
                     },
                     success: function (response) {},
                     error: function (data) {}
