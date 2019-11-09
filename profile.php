@@ -133,6 +133,7 @@ if (!isset($_SESSION['user'])) {
         </div>
         <script>
             $("#account-delete").click(function() {
+                $('.account-delete-error-container .alert').remove();
                 $.ajax({
                 url: 'include/accountDeletePasswordCheck.php',
                         type: 'post',
