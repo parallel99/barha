@@ -69,6 +69,7 @@ if (isset($_SESSION['user'])) {
                             $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission);
                             setcookie('name', $user->name, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                             setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                            setcookie('permission', $user->permission, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                             $valid = true;
                         } else {
                             $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'secret' => $user->secret_key);

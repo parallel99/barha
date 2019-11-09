@@ -62,6 +62,9 @@ if (isset($_COOKIE['email'])) {
 if (isset($_COOKIE['name'])) {
     $_SESSION['user']['name'] = $_COOKIE['name'];
 }
+if (isset($_COOKIE['permission'])) {
+    $_SESSION['user']['permission'] = $_COOKIE['permission'];
+}
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
