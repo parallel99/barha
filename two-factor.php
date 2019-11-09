@@ -20,7 +20,7 @@ if (!isset($_SESSION['two-auth-user'])) {
             if (isset($_POST['submit'])) {
                 require 'vendor/autoload.php';
                 $authenticator = new PHPGangsta_GoogleAuthenticator();
-                $secret = '7RH77J45GIYX6TIZ';
+                $secret = $_SESSION['two-auth-user']['secret_key'];
                 $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
 
                 $tolerance = 2;//2*30sec
@@ -32,6 +32,7 @@ if (!isset($_SESSION['two-auth-user'])) {
                     $_SESSION['user'] = array('name' => $_SESSION['two-auth-user']['name'], 'email' => $_SESSION['two-auth-user']['email']);
                     setcookie('name', $_SESSION['two-auth-user']['name'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                     setcookie('email', $_SESSION['two-auth-user']['email'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                    header("Refresh: 0");
                 } else {
                     echo '<div class="alert alert-danger" role="alert">Hiba</div>';
                 }
