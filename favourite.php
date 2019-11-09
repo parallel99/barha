@@ -21,7 +21,7 @@ if (!isset($_SESSION['user'])) {
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
 
-                $sql = "SELECT recipes.* FROM recipes, users WHERE recipes.name = ANY(users.favourite::int) AND users.email = :email ORDER BY uploadtime DESC;";
+                $sql = "SELECT recipes.* FROM recipes, users WHERE recipes.name::varchar(255) = ANY(users.favourite) AND users.email = :email ORDER BY uploadtime DESC;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                 $stmt->execute();
