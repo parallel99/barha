@@ -102,14 +102,13 @@ class SaveRecipe
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, status, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :status, :url, :makingtime)");
+            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, status, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, 'pending', :url, :makingtime)");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
             $stmt->bindParam(':uploader', $_SESSION['user']['email'], PDO::PARAM_STR);
             $stmt->bindParam(':url', $url, PDO::PARAM_STR);
             $stmt->bindParam(':makingtime', $this->making_time, PDO::PARAM_STR);
-            $stmt->bindParam(':status', 'pending', PDO::PARAM_STR);
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
