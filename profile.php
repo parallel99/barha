@@ -154,7 +154,6 @@ if (!isset($_SESSION['user'])) {
                 url: 'include/deleteAccount.php',
                         type: 'post',
                         data: {
-                            "email": $('#email').text(),
                             "password": $("#passwordDA").val()
                         },
                         success: function (response) {

@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-$email = $_POST['email'];
+$email = $_SESSION['user']['email'];
 $password = $_POST['password'];
 
 $sql = "DELETE FROM users WHERE email = :email AND password = :password;";
@@ -20,6 +20,3 @@ if ($stmt->rowCount() == 0) {
     echo "<script>document.location.href=\"/\";</script>";
     die();
 }
-
-
-?>
