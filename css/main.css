@@ -499,6 +499,11 @@ textarea {
 	text-align: center;
 	display: block;
 }
+#two-factor .two-step-auth-number {
+	padding: .375rem .5rem;
+	text-align: center;
+	margin: 10px;
+}
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
