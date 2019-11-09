@@ -8,7 +8,7 @@ function menu($active)
         header("Refresh: 0");
         die();
     }
-    
+
     if (!isset($_SESSION['user'])) {
         ?>
 <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="navbar">
@@ -67,16 +67,6 @@ function menu($active)
         } ?>">
              <a class="nav-link" href="/recipes.php?search=">Receptek</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Receptek kezelése
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/upload_recipe">Recept feltöltés</a>
-              <a class="dropdown-item" href="/myRecipes">Feltöltött recepteim</a>
-              <a class="dropdown-item" href="/favourite">Kedvenceim</a>
-            </div>
-          </li>
           <li class="nav-item <?php if ($active == "recipe-upload") {
             echo "active";
         } ?>">
@@ -90,7 +80,9 @@ function menu($active)
             </a>
             <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="profile"><span class="fa fa-user-o"></span>Profil</a>
-              <a class="dropdown-item" href="#"><span class="fa fa-sliders"></span>Beállítások</a>
+              <a class="dropdown-item" href="/upload_recipe"><span class="fa fa-upload-o">Recept feltöltés</a>
+              <a class="dropdown-item" href="/myRecipes"><span class="fa fa-pencil-square-o">Recepteim szerkesztése</a>
+              <a class="dropdown-item" href="/favourite"><span class="fa fa-heart-o">Kedvenceim</a>
               <div class="dropdown-divider"></div>
               <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkezés</button>
             </form>
