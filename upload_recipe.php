@@ -43,12 +43,14 @@ if (!isset($_SESSION['user'])) {
                 <div class="ingredients-group">
                 <?php
                 if(isset($_POST['ingredients1'])){
+                  $ingredients_counter = 1;
                   for ($i = 1; $i < 26; $i++) {
                       $ingredients_name = 'ingredients' . $i;
                       $num_name         = 'db' . $i;
                       $unit_name        = 'unit' . $i;
 
                       if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
+                        $ingredients_counter++;
                         $f_ingredients    =  filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
                         $f_quantity       =  filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
                         $f_unit           =  filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
@@ -70,8 +72,21 @@ if (!isset($_SESSION['user'])) {
                             </div>
                           <?php
                         }
-                    }
-                  } else {?>
+                    }?>
+                    <div class="form-group">
+                        <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $ingredients_counter;?>" id="ingredients<?php echo $ingredients_counter;?>" placeholder="Hozzávaló" autocomplete="off">
+                        <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $ingredients_counter;?>" id="db<?php echo $ingredients_counter;?>" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
+                        <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $ingredients_counter;?>" name="unit<?php echo $ingredients_counter;?>" autocomplete="off" data-live-search="true">
+                          <?php
+                              foreach (units() as $unit) {
+                                  echo "<option value='" . $unit. "'>" . $unit . "</option>";
+                              }
+                          ?>
+                        </select>
+                    </div>
+                    <?php
+                  } else {
+                    ?>
                     <div class="form-group">
                         <label class="newLine">Hozzávalók</label>
                         <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávaló" autocomplete="off">
