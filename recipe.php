@@ -90,7 +90,7 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
-        name = $("#name").text();
+        id = <?php echo $recipe->id; ?>;
         if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
 
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
@@ -100,7 +100,7 @@ if ($stmt->rowCount() != 1) {
             url: '../include/addToFavourite.php',
                     type: 'post',
                     data: {
-                        "name": name
+                        "id": id
                     },
                     success: function (response) {},
                     error: function (data) {}
@@ -114,7 +114,7 @@ if ($stmt->rowCount() != 1) {
             url: '../include/removeFromFavourite.php',
                     type: 'post',
                     data: {
-                        "name": name
+                        "id": id
                     },
                     success: function (response) {},
                     error: function (data) {}

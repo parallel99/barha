@@ -1,10 +1,10 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-$name = $_POST['name'];
+$id = $_POST['id'];
 $email = $_SESSION['user']['email'];
 
-$stmt = $pdo->prepare("UPDATE users SET favourite = array_remove(favourite, :name) WHERE email = :email;");
-$stmt->bindParam(':name', $name, PDO::PARAM_STR);
+$stmt = $pdo->prepare("UPDATE users SET favourite = array_remove(favourite, :id) WHERE email = :email;");
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
