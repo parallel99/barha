@@ -17,6 +17,6 @@ if ($stmt->rowCount() == 0) {
     unset($_SESSION['user']);
     setcookie("name", "", time() - 1, "/", "barha.herokuapp.com", 1, 1);
     setcookie("email", "", time() - 1, "/", "barha.herokuapp.com", 1, 1);
-    header("Refresh: 0");
+    echo "<script>document.location.href=\"/\";</script>";
     die();
 }
