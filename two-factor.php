@@ -17,6 +17,22 @@ if (isset($_SESSION['user'])) {
         ?>
         <div class="form-container">
             <form method="post" class="shadow" id="two-factor-form">
+                <?php
+                if (isset($_POST['submit'])) {
+                    $secret = '7RH77J45GIYX6TIZ';
+                    $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
+
+                    $tolerance = 2;//2*30sec
+
+                    $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
+
+                    if ($checkResult) {
+                        echo '<br>OTP is Validated Succesfully';
+                    } else {
+                        echo '<br>FAILED<br><br>';
+                    }
+                }
+                ?>
                 <div class="form-group">
                     <h3 class="h3">2 lépcsős hitelesítés</h3>
                     <hr>
