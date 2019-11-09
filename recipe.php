@@ -91,7 +91,6 @@ if ($stmt->rowCount() != 1) {
     <script>
     $(".favourite").click(function() {
         name = $("#name").text();
-        email = $("#email").text();
         if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
 
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
@@ -115,8 +114,7 @@ if ($stmt->rowCount() != 1) {
             url: '../include/removeFromFavourite.php',
                     type: 'post',
                     data: {
-                        "name": name,
-                        "email": email
+                        "name": name
                     },
                     success: function (response) {},
                     error: function (data) {}

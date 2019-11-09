@@ -31,7 +31,7 @@ if (isset($_SESSION['user'])) {
             <form method="post" class="shadow" id="loginForm">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $_POST["email"] ?? "";?>" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>

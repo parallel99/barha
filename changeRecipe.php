@@ -79,6 +79,17 @@ if ($stmt->rowCount() != 1) {
                     $i = $i+1;
                   }
                   ?>
+                  <div class="form-group">
+                      <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $i;?>" id="ingredients<?php echo $i;?>" placeholder="Hozzávaló" autocomplete="off">
+                      <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $i;?>" id="db<?php echo $i;?>" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
+                      <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $i;?>" name="unit<?php echo $i;?>" autocomplete="off" data-live-search="true">
+                        <?php
+                            foreach (units() as $unit) {
+                                echo "<option value='" . $unit. "'>" . $unit . "</option>";
+                            }
+                        ?>
+                      </select>
+                  </div>
                 </div>
                 <script>
                     $('.ingredients-group').on('input', function (event) {
