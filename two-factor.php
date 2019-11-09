@@ -24,13 +24,16 @@ if (isset($_SESSION['user'])) {
 
                     $tolerance = 2;//2*30sec
 
-                    $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
+
+                    echo $otp;
+
+                    /*$checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
 
                     if ($checkResult) {
                         echo '<br>OTP is Validated Succesfully';
                     } else {
                         echo '<br>FAILED<br><br>';
-                    }
+                    }*/
                 }
                 ?>
                 <div class="form-group">
