@@ -14,9 +14,9 @@ $details = $stmt->fetch();
 if ($stmt->rowCount() == 0) {
     echo "<div class=\"alert alert-danger\">Na-na!</div>";
 } else {
-    session_destroy();
-    setcookie('name', '');
-    setcookie('email', '');
-    echo "<script>document.location.href=\"/\";</script>";
+    unset($_SESSION['user']);
+    setcookie("name", "", time() - 1, "/", "barha.herokuapp.com", 1, 1);
+    setcookie("email", "", time() - 1, "/", "barha.herokuapp.com", 1, 1);
+    header("Refresh: 0");
     die();
 }
