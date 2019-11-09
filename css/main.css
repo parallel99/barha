@@ -648,9 +648,9 @@ textarea {
 }
 @media (max-width: 340px) {
 	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
-    	width: 320px;
+    	width: 300px;
 	}
 	.g-recaptcha {
-		margin-left: -12px;
+		margin-left: -21px;
 	}
 }
