@@ -47,10 +47,10 @@
           <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
           <h4 class="download-google-authenticator-text">Itt megteheted</h4>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6">
               <a href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Szerezd meg: Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png'/></a>
             </div>
-            <div class="col-sm-6">
+            <div class="col-6">
               <a href='https://apps.apple.com/us/app/google-authenticator/id388497605'><img alt='Szerezd meg: App Store' src='images/download-with-app-store.svg'/></a>
             </div>
           </div>
