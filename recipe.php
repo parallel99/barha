@@ -91,7 +91,6 @@ if ($stmt->rowCount() != 1) {
     <script>
     $(".favourite").click(function() {
         name = $("#name").text();
-        email = $("#email").text();
         if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
 
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
