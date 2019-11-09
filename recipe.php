@@ -38,7 +38,9 @@ if ($stmt->rowCount() != 1) {
                     if (isset($_SESSION['user'])) {
                         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-                        $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE '" . $recipe->name . "' = ANY(favourite) AND email = '" . $_SESSION['user']['email'] . "';");
+                        $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE :id = ANY(favourite) AND email = :email;");
+                        $stmt->bindValue(':id', $recipe->id, PDO::PARAM_STR);
+                        $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                         $stmt->execute();
                         $data = $stmt->fetch();
 
