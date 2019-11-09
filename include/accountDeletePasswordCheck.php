@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-$email = $_POST['email'];
+$email = $_SESSION['user']['email'];
 $password = $_POST['password'];
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
@@ -16,5 +16,3 @@ if ($row == 1) {
 } else {
     echo "<h1>Hibás jelszó!</h1>";
 }
-
-?>
