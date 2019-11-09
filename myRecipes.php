@@ -96,11 +96,11 @@ if (!isset($_SESSION['user'])) {
                                 $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
                                 $stmt->execute();
                                 $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name. '</div>';
-                                header("Refresh: 1");
+                                header("Refresh: 0");
                                 die();
                             } catch (Exception $e) {
                                 $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage(). '</div>';
-                                header("Refresh: 1");
+                                header("Refresh: 0");
                                 die();
                             }
                         } ?>
