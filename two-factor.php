@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['user'])) {
+if (!isset($_SESSION['two-auth-user'])) {
     header("Location: /");
     die();
 }
@@ -29,6 +29,9 @@ if (isset($_SESSION['user'])) {
 
                 if ($checkResult) {
                     echo '<div class="alert alert-success" role="alert">Sikeres bejelentkezés</div>';
+                    $_SESSION['user'] = array('name' => $_SESSION['two-auth-user']['name'], 'email' => $_SESSION['two-auth-user']['email']);
+                    setcookie('name', $_SESSION['two-auth-user']['name'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                    setcookie('email', $_SESSION['two-auth-user']['email'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                 } else {
                     echo '<div class="alert alert-danger" role="alert">Hiba</div>';
                 }

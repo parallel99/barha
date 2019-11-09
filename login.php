@@ -71,6 +71,7 @@ if (isset($_SESSION['user'])) {
                             setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                             $valid = true;
                         } else {
+                            $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email);
                             header("Location: /two-factor.php");
                         }
                     }
