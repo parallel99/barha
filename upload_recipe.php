@@ -41,6 +41,37 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
+                <?php
+                if(isset($_POST['ingredients1'])){
+                  for ($i = 1; $i < 26; $i++) {
+                      $ingredients_name = 'ingredients' . $i;
+                      $num_name         = 'db' . $i;
+                      $unit_name        = 'unit' . $i;
+
+                      if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
+                        $f_ingredients    =  filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
+                        $f_quantity       =  filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING);
+                        $f_unit           =  filter_input(INPUT_POST, $unit_name, FILTER_SANITIZE_STRING);
+                        ?>
+                            <div class="form-group">
+                                <?php if($i == 1){ echo '<label class="newLine">Hozzávalók</label>'; } ?>
+                                <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="<?php echo $ingredients_name; ?>" id="<?php echo $ingredients_name; ?>" placeholder="Hozzávaló" value="<?php echo $f_ingredients; ?>" autocomplete="off">
+                                <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="<?php echo $num_name; ?>" id="<?php echo $num_name; ?>" placeholder="Mennyiség" min="1" max="5000" value="<?php echo $f_quantity; ?>" autocomplete="off">
+                                <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="<?php echo $unit_name; ?>" name="<?php echo $unit_name; ?>" autocomplete="off" data-live-search="true">
+                                  <?php
+                                      echo "<option value='" . $f_unit . "'>" . $f_unit . "</option>";
+                                      foreach (units() as $unit) {
+                                        if($unit != $f_unit){
+                                          echo "<option value='" . $f_unit. "'>" . $f_unit . "</option>";
+                                        }
+                                      }
+                                  ?>
+                                </select>
+                            </div>
+                          <?php
+                        }
+                    }
+                  } else {?>
                     <div class="form-group">
                         <label class="newLine">Hozzávalók</label>
                         <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávaló" autocomplete="off">
@@ -53,6 +84,9 @@ if (!isset($_SESSION['user'])) {
                           ?>
                         </select>
                     </div>
+                  <?php
+                  }
+                ?>
                 </div>
                 <script>
                     $('.ingredients-group').on('input', function (event) {
