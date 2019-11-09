@@ -503,6 +503,7 @@ textarea {
 	padding: .375rem .5rem;
 	text-align: center;
 	margin: 10px 5px;
+	max-width: 40px;
 }
 #two-factor .two-step-auth-number-container {
 	margin: auto;
