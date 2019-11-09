@@ -62,7 +62,7 @@ if (!isset($_SESSION['user'])) {
                                       echo "<option value='" . $f_unit . "'>" . $f_unit . "</option>";
                                       foreach (units() as $unit) {
                                         if($unit != $f_unit){
-                                          echo "<option value='" . $f_unit. "'>" . $f_unit . "</option>";
+                                          echo "<option value='" . $unit. "'>" . $unit . "</option>";
                                         }
                                       }
                                   ?>
