@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['two-auth-user'])) {
+if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
