@@ -85,7 +85,7 @@ function menu($active)
               <a class="dropdown-item" href="/favourite"><span aria-hidden="true" class="fa fa-heart-o"></span>Kedvenceim</a>
               <?php
               if ($_SESSION['user']['permission'] == 'admin') {
-                  echo "<a class=\"dropdown-item\" href=\"/favourite\"><span aria-hidden=\"true\" class=\"fa fa-admin\"></span>Admin</a><div class=\"dropdown-divider\"></div>";
+                  echo "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"/admin\"><span aria-hidden=\"true\" class=\"fa fa-lock\"></span>Admin</a>";
               } ?>
               <div class="dropdown-divider"></div>
               <button type="submit" name="logout" class="dropdown-item"><span aria-hidden="true" class="fa fa-sign-out"></span>Kijelentkezés</button>
