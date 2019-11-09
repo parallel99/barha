@@ -22,7 +22,7 @@ if (isset($_SESSION['user'])) {
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="row d-flex justify-content-center">
+                            <div class="row d-flex justify-content-end" id="left">
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-1" id="2-step-auth-number-1" maxlength="1" placeholder="" required>
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-2" id="2-step-auth-number-2" maxlength="1" placeholder="" required>
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-3" id="2-step-auth-number-3" maxlength="1" placeholder="" required>
@@ -30,7 +30,7 @@ if (isset($_SESSION['user'])) {
                         </div>
 
                         <div class="col-sm-6">
-                            <div class="row d-flex justify-content-center">
+                            <div class="row d-flex justify-content-start" id="right">
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-4" id="2-step-auth-number-4" maxlength="1" placeholder="" required>
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-5" id="2-step-auth-number-5" maxlength="1" placeholder="" required>
                                 <input type="text" class="two-step-auth-number form-control col-sm-2" name="2-step-auth-number-6" id="2-step-auth-number-6" maxlength="1" placeholder="" required>

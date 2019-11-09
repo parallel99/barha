@@ -507,6 +507,12 @@ textarea {
 #two-factor .two-step-auth-number-container {
 	margin: auto;
 }
+#two-factor #right {
+	margin-left: 5px;
+}
+#two-factor #left {
+	margin-right: 5px;
+}
 @media (max-width: 992px) {
 	.profile-menu {
 		width: 100%;
