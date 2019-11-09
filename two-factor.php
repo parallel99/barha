@@ -20,17 +20,20 @@ if (isset($_SESSION['user'])) {
                 <div class="form-group">
                     <label for="email">2 lépcsős hitelesítés</label>
 
-                    <div class="col-sm-6">
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-1" id="2-step-auth-number-1" max="1" placeholder="" required>
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-2" id="2-step-auth-number-2" max="1" placeholder="" required>
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-3" id="2-step-auth-number-3" max="1" placeholder="" required>
-                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-1" id="2-step-auth-number-1" max="1" placeholder="" required>
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-2" id="2-step-auth-number-2" max="1" placeholder="" required>
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-3" id="2-step-auth-number-3" max="1" placeholder="" required>
+                        </div>
 
-                    <div class="col-sm-6">
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-4" id="2-step-auth-number-4" max="1" placeholder="" required>
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-5" id="2-step-auth-number-5" max="1" placeholder="" required>
-                        <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-6" id="2-step-auth-number-6" max="1" placeholder="" required>
+                        <div class="col-sm-6">
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-4" id="2-step-auth-number-4" max="1" placeholder="" required>
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-5" id="2-step-auth-number-5" max="1" placeholder="" required>
+                            <input type="text" class="2-step-auth-number form-control" name="2-step-auth-number-6" id="2-step-auth-number-6" max="1" placeholder="" required>
+                        </div>
                     </div>
+                    
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
             </form>
