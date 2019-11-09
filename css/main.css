@@ -497,7 +497,7 @@ textarea {
 	overflow-y: hidden;
 }
 #two-factor-form {
-	margin-top: 20vh;
+	margin-top: 2vh;
 }
 #two-factor-form .two-step-auth-number {
 	padding: .375rem .5rem;
