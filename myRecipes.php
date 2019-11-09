@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -14,9 +14,9 @@ if(!isset($_SESSION['user'])){
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
         menu("none");
-        if(isset($_SESSION["msg"])){
-          echo $_SESSION["msg"];
-          unset($_SESSION["msg"]);
+        if (isset($_SESSION["msg"])) {
+            echo $_SESSION["msg"];
+            unset($_SESSION["msg"]);
         }
         ?>
         <div class="container recipe-list-container">
@@ -30,6 +30,10 @@ if(!isset($_SESSION['user'])){
             $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetchAll();
+
+            if ($stmt->rowCount() == 0) {
+                echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
+            }
 
                 foreach ($data as $row) {
                     ?>
@@ -79,28 +83,27 @@ if(!isset($_SESSION['user'])){
                       </div>
                     </div>
                     <?php
-                        if(isset($_POST["recipe". $row->id])){
-                          include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
-                          include ($_SERVER['DOCUMENT_ROOT'].'/include/SaveRecipe.php');
-                          try {
-                            if (!empty($row->image) || $row->image != NULL || $row->image != "") {
-                              $delimg = new SaveRecipe();
-                              $delimg->DeleteImage($row->url);
+                        if (isset($_POST["recipe". $row->id])) {
+                            include($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
+                            include($_SERVER['DOCUMENT_ROOT'].'/include/SaveRecipe.php');
+                            try {
+                                if (!empty($row->image) || $row->image != null || $row->image != "") {
+                                    $delimg = new SaveRecipe();
+                                    $delimg->DeleteImage($row->url);
+                                }
+                                $stmt = $pdo->prepare("DELETE FROM recipes WHERE uploader = :email AND id = :id");
+                                $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                                $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
+                                $stmt->execute();
+                                $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name. '</div>';
+                                header("Refresh: 1");
+                                die();
+                            } catch (Exception $e) {
+                                $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage(). '</div>';
+                                header("Refresh: 1");
+                                die();
                             }
-                            $stmt = $pdo->prepare("DELETE FROM recipes WHERE uploader = :email AND id = :id");
-                            $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
-                            $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
-                            $stmt->execute();
-                            $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name. '</div>';
-                            header("Refresh: 1");
-                            die();
-                          }catch(Exception $e) {
-                            $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage(). '</div>';
-                            header("Refresh: 1");
-                            die();
-                          }
-                        }
-                    ?>
+                        } ?>
                     <?php
                 }
             ?>
