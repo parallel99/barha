@@ -477,13 +477,7 @@ textarea {
 	text-align: center;
 	position: relative;
 }
-#auth-modal .row .col-sm-6 a {
-	position: relative;
-	margin: auto;
-	width: 100%;
-	height: 100%
-}
-#auth-modal .row .col-sm-6 img {
+#auth-modal .row .col-6 a {
 	position: relative;
 	margin: auto;
 	width: 100%;
