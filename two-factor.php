@@ -29,7 +29,7 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
 
                 if ($checkResult) {
                     echo '<div class="alert alert-success" role="alert">Sikeres bejelentkezés</div>';
-                    $_SESSION['user'] = array('name' => $_SESSION['two-auth-user']['name'], 'email' => $_SESSION['two-auth-user']['email']);
+                    $_SESSION['user'] = array('name' => $_SESSION['two-auth-user']['name'], 'email' => $_SESSION['two-auth-user']['email'], 'permission' => $_SESSION['two-auth-user']['permission']);
                     setcookie('name', $_SESSION['two-auth-user']['name'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                     setcookie('email', $_SESSION['two-auth-user']['email'], time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                     header("Refresh: 0");

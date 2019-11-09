@@ -29,7 +29,6 @@ if ($stmt->rowCount() != 1) {
             include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
             include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
             menu("none");
-            }
         ?>
         <div class="container recipe-container">
             <div class="row">
