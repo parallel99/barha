@@ -47,7 +47,7 @@ textarea {
 	overflow-x: hidden;
 }
 
-#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
+#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
 	background-color: var(--white);
 	border-radius: 10px;
 	width: 400px;
@@ -612,7 +612,7 @@ textarea {
     	display: block;
 	}
 
-	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
+	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
 		width: 342px;
 	}
 	#loginForm button {
@@ -650,7 +650,7 @@ textarea {
 	}
 }
 @media (max-width: 340px) {
-	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm {
+	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
     	width: 300px;
 	}
 	.g-recaptcha {
