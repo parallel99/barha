@@ -102,7 +102,7 @@ class SaveRecipe
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, url, makingtime, status) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :url, :makingtime, :status)");
+            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, status, url, makingtime) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, :status, :url, :makingtime)");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
