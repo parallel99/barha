@@ -16,27 +16,25 @@ if (isset($_SESSION['user'])) {
             menu("login");
         ?>
         <div class="form-container">
-            <form method="post" class="shadow" id="two-factor-form">
-                <?php
-                if (isset($_POST['submit'])) {
-                    require 'vendor/autoload.php';
-                    $authenticator = new PHPGangsta_GoogleAuthenticator();
-                    $secret = '7RH77J45GIYX6TIZ';
-                    $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
+            <?php
+            if (isset($_POST['submit'])) {
+                require 'vendor/autoload.php';
+                $authenticator = new PHPGangsta_GoogleAuthenticator();
+                $secret = '7RH77J45GIYX6TIZ';
+                $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
 
-                    $tolerance = 2;//2*30sec
+                $tolerance = 2;//2*30sec
 
-                    echo "<script>alert(".$otp.")</script>";
+                $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
 
-                    $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
-
-                    if ($checkResult) {
-                        echo '<br>OTP is Validated Succesfully';
-                    } else {
-                        echo '<br>FAILED<br><br>';
-                    }
+                if ($checkResult) {
+                    echo '<div class="alert alert-success" role="alert">Sikeres bejelentkezés</div>';
+                } else {
+                    echo '<div class="alert alert-danger" role="alert">Hiba</div>';
                 }
-                ?>
+            }
+            ?>
+            <form method="post" class="shadow" id="two-factor-form">
                 <div class="form-group">
                     <h3 class="h3">2 lépcsős hitelesítés</h3>
                     <hr>

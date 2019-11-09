@@ -3,19 +3,6 @@
     $authenticator = new PHPGangsta_GoogleAuthenticator();
     $secret = $authenticator->createSecret();
 
-    //$secret = 'PQ3HQXIADIERWMAH';
-    /*$otp = $_POST["text"] ;
-
-    $tolerance = 2;//2*30sec
-
-    $checkResult = $authenticator->verifyCode($secret, $otp, $tolerance);
-
-    if ($checkResult) {
-        echo '<br>OTP is Validated Succesfully';
-    } else {
-        echo '<br>FAILED<br><br>';
-    }*/
-
     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
     $email = $_SESSION['user']['email'];
 
