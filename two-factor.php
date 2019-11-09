@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
             <form method="post" class="shadow" id="two-factor-form">
                 <?php
                 if (isset($_POST['submit'])) {
-                    require '../vendor/autoload.php';
+                    require 'vendor/autoload.php';
                     $authenticator = new PHPGangsta_GoogleAuthenticator();
                     $secret = '7RH77J45GIYX6TIZ';
                     $otp = $_POST["2-step-auth-number-1"].$_POST["2-step-auth-number-2"].$_POST["2-step-auth-number-3"].$_POST["2-step-auth-number-4"].$_POST["2-step-auth-number-5"].$_POST["2-step-auth-number-6"];
