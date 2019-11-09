@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -17,13 +17,13 @@ if(isset($_SESSION['user'])){
         ?>
         <div class="form-container">
           <?php
-            if(isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) {
                 $msg = login();
-                if($msg != ""){
-                  echo $msg;
+                if ($msg != "") {
+                    echo $msg;
                 } else {
-                  header("Refresh: 0");
-                  die();
+                    header("Refresh: 0");
+                    die();
                 }
                 unset($msg);
             }
@@ -42,43 +42,49 @@ if(isset($_SESSION['user'])){
             </form>
         </div>
         <?php
-            function login() {
-              include ($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
+            function login()
+            {
+                include($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
 
-              $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-              $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+                $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+                $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-              $password = hash('sha512', $password1);
+                $password = hash('sha512', $password1);
 
-              $stmt = $pdo->prepare("SELECT * FROM users WHERE email= :email AND password = :password");
-              $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-              $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-              $stmt->execute();
-              $user = $stmt->fetch(PDO::FETCH_OBJ);
-              $row = $stmt->rowCount();
+                $stmt = $pdo->prepare("SELECT * FROM users WHERE email= :email AND password = :password");
+                $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+                $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+                $stmt->execute();
+                $user = $stmt->fetch(PDO::FETCH_OBJ);
+                $row = $stmt->rowCount();
 
-              $find_user = false;
-              $valid = false;
+                $find_user = false;
+                $valid = false;
 
-              if ($row == 1) {
-                  $find_user = true;
-                  if ($user->active == 1 && $find_user) {
-                      $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
-                      setcookie('name', $user->name, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
-                      setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
-                      $valid = true;
-                  }
-              }
+                if ($row == 1) {
+                    $find_user = true;
+                    if ($user->active == 1 && $find_user) {
+                        //Ez meg nincs kész teljesen
+                        if (!isset($user->secret_key)) {
+                            $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email);
+                            setcookie('name', $user->name, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                            setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                            $valid = true;
+                        } else {
+                            header("Location: /two-factor.php");
+                        }
+                    }
+                }
 
-              $msg = "";
+                $msg = "";
 
-              if (!$find_user) {
-                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
-              } elseif (!$valid) {
-                  $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem erősítette meg az email címét!</div>';
-              }
+                if (!$find_user) {
+                    $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
+                } elseif (!$valid) {
+                    $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem erősítette meg az email címét!</div>';
+                }
 
-              return $msg;
+                return $msg;
             }
         ?>
     </body>
