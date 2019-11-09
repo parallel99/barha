@@ -56,7 +56,7 @@ if (!isset($_SESSION['user'])) {
                 <h3>Nyelv váltás</h3>
                 <div class="form-group">
                     <label for="lang-select">Nyelv</label>
-                    <select class="form-control" id="lang-select">
+                    <select class="custom-select form-control" id="lang-select">
                         <option>Magyar</option>
                         <option>Angol</option>
                     </select>
