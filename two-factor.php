@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <script>
-                    $('body').on('keyup', 'input.phone-input', function(){
+                    $('body').on('keyup', '.two-step-auth-number', function(){
                         if($(this).val().length === this.size){
                             var inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
