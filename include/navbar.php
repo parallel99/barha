@@ -80,9 +80,9 @@ function menu($active)
             </a>
             <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="profile"><span class="fa fa-user-o"></span>Profil</a>
-              <a class="dropdown-item" href="/upload_recipe"><span class="fa fa-upload-o">Recept feltöltés</a>
-              <a class="dropdown-item" href="/myRecipes"><span class="fa fa-pencil-square-o">Recepteim szerkesztése</a>
-              <a class="dropdown-item" href="/favourite"><span class="fa fa-heart-o">Kedvenceim</a>
+              <a class="dropdown-item" href="/upload_recipe"><span class="fa fa-upload-o"></span>Recept feltöltés</a>
+              <a class="dropdown-item" href="/myRecipes"><span class="fa fa-pencil-square-o"></span>Recepteim szerkesztése</a>
+              <a class="dropdown-item" href="/favourite"><span class="fa fa-heart-o"></span>Kedvenceim</a>
               <div class="dropdown-divider"></div>
               <button type="submit" name="logout" class="dropdown-item"><span class="fa fa-sign-out"></span>Kijelentkezés</button>
             </form>
