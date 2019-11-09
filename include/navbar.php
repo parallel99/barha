@@ -78,9 +78,9 @@ function menu($active)
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo $_SESSION['user']['name']; ?>
             </a>
-            <form class="dropdown-menu profile-menu" method="post" aria-labelledby="navbarDropdown">
+            <form class="dropdown-menu profile-menu dropdown-menu-right" method="post" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="profile"><span class="fa fa-user-o"></span>Profil</a>
-              <a class="dropdown-item" href="/upload_recipe"><span class="fa fa-upload-o"></span>Recept feltöltés</a>
+              <a class="dropdown-item" href="/upload_recipe"><span class="fa fa-upload"></span>Recept feltöltés</a>
               <a class="dropdown-item" href="/myRecipes"><span class="fa fa-pencil-square-o"></span>Recepteim szerkesztése</a>
               <a class="dropdown-item" href="/favourite"><span class="fa fa-heart-o"></span>Kedvenceim</a>
               <div class="dropdown-divider"></div>

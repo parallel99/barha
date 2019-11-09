@@ -139,11 +139,6 @@ textarea {
 	padding-right: 10px;
 }
 
-.profile-menu {
-	left: -30px;
-	width: 100px;
-}
-
 .alert.alert-primary.cookie-alert {
 	position: fixed;
 	left: calc(50% - 300px);
