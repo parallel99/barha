@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                 }
                 ?>
                 <div class="form-group">
-                    <select class="custom-select form-control" id="lang-select">
+                    <select class="custom-select form-control" name="lang-select" id="lang-select">
                         <option value="hu">Magyar</option>
                         <option value="en">Angol</option>
                     </select>
