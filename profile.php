@@ -56,7 +56,6 @@ if (!isset($_SESSION['user'])) {
                 <h3>Nyelv váltás</h3>
                 <?php
                 if (isset($_POST['account-lang-change'])) {
-                    echo "Ne nyomkodd!";
                     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
                     $stmt = $pdo->prepare("UPDATE users SET lang = :lang WHERE email = :email");
