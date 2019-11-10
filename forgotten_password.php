@@ -36,12 +36,16 @@ if (isset($_SESSION['user'])) {
                 $stmt->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
                 $stmt->bindValue(':new_password', hash("sha512", $new_password), PDO::PARAM_STR);
                 $stmt->execute();
-                $recipe = $stmt->fetch(PDO::FETCH_OBJ);
-            }
+                $data = $stmt->fetch(PDO::FETCH_OBJ);
 
-            //send mail
-            //ez csak ideiglenes
-            echo $new_password;
+                if ($stmt->rowCount() == 0) {
+                    echo "<div class=\"alert alert-danger\" >Nincs ilyen email cím!</div>";
+                }
+
+                //send mail
+                //ez csak ideiglenes
+                echo $new_password;
+            }
 
             function generateRandomString($length)
             {
