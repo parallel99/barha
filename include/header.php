@@ -62,7 +62,7 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
     $stmt->bindValue(':id', $email, PDO::PARAM_INT);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_OBJ);
-    $_SESSION['user'] = array("nev" => $row->nev, "email" => $row->email, $permission => $row->permission);
+    $_SESSION['user'] = array("nev" => $row->nev, "email" => $row->email, "permission" => $row->permission);
 }
 ?>
 
