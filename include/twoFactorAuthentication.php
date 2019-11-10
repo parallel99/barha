@@ -3,14 +3,7 @@
     $authenticator = new PHPGangsta_GoogleAuthenticator();
     $secret = $authenticator->createSecret();
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-    $email = $_SESSION['user']['email'];
-
-    $stmt = $pdo->prepare("UPDATE users SET secret_key = :secret WHERE email = :email");
-    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    $stmt->bindValue(':secret', $secret, PDO::PARAM_STR);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_OBJ);
+    $_SESSION['secret'] = $secret;
 
     $cht = "qr";
     $chs = "300x300";
@@ -44,7 +37,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Kész</button>
+        <button type="button" class="btn btn-primary" name="saveSecretKey" id="saveSecretKey" data-dismiss="modal">Kész</button>
       </div>
     </div>
   </div>
@@ -52,4 +45,14 @@
 <script>
     $('#auth-modal').modal('toggle');
     $("body").css("padding-right", "0");
+
+    $("#saveSecretKey").click(function() {
+        $.ajax({
+        url: 'include/saveSecretKey.php',
+                type: 'post',
+                data: {},
+                success: function (response) {},
+                error: function (data) {}
+        });
+    });
 </script>
