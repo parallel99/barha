@@ -65,15 +65,13 @@ if (!isset($_SESSION['user'])) {
                     $stmt->execute();
                     $data = $stmt->fetch(PDO::FETCH_OBJ);
 
-                    print_r($_POST);
-
-                    echo "<div class=\"alert alert-success\" style=\"margin: 5px 0; box-shadow: 0\">Mentve!</div>";
+                    echo "<div class=\"alert alert-success\" style=\"margin: 10px 0; box-shadow: none\">Mentve!</div>";
                 }
                 ?>
                 <div class="form-group">
                     <select class="custom-select form-control" id="lang-select">
-                        <option>Magyar</option>
-                        <option>Angol</option>
+                        <option value="hu">Magyar</option>
+                        <option value="en">Angol</option>
                     </select>
                 </div>
                 <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
