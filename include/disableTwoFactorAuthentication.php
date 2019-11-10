@@ -8,4 +8,4 @@ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezése\">";
+echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezése\"><script>$(\"#disable-2-step-auth\").remove()</script>";
