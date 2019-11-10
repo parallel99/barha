@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['user']['permission'] != 'Admin')) {
+if ($_SESSION['user']['permission'] != 'Admin') {
     header("Location: /");
     die();
 }
