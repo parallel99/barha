@@ -22,15 +22,11 @@ if (isset($_SESSION['user'])) {
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="email" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Elfelejtettem a jelszavam</button>
+                <input type="submit" class="btn btn-primary" value="Elfelejtettem a jelszavam">
             </form>
         </div>
         <?php
-
-        print_r($_POST);
-
             if (isset($_POST['submit'])) {
-                echo "asd";
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
                 $new_password = generateRandomString(10);
