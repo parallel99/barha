@@ -54,5 +54,6 @@
                 success: function (response) {},
                 error: function (data) {}
         });
+        $('.account-2-step-auth-form').append("Engedélyezve🎉");
     });
 </script>

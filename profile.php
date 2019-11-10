@@ -47,7 +47,6 @@ if (!isset($_SESSION['user'])) {
                             },
                             error: function (data) {}
                     });
-                    $('.account-2-step-auth-form').append("Engedélyezve🎉");
                 });
                 </script>
             </form>
