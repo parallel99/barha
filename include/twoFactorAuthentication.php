@@ -47,7 +47,7 @@
     $("body").css("padding-right", "0");
 
     $("#saveSecretKey").click(function() {
-        $("#enable-2-step-auth").hide();
+        $("#enable-2-step-auth").remove();
         $.ajax({
         url: 'include/saveSecretKey.php',
                 type: 'post',

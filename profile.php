@@ -31,7 +31,7 @@ if (!isset($_SESSION['user'])) {
                     if (isset($data->secret_key)) {
                         echo "<input type=\"button\" class=\"btn btn-primary\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">";
                     } else {
-                        echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezése\">";
+                        echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezés\">";
                     }
                     ?>
                 </div>
