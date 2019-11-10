@@ -55,6 +55,6 @@
                 success: function (response) {},
                 error: function (data) {}
         });
-        $('.account-2-step-auth-form').append("Engedélyezve🎉");
+        $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-primary\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");
     });
 </script>
