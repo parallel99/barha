@@ -58,15 +58,17 @@ if (!isset($_SESSION['user'])) {
                             error: function (data) {}
                     });
                 });
-                $("#disable-2-step-auth")
-                  .mouseover(function() {
-                    $("#disable-2-step-auth").val("Kikapcsolás");
-                  })
-                  .mouseout(function() {
-                    $("#disable-2-step-auth").val("Engedélyezve🎉");
-                  });
                 </script>
             </form>
+            <script>
+            $("#disable-2-step-auth")
+              .mouseover(function() {
+                $("#disable-2-step-auth").val("Kikapcsolás");
+              })
+              .mouseout(function() {
+                $("#disable-2-step-auth").val("Engedélyezve🎉");
+              });
+            </script>
             <hr>
             <form method="POST" class="account-lang-change-form">
                 <h3>Nyelv váltás</h3>
