@@ -59,7 +59,7 @@ ob_start();
 if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
     include($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
-    $stmt->bindValue(':id', id, PDO::PARAM_INT);
+    $stmt->bindValue(':id', $_COOKIE["userid"], PDO::PARAM_INT);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_OBJ);
     $_SESSION['user'] = array("nev" => $row->nev, "email" => $row->email, "permission" => $row->permission);
