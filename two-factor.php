@@ -62,7 +62,7 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                     </div>
                     <script>
                     $('body').on('keydown', '.two-step-auth-number', function(e){
-                        if($(this).val().length === this.size){
+                        if($(this).val().length === this.size && e.keyCode != 8){
                             var inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
                         }
