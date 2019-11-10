@@ -65,6 +65,8 @@ if (!isset($_SESSION['user'])) {
                     $stmt->execute();
                     $data = $stmt->fetch(PDO::FETCH_OBJ);
 
+                    print_r($_POST[]);
+
                     echo "<div class=\"alert alert-success\" style=\"margin: 5px 0; box-shadow: 0\">Mentve!</div>";
                 }
                 ?>
