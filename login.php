@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
                     <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó" required>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
-                <a href="forgotten_password.php" class="small">Elfelejtetted a jelszavad?</a>
+                <a href="forgotten_password" class="small">Elfelejtetted a jelszavad?</a>
             </form>
         </div>
         <?php
