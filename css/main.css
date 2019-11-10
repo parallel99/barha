@@ -518,6 +518,12 @@ textarea {
 #two-factor-form input[type=number] {
     -moz-appearance:textfield;
 }
+#disable-2-step-auth {
+	width: 140px;
+}
+#enable-2-step-auth {
+	width: 140px;
+}
 @media (max-width: 992px) {
 	.recipe-list-container {
 		max-width: 600px;
