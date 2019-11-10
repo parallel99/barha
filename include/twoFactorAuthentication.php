@@ -56,5 +56,12 @@
                 error: function (data) {}
         });
         $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-primary\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");
+        $("#disable-2-step-auth")
+          .mouseover(function() {
+            $("#disable-2-step-auth").val("Kikapcsolás");
+          })
+          .mouseout(function() {
+            $("#disable-2-step-auth").val("Engedélyezve🎉");
+          });
     });
 </script>
