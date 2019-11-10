@@ -47,6 +47,9 @@ if (!isset($_SESSION['user'])) {
                             error: function (data) {}
                     });
                 });
+                $("#disable-2-step-auth").hover(function(){
+                  $("#disable-2-step-auth").val("Kikapcsolás");
+                });
                 </script>
             </form>
             <hr>
