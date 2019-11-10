@@ -47,6 +47,17 @@ if (!isset($_SESSION['user'])) {
                             error: function (data) {}
                     });
                 });
+                $("#disable-2-step-auth").click(function() {
+                    $.ajax({
+                    url: 'include/disableTwoFactorAuthentication.php',
+                            type: 'post',
+                            data: {},
+                            success: function (response) {
+                                $('.account-2-step-auth-form').append(response)
+                            },
+                            error: function (data) {}
+                    });
+                });
                 $("#disable-2-step-auth")
                   .mouseover(function() {
                     $("#disable-2-step-auth").val("Kikapcsolás");
