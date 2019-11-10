@@ -61,10 +61,13 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <script>
-                    $('body').on('keyup', '.two-step-auth-number', function(){
+                    $('body').on('keyup', '.two-step-auth-number', function(e){
                         if($(this).val().length === this.size){
                             var inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
+                        }
+                        if(e.keyCode == 8) {
+                            alert('backspace trapped');
                         }
                     });
                     </script>
