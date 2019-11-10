@@ -30,7 +30,7 @@
             if (isset($_GET['submit']) || isset($_GET['search'])) {
                 $search = trim($_GET['search']);
 
-                $sql = "SELECT * FROM recipes WHERE LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime DESC LIMIT 50;";
+                $sql = "SELECT * FROM recipes WHERE status = 'accepted' AND LOWER(name) LIKE LOWER('%" . $search . "%') ORDER BY uploadtime DESC LIMIT 50;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
@@ -66,7 +66,7 @@
                     echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
                 }
             } else {
-                $sql = "SELECT * FROM recipes ORDER BY uploadtime DESC;";
+                $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $data = $stmt->fetchAll();
