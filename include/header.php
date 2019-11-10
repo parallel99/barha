@@ -56,14 +56,13 @@
 date_default_timezone_set("Europe/Budapest");
 ob_start();
 
-if (isset($_COOKIE['email'])) {
-    $_SESSION['user']['email'] = $_COOKIE['email'];
-}
-if (isset($_COOKIE['name'])) {
-    $_SESSION['user']['name'] = $_COOKIE['name'];
-}
-if (isset($_COOKIE['permission'])) {
-    $_SESSION['user']['permission'] = $_COOKIE['permission'];
+if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
+    include ROOT_PATH.BASE_URL."includes/db.php";
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+    $stmt->bindValue(':id', $email, PDO::PARAM_INT);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_OBJ);
+    $_SESSION['user'] = array("nev" => $row->nev, "email" => $row->email, $permission => $row->permission);
 }
 ?>
 
