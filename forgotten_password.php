@@ -27,6 +27,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <?php
             if (isset($_POST['submit'])) {
+                echo "asd";
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
                 $new_password = generateRandomString(10);
