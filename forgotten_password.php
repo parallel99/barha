@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     header("Location: /");
     die();
 }
@@ -26,8 +26,32 @@ if(isset($_SESSION['user'])){
             </form>
         </div>
         <?php
-            if(isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) {
+                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
+                $new_password = generateRandomString(10);
+
+                $sql = "UPDATE users SET password = :new_password WHERE email = :email;";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+                $stmt->bindValue(':new_password', hash("sha512", $new_password), PDO::PARAM_STR);
+                $stmt->execute();
+                $recipe = $stmt->fetch(PDO::FETCH_OBJ);
+            }
+
+            //send mail
+            //ez csak ideiglenes
+            echo $new_password;
+
+            function generateRandomString($length)
+            {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@#%?.!*';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
             }
         ?>
     </body>
