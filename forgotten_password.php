@@ -38,6 +38,8 @@ if (isset($_SESSION['user'])) {
                 $stmt->execute();
                 $data = $stmt->fetch(PDO::FETCH_OBJ);
 
+                echo $stmt->rowCount();
+
                 if ($stmt->rowCount() == 0) {
                     echo "<div class=\"alert alert-danger\" >Nincs ilyen email cím!</div>";
                 }

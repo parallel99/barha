@@ -68,7 +68,7 @@ textarea {
 	margin-top: 15px;
 	width: 100%!important;
 }
-#forgottenPasswordForm button {
+#forgottenPasswordForm input[type=submit] {
 	margin-top: 15px;
 	width: 100%!important;
 }
@@ -154,7 +154,7 @@ textarea {
 
 .form-container {
 	align-items: center;
-	min-height: calc(100vh - 56px);
+	min-height: calc(100vh - 60px);
 }
 
 .error-container {
