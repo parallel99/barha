@@ -66,9 +66,10 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                             var inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
                         }
+                    });
+                    $('body').on('keyup', '.two-step-auth-number', function(e){
                         if(e.keyCode == 8) {
                             var inputs = $('.two-step-auth-number');
-                            inputs.index(this).val("");
                             if (inputs.index(this) >= 1) {
                                 inputs.eq(inputs.index(this) - 1).focus();
                             }
