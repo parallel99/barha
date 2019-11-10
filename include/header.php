@@ -55,7 +55,6 @@
 <?php
 date_default_timezone_set("Europe/Budapest");
 ob_start();
-header("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
 
 if (isset($_COOKIE['email'])) {
     $_SESSION['user']['email'] = $_COOKIE['email'];
