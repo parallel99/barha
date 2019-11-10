@@ -54,19 +54,27 @@ if (!isset($_SESSION['user'])) {
             <hr>
             <form method="POST" class="account-lang-change-form">
                 <h3>Nyelv váltás</h3>
+                <?php
+                if (isset($_POST['account-lang-change'])) {
+                    echo "Ne nyomkodd!";
+                    include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                    $stmt = $pdo->prepare("UPDATE users SET lang = :lang WHERE email = :email");
+                    $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                    $stmt->bindValue(':lang', $_POST['lang-select'], PDO::PARAM_STR);
+                    $stmt->execute();
+                    $data = $stmt->fetch(PDO::FETCH_OBJ);
+
+                    echo "<div class=\"alert alert-success\" style=\"margin: 5px 0; box-shadow: 0\">Mentve!</div>";
+                }
+                ?>
                 <div class="form-group">
-                    <label for="lang-select">Nyelv</label>
                     <select class="custom-select form-control" id="lang-select">
                         <option>Magyar</option>
                         <option>Angol</option>
                     </select>
                 </div>
                 <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
-                <?php
-                if (isset($_POST['account-lang-change'])) {
-                    echo "Ne nyomkodd!";
-                }
-                ?>
             </form>
             <hr>
             <form method="POST" class="account-password-change-form">
