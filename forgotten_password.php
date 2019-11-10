@@ -26,6 +26,9 @@ if (isset($_SESSION['user'])) {
             </form>
         </div>
         <?php
+
+        print_r($_POST);
+
             if (isset($_POST['submit'])) {
                 echo "asd";
                 include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
