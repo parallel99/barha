@@ -57,7 +57,7 @@ date_default_timezone_set("Europe/Budapest");
 ob_start();
 
 if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
-    include ROOT_PATH.BASE_URL."includes/db.php";
+    include($_SERVER['DOCUMENT_ROOT'].'/include/db.php');
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
     $stmt->bindValue(':id', $email, PDO::PARAM_INT);
     $stmt->execute();
