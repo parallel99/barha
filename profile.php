@@ -90,23 +90,23 @@ if (!isset($_SESSION['user'])) {
                 $stmt = $pdo->prepare("SELECT lang FROM users WHERE email = :email");
                 $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                 $stmt->execute();
-                $lang = $stmt->fetch(PDO::FETCH_OBJ);
+                $data = $stmt->fetch(PDO::FETCH_OBJ);
 
                 print_r($lang);
                 ?>
                 <div class="form-group">
                     <select class="custom-select form-control" name="lang-select" id="lang-select">
-                        <option value="hu">Magyar</option>
-                        <option value="en">Angol</option>
                         <?php
-
-                        if($lang == 'hu') {
+                        if($data->lang == 'hu') {
                             echo "<option value=\"hu\" selected>Magyar</option>";
                             echo "<option value=\"en\">Angol</option>";
-                        } elseif ($lang == 'en') {
-
+                        } elseif ($data->lang == 'en') {
+                            echo "<option value=\"hu\">Magyar</option>";
+                            echo "<option value=\"en\" selected>Angol</option>";
+                        } else {
+                            echo "<option value=\"hu\">Magyar</option>";
+                            echo "<option value=\"en\">Angol</option>";
                         }
-
                         ?>
                     </select>
                 </div>
