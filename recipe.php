@@ -33,7 +33,14 @@ if ($stmt->rowCount() != 1) {
         <div class="container recipe-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h1 id="name"><?php echo $recipe->name ?></h1>
+                    <h1 id="name">
+                  <?php
+                      echo $recipe->name;
+                      if($row->status == 'rejected'){
+                        echo "<div class='rejected-text'> (Elutasítva)</div>";
+                      }
+                  ?>
+                  </h1>
                     <?php
                     if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
 

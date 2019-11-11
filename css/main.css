@@ -133,6 +133,11 @@ textarea {
 	margin-left: 10px;
 }
 
+.rejected-text{
+	color: #ff2655;
+	display: inline-block;
+}
+
 .navbar .name {
 	display: inline-block;
 	margin: 2px 0 0 0;
