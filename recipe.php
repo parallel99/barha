@@ -42,7 +42,7 @@ if($_SESSION['user']['permission'] != 'admin'){
                     <h1 id="name">
                   <?php
                       echo $recipe->name;
-                      if($row->status == 'rejected'){
+                      if($recipe->status == 'rejected'){
                         echo "<div class='rejected-text'> (Elutasítva)</div>";
                       }
                   ?>
