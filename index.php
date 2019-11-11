@@ -21,9 +21,9 @@
             <button type="submit" class="btn btn-primary">Keresés</button>
         </form>
         <script>
-            $('.ingredients-group').on('input', function (event) {
+            $('.ingredients-group').on('input', function () {
                 var length = $(".ingredients-group > div").length
-                if ($("div.ingredients-group div:last-child > input").val() != "" && length < 25) {
+                if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
                     $(".ingredients-group").append("<div class='form-group'><input type='text' class='form-control' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávalók'></div>");
                     $("#ingredients" + (length + 1)).autocomplete({
                         source: ingredients

@@ -92,7 +92,7 @@ if ($stmt->rowCount() != 1) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
     <script>
     $(".favourite").click(function() {
-        id = <?php echo $recipe->id; ?>;
+        let id = <?php echo $recipe->id; ?>;
         if ($('.favourite-text').text() === "Hozzáadás a kedvencekhez") {
 
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
@@ -104,7 +104,7 @@ if ($stmt->rowCount() != 1) {
                     data: {
                         "id": id
                     },
-                    success: function (response) {},
+                    success: function () {},
                     error: function (data) {}
             });
         } else {

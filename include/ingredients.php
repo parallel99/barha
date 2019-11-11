@@ -12,7 +12,7 @@
         success: function (response) {
             $("body").append(response);
         },
-        error: function (data) {
+        error: function () {
             ingredients.push("Hiba");
         }
     });

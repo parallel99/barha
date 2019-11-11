@@ -44,7 +44,7 @@ if (!isset($_SESSION['user'])) {
                             success: function (response) {
                                 $('.account-2-step-auth-form').append(response)
                             },
-                            error: function (data) {}
+                            error: function () {}
                     });
                 });
                 $("#disable-2-step-auth").click(function() {
@@ -55,7 +55,7 @@ if (!isset($_SESSION['user'])) {
                             success: function (response) {
                                 $('.account-2-step-auth-form').append(response)
                             },
-                            error: function (data) {}
+                            error: function () {}
                     });
                 });
                 </script>
@@ -166,7 +166,7 @@ if (!isset($_SESSION['user'])) {
                         success: function (response) {
                             $('.account-delete-error-container').append(response)
                         },
-                        error: function (data) {}
+                        error: function () {}
                 });
             });
 
@@ -184,7 +184,7 @@ if (!isset($_SESSION['user'])) {
                         success: function (response) {
                             $('.account-delete-error-container').append(response);
                         },
-                        error: function (data) {}
+                        error: function () {}
                 });
             });
         </script>

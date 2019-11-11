@@ -4,6 +4,8 @@
     "php": "*",
     "sendgrid/sendgrid": "*",
     "cloudinary/cloudinary_php": "^1.15",
-    "phpgangsta/googleauthenticator": "dev-master"
+    "phpgangsta/googleauthenticator": "dev-master",
+    "ext-pdo": "*",
+    "ext-json": "*"
   }
 }

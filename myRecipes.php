@@ -124,7 +124,7 @@ if (!isset($_SESSION['user'])) {
                 success: function (response) {
                     $('.recipes').append(response)
                 },
-                error: function (data) {}
+                error: function () {}
         });
     });
 </script>
