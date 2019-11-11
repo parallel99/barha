@@ -107,7 +107,12 @@ menu("none");
     <?php
     if (isset($_SESSION['user']) && $recipe->status == 'pending') {
         if ($_SESSION['user']['permission'] == 'admin') {
-            echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elutasít</button><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
+
+            $form = "<form method='post' class='clearfix'>";
+            $form .= "<button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elutasít</button>";
+            $form .= "<button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button>";
+            $form .= "</form>";
+            echo $form;
 
             if (isset($_POST['delete'])) {
                 //$stmt = $pdo->prepare("DELETE recipes WHERE id = :id;");
