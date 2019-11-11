@@ -5,7 +5,7 @@ class SaveRecipe {
         $this->msg = "";
         $this->ok = true;
         $this->recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-        $this->making = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
+        $this->making = str_replace(PHP_EOL, "<br>", filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING));
         $this->making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
         $this->std = new \stdClass();
     }
