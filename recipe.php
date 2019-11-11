@@ -87,17 +87,27 @@ if ($stmt->rowCount() != 1) {
             </div>
             <?php
             if (isset($_SESSION['user'])) {
-              if($_SESSION['permission'] == 'admin'){
+              if($_SESSION['user']['permission'] == 'admin'){
                 echo "<form method='post'><button type='submit' class='btn btn-suces' name='accept'>Elfogad</button></form>";
 
                 if(isset($_POST['accept'])){
                     $stmt = $pdo->prepare("UPDATE recipes SET status = 'accepted' WHERE id = :id;");
                     $stmt->bindValue(':id', $recipe->id, PDO::PARAM_INT);
                     $stmt->execute();
+
+
+
                     foreach ($ingredients as $key => $value) {
-                        $addingredients = $pdo->prepare("INSERT INTO ingredients(name) VALUES(:name);");
-                        $addingredients->bindParam(':name', $value->name, PDO::PARAM_STR);
-                        $addingredients->execute();
+
+                      $getingredients = $pdo->prepare("SELECT name FROM ingredients WHERE name = :name;");
+                      $getingredients->bindValue(':name', $value->name, PDO::PARAM_STR);
+                      $getingredients->execute();
+
+                      if($getingredients->rowCount() == 0){
+                          $addingredients = $pdo->prepare("INSERT INTO ingredients(name) VALUES(:name);");
+                          $addingredients->bindParam(':name', $value->name, PDO::PARAM_STR);
+                          $addingredients->execute();
+                      }
                     }
                 }
               }
