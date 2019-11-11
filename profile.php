@@ -84,11 +84,30 @@ if (!isset($_SESSION['user'])) {
 
                     echo "<div class=\"alert alert-success\" style=\"margin: 10px 0; box-shadow: none\">Mentve!</div>";
                 }
+
+                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+                $stmt = $pdo->prepare("SELECT lang FROM users WHERE email = :email");
+                $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                $stmt->execute();
+                $data = $stmt->fetch(PDO::FETCH_OBJ);
+
+                print_r($lang);
                 ?>
                 <div class="form-group">
                     <select class="custom-select form-control" name="lang-select" id="lang-select">
-                        <option value="hu">Magyar</option>
-                        <option value="en">Angol</option>
+                        <?php
+                        if($data->lang == 'hu') {
+                            echo "<option value=\"hu\" selected>Magyar</option>";
+                            echo "<option value=\"en\">Angol</option>";
+                        } elseif ($data->lang == 'en') {
+                            echo "<option value=\"hu\">Magyar</option>";
+                            echo "<option value=\"en\" selected>Angol</option>";
+                        } else {
+                            echo "<option value=\"hu\">Magyar</option>";
+                            echo "<option value=\"en\">Angol</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
