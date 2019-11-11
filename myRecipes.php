@@ -52,7 +52,7 @@ if (!isset($_SESSION['user'])) {
                                 <?php
                                   echo $row->name;
                                   if($row->status == 'rejected'){
-                                    echo "<div class='rejected-text'> (Elutasítva)</div>";
+                                    echo "<div class='rejected-text'>(Elutasítva)</div>";
                                   }
                                 ?>
                             </h3>

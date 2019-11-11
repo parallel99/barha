@@ -43,7 +43,7 @@ if($_SESSION['user']['permission'] != 'admin'){
                   <?php
                       echo $recipe->name;
                       if($recipe->status == 'rejected'){
-                        echo "<div class='rejected-text'> (Elutasítva)</div>";
+                        echo "<div class='rejected-text'>(Elutasítva)</div>";
                       }
                   ?>
                   </h1>
