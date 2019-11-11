@@ -29,28 +29,6 @@ if($_SESSION['user']['permission'] != 'admin'){
 ?>
 <!DOCTYPE html>
 <html lang="hu">
-<<<<<<< HEAD
-    <head>
-        <title>BárHa | <?php echo($recipe->name); ?></title>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-    </head>
-    <body>
-        <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/makingTime.php';
-            menu("none");
-        ?>
-        <div class="container recipe-container">
-            <div class="row">
-                <div class="col-sm-5">
-                    <h1 id="name">
-                      <?php
-                        echo $recipe->name, statusText($recipe->status);
-                      ?>
-                  </h1>
-                    <?php
-                    if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
-=======
 <head>
     <title>BárHa | <?php echo($recipe->name); ?></title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
@@ -74,7 +52,6 @@ menu("none");
             </h1>
             <?php
             if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
->>>>>>> dcf92d556da5d4e6acbdf02ad6e113b8637af4b5
 
                 $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE :id = ANY(favourite) AND email = :email;");
                 $stmt->bindValue(':id', $recipe->id, PDO::PARAM_STR);
