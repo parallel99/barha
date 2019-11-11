@@ -24,8 +24,8 @@ if($_SESSION['user']['permission'] != 'admin'){
         include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
         die();
     }
-}*/
 }
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="hu">
