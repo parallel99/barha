@@ -47,8 +47,8 @@ menu("registration");
         <div class="form-group">
             <label for="lang-select">Nyelv</label>
             <select class="custom-select form-control" name="lang-select" id="lang-select">
-                    <option value="hu">Magyar</option>
-                    <option value="en">Angol</option>
+                <option value="hu">Magyar</option>
+                <option value="en">Angol</option>
             </select>
         </div>
         <div class="form-group" style="text-align: center">

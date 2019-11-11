@@ -1,13 +1,13 @@
 html {
-	height: fit-content;
-	min-height: 100%;
+    height: fit-content;
+    min-height: 100%;
 }
 
 body {
-	height: fit-content;
-	min-height: 100%;
-	margin: 0;
-	padding: 0;
+    height: fit-content;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
     background-size: cover;
     background: #f8f9fa linear-gradient(40deg, #2096ff, #05ffa3) no-repeat fixed;
 }
@@ -16,7 +16,7 @@ body,
 input,
 .ui-widget,
 .ui-autocomplete.ui-widget {
-	font-family: 'Kalam', cursive;
+    font-family: 'Kalam', cursive;
 }
 
 textarea {
@@ -28,109 +28,113 @@ textarea {
 }
 
 #title {
-	color: #fff;
-	text-align: center;
-	padding-top: 20vh;
-	text-shadow: 2px 2px 2px rgb(80, 80, 80);
-	font-size: 400%;
-	line-height: 95%;
-	margin-bottom: 15px
+    color: #fff;
+    text-align: center;
+    padding-top: 20vh;
+    text-shadow: 2px 2px 2px rgb(80, 80, 80);
+    font-size: 400%;
+    line-height: 95%;
+    margin-bottom: 15px
 }
 
 .ui-autocomplete {
-	max-height: 200px;
-	overflow-y: auto;
-	/* prevent horizontal scrollbar */
-	overflow-x: hidden;
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
 }
 
 #registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
-	background-color: #fff;
-	border-radius: 10px;
-	width: 400px;
-	padding: 25px;
-	margin: auto auto 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 400px;
+    padding: 25px;
+    margin: auto auto 25px;
 }
 
 #registrationForm button {
-	margin-top: 15px;
-	width: 100%!important;
+    margin-top: 15px;
+    width: 100% !important;
 }
+
 #loginForm button {
-	margin-top: 15px;
-	width: 100%!important;
+    margin-top: 15px;
+    width: 100% !important;
 }
+
 #mainForm button {
-	margin-top: 15px;
-	width: 100%!important;
+    margin-top: 15px;
+    width: 100% !important;
 }
+
 #forgottenPasswordForm input[type=submit] {
-	margin-top: 15px;
-	width: 100%!important;
+    margin-top: 15px;
+    width: 100% !important;
 }
+
 #forgottenPasswordForm h1 {
-	margin-bottom: 20px;
-	text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .forgotten-password-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-group label {
-	margin-bottom: .1rem;
+    margin-bottom: .1rem;
 }
 
 #loginForm {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 #loginForm button {
-	margin: 0 0 15px 0;
+    margin: 0 0 15px 0;
 }
 
 #loginForm a {
-	text-align: center;
-	display: block;
+    text-align: center;
+    display: block;
 }
 
 #forgottenPasswordForm {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 #forgottenPasswordForm button {
-	margin: 0 0 15px 0;
+    margin: 0 0 15px 0;
 }
 
 #registrationForm {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 #registrationForm button {
-	margin: 0 0 15px 0;
+    margin: 0 0 15px 0;
 }
 
-#registrationForm>div.form-check {
-	margin-bottom: 10px;
+#registrationForm > div.form-check {
+    margin-bottom: 10px;
 }
 
 .custom-file-label {
-	overflow: hidden;
-	line-height: 1.7;
+    overflow: hidden;
+    line-height: 1.7;
 }
 
-.custom-file-label::after{
-	 background: #007bff;
-	 color: white;
+.custom-file-label::after {
+    background: #007bff;
+    color: white;
 }
 
-.recipe-accept-button{
-	min-width: 150px;
-  margin-top: 20px;
-  float: right;
-	margin-left: 10px;
+.recipe-accept-button {
+    min-width: 150px;
+    margin-top: 20px;
+    float: right;
+    margin-left: 10px;
 }
 
 .rejected-text{
@@ -146,128 +150,128 @@ textarea {
 }
 
 .navbar .name {
-	display: inline-block;
-	margin: 2px 0 0 0;
+    display: inline-block;
+    margin: 2px 0 0 0;
 }
 
 .fa {
-	padding-right: 10px;
+    padding-right: 10px;
 }
 
 .alert.alert-primary.cookie-alert {
-	position: fixed;
-	left: calc(50% - 300px);
-	bottom: 0;
-	max-width: 600px;
+    position: fixed;
+    left: calc(50% - 300px);
+    bottom: 0;
+    max-width: 600px;
 }
 
-.time-input{
-	cursor: pointer;
-	width: 100px;
-	text-align: center;
+.time-input {
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
 }
 
 .form-container {
-	align-items: center;
-	min-height: calc(100vh - 60px);
+    align-items: center;
+    min-height: calc(100vh - 60px);
 }
 
 .error-container {
-	display: flex;
-	align-items: center;
-	min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 80px);
 }
 
 .activation-body {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .activation-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .activation {
-	padding: 25px;
-	background: #fff;
-	width: 80%;
-	max-width: 600px;
-	border-radius: 10px;
-	text-align: center;
-	margin: 15px auto auto;
+    padding: 25px;
+    background: #fff;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 15px auto auto;
 }
 
 .activation h1 {
-	text-align: center;
+    text-align: center;
 }
 
 .error-page {
-	margin: auto;
-	padding: 25px;
-	background: #fff;
-	width: 85%;
-	max-width: 600px;
-	border-radius: 10px;
+    margin: auto;
+    padding: 25px;
+    background: #fff;
+    width: 85%;
+    max-width: 600px;
+    border-radius: 10px;
 }
 
 .alert-danger {
-	margin: 10px auto;
-	max-width: 400px;
+    margin: 10px auto;
+    max-width: 400px;
 }
 
 .alert-success {
-	margin: 10px auto;
-	max-width: 400px;
+    margin: 10px auto;
+    max-width: 400px;
 }
 
 .aszf {
-	color: blue;
-	font-style: italic;
-	display: inline-block;
-	cursor: pointer;
+    color: blue;
+    font-style: italic;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.btn-upload{
-	width: 150px;
+.btn-upload {
+    width: 150px;
 }
 
-.recipe-height{
-	min-height: 600px;
+.recipe-height {
+    min-height: 600px;
 }
 
 #aszfModal .modal-body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .g-recaptcha {
-	display: inline-block;
+    display: inline-block;
 }
 
 #aszfModal .modal-dialog, #aszfModal .modal-content {
-	height: 90%;
+    height: 90%;
 }
 
 #aszfModal .modal-body {
-	max-height: calc(100% - 120px);
-	overflow-y: scroll;
-	width: calc(100% - 1px)
+    max-height: calc(100% - 120px);
+    overflow-y: scroll;
+    width: calc(100% - 1px)
 }
 
 #aszfModal .modal-body::-webkit-scrollbar {
-	width: 12px;
+    width: 12px;
 }
 
 #aszfModal .modal-body::-webkit-scrollbar-track {
-	background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 #aszfModal .modal-body::-webkit-scrollbar-thumb {
-	background: #888;
+    background: #888;
 }
 
 #aszfModal .modal-body::-webkit-scrollbar-thumb:hover {
-	background: #555;
+    background: #555;
 }
 
 .account {
@@ -290,180 +294,185 @@ textarea {
 }
 
 .alert {
-	border-radius: 10px;
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 .recipe-list-container {
-	max-width: 800px;
+    max-width: 800px;
 }
 
 .recipe-list-container .search {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-	margin-top: 25px;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    margin-top: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px;
 }
 
 .recipe-list-container .search input {
-	margin-right: 15px;
-	border-radius: .25rem!important;
+    margin-right: 15px;
+    border-radius: .25rem !important;
 }
 
 .recipe-list-container img {
-	max-width: 150px;
-	border-radius: 10px;
-	margin: 15px;
+    max-width: 150px;
+    border-radius: 10px;
+    margin: 15px;
 }
 
 .recipe-list-container .media {
-	text-decoration: none;
-	border-radius: 10px;
-	background-color: #fff;
-	margin: 25px auto;
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-	min-height: 125px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 25px auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    min-height: 125px;
 }
+
 .recipe-list-container .media-body {
-	margin: 15px 15px 15px 0;
+    margin: 15px 15px 15px 0;
 }
+
 .recipe-list-container .media-left {
-	margin: auto;
+    margin: auto;
 }
 
 .recipe-list-container .media h6, .gray {
-	color: #6c757d;
+    color: #6c757d;
 }
+
 .recipe-list-container .media h3 {
-	color: black;
+    color: black;
 }
 
 .recipe-list-container .no-result {
-	padding: 15px;
-	border-radius: 10px;
-	background-color: #fff;
-	margin: 25px auto;
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 25px auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 .recipe-list-container .no-result h3 {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .recipe-list-container .more-recipe {
-	padding: 15px;
-	border-radius: 10px;
-	background-color: #fff;
-	margin: 25px auto;
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 25px auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
+
 .recipe-list-container .more-recipe button {
-	width: 100%;
+    width: 100%;
 }
 
 .recipe-container {
-	border-radius: 10px;
+    border-radius: 10px;
     background-color: #fff;
     padding: 25px;
     margin: 20px auto;
 }
 
 .recipe-container img {
-	width: 100%;
-	height: auto;
-	padding: 5px;
-	border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .recipe-container .recipe {
-	margin-top: 15px;
-	padding: 20px 20px 0 20px;
-	width: 100%;
+    margin-top: 15px;
+    padding: 20px 20px 0 20px;
+    width: 100%;
 }
 
 .recipe-container h1 {
-	word-break: break-word;
+    word-break: break-word;
 }
 
 .recipe-container .recipe p {
-	text-align: justify;
-	word-break: break-word;
+    text-align: justify;
+    word-break: break-word;
 }
 
 .recipe-container .recipe p:last-child {
-	margin: 0;
+    margin: 0;
 }
 
-.newLine{
-	display: block;
-}
-.upload-ingredients-db, .upload-ingredients-name, .upload-ingredients-unit{
-	display: inline-block;
+.newLine {
+    display: block;
 }
 
-.upload-ingredients-name{
-	width: 500px;
+.upload-ingredients-db, .upload-ingredients-name, .upload-ingredients-unit {
+    display: inline-block;
 }
 
-.upload-ingredients-db{
-	width: 150px;
+.upload-ingredients-name {
+    width: 500px;
 }
 
-.upload-ingredients-unit{
-	width: 220px;
-	padding: 1px;
+.upload-ingredients-db {
+    width: 150px;
 }
 
-.myrecipe-btn{
-	width: 50%;
-	display: inline-block;
-	padding: 10px;
-	text-align: center;
-	color: white;
+.upload-ingredients-unit {
+    width: 220px;
+    padding: 1px;
 }
 
-.delete-recipe-btn{
-	background: #ff2655;
-	border-radius: 0 0 10px 0;
-	border: 0;
-	border-bottom: 2px solid #b80000;
-	border-right: 2px solid #b80000;
+.myrecipe-btn {
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: white;
 }
 
-.write-recipe-btn{
-	background: #00a2ff;
-	border-radius: 0 0 0 10px;
-	border: 0;
-	border-bottom: 2px solid #006eff;
-	border-left: 2px solid #006eff;
-	float: left;
+.delete-recipe-btn {
+    background: #ff2655;
+    border-radius: 0 0 10px 0;
+    border: 0;
+    border-bottom: 2px solid #b80000;
+    border-right: 2px solid #b80000;
 }
 
-.custom-checkbox{
-	margin-top: 0;
-	display: inline-block;
-	left: 5px;
+.write-recipe-btn {
+    background: #00a2ff;
+    border-radius: 0 0 0 10px;
+    border: 0;
+    border-bottom: 2px solid #006eff;
+    border-left: 2px solid #006eff;
+    float: left;
+}
+
+.custom-checkbox {
+    margin-top: 0;
+    display: inline-block;
+    left: 5px;
 }
 
 .recipe-container .favourite {
-	display:flex;
-	align-items: center;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .recipe-container .favourite-star {
-	height: 35px;
-	width: 35px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .recipe-container .favourite:hover .favourite-star {
-	background-image: url("/images/favourite2.svg");
+    background-image: url("/images/favourite2.svg");
 }
 
 .recipe-container .favourite h5 {
@@ -472,56 +481,67 @@ textarea {
     margin: 4px 0 0 5px;
 }
 
-.media-body{
-	word-break: break-word;
+.media-body {
+    word-break: break-word;
 }
 
 #auth-modal .auth-qr-code {
-	position: relative;
-	display: block;
-	margin: auto auto -20px;
+    position: relative;
+    display: block;
+    margin: auto auto -20px;
 }
+
 #auth-modal .auth-secret {
-	text-align: center;
-	position: relative;
+    text-align: center;
+    position: relative;
 }
+
 #auth-modal .row .col-6 a {
-	position: relative;
-	margin: auto;
-	width: 100%;
-	height: 100%
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%
 }
+
 #auth-modal .row .col-6 img {
-	position: relative;
-	margin: auto;
-	width: 100%;
-	height: 100%
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%
 }
+
 #auth-modal .download-google-authenticator-text {
-	text-align: center;
-	display: block;
+    text-align: center;
+    display: block;
 }
+
 #two-factor-body {
-	overflow-y: hidden;
+    overflow-y: hidden;
 }
+
 #two-factor-form {
-	margin-top: 2vh;
+    margin-top: 2vh;
 }
+
 #two-factor-form .two-step-auth-number {
-	padding: .375rem .5rem;
-	text-align: center;
-	margin: 20px 5px 10px 5px;
-	max-width: 30px;
+    padding: .375rem .5rem;
+    text-align: center;
+    margin: 20px 5px 10px 5px;
+    max-width: 30px;
 }
+
 #two-factor-form .two-step-auth-number-container {
-	margin: auto;
+    margin: auto;
 }
+
 #two-factor-form #right {
-	margin-left: 5px;
+    margin-left: 5px;
 }
+
 #two-factor-form #left {
-	margin-right: 5px;
+    margin-right: 5px;
 }
+
 #two-factor-form input::-webkit-outer-spin-button,
 #two-factor-form input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -529,151 +549,179 @@ textarea {
 }
 
 #two-factor-form input[type=number] {
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
 }
+
 #disable-2-step-auth {
-	width: 140px;
+    width: 140px;
 }
+
 #enable-2-step-auth {
-	width: 140px;
+    width: 140px;
 }
+
 @media (max-width: 992px) {
-	.recipe-list-container {
-		max-width: 600px;
-	}
-	.upload-ingredients-name{
-		width: 300px;
-	}
-	.upload-ingredients-db{
-		width: 120px;
-	}
+    .recipe-list-container {
+        max-width: 600px;
+    }
+
+    .upload-ingredients-name {
+        width: 300px;
+    }
+
+    .upload-ingredients-db {
+        width: 120px;
+    }
 }
 
 @media (max-width: 768px) {
-	.upload-ingredients-name{
-		width: 250px;
-	}
-	.upload-ingredients-db, .upload-ingredients-unit{
-		width: 110px;
-	}
+    .upload-ingredients-name {
+        width: 250px;
+    }
+
+    .upload-ingredients-db, .upload-ingredients-unit {
+        width: 110px;
+    }
 }
 
 @media (max-width: 660px) {
-	.alert.alert-primary.cookie-alert {
-		width: 80%;
-		left: 10%;
-	}
+    .alert.alert-primary.cookie-alert {
+        width: 80%;
+        left: 10%;
+    }
 }
 
 @media (max-width: 600px) {
-  .account {
-    margin: 20px 10px;
-    width: auto;
-  }
-	.recipe-container {
-		width: 95%;
-		padding: 15px;
-	}
-	.alert.alert-primary.cookie-alert {
-    	width: 95%;
-    	position: fixed;
-    	left: 2.5%;
-	}
-	.recipe-list-container .media {
-		margin: 15px auto;
-	}
-	.recipe-list-container .search {
-		margin: 15px auto;
-	}
-	.recipe-list-container .no-result {
-		margin: 15px auto;
-	}
-	.recipe-list-container .more-recipe {
-		margin: 15px auto;
-	}
-	.upload-ingredients-name{
-		width: 100%;
-		margin-bottom: 5px;
-	}
-	.upload-ingredients-db, .upload-ingredients-unit{
-		width: 130px;
-	}
-	.recipe-accept-button{
-		min-width: 100%;
-	}
+    .account {
+        margin: 20px 10px;
+        width: auto;
+    }
+
+    .recipe-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .alert.alert-primary.cookie-alert {
+        width: 95%;
+        position: fixed;
+        left: 2.5%;
+    }
+
+    .recipe-list-container .media {
+        margin: 15px auto;
+    }
+
+    .recipe-list-container .search {
+        margin: 15px auto;
+    }
+
+    .recipe-list-container .no-result {
+        margin: 15px auto;
+    }
+
+    .recipe-list-container .more-recipe {
+        margin: 15px auto;
+    }
+
+    .upload-ingredients-name {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .upload-ingredients-db, .upload-ingredients-unit {
+        width: 130px;
+    }
+
+    .recipe-accept-button {
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 410px) {
-	.recipe-list-container .search input {
-		width: 100%;
-		margin-right: 0;
-	}
+    .recipe-list-container .search input {
+        width: 100%;
+        margin-right: 0;
+    }
 
-	.recipe-list-container .search span, .recipe-list-container .search button {
-		width: 100%;
-		margin-top: 10px;
-	}
+    .recipe-list-container .search span, .recipe-list-container .search button {
+        width: 100%;
+        margin-top: 10px;
+    }
 
-	.recipe-list-container img {
-		max-width: 125px;
-		margin: 10px;
-	}
+    .recipe-list-container img {
+        max-width: 125px;
+        margin: 10px;
+    }
 
-	.recipe-list-container .media-body {
-		margin: 10px 10px 10px 0;
-	}
+    .recipe-list-container .media-body {
+        margin: 10px 10px 10px 0;
+    }
 
-	.recipe-list-container .media h3 {
-		font-size: 1.5rem;
-		word-break: break-word;
-	}
-	.recipe-list-container .media strong::before {
-		content: ' ';
-    	display: block;
-	}
+    .recipe-list-container .media h3 {
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
 
-	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
-		width: 342px;
-	}
-	#loginForm button {
-		width: 300px;
-	}
+    .recipe-list-container .media strong::before {
+        content: ' ';
+        display: block;
+    }
+
+    #registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
+        width: 342px;
+    }
+
+    #loginForm button {
+        width: 300px;
+    }
+
     #registrationForm button {
         width: 300px;
     }
+
     #mainForm button {
         width: 300px;
-	}
-	#forgottenPasswordForm button {
-		width: 300px;
-	}
-	#registrationForm {
-		padding: 20px;
-	}
-	.errorpage {
-		width: 90%;
-	}
-	.alert-success {
-		max-width: 300px;
-	}
-	.alert-danger {
-		max-width: 300px;
-	}
-	.email-confirm {
-		width: 300px;
-	}
-	body {
-		-webkit-tap-highlight-color: transparent;
-		-webkit-user-select: none;
-		user-select: none;
-		-webkit-touch-callout: none;
-	}
+    }
+
+    #forgottenPasswordForm button {
+        width: 300px;
+    }
+
+    #registrationForm {
+        padding: 20px;
+    }
+
+    .errorpage {
+        width: 90%;
+    }
+
+    .alert-success {
+        max-width: 300px;
+    }
+
+    .alert-danger {
+        max-width: 300px;
+    }
+
+    .email-confirm {
+        width: 300px;
+    }
+
+    body {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
 }
+
 @media (max-width: 340px) {
-	#registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
-    	width: 300px;
-	}
-	.g-recaptcha {
-		margin-left: -21px;
-	}
+    #registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
+        width: 300px;
+    }
+
+    .g-recaptcha {
+        margin-left: -21px;
+    }
 }

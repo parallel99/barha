@@ -1,229 +1,229 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "049df66539167c9bf01e708012fc109b",
-    "packages": [
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "049df66539167c9bf01e708012fc109b",
+  "packages": [
+    {
+      "name": "cloudinary/cloudinary_php",
+      "version": "1.15.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/cloudinary/cloudinary_php.git",
+        "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/d3ff05f2436a5322b70a00782c1d4b1656b043e9",
+        "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9",
+        "shasum": ""
+      },
+      "require": {
+        "ext-curl": "*",
+        "ext-json": "*",
+        "php": ">=5.4.0"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+      },
+      "type": "library",
+      "autoload": {
+        "classmap": [
+          "src"
+        ],
+        "files": [
+          "src/Helpers.php"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
         {
-            "name": "cloudinary/cloudinary_php",
-            "version": "1.15.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/d3ff05f2436a5322b70a00782c1d4b1656b043e9",
-                "reference": "d3ff05f2436a5322b70a00782c1d4b1656b043e9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.8.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ],
-                "files": [
-                    "src/Helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cloudinary",
-                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
-                }
-            ],
-            "description": "Cloudinary PHP SDK",
-            "homepage": "https://github.com/cloudinary/cloudinary_php",
-            "keywords": [
-                "cdn",
-                "cloud",
-                "cloudinary",
-                "image management",
-                "sdk"
-            ],
-            "time": "2019-10-30T15:43:32+00:00"
-        },
-        {
-            "name": "phpgangsta/googleauthenticator",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPGangsta/GoogleAuthenticator.git",
-                "reference": "505c2af8337b559b33557f37cda38e5f843f3768"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPGangsta/GoogleAuthenticator/zipball/505c2af8337b559b33557f37cda38e5f843f3768",
-                "reference": "505c2af8337b559b33557f37cda38e5f843f3768",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "PHPGangsta/GoogleAuthenticator.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Kliewe",
-                    "email": "info@phpgangsta.de",
-                    "homepage": "http://www.phpgangsta.de/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Google Authenticator 2-factor authentication",
-            "keywords": [
-                "googleauthenticator",
-                "rfc6238",
-                "totp"
-            ],
-            "time": "2019-03-20T00:55:58+00:00"
-        },
-        {
-            "name": "sendgrid/php-http-client",
-            "version": "3.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sendgrid/php-http-client.git",
-                "reference": "e9a04d949ee2d19938ab83dc100933a3b41a8ec7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/e9a04d949ee2d19938ab83dc100933a3b41a8ec7",
-                "reference": "e9a04d949ee2d19938ab83dc100933a3b41a8ec7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.4",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SendGrid\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Bernier",
-                    "email": "dx@sendgrid.com"
-                },
-                {
-                    "name": "Elmer Thomas",
-                    "email": "elmer@thinkingserious.com"
-                }
-            ],
-            "description": "HTTP REST client, simplified for PHP",
-            "homepage": "http://github.com/sendgrid/php-http-client",
-            "keywords": [
-                "api",
-                "fluent",
-                "http",
-                "rest",
-                "sendgrid"
-            ],
-            "time": "2018-04-10T18:06:08+00:00"
-        },
-        {
-            "name": "sendgrid/sendgrid",
-            "version": "7.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "37fa19d3ae019842f07a2a43e92ed0f566ad927d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/37fa19d3ae019842f07a2a43e92ed0f566ad927d",
-                "reference": "37fa19d3ae019842f07a2a43e92ed0f566ad927d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "ext-openssl": "*",
-                "php": ">=5.6",
-                "sendgrid/php-http-client": "~3.9"
-            },
-            "replace": {
-                "sendgrid/sendgrid-php": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7.9 || ^6.4.3",
-                "squizlabs/php_codesniffer": "3.*",
-                "swaggest/json-diff": "^3.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SendGrid\\": "lib/",
-                    "SendGrid\\Mail\\": "lib/mail/",
-                    "SendGrid\\Contacts\\": "lib/contacts/",
-                    "SendGrid\\Stats\\": "lib/stats/"
-                },
-                "files": [
-                    "lib/SendGrid.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "This library allows you to quickly and easily send emails through Twilio SendGrid using PHP.",
-            "homepage": "http://github.com/sendgrid/sendgrid-php",
-            "keywords": [
-                "email",
-                "grid",
-                "send",
-                "sendgrid",
-                "twilio sendgrid"
-            ],
-            "time": "2019-04-15T17:27:21+00:00"
+          "name": "Cloudinary",
+          "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
         }
-    ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {
-        "phpgangsta/googleauthenticator": 20
+      ],
+      "description": "Cloudinary PHP SDK",
+      "homepage": "https://github.com/cloudinary/cloudinary_php",
+      "keywords": [
+        "cdn",
+        "cloud",
+        "cloudinary",
+        "image management",
+        "sdk"
+      ],
+      "time": "2019-10-30T15:43:32+00:00"
     },
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": {
-        "ext-mbstring": "^7.3",
-        "php": "*",
-        "ext-pdo": "*",
-        "ext-json": "*"
+    {
+      "name": "phpgangsta/googleauthenticator",
+      "version": "dev-master",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/PHPGangsta/GoogleAuthenticator.git",
+        "reference": "505c2af8337b559b33557f37cda38e5f843f3768"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/PHPGangsta/GoogleAuthenticator/zipball/505c2af8337b559b33557f37cda38e5f843f3768",
+        "reference": "505c2af8337b559b33557f37cda38e5f843f3768",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=5.3"
+      },
+      "type": "library",
+      "autoload": {
+        "classmap": [
+          "PHPGangsta/GoogleAuthenticator.php"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "BSD-4-Clause"
+      ],
+      "authors": [
+        {
+          "name": "Michael Kliewe",
+          "email": "info@phpgangsta.de",
+          "homepage": "http://www.phpgangsta.de/",
+          "role": "Developer"
+        }
+      ],
+      "description": "Google Authenticator 2-factor authentication",
+      "keywords": [
+        "googleauthenticator",
+        "rfc6238",
+        "totp"
+      ],
+      "time": "2019-03-20T00:55:58+00:00"
     },
-    "platform-dev": []
+    {
+      "name": "sendgrid/php-http-client",
+      "version": "3.9.6",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sendgrid/php-http-client.git",
+        "reference": "e9a04d949ee2d19938ab83dc100933a3b41a8ec7"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/e9a04d949ee2d19938ab83dc100933a3b41a8ec7",
+        "reference": "e9a04d949ee2d19938ab83dc100933a3b41a8ec7",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=5.6"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "~4.4",
+        "squizlabs/php_codesniffer": "~2.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "SendGrid\\": "lib/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Matt Bernier",
+          "email": "dx@sendgrid.com"
+        },
+        {
+          "name": "Elmer Thomas",
+          "email": "elmer@thinkingserious.com"
+        }
+      ],
+      "description": "HTTP REST client, simplified for PHP",
+      "homepage": "http://github.com/sendgrid/php-http-client",
+      "keywords": [
+        "api",
+        "fluent",
+        "http",
+        "rest",
+        "sendgrid"
+      ],
+      "time": "2018-04-10T18:06:08+00:00"
+    },
+    {
+      "name": "sendgrid/sendgrid",
+      "version": "7.3.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sendgrid/sendgrid-php.git",
+        "reference": "37fa19d3ae019842f07a2a43e92ed0f566ad927d"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/37fa19d3ae019842f07a2a43e92ed0f566ad927d",
+        "reference": "37fa19d3ae019842f07a2a43e92ed0f566ad927d",
+        "shasum": ""
+      },
+      "require": {
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "php": ">=5.6",
+        "sendgrid/php-http-client": "~3.9"
+      },
+      "replace": {
+        "sendgrid/sendgrid-php": "*"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "^5.7.9 || ^6.4.3",
+        "squizlabs/php_codesniffer": "3.*",
+        "swaggest/json-diff": "^3.4"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "SendGrid\\": "lib/",
+          "SendGrid\\Mail\\": "lib/mail/",
+          "SendGrid\\Contacts\\": "lib/contacts/",
+          "SendGrid\\Stats\\": "lib/stats/"
+        },
+        "files": [
+          "lib/SendGrid.php"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "description": "This library allows you to quickly and easily send emails through Twilio SendGrid using PHP.",
+      "homepage": "http://github.com/sendgrid/sendgrid-php",
+      "keywords": [
+        "email",
+        "grid",
+        "send",
+        "sendgrid",
+        "twilio sendgrid"
+      ],
+      "time": "2019-04-15T17:27:21+00:00"
+    }
+  ],
+  "packages-dev": [],
+  "aliases": [],
+  "minimum-stability": "stable",
+  "stability-flags": {
+    "phpgangsta/googleauthenticator": 20
+  },
+  "prefer-stable": false,
+  "prefer-lowest": false,
+  "platform": {
+    "ext-mbstring": "^7.3",
+    "php": "*",
+    "ext-pdo": "*",
+    "ext-json": "*"
+  },
+  "platform-dev": []
 }

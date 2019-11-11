@@ -8,9 +8,9 @@
         $(document).ready(function () {
             $(".cookie").click(function () {
                 $(".cookie-alert").hide(300, "swing");
-                var now = new Date();
-                var time = now.getTime();
-                var expireTime = time + 3600 * 576 * 7 * 30 * 300;
+                let now = new Date();
+                let time = now.getTime();
+                let expireTime = time + 3600 * 576 * 7 * 30 * 300;
                 now.setTime(expireTime);
                 document.cookie = 'cookieok=1;expires=' + now.toGMTString() + ';path=/';
             });

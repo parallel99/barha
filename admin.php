@@ -16,12 +16,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 menu("favourite");
 ?>
 <div class="container recipe-list-container">
-  <?php
-    if(isset($_SESSION['admin-message'])){
-       echo $_SESSION['admin-message'];
-       unset($_SESSION['admin-message']);
+    <?php
+    if (isset($_SESSION['admin-message'])) {
+        echo $_SESSION['admin-message'];
+        unset($_SESSION['admin-message']);
     }
-  ?>
+    ?>
     <div class="favourite">
         <?php
         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';

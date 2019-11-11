@@ -1,6 +1,6 @@
 {
   "require": {
-  	"ext-mbstring": "^7.3",
+    "ext-mbstring": "^7.3",
     "php": "*",
     "sendgrid/sendgrid": "*",
     "cloudinary/cloudinary_php": "^1.15",

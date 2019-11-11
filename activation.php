@@ -4,7 +4,7 @@ if (!isset($_GET["id"])) {
     die();
 }
 
-include ($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
 
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE token = :token");
@@ -26,37 +26,37 @@ if ($row == 1) {
 ?>
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <title>BárHa | E-mail megerősítés</title>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-    </head>
-    <body>
+<head>
+    <title>BárHa | E-mail megerősítés</title>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+</head>
+<body>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
+menu("none");
+?>
+<div class="form-container">
+    <div class="shadow email-confirm activation">
         <?php
-        include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
-        menu("none");
+        if (isset($volt)) {
+            if ($volt) {
+                echo "<h1>Sikertelen megerősítés</h1><hr>";
+                echo "<p>A megerősítés már megtörtént!</p>";
+            } else {
+                echo "<h1>Sikeres megerősítés</h1><hr>";
+                echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
+            }
+        } else {
+            echo "<h1>Sikertelen megerősítés</h1><hr>";
+            echo "<p>Érvénytelen link!</p>";
+        }
         ?>
-        <div class="form-container">
-            <div class="shadow email-confirm activation">
-                <?php
-                if (isset($volt)) {
-                    if ($volt) {
-                        echo "<h1>Sikertelen megerősítés</h1><hr>";
-                        echo "<p>A megerősítés már megtörtént!</p>";
-                    } else {
-                        echo "<h1>Sikeres megerősítés</h1><hr>";
-                        echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
-                    }
-                } else {
-                    echo "<h1>Sikertelen megerősítés</h1><hr>";
-                    echo "<p>Érvénytelen link!</p>";
-                }
-                ?>
-                <hr>
-                <div>
-                    <a href="/" class="btn btn-primary">Főoldal</a>
-                </div>
-            </div>
+        <hr>
+        <div>
+            <a href="/" class="btn btn-primary">Főoldal</a>
         </div>
-    </body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
+    </div>
+</div>
+</body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
