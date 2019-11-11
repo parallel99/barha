@@ -1,25 +1,23 @@
 <?php
-class SaveRecipe
-{
-    public function __construct()
-    {
-        $this->msg          = "";
-        $this->ok           = true;
-        $this->recipe_name  = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-        $this->making       = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
-        $this->making_time  = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
-        $this->std          = new \stdClass();
+
+class SaveRecipe {
+    public function __construct() {
+        $this->msg = "";
+        $this->ok = true;
+        $this->recipe_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+        $this->making = filter_input(INPUT_POST, "making", FILTER_SANITIZE_STRING);
+        $this->making_time = filter_input(INPUT_POST, "makingtime", FILTER_SANITIZE_STRING);
+        $this->std = new \stdClass();
     }
 
-    public function Check($units)
-    {
-        $time_ok     = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $this->making_time);
+    public function Check($units) {
+        $time_ok = preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][05]$/", $this->making_time);
         $ingredients_ok = false;
 
         for ($i = 1; $i < 26; $i++) {
             $ingredients_name = 'ingredients' . $i;
-            $num_name         = 'db' . $i;
-            $unit_name        = 'unit' . $i;
+            $num_name = 'db' . $i;
+            $unit_name = 'unit' . $i;
             if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
                 if (filter_input(INPUT_POST, $num_name, FILTER_SANITIZE_STRING) != "") {
                     $this->std->$ingredients_name = new \stdClass();
@@ -41,13 +39,13 @@ class SaveRecipe
                 $ingredients_name = 'ingredients' . $i;
                 if (isset($this->std->$ingredients_name->unit)) {
                     if ($this->std->$ingredients_name->unit == $unit) {
-                        $unit_number = $unit_number+1;
+                        $unit_number = $unit_number + 1;
                     }
                 }
             }
         }
 
-        if (count((array) $this->std) != $unit_number) {
+        if (count((array)$this->std) != $unit_number) {
             $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">A megadott mértékegység nem létezik!</div>';
             $this->ok = false;
         }
@@ -82,8 +80,7 @@ class SaveRecipe
         }
     }
 
-    public function CheckImage()
-    {
+    public function CheckImage() {
         $this->ok = getimagesize($_FILES["customFile"]["tmp_name"]);
         if ($this->ok == false) {
             $this->msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem Képet töltött fel!</div>';
@@ -95,8 +92,7 @@ class SaveRecipe
         }
     }
 
-    public function Save()
-    {
+    public function Save() {
         if ($this->ok) {
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
             $ingredients = json_encode($this->std);
@@ -122,8 +118,28 @@ class SaveRecipe
         return $this->msg;
     }
 
-    public function Update()
-    {
+    public function UploadImage($url) {
+        require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
+        require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
+        require_once 'vendor/cloudinary/cloudinary_php/src/Error.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+
+        \Cloudinary::config(array(
+            "cloud_name" => "htmfraf8s",
+            "api_key" => "445362577878397",
+            "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+        ));
+
+        $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
+
+        $stmt = $pdo->prepare("UPDATE recipes SET image = :image, imagename = :imagename WHERE url = :url");
+        $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
+        $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
+        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    public function Update() {
         if ($this->ok) {
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
             $ingredients = json_encode($this->std);
@@ -157,40 +173,17 @@ class SaveRecipe
         return $this->msg;
     }
 
-    public function UploadImage($url)
-    {
+    public function DeleteImage($url) {
         require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
         require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
         require_once 'vendor/cloudinary/cloudinary_php/src/Error.php';
         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
         \Cloudinary::config(array(
-          "cloud_name" => "htmfraf8s",
-          "api_key" => "445362577878397",
-          "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
-      ));
-
-        $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
-
-        $stmt = $pdo->prepare("UPDATE recipes SET image = :image, imagename = :imagename WHERE url = :url");
-        $stmt->bindParam(':image', $cloudUpload['secure_url'], PDO::PARAM_STR);
-        $stmt->bindParam(':imagename', $cloudUpload['public_id'], PDO::PARAM_STR);
-        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
-        $stmt->execute();
-    }
-
-    public function DeleteImage($url)
-    {
-        require_once 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
-        require_once 'vendor/cloudinary/cloudinary_php/src/Uploader.php';
-        require_once 'vendor/cloudinary/cloudinary_php/src/Error.php';
-        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
-
-        \Cloudinary::config(array(
-          "cloud_name" => "htmfraf8s",
-          "api_key" => "445362577878397",
-          "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
-      ));
+            "cloud_name" => "htmfraf8s",
+            "api_key" => "445362577878397",
+            "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+        ));
 
 
         $stmt = $pdo->prepare("SELECT imagename FROM recipes WHERE url = :url");

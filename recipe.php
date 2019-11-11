@@ -94,7 +94,6 @@ if ($stmt->rowCount() != 1) {
     $(".favourite").click(function() {
         let id = <?php echo $recipe->id; ?>;
         if ($('.favourite-text').text() === "Hozzáadás a kedvencekhez") {
-
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
             $(".favourite-text").text('Hozzáadva a kedvencekhez');
 
@@ -105,10 +104,9 @@ if ($stmt->rowCount() != 1) {
                         "id": id
                     },
                     success: function () {},
-                    error: function (data) {}
+                    error: function () {}
             });
         } else {
-
             $(".favourite-star").css('background-image', 'url(\'/images/favourite.svg\')');
             $(".favourite-text").text('Hozzáadás a kedvencekhez');
 
@@ -119,7 +117,7 @@ if ($stmt->rowCount() != 1) {
                         "id": id
                     },
                     success: function (response) {},
-                    error: function (data) {}
+                    error: function () {}
             });
         }
     });
