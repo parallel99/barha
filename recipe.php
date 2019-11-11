@@ -35,14 +35,12 @@ if ($stmt->rowCount() != 1) {
                 <div class="col-sm-5">
                     <h1 id="name"><?php echo $recipe->name ?></h1>
                     <?php
-                    if (isset($_SESSION['user'])) {
-                        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                    if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
 
                         $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE :id = ANY(favourite) AND email = :email;");
                         $stmt->bindValue(':id', $recipe->id, PDO::PARAM_STR);
                         $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                         $stmt->execute();
-                        $data = $stmt->fetch();
 
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
@@ -87,6 +85,24 @@ if ($stmt->rowCount() != 1) {
                     ?>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['user'])) {
+              if($_SESSION['permission'] == 'admin'){
+                echo "<form method='post'><button type='submit' class='btn btn-suces' name='accept'>Elfogad</button></form>";
+
+                if(isset($_POST['accept'])){
+                    $stmt = $pdo->prepare("UPDATE recipes SET status = 'accepted' WHERE id = :id;");
+                    $stmt->bindValue(':id', $recipe->id, PDO::PARAM_INT);
+                    $stmt->execute();
+                    foreach ($ingredients as $key => $value) {
+                        $addingredients = $pdo->prepare("INSERT INTO ingredients(name) VALUES(:name);");
+                        $addingredients->bindParam(':name', $value->name, PDO::PARAM_STR);
+                        $addingredients->execute();
+                    }
+                }
+              }
+            }
+            ?>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
