@@ -34,7 +34,7 @@ menu("none");
         }
 
         require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
-        $Mail = new Mail($email, $email, "Új jelszó", "Új jelszó: " . $new_password);
+        $Mail = new Mail($_POST['email'], $_POST['email'], "Új jelszó", "Új jelszó: " . $new_password);
         $Mail->Send();
 
         //ez csak ideiglenes
