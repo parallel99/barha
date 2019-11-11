@@ -85,6 +85,24 @@ if ($stmt->rowCount() != 1) {
                     ?>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
+              if($_SESSION['permission'] == 'admin'){
+                echo "<form method='post'><button type='submit' class='btn btn-suces' name='accept'>Elfogad</button></form>"
+
+                if(isset($_POST['accept'])){
+                    $stmt = $pdo->prepare("UPDATE recipes SET status = 'accepted' WHERE id = :id;");
+                    $stmt->bindValue(':id', $recipe->id, PDO::PARAM_STR);
+                    $stmt->execute();
+                    foreach ($ingredients as $key => $value) {
+                        $addingredients = $pdo->prepare("INSERT INTO ingredients(name) VALUES(:name);");
+                        $addingredients->bindParam(':name', $value->name, PDO::PARAM_STR);
+                        $addingredients->execute();
+                    }
+                }
+              }
+            }
+            ?>
         </div>
     </body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
