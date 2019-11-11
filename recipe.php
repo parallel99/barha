@@ -17,6 +17,10 @@ if ($stmt->rowCount() != 1) {
     die();
 }
 
+if($recipe->status != 'accepted' && $recipe->uploader != $_SESSION['user']['email']){
+    include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="hu">
