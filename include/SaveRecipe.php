@@ -145,7 +145,7 @@ class SaveRecipe {
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("UPDATE recipes SET name = :name, ingredients = :ingredients, making = :making, uploadtime = CURRENT_TIMESTAMP, url = :url, makingtime = :makingtime WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE recipes SET name = :name, ingredients = :ingredients, making = :making, uploadtime = CURRENT_TIMESTAMP, url = :url, makingtime = :makingtime, status = 'pending' WHERE id = :id");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
