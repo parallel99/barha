@@ -33,7 +33,10 @@ menu("none");
             echo "<div class=\"alert alert-danger\" >Nincs ilyen email cím!</div>";
         }
 
-        //send mail
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
+        $Mail = new Mail($email, $email, "Új jelszó", "Új jelszó: " . $new_password);
+        $Mail->Send();
+
         //ez csak ideiglenes
         echo "New password: " . $new_password;
     }
