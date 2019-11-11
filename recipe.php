@@ -86,7 +86,7 @@ if ($stmt->rowCount() != 1) {
                 </div>
             </div>
             <?php
-            if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['user']) && $recipe->status != 'accepted') {
               if($_SESSION['user']['permission'] == 'admin'){
                 echo "<form method='post'><button type='submit' class='btn btn-suces' name='accept'>Elfogad</button></form>";
 
