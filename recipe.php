@@ -86,16 +86,24 @@ if ($stmt->rowCount() != 1) {
                 </div>
             </div>
             <?php
-            if (isset($_SESSION['user']) && $recipe->status != 'accepted') {
+            if (isset($_SESSION['user']) && $recipe->status == 'pending') {
               if($_SESSION['user']['permission'] == 'admin'){
-                echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
+                echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elfogad</button><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
+
+                if(isset($_POST['delete'])){
+                    //$stmt = $pdo->prepare("DELETE recipes WHERE id = :id;");
+                    $stmt = $pdo->prepare("UPDATE recipes SET status = 'rejected' WHERE id = :id;");
+                    $stmt->bindValue(':id', $recipe->id, PDO::PARAM_INT);
+                    $stmt->execute();
+                    $_SESSION['admin-message'] = '<div class="alert alert-danger alert-dismissible fade show">Sikeresen törölte a receptet!</div>';
+                    header("Location: /admin");
+                    die();
+                }
 
                 if(isset($_POST['accept'])){
                     $stmt = $pdo->prepare("UPDATE recipes SET status = 'accepted' WHERE id = :id;");
                     $stmt->bindValue(':id', $recipe->id, PDO::PARAM_INT);
                     $stmt->execute();
-
-
 
                     foreach ($ingredients as $key => $value) {
 
@@ -109,6 +117,9 @@ if ($stmt->rowCount() != 1) {
                           $addingredients->execute();
                       }
                     }
+                    $_SESSION['admin-message'] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elfogadta a receptet!</div>';
+                    header("Location: /admin");
+                    die();
                 }
               }
             }
