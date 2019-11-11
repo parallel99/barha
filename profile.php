@@ -100,7 +100,10 @@ if (!isset($_SESSION['user'])) {
                         <option value="en">Angol</option>
                         <?php
 
-                        if() {
+                        if($lang == 'hu') {
+                            echo "<option value=\"hu\" selected>Magyar</option>";
+                            echo "<option value=\"en\">Angol</option>";
+                        } elseif ($lang == 'en') {
 
                         }
 
