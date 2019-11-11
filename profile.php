@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION['user'])) {
-    header("HTTP/1.1 401 Unauthorized");
-    exit;
+    header("Location: /error/401");
+    die();
 }
 ?>
 <!DOCTYPE html>
