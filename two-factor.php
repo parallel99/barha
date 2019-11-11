@@ -63,7 +63,7 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                         if($(this).val().length === this.size && e.keyCode !== 8){
                             const inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
-                            if (inputs.index(this) == 5) {
+                            if (inputs.index(this) === 5) {
                                 $("#2-step-auth-number-6").blur();
                             }
                         }

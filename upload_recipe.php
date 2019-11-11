@@ -104,7 +104,7 @@ if (!isset($_SESSION['user'])) {
                 ?>
                 </div>
                 <script>
-                    $('.ingredients-group').on('input', function (event) {
+                    $('.ingredients-group').on('input', function () {
                         var length = $(".ingredients-group > div").length
                         if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
                             var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";

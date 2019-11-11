@@ -60,9 +60,9 @@ $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&
             url: 'include/saveSecretKey.php',
             type: 'post',
             data: {},
-            success: function (response) {
+            success: function () {
             },
-            error: function (data) {
+            error: function () {
             }
         });
         $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-primary\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");

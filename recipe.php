@@ -116,7 +116,7 @@ if ($stmt->rowCount() != 1) {
                     data: {
                         "id": id
                     },
-                    success: function (response) {},
+                    success: function () {},
                     error: function () {}
             });
         }
