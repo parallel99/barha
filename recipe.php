@@ -88,7 +88,7 @@ if ($stmt->rowCount() != 1) {
             <?php
             if (isset($_SESSION['user']) && $recipe->status == 'pending') {
               if($_SESSION['user']['permission'] == 'admin'){
-                echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elfogad</button><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
+                echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elutasít</button><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
 
                 if(isset($_POST['delete'])){
                     //$stmt = $pdo->prepare("DELETE recipes WHERE id = :id;");
