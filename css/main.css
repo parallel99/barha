@@ -530,6 +530,17 @@ textarea {
 #enable-2-step-auth {
 	width: 140px;
 }
+.without_ampm::-webkit-datetime-edit-ampm-field {
+	display: none;
+}
+input[type=time]::-webkit-clear-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance:none;
+	appearance: none;
+	margin: -10px;
+}
 @media (max-width: 992px) {
 	.recipe-list-container {
 		max-width: 600px;

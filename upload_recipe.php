@@ -37,7 +37,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="form-group">
                   <label for="makingtime">Elkészítési idő</label>
-                  <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $_POST["makingtime"] ?? "00:00";?>" required>
+                  <input type="time" step="300" name="makingtime" class="form-control time-input without_ampm" value="<?php echo $_POST["makingtime"] ?? "00:00";?>" required>
                 </div>
                 <!-- Feladtam a custom select-et(EGYENLŐRE) mert nehéz automatán generálni-->
                 <div class="ingredients-group">
