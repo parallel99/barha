@@ -12,7 +12,7 @@ function menu($active)
         ?>
 <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="navbar">
     <a class="navbar-brand" href="/" aria-label="Főoldal">
-        <img src="\images\android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
+        <img src="/images/android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
         <span class="name">BárHa</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@ function menu($active)
              <li class="nav-item <?php if ($active == "recipes") {
             echo "active";
         } ?>">
-                <a class="nav-link" href="/recipes.php?search=">Receptek</a>
+                <a class="nav-link" href="/recipes?search=">Receptek</a>
              </li>
              <li class="nav-item <?php if ($active == "registration") {
             echo "active";
@@ -48,7 +48,7 @@ function menu($active)
         ?>
 <nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="navbar">
     <a class="navbar-brand" href="/" aria-label="Főoldal">
-        <img src="\images\android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
+        <img src="/images/android-chrome-512x512.png" width="30" height="30" class="d-inline-block align-top" alt="BárHa">
         <span class="name">BárHa</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@ function menu($active)
           <li class="nav-item <?php if ($active == "recipes") {
             echo "active";
         } ?>">
-             <a class="nav-link" href="/recipes.php?search=">Receptek</a>
+             <a class="nav-link" href="/recipes?search=">Receptek</a>
           </li>
           <li class="nav-item <?php if ($active == "recipe-upload") {
             echo "active";
