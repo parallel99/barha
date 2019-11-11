@@ -47,10 +47,7 @@ if (!isset($_SESSION['user'])) {
                           <div class="media-body">
                               <h3>
                                 <?php
-                                  echo $row->name;
-                                  if($row->status == 'rejected'){
-                                    echo "<div class='rejected-text'>(Elutasítva)</div>";
-                                  }
+                                  echo $row->name, statusText($row->status);
                                 ?>
                             </h3>
                               <h6>Elkészítési idő:
