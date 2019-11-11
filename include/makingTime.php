@@ -14,3 +14,13 @@ function MakingTime($mtime) {
 
     return $hour . " " . $minute;
 }
+
+function statusText($status){
+    if($status == 'rejected'){
+      return "<div class='rejected-text'>(Elutasítva)</div>";
+    }
+    if($status == 'pending'){
+      return "<div class='pending-text'>(Feldolgozás alatt)</div>";
+    }
+    return "";
+}

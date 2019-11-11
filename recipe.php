@@ -43,12 +43,9 @@ if($_SESSION['user']['permission'] != 'admin'){
             <div class="row">
                 <div class="col-sm-5">
                     <h1 id="name">
-                  <?php
-                      echo $recipe->name;
-                      if($recipe->status == 'rejected'){
-                        echo "<div class='rejected-text'>(Elutasítva)</div>";
-                      }
-                  ?>
+                      <?php
+                        echo $recipe->name, statusText($recipe->status);
+                      ?>
                   </h1>
                     <?php
                     if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
