@@ -38,7 +38,7 @@ menu("none");
         $Mail->Send();
 
         //ez csak ideiglenes
-        echo "New password: " . $new_password;
+        echo "<div class=\"alert alert-success\">Az új jelszót elküldtük emailben!</div>";
     }
 
     function generateRandomString($length) {
