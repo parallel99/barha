@@ -42,8 +42,14 @@ menu("registration");
         </div>
         <div class="form-group">
             <label for="password2">Jelszó megerősítése</label>
-            <input type="password" class="form-control" name="password2" id="password2"
-                   placeholder="Jelszó megerősítése" required>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
+        </div>
+        <div class="form-group">
+            <label for="lang-select">Nyelv</label>
+            <select class="custom-select form-control" name="lang-select" id="lang-select">
+                    <option value="hu">Magyar</option>
+                    <option value="en">Angol</option>
+            </select>
         </div>
         <div class="form-group" style="text-align: center">
             <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
@@ -171,12 +177,13 @@ function registration() {
         $token = hash('sha512', $ticket);
         $reg_time = date('Y-m-d H:i:s');
 
-        $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time) VALUES (:name, :email, :password, :token, '0', :reg_time)");
+        $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time, lang) VALUES (:name, :email, :password, :token, '0', :reg_time, :lang)");
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
         $stmt->bindParam(':token', $token, PDO::PARAM_STR);
         $stmt->bindParam(':reg_time', $reg_time, PDO::PARAM_STR);
+        $stmt->bindParam(':lang', $_POST['lang-select'], PDO::PARAM_STR);
         $stmt->execute();
 
         require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
