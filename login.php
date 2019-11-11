@@ -67,12 +67,10 @@ if (isset($_SESSION['user'])) {
                         //Ez meg nincs kész teljesen
                         if (!isset($user->secret_key)) {
                             $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission);
-                            setcookie('name', $user->name, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
-                            setcookie('email', $user->email, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
-                            setcookie('permission', $user->permission, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
+                            setcookie('userid', $user->id, time()+5000000, "/", "barha.herokuapp.com", 1, 1);
                             $valid = true;
                         } else {
-                            $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'secret' => $user->secret_key);
+                            $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'secret' => $user->secret_key, 'id' => $user->id);
                             header("Location: /two-factor.php");
                         }
                     }
