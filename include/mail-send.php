@@ -16,7 +16,10 @@ class Mail {
   public function Send() {
       require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
       $email = new \SendGrid\Mail\Mail();
-      $email->setFrom(getenv('SENDGRID_USERNAME'), "BárHa");
+      try {
+          $email->setFrom(getenv('SENDGRID_USERNAME'), "BárHa");
+      } catch (\SendGrid\Mail\TypeException $e) {
+      }
       $email->setSubject($this->title);
       $email->addTo($this->emailaddress, $this->name);
       $email->addContent("text/html", $this->message);

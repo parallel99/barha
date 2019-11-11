@@ -28,7 +28,7 @@ textarea {
 }
 
 #title {
-	color: var(--white);
+	color: #fff;
 	text-align: center;
 	padding-top: 20vh;
 	text-shadow: 2px 2px 2px rgb(80, 80, 80);
@@ -45,7 +45,7 @@ textarea {
 }
 
 #registrationForm, #loginForm, #mainForm, #forgottenPasswordForm, #two-factor-form {
-	background-color: var(--white);
+	background-color: #fff;
 	border-radius: 10px;
 	width: 400px;
 	padding: 25px;
@@ -171,7 +171,7 @@ textarea {
 
 .activation {
 	padding: 25px;
-	background: var(--white);
+	background: #fff;
 	width: 80%;
 	max-width: 600px;
 	border-radius: 10px;
@@ -186,7 +186,7 @@ textarea {
 .error-page {
 	margin: auto;
 	padding: 25px;
-	background: var(--white);
+	background: #fff;
 	width: 85%;
 	max-width: 600px;
 	border-radius: 10px;
@@ -253,7 +253,7 @@ textarea {
 
 .account {
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: #fff;
     padding: 25px;
     margin: 20px auto;
 }
@@ -280,7 +280,7 @@ textarea {
 }
 
 .recipe-list-container .search {
-	background-color: var(--white);
+	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 	margin-top: 25px;
@@ -303,7 +303,7 @@ textarea {
 .recipe-list-container .media {
 	text-decoration: none;
 	border-radius: 10px;
-	background-color: var(--white);
+	background-color: #fff;
 	margin: 25px auto;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 	min-height: 125px;
@@ -316,7 +316,7 @@ textarea {
 }
 
 .recipe-list-container .media h6, .gray {
-	color: var(--secondary);
+	color: #6c757d;
 }
 .recipe-list-container .media h3 {
 	color: black;
@@ -325,7 +325,7 @@ textarea {
 .recipe-list-container .no-result {
 	padding: 15px;
 	border-radius: 10px;
-	background-color: var(--white);
+	background-color: #fff;
 	margin: 25px auto;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
@@ -337,7 +337,7 @@ textarea {
 .recipe-list-container .more-recipe {
 	padding: 15px;
 	border-radius: 10px;
-	background-color: var(--white);
+	background-color: #fff;
 	margin: 25px auto;
 	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
@@ -347,7 +347,7 @@ textarea {
 
 .recipe-container {
 	border-radius: 10px;
-    background-color: var(--white);
+    background-color: #fff;
     padding: 25px;
     margin: 20px auto;
 }
