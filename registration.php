@@ -42,10 +42,10 @@ menu("registration");
         </div>
         <div class="form-group">
             <label for="password2">Jelszó megerősítése</label>
-            <input type="password" class="form-control" name="password2" id="password2"
-                   placeholder="Jelszó megerősítése" required>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
         </div>
         <div class="form-group">
+            <label for="lang-select">Nyelv</label>
             <select class="custom-select form-control" name="lang-select" id="lang-select">
                     <option value="hu">Magyar</option>
                     <option value="en">Angol</option>
