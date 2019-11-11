@@ -119,6 +119,7 @@ function registration() {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
     $password1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
     $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+    $lang = filter_input(INPUT_POST, 'lang-select', FILTER_SANITIZE_STRING);
 
 
     if (isset($_POST['g-recaptcha-response'])) {
@@ -177,13 +178,13 @@ function registration() {
         $token = hash('sha512', $ticket);
         $reg_time = date('Y-m-d H:i:s');
 
-        $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time, lang) VALUES (:name, :email, :password, :token, '0', :reg_time, :lang)");
+        $stmt = $pdo->prepare("INSERT INTO users(name, email, password, token, active, reg_time, lang, permission) VALUES (:name, :email, :password, :token, '0', :reg_time, :lang, 'user')");
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
         $stmt->bindParam(':token', $token, PDO::PARAM_STR);
         $stmt->bindParam(':reg_time', $reg_time, PDO::PARAM_STR);
-        $stmt->bindParam(':lang', $_POST['lang-select'], PDO::PARAM_STR);
+        $stmt->bindParam(':lang', $lang, PDO::PARAM_STR);
         $stmt->execute();
 
         require_once($_SERVER['DOCUMENT_ROOT'] . '/include/mail-send.php');
