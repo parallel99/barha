@@ -88,7 +88,7 @@ if ($stmt->rowCount() != 1) {
             <?php
             if (isset($_SESSION['user']) && $recipe->status != 'accepted') {
               if($_SESSION['user']['permission'] == 'admin'){
-                echo "<form method='post'><button type='submit' class='btn btn-suces' name='accept'>Elfogad</button></form>";
+                echo "<form method='post' class='clearfix'><button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button></form>";
 
                 if(isset($_POST['accept'])){
                     $stmt = $pdo->prepare("UPDATE recipes SET status = 'accepted' WHERE id = :id;");
