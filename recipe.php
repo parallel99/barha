@@ -44,10 +44,7 @@ menu("none");
         <div class="col-sm-5">
             <h1 id="name">
                 <?php
-                echo $recipe->name;
-                if ($recipe->status == 'rejected') {
-                    echo "<div class='rejected-text'>(Elutasítva)</div>";
-                }
+                echo $recipe->name, statusText($recipe->status);
                 ?>
             </h1>
             <?php
