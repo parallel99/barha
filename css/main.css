@@ -130,6 +130,7 @@ textarea {
 	min-width: 150px;
   margin-top: 20px;
   float: right;
+	margin-left: 10px;
 }
 
 .navbar .name {
