@@ -35,14 +35,12 @@ if ($stmt->rowCount() != 1) {
                 <div class="col-sm-5">
                     <h1 id="name"><?php echo $recipe->name ?></h1>
                     <?php
-                    if (isset($_SESSION['user'])) {
-                        include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                    if (isset($_SESSION['user']) && $recipe->status == 'accepted') {
 
                         $stmt = $pdo->prepare("SELECT name, email, favourite FROM users WHERE :id = ANY(favourite) AND email = :email;");
                         $stmt->bindValue(':id', $recipe->id, PDO::PARAM_STR);
                         $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                         $stmt->execute();
-                        $data = $stmt->fetch();
 
                         echo "<hr>";
                         if ($stmt->rowCount() == 0) {
