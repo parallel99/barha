@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | Recept feltöltés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
@@ -119,7 +119,6 @@ if (!isset($_SESSION['user'])) {
                                 source: ingredients
                             });
                         }
-                        ;
                     });
                 </script>
                 <div class="form-group">

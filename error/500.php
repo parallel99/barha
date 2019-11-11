@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | 500</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

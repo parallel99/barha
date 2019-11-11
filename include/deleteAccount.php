@@ -12,7 +12,7 @@ $stmt->execute();
 $details = $stmt->fetch();
 
 if ($stmt->rowCount() == 0) {
-    echo "<div class=\"alert alert-danger\" style=\"margin: 5px 0; box-shadow: 0\">Hiba!</div>";
+    echo "<div class=\"alert alert-danger\" style=\"margin: 5px 0; box-shadow: none\">Hiba!</div>";
 } else {
     unset($_SESSION['user']);
     setcookie("name", "", time() - 1, "/", "barha.herokuapp.com", 1, 1);

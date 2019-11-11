@@ -1,9 +1,12 @@
 <?php
     require '../vendor/autoload.php';
     $authenticator = new PHPGangsta_GoogleAuthenticator();
+try {
     $secret = $authenticator->createSecret();
+} catch (Exception $e) {
+}
 
-    $_SESSION['secret'] = $secret;
+$_SESSION['secret'] = $secret;
 
     $cht = "qr";
     $chs = "300x300";

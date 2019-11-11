@@ -19,7 +19,7 @@ if ($stmt->rowCount() != 1) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | Recept feltöltés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
@@ -107,7 +107,6 @@ if ($stmt->rowCount() != 1) {
                                 source: ingredients
                             });
                         }
-                        ;
                     });
                 </script>
                 <div class="form-group">

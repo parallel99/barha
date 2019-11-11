@@ -1,5 +1,5 @@
 <script>
-    var ingredients = [];
+    let ingredients = [];
     $(function () {
         $("#ingredients1").autocomplete({
             source: ingredients

@@ -8,11 +8,8 @@ body {
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	background: linear-gradient(40deg, #2096ff, #05ffa3);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-color: #f8f9fa;
+    background-size: cover;
+    background: #f8f9fa linear-gradient(40deg, #2096ff, #05ffa3) no-repeat fixed;
 }
 
 body,
@@ -51,9 +48,8 @@ textarea {
 	background-color: var(--white);
 	border-radius: 10px;
 	width: 400px;
-	margin: auto;
 	padding: 25px;
-	margin-bottom: 25px;
+	margin: auto auto 25px;
 }
 
 #registrationForm button {
@@ -174,14 +170,13 @@ textarea {
 }
 
 .activation {
-	margin: auto;
 	padding: 25px;
 	background: var(--white);
 	width: 80%;
 	max-width: 600px;
 	border-radius: 10px;
 	text-align: center;
-	margin-top: 15px;
+	margin: 15px auto auto;
 }
 
 .activation h1 {
@@ -429,7 +424,7 @@ textarea {
 }
 
 .custom-checkbox{
-	margin-top: 0px;
+	margin-top: 0;
 	display: inline-block;
 	left: 5px;
 }
@@ -464,9 +459,8 @@ textarea {
 
 #auth-modal .auth-qr-code {
 	position: relative;
-	margin: auto;
 	display: block;
-	margin-bottom: -20px;
+	margin: auto auto -20px;
 }
 #auth-modal .auth-secret {
 	text-align: center;

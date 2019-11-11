@@ -25,7 +25,7 @@ if ($row == 1) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | E-mail megerősítés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

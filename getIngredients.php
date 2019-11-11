@@ -10,4 +10,4 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
 
 echo '<script>ingredients.push("'.implode("\",\"", $ingredients).'")</script>';
-?>
+

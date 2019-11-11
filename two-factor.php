@@ -5,7 +5,7 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | Bejelentkezés</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
@@ -60,8 +60,8 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                     </div>
                     <script>
                     $('body').on('keydown', '.two-step-auth-number', function(e){
-                        if($(this).val().length === this.size && e.keyCode != 8){
-                            var inputs = $('.two-step-auth-number');
+                        if($(this).val().length === this.size && e.keyCode !== 8){
+                            const inputs = $('.two-step-auth-number');
                             inputs.eq(inputs.index(this) + 1).focus();
                             if (inputs.index(this) == 5) {
                                 $("#2-step-auth-number-6").blur();
@@ -69,8 +69,8 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
                         }
                     });
                     $('body').on('keyup', '.two-step-auth-number', function(e){
-                        if(e.keyCode == 8) {
-                            var inputs = $('.two-step-auth-number');
+                        if(e.keyCode === 8) {
+                            const inputs = $('.two-step-auth-number');
                             if (inputs.index(this) >= 1) {
                                 inputs.eq(inputs.index(this) - 1).focus();
                             }

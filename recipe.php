@@ -19,7 +19,7 @@ if ($stmt->rowCount() != 1) {
 
 ?>
 <!DOCTYPE html>
-<html lang="hu" role="main">
+<html lang="hu">
     <head>
         <title>BárHa | <?php echo($recipe->name); ?></title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
@@ -93,7 +93,7 @@ if ($stmt->rowCount() != 1) {
     <script>
     $(".favourite").click(function() {
         id = <?php echo $recipe->id; ?>;
-        if ($('.favourite-text').text() == "Hozzáadás a kedvencekhez") {
+        if ($('.favourite-text').text() === "Hozzáadás a kedvencekhez") {
 
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
             $(".favourite-text").text('Hozzáadva a kedvencekhez');

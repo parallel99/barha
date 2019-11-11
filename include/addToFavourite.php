@@ -14,4 +14,4 @@ if($getrecipe->rowCount() > 0){
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 }
-?>
+
