@@ -61,11 +61,10 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
 }
 
 if(isset($_SESSION['user']['lang'])){
-    include "lang/".$_SESSION['lang'].".php";
+    include "lang/".$_SESSION['user']['lang'].".php";
 }else{
     include "lang/en.php";
 }
-?>
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
