@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
         <div class="form-group">
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="customFile" id="customFile">
-                <label class="custom-file-label" for="customFile">Válassz képet</label>
+                <label class="custom-file-label text-muted" for="customFile">Válassz képet</label>
             </div>
         </div>
         <div class="form-group">
