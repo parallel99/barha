@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Receptek</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?= _RECIPES ?></title>
 </head>
 <body>
 <?php
@@ -105,7 +105,7 @@ if (!isset($_GET['search'])) {
             success: function (response) {
                 $('.recipes').append(response)
             },
-            error: function (data) {
+            error: function () {
             }
         });
     });
