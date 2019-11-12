@@ -44,7 +44,6 @@ define("_PREPARATION", "Preparation");
 define("_HOUR", "hour");
 define("_MIN", "min");
 
-
 //Search
 define("_NO_RESULTS", "No results");
 
@@ -60,3 +59,6 @@ define("_NEW_PASSWORD", "New password");
 define("_CONFIRM_NEW_PASSWORD", "Confirm new password");
 define("_NEW_EMAIL", "New email address");
 define("_CANCEL", "Cancel");
+define("_EDIT", "Edit");
+define("_DELETE", "Delete");
+define("_DELET_RECIPE", "Delete recipe");

@@ -58,18 +58,18 @@ if (!isset($_SESSION['user'])) {
                           </div>
                       </a>
                       <button onclick="location.href='/changeRecipe?id=<?php echo $row->id; ?>';" class="myrecipe-btn write-recipe-btn">
-                        <i class="fa fa-edit"></i>Szerkeszt
+                        <i class="fa fa-edit"></i><?= _EDIT ?>
                       </button>
                       <button type="button" class="myrecipe-btn delete-recipe-btn" data-toggle="modal" data-target="#recipe<?php echo $row->id; ?>">
-                        <i class="fa fa-trash-o"></i>Töröl
+                        <i class="fa fa-trash-o"></i><?= _DELETE ?>
                       </button>
                     </div>
                     <div class="modal fade" id="recipe<?php echo $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Figyelem!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><?= _DELET_RECIPE ?></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="<?= _CLOSE ?>">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
@@ -77,8 +77,8 @@ if (!isset($_SESSION['user'])) {
                             Biztosan törölni kívánja ezt a receptet: <?php echo $row->name; ?>
                           </div>
                           <form class="modal-footer" method="post">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Vissza</button>
-                            <button type="submit" name="recipe<?php echo $row->id; ?>" class="btn btn-danger">Törlés</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= _CANCEL ?></button>
+                            <button type="submit" name="recipe<?php echo $row->id; ?>" class="btn btn-danger"><?= _DELETE ?></button>
                           </form>
                         </div>
                       </div>

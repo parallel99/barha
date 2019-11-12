@@ -59,3 +59,6 @@ define("_NEW_PASSWORD", "Új jelszó");
 define("_CONFIRM_NEW_PASSWORD", "Új jelszó megerősítése");
 define("_NEW_EMAIL", "Új email");
 define("_CANCEL", "Mégsem");
+define("_EDIT", "Szerkesztés");
+define("_DELETE", "Törlés");
+define("_DELET_RECIPE", "Recept törlése");
