@@ -107,6 +107,8 @@ if (isset($_SESSION['user']['lang'])) {
             background-color: transparent;
             display: block;
             margin: auto;
+            width: 350px;
+            height: auto;
             max-width: 80%;
         }
 
