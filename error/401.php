@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<? try {echo $_SESSION['user']['lang'];}catch(e){echo 'hu';} ?>">
+<html lang="<? try {echo $_SESSION['user']['lang'];}catch (Exception $e){echo 'hu';} ?>">
 <head>
     <title>BárHa | 401</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

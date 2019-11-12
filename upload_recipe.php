@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="<? try {echo $_SESSION['user']['lang'];}catch(e){echo 'hu';} ?>">
+<html lang="<? try {echo $_SESSION['user']['lang'];}catch (Exception $e){echo 'hu';} ?>">
 <head>
     <title>BárHa | Recept feltöltés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
