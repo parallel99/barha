@@ -21,8 +21,8 @@ if ($stmt->rowCount() != 1) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Recept feltöltés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | Recept feltöltés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
 </head>
 <body>
@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">A recept neve</label>
-            <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név"
+            <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="<?= _NAME ?>"
                    value="<?php echo $recipe->name; ?>" required>
         </div>
         <div class="form-group">
@@ -51,7 +51,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <div class="form-group">
-            <label for="makingtime">Elkészítési idő</label>
+            <label for="makingtime"><?= _PREPARATION_TIME ?></label>
             <input type="time" step="300" name="makingtime" class="form-control time-input"
                    value="<?php echo date_format(date_create($recipe->makingtime), "H:i"); ?>" required>
         </div>

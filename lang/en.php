@@ -35,3 +35,6 @@ define("_CLOSE", "Close");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Preparation time: ");
+define("_PREPARATION_TIME", "Preparation time");
+define("_HOUR", "hour");
+define("_MIN", "min");

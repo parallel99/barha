@@ -53,7 +53,7 @@ menu("none");
         ?>
         <hr>
         <div>
-            <a href="/" class="btn btn-primary">Főoldal</a>
+            <a href="/" class="btn btn-primary"><?= _HOMEPAGE ?></a>
         </div>
     </div>
 </div>
