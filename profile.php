@@ -83,8 +83,7 @@ menu("profile");
             $data = $stmt->fetch(PDO::FETCH_OBJ);
 
             $_SESSION['user']['lang'] = $_POST['lang-select'];
-
-            echo "<div class=\"alert alert-success\" style=\"margin: 10px 0; box-shadow: none\">Mentve!</div>";
+            header("Refresh: 0");
         }
         ?>
         <div class="form-group">
