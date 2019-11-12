@@ -20,4 +20,4 @@ define("_UPLOAD_RECIPE", "Recept feltöltés");
 define("_EDIT_RECIPES", "Recepteim szerkesztése");
 
 //Index
-define("_HOMEPAGE-TITLE", "Mi van a hűtőben?");
+define("_HOMEPAGE_TITLE", "Mi van a hűtőben?");

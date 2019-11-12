@@ -19,4 +19,4 @@ define("_UPLOAD_RECIPE", "Upload recipe");
 define("_EDIT_RECIPES", "Edit recipes");
 
 //Index
-define("_HOMEPAGE-TITLE", "What can you find in the fridge?");
+define("_HOMEPAGE_TITLE", "What can you find in the fridge?");

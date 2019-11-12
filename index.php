@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php';
 menu("index");
 ?>
-<h1 id="title"><?= _HOMEPAGE-TITLE ?></h1>
+<h1 id="title"><?= _HOMEPAGE_TITLE ?></h1>
 
 <form method="get" class="shadow" id="mainForm" action="search.php">
     <div class="ingredients-group">
@@ -18,7 +18,7 @@ menu("index");
             <input autofocus type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="<?= _INGREDIENTS ?>">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Keresés</button>
+    <button type="submit" class="btn btn-primary"><?= _SEARCH ?></button>
 </form>
 <script>
     $('.ingredients-group').on('input', function () {
