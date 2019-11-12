@@ -17,7 +17,7 @@ foreach ($data as $row) {
         </div>
         <div class="media-body">
             <h3><?php echo $row->name; ?></h3>
-            <h6>Elkészítési idő: <strong><?php echo rand(10, 60); ?> perc</strong></h6>
+            <h6><?= _PREPARATION_TIME ?><strong><?php echo MakingTime($row->makingtime); ?></h6>
         </div>
     </a>
     <?php

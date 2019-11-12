@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">A recept neve</label>
-            <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Név" value="<?php echo $_POST["name"] ?? ""; ?>" required>
+            <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="<?= _NAME ?>" value="<?php echo $_POST["name"] ?? ""; ?>" required>
         </div>
         <div class="form-group">
             <div class="custom-file">
@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <div class="form-group">
-            <label for="makingtime">Elkészítési idő</label>
+            <label for="makingtime"><?= _PREPARATION_TIME ?></label>
             <!-- Én ezt külön szednem 2db mezore egyikben az orat masikban a percet es mind a kettő number tipusu lenne -->
             <input type="time" step="300" name="makingtime" class="form-control time-input" value="<?php echo $_POST["makingtime"] ?? "00:00"; ?>" required>
         </div>
