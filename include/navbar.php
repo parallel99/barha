@@ -47,7 +47,7 @@ function menu($active) {
         <?php
     } else {
         ?>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top" aria-label="navbar">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top shadow-sm" aria-label="navbar">
             <a class="navbar-brand" href="/" aria-label="Főoldal">
                 <img src="/images/android-chrome-192x192.png" width="30" height="30" class="d-inline-block align-top"
                      alt="BárHa">
