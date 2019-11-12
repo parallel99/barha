@@ -32,3 +32,6 @@ define("_LANGUAGE", "Language");
 define("_EN", "English");
 define("_HU", "Hungarian");
 define("_CLOSE", "Close");
+
+//Recipe
+define("_PREPARATION_TIME:", "Preparation time: ");

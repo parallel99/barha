@@ -44,7 +44,7 @@ menu("favourite");
                 </div>
                 <div class="media-body">
                     <h3><?php echo $row->name; ?></h3>
-                    <h6>Elkészítési idő:
+                    <h6><?= _PREPARATION_TIME: ?>
                         <strong><?php echo MakingTime($row->makingtime); ?></strong>
                     </h6>
                 </div>

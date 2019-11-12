@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
                                   echo $row->name, statusText($row->status);
                                 ?>
                             </h3>
-                              <h6>Elkészítési idő:
+                              <h6><?= _PREPARATION_TIME: ?>
                                 <strong>
                                   <?php echo MakingTime($row->makingtime); ?>
                                 </strong>
