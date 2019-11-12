@@ -60,10 +60,10 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
     $_SESSION['user'] = array("name" => $row->name, "email" => $row->email, "permission" => $row->permission);
 }
 
-if(isset($_SESSION['lang'])){
+if(isset($_SESSION['user']['lang'])){
     include "lang/".$_SESSION['lang'].".php";
 }else{
-    include "lang_en.php";
+    include "lang/en.php";
 }
 ?>
 ?>
