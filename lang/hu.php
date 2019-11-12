@@ -10,9 +10,6 @@ define("_LOGOUT", "Kijelentkezés");
 define("_SEARCH", "Keresés");
 define("_REGISTER", "Regisztráció");
 define("_LOGIN", "Bejelentkezés");
-define("_NAME", "Név");
-define("_USERNAME", "Felhasználónév");
-define("_EMAIL", "E-mail");
 
 
 //Navbar
@@ -21,3 +18,10 @@ define("_EDIT_RECIPES", "Recepteim szerkesztése");
 
 //Index
 define("_HOMEPAGE_TITLE", "Mi van a hűtőben?");
+
+//Login
+define("_NAME", "Név");
+define("_USERNAME", "Felhasználónév");
+define("_EMAIL", "E-mail");
+define("_PASSWORD", "Jelszó");
+define("_FORGOT_PASSWORD", "Elfelejtetted a jelszavad?");

@@ -7,8 +7,8 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <title>BárHa | Bejelentkezés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?= _LOGIN ?></title>
 </head>
 <body>
 <?php
@@ -30,15 +30,15 @@ menu("login");
     ?>
     <form method="post" class="shadow" id="loginForm">
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $_POST["email"] ?? ""; ?>" required>
+            <label for="email"><?= _EMAIL ?></label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="<?= _EMAIL ?>" value="<?php echo $_POST["email"] ?? ""; ?>" required>
         </div>
         <div class="form-group">
-            <label for="password">Jelszó</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Jelszó" required>
+            <label for="password"><?= _PASSWORD ?></label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="<?= _PASSWORD ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
-        <a href="forgotten_password" class="small">Elfelejtetted a jelszavad?</a>
+        <button type="submit" class="btn btn-primary" name="submit"><?= _LOGIN ?></button>
+        <a href="forgotten_password" class="small"><?= _FORGOT_PASSWORD ?></a>
     </form>
 </div>
 <?php
