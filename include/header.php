@@ -63,7 +63,7 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
 if(isset($_SESSION['user']['lang'])){
     include($_SERVER['DOCUMENT_ROOT'] . "/lang/" . $_SESSION['user']['lang'] . ".php");
 }else{
-    include($_SERVER['DOCUMENT_ROOT'] . "/lang/en.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/lang/hu.php");
 }
 ?>
 

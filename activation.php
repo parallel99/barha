@@ -25,7 +25,7 @@ if ($row == 1) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="<? echo $_SESSION['user']['lang'] ?>">
+<html lang="<? try {echo $_SESSION['user']['lang'];}catch(e){echo 'hu';} ?>">
 <head>
     <title>BárHa | E-mail megerősítés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

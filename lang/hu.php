@@ -1,5 +1,7 @@
 <?php
 
+define("_LANG", "hu");
+
 define("_BARHA", "BárHa");
 define("_HOMEPAGE", "Kezdőlap");
 define("_RECIPES", "Receptek");

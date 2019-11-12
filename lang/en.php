@@ -1,5 +1,7 @@
 <?php
 
+define("_LANG", "en");
+
 define("_BARHA", "BarHa");
 define("_HOMEPAGE", "Homepage");
 define("_RECIPES", "Recipes");
