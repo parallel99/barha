@@ -61,9 +61,9 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
 }
 
 if(isset($_SESSION['user']['lang'])){
-    include "lang/".$_SESSION['user']['lang'].".php";
+    include($_SERVER['DOCUMENT_ROOT'] . "/lang/" . $_SESSION['user']['lang'] . ".php");
 }else{
-    include "lang/en.php";
+    include($_SERVER['DOCUMENT_ROOT'] . "/lang/en.php");
 }
 ?>
 
