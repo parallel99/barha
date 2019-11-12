@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
-    <title>BárHa | 404</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | 404</title>
 </head>
 <body>
 <?php
@@ -15,7 +15,7 @@ menu("none");
         <hr>
         Úgy néz ki valami hiba történt! Az oldal már nem létezik vagy nem is létezett!
         <hr>
-        <input type="button" class="btn btn-primary" value="Vissza a főoldalra" onclick="window.location.assign('/');">
+        <input type="button" class="btn btn-primary" value="<?= _HOMEPAGE ?>" onclick="window.location.assign('/');">
     </div>
 </div>
 </body>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
-    <title>BárHa</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?></title>
 </head>
 <body>
 <?php

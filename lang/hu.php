@@ -68,3 +68,5 @@ define("_ACCEPT", "Elfogad");
 define("_REJECT", "Elutasít");
 define("_REJECTED", "Elutasítva");
 define("_PENDING", "Feldolgozás alatt");
+
+//Error

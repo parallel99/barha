@@ -68,3 +68,6 @@ define("_ACCEPT", "Accept");
 define("_REJECT", "Reject");
 define("_REJECTED", "Rejected");
 define("_PENDING", "Pending");
+
+//Error
+
