@@ -13,6 +13,8 @@ define("_SEARCH", "Search");
 define("_REGISTER", "Register");
 define("_LOGIN", "Login");
 
+define("_YES", "Yes");
+define("_NO", "No");
 
 //Navbar
 define("_UPLOAD_RECIPE", "Upload recipe");
@@ -44,3 +46,16 @@ define("_MIN", "min");
 
 //Search
 define("_NO_RESULTS", "No results");
+
+//Profile
+define("_SAVE", "Save");
+define("_2_STEP_AUTH", "2 factor authentication");
+define("_CHANGE_LANG", "Change language");
+define("_CHANGE_PASSWORD", "Change password");
+define("_CHANGE_EMAIL", "Change email address");
+define("_DELETE_ACCOUNT", "Delete account");
+define("_CURRENT_PASSWORD", "Current password");
+define("_NEW_PASSWORD", "New password");
+define("_CONFIRM_NEW_PASSWORD", "Confirm new password");
+define("_NEW_EMAIL", "New email address");
+define("_CANCEL", "Cancel");

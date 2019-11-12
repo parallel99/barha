@@ -13,6 +13,8 @@ define("_SEARCH", "Keresés");
 define("_REGISTER", "Regisztráció");
 define("_LOGIN", "Bejelentkezés");
 
+define("_YES", "Igen");
+define("_NO", "Nem");
 
 //Navbar
 define("_UPLOAD_RECIPE", "Recept feltöltés");
@@ -44,3 +46,16 @@ define("_MIN", "perc");
 
 //Search
 define("_NO_RESULTS", "Nincs találat");
+
+//Profile
+define("_SAVE", "Mentés");
+define("_2_STEP_AUTH", "2 lépcsős hitelesítés");
+define("_CHANGE_LANG", "Nyelv váltás");
+define("_CHANGE_PASSWORD", "Jelszó váltás");
+define("_CHANGE_EMAIL", "Email cím váltás");
+define("_DELETE_ACCOUNT", "Fiók törlése");
+define("_CURRENT_PASSWORD", "Jelenlegi jelszó");
+define("_NEW_PASSWORD", "Új jelszó");
+define("_CONFIRM_NEW_PASSWORD", "Új jelszó megerősítése");
+define("_NEW_EMAIL", "Új email");
+define("_CANCEL", "Mégsem");

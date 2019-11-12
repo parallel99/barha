@@ -17,7 +17,7 @@ menu("profile");
 ?>
 <div class="account container shadow">
     <form method="POST" class="account-2-step-auth-form">
-        <h3>2 lépcsős hitelesítés</h3>
+        <h3><?= _2_STEP_AUTH ?></h3>
         <div class="form-group">
             <?php
 
@@ -110,47 +110,47 @@ menu("profile");
                 ?>
             </select>
         </div>
-        <button type="submit" name="account-lang-change" class="btn btn-primary">Mentés</button>
+        <button type="submit" name="account-lang-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
     <form method="POST" class="account-password-change-form">
-        <h3>Jelszó váltás</h3>
+        <h3><?= _CHANGE_PASSWORD ?></h3>
         <div class="form-group">
-            <label for="passwordCurrent">Jelenlegi jelszó</label>
-            <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Jelenlegi jelszó">
+            <label for="passwordCurrent"><?= _CURRENT_PASSWORD ?></label>
+            <input required type="password" name="passwordCurrent" id="passwordCurrent" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _CURRENT_PASSWORD ?>">
         </div>
         <div class="form-group">
-            <label for="passwordNew1">Új jelszó</label>
-            <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új jelszó">
+            <label for="passwordNew1"><?= _NEW_PASSWORD ?></label>
+            <input required type="password" name="passwordNew1" id="passwordNew1" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _NEW_PASSWORD ?>">
         </div>
         <div class="form-group">
-            <label for="passwordNew2">Új jelszó megerősítése</label>
-            <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új jelszó megerősítése">
+            <label for="passwordNew2"><?= _CONFIRM_NEW_PASSWORD ?></label>
+            <input required type="password" name="passwordNew2" id="passwordNew2" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _CONFIRM_NEW_PASSWORD ?>">
         </div>
-        <button type="submit" name="account-password-change" class="btn btn-primary">Jelszó váltás</button>
+        <button type="submit" name="account-password-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
     <form method="POST" class="account-email-change-form">
-        <h3>Email cím váltás</h3>
+        <h3><?= _CHANGE_EMAIL ?></h3>
         <div class="form-group">
-            <label for="emailNew">Új email cím</label>
-            <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új email cím">
+            <label for="emailNew"><?= _NEW_EMAIL ?></label>
+            <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _NEW_EMAIL ?>">
         </div>
         <div class="form-group">
             <label for="password"><?= _PASSWORD ?></label>
             <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _PASSWORD ?>">
         </div>
-        <button type="submit" name="account-email-change" class="btn btn-primary">Email cím váltás</button>
+        <button type="submit" name="account-email-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
     <form method="POST" class="account-delete-form">
-        <h3>Fiók törlése</h3>
+        <h3><?= _DELETE_ACCOUNT ?></h3>
         <div class="account-delete-error-container"></div>
         <div class="form-group">
             <label for="password"><?= _PASSWORD ?></label>
             <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="<?= _PASSWORD ?>" autocomplete="off">
         </div>
-        <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
+        <button type="button" name="account-delete" id="account-delete" class="btn btn-danger"><?= _DELETE_ACCOUNT ?></button>
     </form>
 </div>
 <!-- deleteConfirmModal -->
@@ -158,8 +158,8 @@ menu("profile");
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Fiók törlése</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLabel"><?= _DELETE_ACCOUNT ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="<?= _CANCEL ?>">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -167,8 +167,8 @@ menu("profile");
                 Biztos benne hogy törölni szeretné a fiókját? Ezek után a fiók soha többé nem lesz visszaállítható.
             </div>
             <div class="modal-footer">
-                <button type="button" id="modal-delete-cancel" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
-                <button type="button" id="modal-delete" class="btn btn-danger">Igen</button>
+                <button type="button" id="modal-delete-cancel" class="btn btn-secondary" data-dismiss="modal"><?= _CANCEL ?></button>
+                <button type="button" id="modal-delete" class="btn btn-danger"><?= _YES ?></button>
             </div>
         </div>
     </div>
