@@ -69,5 +69,4 @@ define("_REJECT", "Reject");
 define("_REJECTED", "Rejected");
 define("_PENDING", "Pending");
 
-//Error
-
+define("_NOSCRIPT", "Your browser doesn\'t support JavaScript or you have disabled JavaScript.");

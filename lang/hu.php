@@ -69,4 +69,4 @@ define("_REJECT", "Elutasít");
 define("_REJECTED", "Elutasítva");
 define("_PENDING", "Feldolgozás alatt");
 
-//Error
+define("_NOSCRIPT", "Ide ki kell talani valamit.");

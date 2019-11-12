@@ -59,9 +59,9 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
     $_SESSION['user'] = array("name" => $row->name, "email" => $row->email, "permission" => $row->permission, "lang" => $row->lang);
 }
 
-if(isset($_SESSION['user']['lang'])){
+if (isset($_SESSION['user']['lang'])) {
     include($_SERVER['DOCUMENT_ROOT'] . "/lang/" . $_SESSION['user']['lang'] . ".php");
-}else{
+} else {
     include($_SERVER['DOCUMENT_ROOT'] . "/lang/hu.php");
 }
 ?>
@@ -80,6 +80,51 @@ if(isset($_SESSION['user']['lang'])){
     gtag('config', 'UA-151926533-1');
 </script>
 
+<noscript>
+    <div class="bg">
+        <div class="alert alert-danger">
+            <?= _NOSCRIPT ?>
+        </div>
+        <img draggable="false" src="/images/android-chrome-512x512.png" alt="icon" class="icon">
+    </div>
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: var(--light);
+            z-index: 9999;
+        }
+
+        .bg .icon {
+            filter: grayscale(100%) drop-shadow(rgba(0, 0, 0, 0.15) 0px 0px 10px);
+            background-color: transparent;
+        }
+
+        .alert {
+            width: 600px;
+            margin: 75px auto;
+        }
+
+        @media (max-width: 780px) {
+            .alert {
+                width: 400px
+            }
+        }
+
+        @media (max-width: 440px) {
+            .alert {
+                width: 280px
+            }
+        }
+    </style>
+</noscript>
 
 <script src="/js/jquery-3.4.1.min.js"></script>
 <script src="/js/jquery-ui.min.js"></script>
