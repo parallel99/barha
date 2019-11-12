@@ -109,8 +109,8 @@ menu("none");
         if ($_SESSION['user']['permission'] == 'admin') {
 
             $form = "<form method='post' class='clearfix'>";
-            $form .= "<button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>Elutasít</button>";
-            $form .= "<button type='submit' class='btn btn-success recipe-accept-button' name='accept'>Elfogad</button>";
+            $form .= "<button type='submit' class='btn btn-danger recipe-accept-button' name='delete'>" . _REJECT . "</button>";
+            $form .= "<button type='submit' class='btn btn-success recipe-accept-button' name='accept'>" . _ACCEPT . "</button>";
             $form .= "</form>";
             echo $form;
 

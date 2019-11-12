@@ -17,10 +17,10 @@ function MakingTime($mtime) {
 
 function statusText($status){
     if($status == 'rejected'){
-      return "<div class='rejected-text'>(Elutasítva)</div>";
+      return "<div class='rejected-text'>(" . _REJECTED . ")</div>";
     }
     if($status == 'pending'){
-      return "<div class='pending-text'>(Feldolgozás alatt)</div>";
+      return "<div class='pending-text'>(" . _PENDING . ")</div>";
     }
     return "";
 }

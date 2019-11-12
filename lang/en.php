@@ -62,3 +62,9 @@ define("_CANCEL", "Cancel");
 define("_EDIT", "Edit");
 define("_DELETE", "Delete");
 define("_DELET_RECIPE", "Delete recipe");
+
+//Admin
+define("_ACCEPT", "Accept");
+define("_REJECT", "Reject");
+define("_REJECTED", "Rejected");
+define("_PENDING", "Pending");
