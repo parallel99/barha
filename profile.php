@@ -1,11 +1,11 @@
 <?php
 if (!isset($_SESSION['user'])) {
-    header("Location: /error/401");
+    header("Location: /");
     die();
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<?php echo $_SESSION['user']['lang']; ?>">
 <head>
     <title>BárHa | Profil</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
