@@ -25,3 +25,10 @@ define("_USERNAME", "Felhasználónév");
 define("_EMAIL", "E-mail");
 define("_PASSWORD", "Jelszó");
 define("_FORGOT_PASSWORD", "Elfelejtetted a jelszavad?");
+
+//Register
+define("_PASSWORD_CONFIRM", "Jelszó megerősítése");
+define("_LANGUAGE", "Nyelv");
+define("_EN", "Angol");
+define("_HU", "Magyar");
+define("_CLOSE", "Bezárás");

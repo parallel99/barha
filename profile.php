@@ -7,8 +7,8 @@ if (!isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Profil</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?= _PROFILE?></title>
 </head>
 <body>
 <?php
@@ -44,8 +44,7 @@ menu("profile");
                     success: function (response) {
                         $('.account-2-step-auth-form').append(response)
                     },
-                    error: function () {
-                    }
+                    error: function () {}
                 });
             });
             $("#disable-2-step-auth").click(function () {
@@ -56,8 +55,7 @@ menu("profile");
                     success: function (response) {
                         $('.account-2-step-auth-form').append(response)
                     },
-                    error: function () {
-                    }
+                    error: function () {}
                 });
             });
         </script>
@@ -139,8 +137,8 @@ menu("profile");
             <input required type="text" name="emailNew" id="emailNew" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Új email cím">
         </div>
         <div class="form-group">
-            <label for="password">Jelszó</label>
-            <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="Jelszó">
+            <label for="password"><?= _PASSWORD ?></label>
+            <input required type="password" name="password" id="password" minlength="4" maxlength="255" class="form-control" autocomplete="off" placeholder="<?= _PASSWORD ?>">
         </div>
         <button type="submit" name="account-email-change" class="btn btn-primary">Email cím váltás</button>
     </form>
@@ -149,8 +147,8 @@ menu("profile");
         <h3>Fiók törlése</h3>
         <div class="account-delete-error-container"></div>
         <div class="form-group">
-            <label for="password">Jelszó</label>
-            <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="Jelszó" autocomplete="off">
+            <label for="password"><?= _PASSWORD ?></label>
+            <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="<?= _PASSWORD ?>" autocomplete="off">
         </div>
         <button type="button" name="account-delete" id="account-delete" class="btn btn-danger">Fiók törlése</button>
     </form>
@@ -187,8 +185,7 @@ menu("profile");
             success: function (response) {
                 $('.account-delete-error-container').append(response)
             },
-            error: function () {
-            }
+            error: function () {}
         });
     });
 
@@ -206,8 +203,7 @@ menu("profile");
             success: function (response) {
                 $('.account-delete-error-container').append(response);
             },
-            error: function () {
-            }
+            error: function () {}
         });
     });
 </script>

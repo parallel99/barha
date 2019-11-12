@@ -25,3 +25,10 @@ define("_USERNAME", "Username");
 define("_EMAIL", "E-mail");
 define("_PASSWORD", "Password");
 define("_FORGOT_PASSWORD", "Forgot your password?");
+
+//Register
+define("_PASSWORD_CONFIRM", "Confirm password");
+define("_LANGUAGE", "Language");
+define("_EN", "English");
+define("_HU", "Hungarian");
+define("_CLOSE", "Close");

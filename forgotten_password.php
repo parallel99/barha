@@ -7,8 +7,8 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Elfelejtett jelszó</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | Elfelejtett jelszó</title>
 </head>
 <body>
 <?php
@@ -55,8 +55,8 @@ menu("none");
     <form method="post" class="shadow" id="forgottenPasswordForm">
         <h1>Elfelejtett jelszó</h1>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="email" required>
+            <label for="email"><?= _EMAIL ?></label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="<?= _EMAIL ?>" autocomplete="email" required>
         </div>
         <input type="submit" class="btn btn-primary" name="submit" value="Elfelejtettem a jelszavam">
     </form>

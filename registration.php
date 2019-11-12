@@ -7,8 +7,8 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Regisztráció</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?= _REGISTER ?></title>
     <!-- recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -28,27 +28,26 @@ menu("registration");
     <form method="post" class="shadow" id="registrationForm">
         <div class="form-group">
             <label for="name">Név</label>
-            <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? ""; ?>"
-                   placeholder="Név" required>
+            <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? ""; ?>" placeholder="<?= _NAME ?>" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" name="email" id="email"
-                   value="<?php echo $_POST["email"] ?? ""; ?>" placeholder="Email" required>
+                   value="<?php echo $_POST["email"] ?? ""; ?>" placeholder="<?= _EMAIL ?>" required>
         </div>
         <div class="form-group">
-            <label for="password1">Jelszó</label>
-            <input type="password" class="form-control" name="password1" id="password1" placeholder="Jelszó" required>
+            <label for="password1"><?= _PASSWORD ?></label>
+            <input type="password" class="form-control" name="password1" id="password1" placeholder="<?= _PASSWORD ?>" required>
         </div>
         <div class="form-group">
-            <label for="password2">Jelszó megerősítése</label>
-            <input type="password" class="form-control" name="password2" id="password2" placeholder="Jelszó megerősítése" required>
+            <label for="password2"><?= _PASSWORD_CONFIRM ?></label>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="<?= _PASSWORD_CONFIRM ?>" required>
         </div>
         <div class="form-group">
-            <label for="lang-select">Nyelv</label>
+            <label for="lang-select"><?= _LANGUAGE ?></label>
             <select class="custom-select form-control" name="lang-select" id="lang-select">
-                <option value="hu">Magyar</option>
-                <option value="en">Angol</option>
+                <option value="hu"><?= _HU ?></option>
+                <option value="en"><?= _EN ?></option>
             </select>
         </div>
         <div class="form-group" style="text-align: center">
@@ -104,7 +103,7 @@ menu("registration");
                 <p>A miénk lesz a veséd IS.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><?= _CLOSE ?></button>
             </div>
         </div>
     </div>

@@ -7,8 +7,8 @@ if (!isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
     <head>
-        <title>BárHa | Receptek</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+        <title><?= _BARHA ?> | <?= _RECIPES ?></title>
     </head>
     <body>
         <?php

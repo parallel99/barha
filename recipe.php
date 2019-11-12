@@ -18,25 +18,25 @@ if ($stmt->rowCount() != 1) {
 }
 
 //Ezen még gondolkodnom kell
-if(!isset($_SESSION['user'])){
-    if($recipe->status != 'accepted'){
-      include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
-      die();
+if (!isset($_SESSION['user'])) {
+    if ($recipe->status != 'accepted') {
+        include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
+        die();
     }
 } else {
-    if($_SESSION['user']['permission'] != 'admin'){
-      if($recipe->status != 'accepted' && $recipe->uploader != $_SESSION['user']['email']){
-          include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
-          die();
-      }
+    if ($_SESSION['user']['permission'] != 'admin') {
+        if ($recipe->status != 'accepted' && $recipe->uploader != $_SESSION['user']['email']) {
+            include $_SERVER['DOCUMENT_ROOT'] . '/error/404.php';
+            die();
+        }
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | <?php echo($recipe->name); ?></title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?php echo($recipe->name); ?></title>
 </head>
 <body>
 <?php

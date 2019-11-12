@@ -7,8 +7,8 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
-    <title>BárHa | Bejelentkezés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | <?= _LOGIN ?></title>
 </head>
 <body id="two-factor-body">
 <?php
@@ -79,7 +79,7 @@ menu("login");
             </script>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary" name="submit">Bejelentkezés</button>
+        <button type="submit" class="btn btn-primary" name="submit"><?= _LOGIN ?></button>
     </form>
 </div>
 </body>
