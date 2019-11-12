@@ -98,14 +98,14 @@ menu("profile");
                 $data = $stmt->fetch(PDO::FETCH_OBJ);
 
                 if ($data->lang == 'hu') {
-                    echo "<option value=\"hu\" selected>Magyar</option>";
-                    echo "<option value=\"en\">Angol</option>";
+                    echo "<option value=\"hu\" selected>" . _HU . "</option>";
+                    echo "<option value=\"en\">" . _EN . "</option>";
                 } elseif ($data->lang == 'en') {
-                    echo "<option value=\"hu\">Magyar</option>";
-                    echo "<option value=\"en\" selected>Angol</option>";
+                    echo "<option value=\"hu\">" . _HU . "</option>";
+                    echo "<option value=\"en\" selected>" . _EN . "</option>";
                 } else {
-                    echo "<option value=\"hu\">Magyar</option>";
-                    echo "<option value=\"en\">Angol</option>";
+                    echo "<option value=\"hu\">" . _HU . "</option>";
+                    echo "<option value=\"en\">" . _EN . "</option>";
                 }
                 ?>
             </select>
