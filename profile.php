@@ -71,7 +71,7 @@ menu("profile");
     </script>
     <hr>
     <form method="POST" class="account-lang-change-form">
-        <h3>Nyelv váltás</h3>
+        <h3><?= _CHANGE_LANG ?></h3>
         <?php
         if (isset($_POST['account-lang-change'])) {
             $_SESSION['user']['lang'] = $_POST['lang-select'];
