@@ -69,7 +69,7 @@ menu("none");
             }
             ?>
             <hr>
-            <h3>Hozzávalók</h3>
+            <h3><?= _INGREDIENTS ?></h3>
             <div class="ingredients">
                 <ul>
                     <?php
@@ -92,7 +92,7 @@ menu("none");
     </div>
     <div class="row">
         <div class="recipe">
-            <h3>Elkészítés</h3>
+            <h3><?= _PREPARATION ?></h3>
             <h6 class="gray"><?= _PREPARATION_TIME_COLON ?>
                 <strong>
                     <?php echo MakingTime($recipe->makingtime); ?>
@@ -154,6 +154,7 @@ menu("none");
 <script>
     $(".favourite").click(function () {
         let id = <?php echo $recipe->id; ?>;
+        // Ez meg nem jó teljesen
         if ($('.favourite-text').text() === "Hozzáadás a kedvencekhez") {
             $(".favourite-star").css('background-image', 'url(\'/images/favourite2.svg\')');
             $(".favourite-text").text('Hozzáadva a kedvencekhez');
