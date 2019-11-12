@@ -105,6 +105,9 @@ if (isset($_SESSION['user']['lang'])) {
         .bg .icon {
             filter: grayscale(100%) drop-shadow(rgba(0, 0, 0, 0.15) 0px 0px 10px);
             background-color: transparent;
+            display: block;
+            margin: auto;
+            max-width: 80%;
         }
 
         .alert {
