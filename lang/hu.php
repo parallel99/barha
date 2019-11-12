@@ -41,3 +41,6 @@ define("_PREPARATION_TIME", "Elkészítési idő");
 define("_PREPARATION", "Elkészítés");
 define("_HOUR", "óra");
 define("_MIN", "perc");
+
+//Search
+define("_NO_RESULTS", "Nincs találat");

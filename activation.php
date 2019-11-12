@@ -27,8 +27,8 @@ if ($row == 1) {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
-    <title>BárHa | E-mail megerősítés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | E-mail megerősítés</title>
 </head>
 <body>
 <?php

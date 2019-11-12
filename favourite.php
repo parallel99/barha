@@ -28,7 +28,7 @@ menu("favourite");
         $data = $stmt->fetchAll();
 
         if ($stmt->rowCount() == 0) {
-            echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
+            echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
         }
 
         foreach ($data as $row) {

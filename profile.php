@@ -74,6 +74,8 @@ menu("profile");
         <h3>Nyelv váltás</h3>
         <?php
         if (isset($_POST['account-lang-change'])) {
+            $_SESSION['user']['lang'] = $_POST['lang-select'];
+
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
             $stmt = $pdo->prepare("UPDATE users SET lang = :lang WHERE email = :email");
@@ -82,7 +84,6 @@ menu("profile");
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
 
-            $_SESSION['user']['lang'] = $_POST['lang-select'];
             header("Refresh: 0");
         }
         ?>

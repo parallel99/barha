@@ -7,8 +7,8 @@ if ($_SESSION['user']['permission'] != 'admin') {
 <!DOCTYPE html>
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
-    <title>BárHa | Admin</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
+    <title><?= _BARHA ?> | Admin</title>
 </head>
 <body>
 <?php
@@ -33,7 +33,7 @@ menu("favourite");
         $data = $stmt->fetchAll();
 
         if ($stmt->rowCount() == 0) {
-            echo "<div class=\"no-result\"><h3>Nincs találat</h3></div>";
+            echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
         }
 
         foreach ($data as $row) {
