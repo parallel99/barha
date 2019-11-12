@@ -34,4 +34,4 @@ define("_HU", "Magyar");
 define("_CLOSE", "Bezárás");
 
 //Recipe
-define("_PREPARATION_TIME\:", "Elkészítési idő: ");
+define("_PREPARATION_TIME_COLON", "Elkészítési idő: ");

@@ -93,7 +93,7 @@ menu("none");
     <div class="row">
         <div class="recipe">
             <h3>Elkészítés</h3>
-            <h6 class="gray"><?= _PREPARATION_TIME: ?>
+            <h6 class="gray"><?= _PREPARATION_TIME_COLON ?>
                 <strong>
                     <?php echo MakingTime($recipe->makingtime); ?>
                 </strong>

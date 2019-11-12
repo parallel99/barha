@@ -52,7 +52,7 @@ if (!isset($_GET['search'])) {
                     </div>
                     <div class="media-body">
                         <h3><?php echo $row->name; ?></h3>
-                        <h6><?= _PREPARATION_TIME: ?>
+                        <h6><?= _PREPARATION_TIME_COLON ?>
                             <strong>
                                 <?php echo MakingTime($row->makingtime); ?>
                             </strong>
