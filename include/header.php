@@ -59,6 +59,13 @@ if (isset($_COOKIE["userid"]) && !isset($_SESSION['user'])) {
     $row = $stmt->fetch(PDO::FETCH_OBJ);
     $_SESSION['user'] = array("name" => $row->name, "email" => $row->email, "permission" => $row->permission);
 }
+
+if(isset($_SESSION['lang'])){
+    include "lang/".$_SESSION['lang'].".php";
+}else{
+    include "lang_en.php";
+}
+?>
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
