@@ -1,6 +1,5 @@
 <?php
 
-define("_HOMEPAGE-TITLE", "Mi van a hűtőben?");
 define("_BARHA", "BárHa");
 define("_HOMEPAGE", "Kezdőlap");
 define("_RECIPES", "Receptek");
@@ -19,3 +18,6 @@ define("_EMAIL", "E-mail");
 //Navbar
 define("_UPLOAD_RECIPE", "Recept feltöltés");
 define("_EDIT_RECIPES", "Recepteim szerkesztése");
+
+//Index
+define("_HOMEPAGE-TITLE", "Mi van a hűtőben?");
