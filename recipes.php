@@ -65,28 +65,6 @@ if (!isset($_GET['search'])) {
             if ($stmt->rowCount() == 50) {
                 echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
             }
-        } else {
-            //--------------------------------------Ez itt micsoda?------------------------------------------
-            //nem tudom szerintem te csináltad, de amúgy nincs értelme mert soha nem fút le úgy se
-            $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC;";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute();
-            $data = $stmt->fetchAll();
-
-            foreach ($data as $row) {
-                ?>
-                <a class="media" href="recipe/<?php echo $row->url; ?>">
-                    <div class="media-left">
-                        <img src="/images/no-img.png" loading="lazy" alt="<?php echo $row->name; ?>">
-                    </div>
-                    <div class="media-body">
-                        <h3><?php echo $row->name; ?></h3>
-                        <h6>Elkészítési idő: <strong><?php echo rand(10, 60); ?> perc</strong></h6>
-                    </div>
-                </a>
-                <?php
-            }
-            //-----------------------------------------------------------------------------------------------
         }
         ?>
     </div>
