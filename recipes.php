@@ -16,10 +16,10 @@ if (!isset($_GET['search'])) {
 <div class="container recipe-list-container">
     <form method="get" class="row search">
         <div class="input-group">
-            <input type="text" class="form-control" name="search" id="search" placeholder="Keresés" value="<?php echo trim($_GET["search"]) ?? ""; ?>">
+            <input type="text" class="form-control" name="search" id="search" placeholder="<?= _SEARCH ?>" value="<?php echo trim($_GET["search"]) ?? ""; ?>">
             <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit">Keresés</button>
-                    </span>
+                <button class="btn btn-primary" type="submit"><?= _SEARCH ?></button>
+            </span>
         </div>
     </form>
     <div class="recipes">
@@ -66,6 +66,7 @@ if (!isset($_GET['search'])) {
                 echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">Tovább</button></div>";
             }
         } else {
+            //--------------------------------------Ez itt micsoda?------------------------------------------
             $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC;";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
@@ -84,6 +85,7 @@ if (!isset($_GET['search'])) {
                 </a>
                 <?php
             }
+            //-----------------------------------------------------------------------------------------------
         }
         ?>
     </div>
