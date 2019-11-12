@@ -34,4 +34,4 @@ define("_HU", "Hungarian");
 define("_CLOSE", "Close");
 
 //Recipe
-define("_PREPARATION_TIME:", "Preparation time: ");
+define("_PREPARATION_TIME\:", "Preparation time: ");
