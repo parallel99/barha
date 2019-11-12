@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
     <title>BárHa | Kedvencek</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

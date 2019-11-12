@@ -5,7 +5,7 @@ if ($_SESSION['user']['permission'] != 'admin') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
     <title>BárHa | Admin</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>

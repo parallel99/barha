@@ -19,7 +19,7 @@ if ($stmt->rowCount() != 1) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<? echo $_SESSION['user']['lang'] ?>">
 <head>
     <title>BárHa | Recept feltöltés</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
