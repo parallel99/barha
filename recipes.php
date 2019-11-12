@@ -67,6 +67,7 @@ if (!isset($_GET['search'])) {
             }
         } else {
             //--------------------------------------Ez itt micsoda?------------------------------------------
+            //nem tudom szerintem te csináltad, de amúgy nincs értelme mert soha nem fút le úgy se
             $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC;";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
