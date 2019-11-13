@@ -47,11 +47,11 @@ if (isset($_POST["submit"])) {
                 var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                 inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                 inputs += "<div class='dropdown bootstrap-select'>";
+                inputs += "<select class='selectpicker' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' data-live-search='true'>";
                 <?php foreach (units() as $unit) {
                   echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";";
                 } ?>
                 inputs += "</select>";
-                inputs += "<select class='selectpicker' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' data-live-search='true'>";
                 inputs += "<button type='button' class='btn dropdown-toggle btn-light' data-toggle='dropdown' role='button' data-id='unit" + (length + 1) + "' title='db' aria-expanded='false'>";
                 inputs += "<div class='filter-option'><div class='filter-option-inner'>";
                 inputs += "<div class='filter-option-inner-inner'>db</div>";
