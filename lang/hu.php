@@ -45,8 +45,10 @@ define("_PREPARATION", "Elkészítés");
 define("_HOUR", "óra");
 define("_MIN", "perc");
 define("_RECIPE_NAME", "A recpet neve");
-define("_CHOOSE_IMG", "Válassz képet");
+define("_SELECT_IMG", "Válassz képet");
+define("_SELECT", "Választ");
 define("_UPLOAD", "Feltöltés");
+define("_QUANTITY", "Mennyiség");
 
 //Search
 define("_NO_RESULTS", "Nincs találat");

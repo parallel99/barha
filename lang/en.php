@@ -45,8 +45,10 @@ define("_PREPARATION", "Preparation");
 define("_HOUR", "hour");
 define("_MIN", "min");
 define("_RECIPE_NAME", "Recipe name");
-define("_CHOOSE_IMG", "Choose image");
+define("_SELECT_IMG", "Select image");
+define("_SELECT", "Select");
 define("_UPLOAD", "Upload");
+define("_QUANTITY", "Quantity");
 
 //Search
 define("_NO_RESULTS", "No results");

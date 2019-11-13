@@ -31,8 +31,13 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="form-group">
             <div class="custom-file">
+                <style>
+                    .custom-file-input ~ .custom-file-label::after {
+                        content: "<?= _SELECT ?>";
+                    }
+                </style>
                 <input type="file" class="custom-file-input" name="customFile" id="customFile">
-                <label class="custom-file-label text-muted" for="customFile"><?= _CHOOSE_IMG ?></label>
+                <label class="custom-file-label text-muted" for="customFile"><?= _SELECT_IMG ?></label>
             </div>
         </div>
         <div class="form-group">
@@ -61,7 +66,7 @@ if (isset($_POST["submit"])) {
                                 echo '<label class="newLine">' . _INGREDIENTS . '</label>';
                             } ?>
                             <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="<?php echo $ingredients_name; ?>" id="<?php echo $ingredients_name; ?>" placeholder="<?= _INGREDIENT ?>" value="<?php echo $f_ingredients; ?>" autocomplete="off">
-                            <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="<?php echo $num_name; ?>" id="<?php echo $num_name; ?>" placeholder="Mennyiség" min="1" max="5000" value="<?php echo $f_quantity; ?>" autocomplete="off">
+                            <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="<?php echo $num_name; ?>" id="<?php echo $num_name; ?>" placeholder="<?= _QUANTITY ?>" min="1" max="5000" value="<?php echo $f_quantity; ?>" autocomplete="off">
                             <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="<?php echo $unit_name; ?>" name="<?php echo $unit_name; ?>" autocomplete="off" data-live-search="true">
                                 <?php
                                 echo "<option value='" . $f_unit . "'>" . $f_unit . "</option>";
@@ -78,7 +83,7 @@ if (isset($_POST["submit"])) {
                 } ?>
                 <div class="form-group">
                     <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $ingredients_counter; ?>" id="ingredients<?php echo $ingredients_counter; ?>" placeholder="<?= _INGREDIENT ?>" autocomplete="off">
-                    <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $ingredients_counter; ?>" id="db<?php echo $ingredients_counter; ?>" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
+                    <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $ingredients_counter; ?>" id="db<?php echo $ingredients_counter; ?>" placeholder="<?= _QUANTITY ?>" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $ingredients_counter; ?>" name="unit<?php echo $ingredients_counter; ?>" autocomplete="off" data-live-search="true">
                         <?php
                         foreach (units() as $unit) {
@@ -91,9 +96,9 @@ if (isset($_POST["submit"])) {
             } else {
                 ?>
                 <div class="form-group">
-                    <label class="newLine">Hozzávalók</label>
+                    <label class="newLine"><?= _INGREDIENTS ?></label>
                     <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="<?= _INGREDIENT ?>" autocomplete="off">
-                    <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
+                    <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="<?= _QUANTITY ?>" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off" data-live-search="true">
                         <?php
                         foreach (units() as $unit) {
@@ -111,7 +116,7 @@ if (isset($_POST["submit"])) {
                 var length = $(".ingredients-group > div").length
                 if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
                     var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='<?= _INGREDIENT ?>'> ";
-                    inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
+                    inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='<?= _QUANTITY ?>'> ";
                     inputs += "<select class='form-control upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off' data-live-search='true'>";
                     <?php foreach (units() as $unit) {
                     echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t";
