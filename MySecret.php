@@ -75,7 +75,7 @@ if (isset($_POST["submit"])) {
                 inputs += "</div>";
                 inputs += "</div>";
                 inputs += "</div>";
-                inputs += "<script src='https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js'></script>";
+                inputs += "<script src='https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js'>";
                 $(".ingredients-group").append(inputs);
                 $("#ingredients" + (length + 1)).autocomplete({
                     source: ingredients
