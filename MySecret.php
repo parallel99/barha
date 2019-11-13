@@ -41,22 +41,44 @@ if (isset($_POST["submit"])) {
                 </div>
         </div>
         <script>
-            $('.ingredients-group').on('input', function () {
-                var length = $(".ingredients-group > div").length
-                if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
-                    var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
-                    inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
-                    inputs += "<select class='selectpicker' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' data-live-search='true'>";
-                    <?php foreach (units() as $unit) {
-                      echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t";
-                    } ?>
-                    inputs += "</select></div>";
-                    $(".ingredients-group").append(inputs);
-                    $("#ingredients" + (length + 1)).autocomplete({
-                        source: ingredients
-                    });
-                }
-            });
+        $('.ingredients-group').on('input', function () {
+            var length = $(".ingredients-group > div").length
+            if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
+                inputs = "<div class='dropdown bootstrap-select'>";
+                <?php foreach (units() as $unit) {
+                  echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";";
+                } ?>
+                inputs += "</select>";
+                inputs += "<select class='selectpicker' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' data-live-search='true'>";
+                inputs += "<button type='button' class='btn dropdown-toggle btn-light' data-toggle='dropdown' role='button' data-id='unit" + (length + 1) + "' title='<?php units()[0];?>' aria-expanded='false'>
+                  <div class='filter-option'><div class='filter-option-inner'>
+                      <div class='filter-option-inner-inner'>db</div>;
+                  </div>
+                </div>
+              </button>";
+              inputs += "<div class='dropdown-menu' role='combobox' x-placement='bottom-start' style='max-height: 500.8px; overflow: hidden; min-height: 162px; min-width: 220px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);'>
+                <div class='bs-searchbox'>
+                  <input type='text' class='form-control' autocomplete='off' role='textbox' aria-label='Search'>
+                </div>
+                <div class='inner show' role='listbox' aria-expanded='false' tabindex='-1' style='max-height: 436.8px; overflow-y: auto; min-height: 98px;'>
+                  <ul class='dropdown-menu inner show'>
+                    <?php foreach (units() as $unit) { ?>
+                    <li class=''>
+                      <a role='option' class='dropdown-item' aria-disabled='false' tabindex='0' aria-selected='false'>
+                        <span class='text'><?php echo $unit; ?></span>
+                      </a>
+                    </li>
+                    <?php } ?>
+                    </ul>
+                  </div>
+                </div>
+              </div>";
+                $(".ingredients-group").append(inputs);
+                $("#ingredients" + (length + 1)).autocomplete({
+                    source: ingredients
+                });
+            }
+        });
         </script>
         <div class="form-group">
             <label for="name">A recept elkészítésének módja</label>
