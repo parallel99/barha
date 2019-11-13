@@ -11,8 +11,8 @@ $_SESSION['secret'] = $secret;
 $cht = "qr";
 $chs = "300x300";
 $choe = "UTF-8";
-$app_name = urlencode('BárHa ('.$_SESSION['user']['email'].')');
-$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/' . $app_name . '?secret=' . $secret . '&choe=' . $choe;
+
+$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BarHa?secret=' . $secret . '&choe=' . $choe;
 
 ?>
 <div id="auth-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
