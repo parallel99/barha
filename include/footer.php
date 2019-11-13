@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 <?php if (!isset($_COOKIE["cookieok"]) || $_COOKIE["cookieok"] != 1) { ?>
     <div class="alert alert-primary cookie-alert">
         Az oldalon <strong>sütiket használunk</strong> annak érdekében, hogy a lehető legjobb felhasználói élményt
