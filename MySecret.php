@@ -44,7 +44,7 @@ if (isset($_POST["submit"])) {
         $('.ingredients-group').on('input', function () {
             var length = $(".ingredients-group > div").length
             if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
-                var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
+                var inputs = "<link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"><div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
                 inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                 inputs += "<div class='dropdown bootstrap-select'>";
                 inputs += "<select class='selectpicker' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' data-live-search='true'>";
