@@ -45,7 +45,6 @@ define("_PREPARATION", "Preparation");
 define("_HOUR", "hour");
 define("_MIN", "min");
 define("_RECIPE_NAME", "Recipe name");
-define("_UPLOAD_RECIPE", "Upload recipe");
 define("_CHOOSE_IMG", "Choose image");
 define("_UPLOAD", "Upload");
 
