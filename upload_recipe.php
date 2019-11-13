@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-    <title><?= _BARHA ?> | Recept feltöltés</title>
+    <title><?= _BARHA ?> | <?= _UPLOAD_RECIPE ?></title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
 </head>
 <body>
@@ -26,13 +26,13 @@ if (isset($_POST["submit"])) {
 <div class="form-container container recipe-container recipe-height">
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="name">A recept neve</label>
+            <label for="name"><?= _RECIPE_NAME ?></label>
             <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="<?= _NAME ?>" value="<?php echo $_POST["name"] ?? ""; ?>" required>
         </div>
         <div class="form-group">
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="customFile" id="customFile">
-                <label class="custom-file-label text-muted" for="customFile">Válassz képet</label>
+                <label class="custom-file-label text-muted" for="customFile"><?= _CHOOSE_IMG ?></label>
             </div>
         </div>
         <div class="form-group">
@@ -58,9 +58,9 @@ if (isset($_POST["submit"])) {
                         ?>
                         <div class="form-group">
                             <?php if ($i == 1) {
-                                echo '<label class="newLine">Hozzávalók</label>';
+                                echo '<label class="newLine">' . _INGREDIENTS . '</label>';
                             } ?>
-                            <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="<?php echo $ingredients_name; ?>" id="<?php echo $ingredients_name; ?>" placeholder="Hozzávaló" value="<?php echo $f_ingredients; ?>" autocomplete="off">
+                            <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="<?php echo $ingredients_name; ?>" id="<?php echo $ingredients_name; ?>" placeholder="<?= _INGREDIENT ?>" value="<?php echo $f_ingredients; ?>" autocomplete="off">
                             <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="<?php echo $num_name; ?>" id="<?php echo $num_name; ?>" placeholder="Mennyiség" min="1" max="5000" value="<?php echo $f_quantity; ?>" autocomplete="off">
                             <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="<?php echo $unit_name; ?>" name="<?php echo $unit_name; ?>" autocomplete="off" data-live-search="true">
                                 <?php
@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
                     }
                 } ?>
                 <div class="form-group">
-                    <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $ingredients_counter; ?>" id="ingredients<?php echo $ingredients_counter; ?>" placeholder="Hozzávaló" autocomplete="off">
+                    <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients<?php echo $ingredients_counter; ?>" id="ingredients<?php echo $ingredients_counter; ?>" placeholder="<?= _INGREDIENT ?>" autocomplete="off">
                     <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $ingredients_counter; ?>" id="db<?php echo $ingredients_counter; ?>" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $ingredients_counter; ?>" name="unit<?php echo $ingredients_counter; ?>" autocomplete="off" data-live-search="true">
                         <?php
@@ -92,7 +92,7 @@ if (isset($_POST["submit"])) {
                 ?>
                 <div class="form-group">
                     <label class="newLine">Hozzávalók</label>
-                    <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="Hozzávaló" autocomplete="off">
+                    <input type="text" class="form-control ui-autocomplete-input upload-ingredients-name" name="ingredients1" id="ingredients1" placeholder="<?= _INGREDIENT ?>" autocomplete="off">
                     <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="Mennyiség" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off" data-live-search="true">
                         <?php
@@ -110,7 +110,7 @@ if (isset($_POST["submit"])) {
             $('.ingredients-group').on('input', function () {
                 var length = $(".ingredients-group > div").length
                 if ($("div.ingredients-group div:last-child > input").val() !== "" && length < 25) {
-                    var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='Hozzávaló'> ";
+                    var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='<?= _INGREDIENT ?>'> ";
                     inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='Mennyiség'> ";
                     inputs += "<select class='form-control upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off' data-live-search='true'>";
                     <?php foreach (units() as $unit) {
@@ -128,7 +128,7 @@ if (isset($_POST["submit"])) {
             <label for="name">A recept elkészítésének módja</label>
             <textarea class="form-control" name="making" placeholder="Ide írhatja a recept elkészítésének a leírását" rows="10" required><?php echo $_POST["making"] ?? ""; ?></textarea>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary btn-upload">Beküld</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-upload"><?= _UPLOAD ?></button>
     </form>
 </div>
 </body>

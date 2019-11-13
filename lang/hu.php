@@ -7,6 +7,7 @@ define("_HOMEPAGE", "Kezdőlap");
 define("_RECIPES", "Receptek");
 define("_FAVOURITES", "Kedvenceim");
 define("_INGREDIENTS", "Hozzávalók");
+define("_INGREDIENT", "Hozzávaló");
 define("_PROFILE", "Profil");
 define("_LOGOUT", "Kijelentkezés");
 define("_SEARCH", "Keresés");
@@ -43,6 +44,10 @@ define("_PREPARATION_TIME", "Elkészítési idő");
 define("_PREPARATION", "Elkészítés");
 define("_HOUR", "óra");
 define("_MIN", "perc");
+define("_RECIPE_NAME", "A recpet neve");
+define("_UPLOAD_RECIPE", "Recept feltöltés");
+define("_CHOOSE_IMG", "Válassz képet");
+define("_UPLOAD", "Feltöltés");
 
 //Search
 define("_NO_RESULTS", "Nincs találat");

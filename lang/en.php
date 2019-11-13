@@ -7,6 +7,7 @@ define("_HOMEPAGE", "Homepage");
 define("_RECIPES", "Recipes");
 define("_FAVOURITES", "Favourites");
 define("_INGREDIENTS", "Ingredients");
+define("_INGREDIENT", "Ingredient");
 define("_PROFILE", "Profile");
 define("_LOGOUT", "Logout");
 define("_SEARCH", "Search");
@@ -43,6 +44,10 @@ define("_PREPARATION_TIME", "Preparation time");
 define("_PREPARATION", "Preparation");
 define("_HOUR", "hour");
 define("_MIN", "min");
+define("_RECIPE_NAME", "Recipe name");
+define("_UPLOAD_RECIPE", "Upload recipe");
+define("_CHOOSE_IMG", "Choose image");
+define("_UPLOAD", "Upload");
 
 //Search
 define("_NO_RESULTS", "No results");
