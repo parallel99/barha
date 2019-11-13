@@ -550,10 +550,12 @@ textarea {
 
 #disable-2-step-auth {
     width: 140px;
+    background: var(--red);
 }
 
 #enable-2-step-auth {
     width: 140px;
+    background: var(--green);
 }
 
 @media (max-width: 992px) {
