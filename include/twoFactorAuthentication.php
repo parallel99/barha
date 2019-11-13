@@ -11,8 +11,8 @@ $_SESSION['secret'] = $secret;
 $cht = "qr";
 $chs = "300x300";
 $choe = "UTF-8";
-
-$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/BárHa('.$_SESSION['user']['email'].')?secret=' . $secret . '&choe=' . $choe;
+$app_name = urlencode('BárHa ('.$_SESSION['user']['email'].')');
+$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chl=otpauth://totp/' . $app_name . '?secret=' . $secret . '&choe=' . $choe;
 
 ?>
 <div id="auth-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -24,7 +24,7 @@ $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&
             <div class="modal-body">
                 Olvasd be a QR kódot a Google Authenticator alkalmazassal
                 <?php
-                echo "<img class=\"auth-qr-code\" src=" . urlencode($qrcode) . " alt='Secret key'>";
+                echo "<img class=\"auth-qr-code\" src=" . $qrcode . " alt='Secret key'>";
                 echo "<p class=\"auth-secret small text-muted\">" . $secret . "</p>";
                 ?>
                 <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
