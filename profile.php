@@ -21,6 +21,9 @@ menu("profile");
         <div class="form-group">
             <?php
 
+            //TODO megcsinalni ugy hogy a meglevo gombokat valtoztassa meg
+            //TODO a modal-t attenni ebbe a fileba
+
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
             $stmt = $pdo->prepare("SELECT secret_key FROM users WHERE email = :email");
