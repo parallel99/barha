@@ -30,7 +30,7 @@ class Mail {
         try {
             $sendgrid->send($email);
         } catch (Exception $e) {
-            echo 'Hiba: ' . $e->getMessage() . "\n";
+            echo _ERROR_COLON . $e->getMessage() . "\n";
         }
     }
 }

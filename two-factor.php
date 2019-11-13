@@ -33,7 +33,7 @@ menu("login");
             setcookie('userid', $_SESSION['two-auth-user']['id'], time() + 5000000, "/", "barha.herokuapp.com", 1, 1);
             header("Refresh: 0");
         } else {
-            echo '<div class="alert alert-danger" role="alert">Hiba</div>';
+            echo '<div class="alert alert-danger" role="alert">' . _ERROR . '</div>';
         }
     }
     ?>

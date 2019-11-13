@@ -13,7 +13,7 @@
             $("body").append(response);
         },
         error: function () {
-            ingredients.push("Hiba");
+            ingredients.push("<?= _ERROR ?>");
         }
     });
 </script>

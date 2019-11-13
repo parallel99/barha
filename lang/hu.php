@@ -68,11 +68,14 @@ define("_CANCEL", "Mégsem");
 define("_EDIT", "Szerkesztés");
 define("_DELETE", "Törlés");
 define("_DELET_RECIPE", "Recept törlése");
+define("_DIRECTIONS", "A recept elkészítésének módja");
 
 //Admin
 define("_ACCEPT", "Elfogad");
 define("_REJECT", "Elutasít");
 define("_REJECTED", "Elutasítva");
 define("_PENDING", "Feldolgozás alatt");
+define("_ERROR", "Hiba!");
+define("_ERROR_COLON", "Hiba: ");
 
 define("_NOSCRIPT", "Ide ki kell talani valamit.");

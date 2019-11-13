@@ -49,6 +49,7 @@ define("_SELECT_IMG", "Select image");
 define("_SELECT", "Select");
 define("_UPLOAD", "Upload");
 define("_QUANTITY", "Quantity");
+define("_DIRECTIONS", "Directions");
 
 //Search
 define("_NO_RESULTS", "No results");
@@ -74,5 +75,7 @@ define("_ACCEPT", "Accept");
 define("_REJECT", "Reject");
 define("_REJECTED", "Rejected");
 define("_PENDING", "Pending");
+define("_ERROR", "Error!");
+define("_ERROR_COLON", "Error: ");
 
 define("_NOSCRIPT", "Your browser doesn't support JavaScript or you have disabled JavaScript.");
