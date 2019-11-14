@@ -22,7 +22,7 @@ if ($stmt->rowCount() != 1) {
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-    <title><?= _BARHA ?> | Recept feltöltés</title>
+    <title><?= _BARHA ?> | <?= _UPLOAD_RECIPE ?></title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php'; ?>
 </head>
 <body>
@@ -40,14 +40,14 @@ if (isset($_POST["submit"])) {
 <div class="form-container container recipe-container recipe-height">
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="name">A recept neve</label>
+            <label for="name"><?= _RECIPE_NAME ?></label>
             <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="<?= _NAME ?>"
                    value="<?php echo $recipe->name; ?>" required>
         </div>
         <div class="form-group">
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="customFile" id="customFile">
-                <label class="custom-file-label" for="customFile">Válassz képet</label>
+                <label class="custom-file-label" for="customFile"><?= _SELECT_IMG ?></label>
             </div>
         </div>
         <div class="form-group">
