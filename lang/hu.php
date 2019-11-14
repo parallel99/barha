@@ -44,7 +44,7 @@ define("_PREPARATION_TIME", "Elkészítési idő");
 define("_PREPARATION", "Elkészítés");
 define("_HOUR", "óra");
 define("_MIN", "perc");
-define("_RECIPE_NAME", "A recpet neve");
+define("_RECIPE_NAME", "A recepet neve");
 define("_SELECT_IMG", "Válassz képet");
 define("_SELECT", "Választ");
 define("_UPLOAD", "Feltöltés");
