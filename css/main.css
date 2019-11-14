@@ -557,6 +557,22 @@ textarea {
     width: 140px;
     background: var(--green);
 }
+.search .arrow-down {
+    width: 100%;
+    text-align: center;
+    transition:all 0.3s ease;
+    font-size: 0rem;
+    padding: 0;
+    margin: 10px 0 -5px 0;
+    opacity:0;
+}
+.search .arrow-down:before {
+    content: url("/images/arrow-down.svg");
+}
+.search:hover .search .arrow-down {
+    font-size:2rem;
+    opacity:.75;
+}
 
 @media (max-width: 992px) {
     .recipe-list-container {

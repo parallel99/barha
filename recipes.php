@@ -21,6 +21,7 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-primary" type="submit"><?= _SEARCH ?></button>
             </span>
         </div>
+        <span class="arrow-down"></span>
     </form>
     <div class="recipes">
         <?php
