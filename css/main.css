@@ -558,19 +558,16 @@ textarea {
     background: var(--green);
 }
 .search .arrow-down {
-    width: 100%;
-    text-align: center;
+    width: 0;
+    height: auto;
+    display: block;
     transition:all 0.3s ease;
-    font-size: 0rem;
     padding: 0;
-    margin: 10px 0 -5px 0;
+    margin: 10px auto -5px auto;
     opacity:0;
 }
-.search .arrow-down:before {
-    content: url("/images/arrow-down.svg");
-}
 .search:hover .search .arrow-down {
-    font-size:2rem;
+    height: 40px;
     opacity:.75;
 }
 
