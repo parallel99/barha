@@ -78,4 +78,21 @@ define("_PENDING", "Feldolgozás alatt");
 define("_ERROR", "Hiba!");
 define("_ERROR_COLON", "Hiba: ");
 
+//Noscript TODO fordítás
 define("_NOSCRIPT", "Ide ki kell talani valamit.");
+
+//Units
+define("_PIECE", "db");
+define("_G", "g");
+define("_DKG", "dkg");
+define("_KG", "kg");
+define("_LITER", "liter");
+define("_DL", "dl");
+define("_CL", "cl");
+define("_ML", "ml");
+define("_TABLESPOON", "evőkanál");
+define("_CUP", "bögre");
+define("_PINCH", "csipet");
+define("_PACK", "csomag");
+define("_TEASPOON", "Teáskanál");
+define("_CLOVES", "gerezd");

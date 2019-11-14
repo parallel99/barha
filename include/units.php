@@ -3,10 +3,9 @@ function units() {
 
     //TODO ezt is le kene fordítani
 
-    $unit = array("db", "g", "dkg", "kg", "liter", "dl", "cl", "ml",
-        "merőkanál", "evőkanál", "kiskanál", "mokkáskanál",
-        "bögre", "csésze", "csipet", "marék", "gerezd", "csokor",
-        "csomag");
+    $unit = array(_PIECE, _G, _DKG, _KG, _LITER, _DL, _CL, _ML,
+        "kávéskanál", _TABLESPOON, "kiskanál", _TEASPOON, _CUP,
+        _PINCH, "marék", _CLOVES, "csokor", _PACK);
 
     return $unit;
 }

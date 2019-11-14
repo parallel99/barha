@@ -78,4 +78,22 @@ define("_PENDING", "Pending");
 define("_ERROR", "Error!");
 define("_ERROR_COLON", "Error: ");
 
+//Noscript
 define("_NOSCRIPT", "Your browser doesn't support JavaScript or you have disabled JavaScript.");
+
+//Units
+define("_PIECE", "piece");
+define("_G", "g");
+define("_DKG", "dkg");
+define("_KG", "kg");
+define("_LITER", "liter");
+define("_DL", "dl");
+define("_CL", "cl");
+define("_ML", "ml");
+define("_TABLESPOON", "tablespoon");
+define("_CUP", "cup");
+define("_PINCH", "pinch");
+define("_PINCH", "csipet");
+define("_PACK", "pack");
+define("_TEASPOON", "Teaspoon");
+define("_CLOVES", "cloves");
