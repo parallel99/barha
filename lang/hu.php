@@ -44,11 +44,12 @@ define("_PREPARATION_TIME", "Elkészítési idő");
 define("_PREPARATION", "Elkészítés");
 define("_HOUR", "óra");
 define("_MIN", "perc");
-define("_RECIPE_NAME", "A recpet neve");
+define("_RECIPE_NAME", "A recepet neve");
 define("_SELECT_IMG", "Válassz képet");
 define("_SELECT", "Választ");
 define("_UPLOAD", "Feltöltés");
 define("_QUANTITY", "Mennyiség");
+define("_DIRECTIONS", "A recept elkészítésének módja");
 
 //Search
 define("_NO_RESULTS", "Nincs találat");
@@ -68,7 +69,6 @@ define("_CANCEL", "Mégsem");
 define("_EDIT", "Szerkesztés");
 define("_DELETE", "Törlés");
 define("_DELET_RECIPE", "Recept törlése");
-define("_DIRECTIONS", "A recept elkészítésének módja");
 
 //Admin
 define("_ACCEPT", "Elfogad");

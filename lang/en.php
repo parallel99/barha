@@ -93,7 +93,6 @@ define("_ML", "ml");
 define("_TABLESPOON", "tablespoon");
 define("_CUP", "cup");
 define("_PINCH", "pinch");
-define("_PINCH", "csipet");
 define("_PACK", "pack");
 define("_TEASPOON", "Teaspoon");
 define("_CLOVES", "cloves");
