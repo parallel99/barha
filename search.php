@@ -34,8 +34,8 @@ menu("index");
     while($recipe = $stmt->fetch(PDO::FETCH_OBJ)){
         $num = 0;
         $ingredients = json_decode($recipe->ingredients);
-        print_r($ingredients);
-        /*foreach ($ingredients as $key => $value) {
+        //print_r($ingredients);
+        foreach ($ingredients as $key => $value) {
           foreach ($search as $search_name => $search_ingredients) {
               if($value->name == $search_ingredients){
                 $num = $num + 1;
@@ -49,7 +49,7 @@ menu("index");
         if($num == count((array)$ingredients)){
            print $recipe->name;
            print "jó<br>";
-        }*/
+        }
         /*foreach ($ingredients as $key => $value) {
             print $value->name;
         }
