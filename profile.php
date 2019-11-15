@@ -77,17 +77,18 @@ menu("profile");
         <h3><?= _CHANGE_LANG ?></h3>
         <?php
         if (isset($_POST['account-lang-change'])) {
-            $_SESSION['lang'] = $_POST['lang-select'];
+            if($_POST['lang-select'] == "hu" || $_POST['lang-select'] == "en"){
+                $_SESSION['lang'] = $_POST['lang-select'];
+                include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
-            include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
+                $stmt = $pdo->prepare("UPDATE users SET lang = :lang WHERE email = :email");
+                $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
+                $stmt->bindValue(':lang', $_POST['lang-select'], PDO::PARAM_STR);
+                $stmt->execute();
+                $data = $stmt->fetch(PDO::FETCH_OBJ);
 
-            $stmt = $pdo->prepare("UPDATE users SET lang = :lang WHERE email = :email");
-            $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
-            $stmt->bindValue(':lang', $_POST['lang-select'], PDO::PARAM_STR);
-            $stmt->execute();
-            $data = $stmt->fetch(PDO::FETCH_OBJ);
-
-            header("Refresh: 0");
+                header("Refresh: 0");
+          }
         }
         ?>
         <div class="form-group">
