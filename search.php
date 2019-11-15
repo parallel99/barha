@@ -30,9 +30,10 @@ menu("index");
         echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
     }
 
-    $num = 0;
+
 
     foreach ($data as $recipe) {
+        $num = 0;
         $ingredients = json_decode($recipe->ingredients);
         foreach ($ingredients as $key => $value) {
           foreach ($search as $search_name => $search_ingredients) {
@@ -40,6 +41,8 @@ menu("index");
                 $num = $num + 1;
 
               }
+              print('$value->name: ' . $value->name . '<br>');
+              print('$search_ingredients: ' . $search_ingredients. '<br>');
           }
         }
         if($num == count((array)$ingredients)){
