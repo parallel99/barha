@@ -19,7 +19,7 @@ function menu($active) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item <?php if ($active == "index") {
                         echo "active";
                     } ?>">
@@ -39,6 +39,18 @@ function menu($active) {
                         echo "active";
                     } ?>">
                         <a class="nav-link" href="/login"><?= _LOGIN ?></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-language" aria-hidden="true"></i><?= _LANGUAGE ?>
+                        </a>
+                        <form class="dropdown-menu profile-menu dropdown-menu-right" method="post" aria-labelledby="navbarDropdown">
+                            <button type="submit" name="hu" class="dropdown-item"><span aria-hidden="true" class="fa fa-sign-out fa-fw"></span><?= _HU ?></button>
+                            <button type="submit" name="en" class="dropdown-item"><span aria-hidden="true" class="fa fa-sign-out fa-fw"></span><?= _EN ?></button>
+                        </form>
                     </li>
                 </ul>
             </div>
