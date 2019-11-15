@@ -7,6 +7,17 @@ function menu($active) {
         die();
     }
 
+    if (isset($_POST["hu"]) && !isset($_SESSION['user']['name'])) {
+        $_SESSION['user']['lang'] = "hu";
+        header("Refresh: 0");
+        die();
+    }
+    if (isset($_POST["en"]) && !isset($_SESSION['user']['name'])) {
+        $_SESSION['user']['lang'] = "en";
+        header("Refresh: 0");
+        die();
+    }
+
     if (!isset($_SESSION['user'])) {
         ?>
         <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" aria-label="navbar">
