@@ -24,7 +24,6 @@ menu("index");
     $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC LIMIT 50;";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $data = $stmt->fetch(PDO::FETCH_OBJ);
 
     if ($stmt->rowCount() == 0) {
         echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
@@ -32,7 +31,7 @@ menu("index");
 
 
 
-    foreach ($data as $recipe) {
+    while($recipe = $stmt->fetch(PDO::FETCH_OBJ)){
         $num = 0;
         $ingredients = json_decode($recipe->ingredients);
         print_r($ingredients);
