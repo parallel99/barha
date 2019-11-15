@@ -307,9 +307,11 @@ textarea {
     margin-right: 0;
     padding: 15px;
 }
-
+.recipe-list-container .input-group-btn {
+    margin: 0 5px;
+}
 .recipe-list-container .search input {
-    margin-right: 15px;
+    margin-right: 10px;
     border-radius: .25rem !important;
 }
 

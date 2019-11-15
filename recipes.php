@@ -17,9 +17,11 @@ if (!isset($_GET['search'])) {
     <form method="get" class="row search">
         <div class="input-group">
             <input type="text" class="form-control" name="search" id="search" placeholder="<?= _SEARCH ?>" value="<?php echo trim($_GET["search"]) ?? ""; ?>">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit"><?= _SEARCH ?></button>
-                <button class="btn btn-outline-primary" type="button">Részletes keresés</button>
+            <span class="input-group-btn" id="#searchBtn-container">
+                <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
+            </span>
+            <span class="input-group-btn" id="#advSearchBtn-container">
+                <button class="btn btn-outline-primary" type="button" id="#advSearchBtn">Részletes keresés</button>
             </span>
         </div>
     </form>
