@@ -26,7 +26,7 @@ if (!isset($_GET['search'])) {
         </div>
         <script>
             let clicked = false;
-            $("#advSearchBtn-container").click(function() {
+            $("#advSearchBtn").click(function() {
                 alert("click");
                 if (!clicked) {
                     alert("if");
