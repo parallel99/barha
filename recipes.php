@@ -26,6 +26,7 @@ if (!isset($_GET['search'])) {
         </div>
         <script>
             let clicked = false;
+            //TODO kitalalni hogy miert nem jo ez a fos
             $(document).ready(function() {
                 $("#advSearchBtn").click(function(){
                     alert("click");
