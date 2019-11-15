@@ -125,9 +125,9 @@ class SaveRecipe {
         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
         \Cloudinary::config(array(
-            "cloud_name" => "htmfraf8s",
-            "api_key" => "445362577878397",
-            "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+            "cloud_name" => /*"htmfraf8s"*/getenv("CLOUDINARY_CLOUD_NAME"),
+            "api_key" => /*"445362577878397"*/getenv("CLOUDINARY_API_KEY"),
+            "api_secret" => /*"yWEvOGYU2B_xylfLEzW3XDNNnbQ"*/getenv("CLOUDINARY_API_SECRET")
         ));
 
         $cloudUpload = \Cloudinary\Uploader::upload($_FILES["customFile"]['tmp_name']);
@@ -180,9 +180,9 @@ class SaveRecipe {
         include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
         \Cloudinary::config(array(
-            "cloud_name" => "htmfraf8s",
-            "api_key" => "445362577878397",
-            "api_secret" => "yWEvOGYU2B_xylfLEzW3XDNNnbQ"
+            "cloud_name" => /*"htmfraf8s"*/getenv("CLOUDINARY_CLOUD_NAME"),
+            "api_key" => /*"445362577878397"*/getenv("CLOUDINARY_API_KEY"),
+            "api_secret" => /*"yWEvOGYU2B_xylfLEzW3XDNNnbQ"*/getenv("CLOUDINARY_API_SECRET")
         ));
 
 
