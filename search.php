@@ -11,18 +11,14 @@ menu("index");
 ?>
 <div class="container">
     <?php
-    if (!isset($_GET)) {
-        echo "ez így nem jó";
-    }
-
     $search = new \stdClass();
 
     //$ingredients = array_unique(array_filter($_GET));
 
     for ($i = 1; $i < 26; $i++) {
         $ingredients_name = 'ingredients' . $i;
-        if (filter_has_var(INPUT_GET, $ingredients_name) && $_POST[$ingredients_name] != "") {
-                $search->$ingredients_name = filter_input(INPUT_GET, $ingredients_name, FILTER_SANITIZE_STRING);
+        if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
+                $search->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
             }
         }
     }
