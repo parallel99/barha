@@ -19,11 +19,8 @@ menu("index");
             $search->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
         }
     }
-    
-    foreach ($search as $key => $value) {
-        print_r($value);
-    }
-    echo "-----------------------------------------";
+
+
     $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC LIMIT 50;";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -33,10 +30,20 @@ menu("index");
         echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
     }
 
+    $num = 0;
+
     foreach ($data as $recipe) {
         $ingredients = json_decode($recipe->ingredients);
         foreach ($ingredients as $key => $value) {
-            print_r($value->name);
+          foreach ($search as $search_name => $search_ingredients) {
+              if($value->name == $search_ingredients){
+                $num = $num + 1;
+              }
+          }
+        }
+        if($num == count((array)$ingredients)){
+           print $recipe->name;
+           print "jó<br>";
         }
     }
     ?>
