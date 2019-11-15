@@ -48,8 +48,8 @@ function menu($active) {
                             <i class="fa fa-language" aria-hidden="true"></i><?= _LANGUAGE ?>
                         </a>
                         <form class="dropdown-menu profile-menu dropdown-menu-right" method="post" aria-labelledby="navbarDropdown">
-                            <button type="submit" name="hu" class="dropdown-item"><span aria-hidden="true" class="fa fa-sign-out fa-fw"></span><?= _HU ?></button>
-                            <button type="submit" name="en" class="dropdown-item"><span aria-hidden="true" class="fa fa-sign-out fa-fw"></span><?= _EN ?></button>
+                            <button type="submit" name="hu" class="dropdown-item"><?= _HU ?></button>
+                            <button type="submit" name="en" class="dropdown-item"><?= _EN ?></button>
                         </form>
                     </li>
                 </ul>
