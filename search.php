@@ -35,21 +35,21 @@ menu("index");
     foreach ($data as $recipe) {
         $num = 0;
         $ingredients = json_decode($recipe->ingredients);
-        foreach ($ingredients as $key => $value) {
-          /*foreach ($search as $search_name => $search_ingredients) {
+        /*foreach ($ingredients as $key => $value) {
+          foreach ($search as $search_name => $search_ingredients) {
               if($value->name == $search_ingredients){
                 $num = $num + 1;
 
               }
 
               print('$search_ingredients: ' . $search_ingredients. '<br>');
-          }*/
+          }
           print('$value->name: ' . $value->name . '<br>');
         }
         if($num == count((array)$ingredients)){
            print $recipe->name;
            print "jó<br>";
-        }
+        }*/
         print('$num: ' . $num . '<br>');
         print('$ingredients: ' . count((array)$ingredients) . '<br>');
     }
