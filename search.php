@@ -50,6 +50,9 @@ menu("index");
            print $recipe->name;
            print "jó<br>";
         }*/
+        foreach ($ingredients as $key => $value) {
+            print $value->name;
+        }
         print('$num: ' . $num . '<br>');
         print('$ingredients: ' . count((array)$ingredients) . '<br>');
     }
