@@ -77,7 +77,7 @@ menu("profile");
         <h3><?= _CHANGE_LANG ?></h3>
         <?php
         if (isset($_POST['account-lang-change'])) {
-            $_SESSION['user']['lang'] = $_POST['lang-select'];
+            $_SESSION['lang'] = $_POST['lang-select'];
 
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 

@@ -8,12 +8,12 @@ function menu($active) {
     }
 
     if (isset($_POST["hu"]) && !isset($_SESSION['user']['name'])) {
-        $_SESSION['user']['lang'] = "hu";
+        $_SESSION['lang'] = "hu";
         header("Refresh: 0");
         die();
     }
     if (isset($_POST["en"]) && !isset($_SESSION['user']['name'])) {
-        $_SESSION['user']['lang'] = "en";
+        $_SESSION['lang'] = "en";
         header("Refresh: 0");
         die();
     }
