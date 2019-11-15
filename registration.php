@@ -124,7 +124,7 @@ function registration() {
     if (isset($_POST['g-recaptcha-response'])) {
         $captcha = $_POST['g-recaptcha-response'];
     }
-    $secretKey = "6LfJWrgUAAAAACD9V-GcW1nXwxwYQtIlpImmKbyo";
+    $secretKey = /*"6LfJWrgUAAAAACD9V-GcW1nXwxwYQtIlpImmKbyo"*/getenv("GOOGLE_RECAPTCHA_SECRET_KEY");
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
     $response = file_get_contents($url);
     $responseKeys = json_decode($response, true);
