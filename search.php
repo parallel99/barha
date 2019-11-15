@@ -38,6 +38,7 @@ menu("index");
           foreach ($search as $search_name => $search_ingredients) {
               if($value->name == $search_ingredients){
                 $num = $num + 1;
+
               }
           }
         }
@@ -45,6 +46,8 @@ menu("index");
            print $recipe->name;
            print "jó<br>";
         }
+        print('$num: ' . $num . '<br>');
+        print('$ingredients: ' . count((array)$ingredients) . '<br>');
     }
     ?>
 
