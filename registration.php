@@ -158,6 +158,11 @@ function registration() {
         $ok = false;
     }
 
+    if($lang != "hu" && $lang != "en"){
+      $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ilyen nyelvet nem támogat az oldal!</div>';
+      $ok = false;
+    }
+
     include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
     $getemail = $pdo->prepare("SELECT * FROM users WHERE email = :email;");
