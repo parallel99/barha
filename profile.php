@@ -23,6 +23,7 @@ menu("profile");
 
             //TODO megcsinalni ugy hogy a meglevo gombokat valtoztassa meg
             //TODO a modal-t attenni ebbe a fileba
+            // ezt az egeszet át tervezem írni a hétvegén
 
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 

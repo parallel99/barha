@@ -19,9 +19,9 @@ if (!isset($_GET['search'])) {
             <input type="text" class="form-control" name="search" id="search" placeholder="<?= _SEARCH ?>" value="<?php echo trim($_GET["search"]) ?? ""; ?>">
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit"><?= _SEARCH ?></button>
+                <button class="btn btn-outline-primary" type="button">Részletes keresés</button>
             </span>
         </div>
-        <img src="/images/arrow-down.svg" class="arrow-down">
     </form>
     <div class="recipes">
         <?php

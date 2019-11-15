@@ -557,19 +557,6 @@ textarea {
     width: 140px;
     background: var(--green);
 }
-.search .arrow-down {
-    width: 0;
-    height: auto;
-    display: block;
-    transition:all 0.3s ease;
-    padding: 0;
-    margin: 10px auto -5px auto;
-    opacity:0;
-}
-.search:hover .arrow-down {
-    height: 40px;
-    opacity:.75;
-}
 
 @media (max-width: 992px) {
     .recipe-list-container {
