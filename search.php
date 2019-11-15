@@ -19,7 +19,10 @@ menu("index");
             $search->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
         }
     }
-    print_r($search);
+    
+    foreach ($search as $key => $value) {
+        print_r($value);
+    }
     echo "-----------------------------------------";
     $sql = "SELECT * FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC LIMIT 50;";
     $stmt = $pdo->prepare($sql);
