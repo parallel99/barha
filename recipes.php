@@ -24,6 +24,15 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-outline-primary" type="button" id="#advSearchBtn">Részletes keresés</button>
             </span>
         </div>
+        <script>
+            let clicked = false;
+            $("#advSearchBtn-container").click(function() {
+                if (!clicked) {
+                    $(".search").append("<div>Meg tobb dolog</div>");
+                }
+                clicked = true;
+            });
+        </script>
     </form>
     <div class="recipes">
         <?php
