@@ -26,13 +26,15 @@ if (!isset($_GET['search'])) {
         </div>
         <script>
             let clicked = false;
-            $(document).on('click','#advSearchBtn',function(e) {
-                alert("click");
-                if (!clicked) {
-                    alert("if");
-                    $(".search").append("<div>Meg tobb dolog</div>");
-                }
-                clicked = true;
+            $(document).ready(function() {
+                $("#btnSubmit").click(function(){
+                    alert("click");
+                    if (!clicked) {
+                        alert("if");
+                        $(".search").append("<div>Meg tobb dolog</div>");
+                    }
+                    clicked = true;
+                });
             });
         </script>
     </form>
