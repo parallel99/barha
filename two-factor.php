@@ -30,6 +30,7 @@ menu("login");
         if ($checkResult) {
             echo '<div class="alert alert-success" role="alert">Sikeres bejelentkezés</div>';
             $_SESSION['user'] = array('name' => $_SESSION['two-auth-user']['name'], 'email' => $_SESSION['two-auth-user']['email'], 'permission' => $_SESSION['two-auth-user']['permission']);
+            $_SESSION['lang'] = $_SESSION['two-auth-user']['lang'];
             setcookie('userid', $_SESSION['two-auth-user']['id'], time() + 5000000, "/", "barha.herokuapp.com", 1, 1);
             header("Refresh: 0");
         } else {

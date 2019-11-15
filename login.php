@@ -65,11 +65,12 @@ function login() {
         if ($user->active == 1 && $find_user) {
             //Ez meg nincs kész teljesen
             if (!isset($user->secret_key)) {
-                $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'lang' => $user->lang);
+                $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission);
+                $_SESSION['lang'] = $user->lang;
                 setcookie('userid', $user->id, time() + 5000000, "/", "barha.herokuapp.com", 1, 1);
                 $valid = true;
             } else {
-                $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'secret' => $user->secret_key, 'id' => $user->id);
+                $_SESSION['two-auth-user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission, 'secret' => $user->secret_key, 'id' => $user->id, 'lang' => $user->lang);
                 header("Location: /two-factor.php");
             }
         }
