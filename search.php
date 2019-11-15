@@ -32,9 +32,9 @@ menu("index");
 
 
 
-    foreach ($data->ingredients as $recipe) {
+    foreach ($data as $recipe) {
         $num = 0;
-        $ingredients = json_decode($recipe);
+        $ingredients = json_decode($recipe->ingrdients);
         print_r($ingredients);
         /*foreach ($ingredients as $key => $value) {
           foreach ($search as $search_name => $search_ingredients) {
