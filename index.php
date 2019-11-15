@@ -12,7 +12,7 @@ menu("index");
 ?>
 <h1 id="title"><?= _HOMEPAGE_TITLE ?></h1>
 
-<form method="post" class="shadow" id="mainForm" action="search.php">
+<form method="post" class="shadow" id="mainForm" action="search">
     <div class="ingredients-group">
         <div class="form-group">
             <input autofocus type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="<?= _INGREDIENTS ?>">
