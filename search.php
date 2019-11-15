@@ -18,8 +18,7 @@ menu("index");
     for ($i = 1; $i < 26; $i++) {
         $ingredients_name = 'ingredients' . $i;
         if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
-                $search->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
-            }
+            $search->$ingredients_name = filter_input(INPUT_POST, $ingredients_name, FILTER_SANITIZE_STRING);
         }
     }
     print_r($search);
