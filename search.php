@@ -36,14 +36,15 @@ menu("index");
         $num = 0;
         $ingredients = json_decode($recipe->ingredients);
         foreach ($ingredients as $key => $value) {
-          foreach ($search as $search_name => $search_ingredients) {
+          /*foreach ($search as $search_name => $search_ingredients) {
               if($value->name == $search_ingredients){
                 $num = $num + 1;
 
               }
-              print('$value->name: ' . $value->name . '<br>');
+
               print('$search_ingredients: ' . $search_ingredients. '<br>');
-          }
+          }*/
+          print('$value->name: ' . $value->name . '<br>');
         }
         if($num == count((array)$ingredients)){
            print $recipe->name;
