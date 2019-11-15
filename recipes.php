@@ -26,10 +26,8 @@ if (!isset($_GET['search'])) {
         </div>
         <script>
             let clicked = false;
-            $("#advSearchBtn").click(function() {
-                alert("click");
+            $(document).on('click','#advSearchBtn',function(e) {
                 if (!clicked) {
-                    alert("if");
                     $(".search").append("<div>Meg tobb dolog</div>");
                 }
                 clicked = true;
