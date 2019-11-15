@@ -19,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
 menu("recipe-upload");
 if (isset($_POST["submit"])) {
     $upload = new SaveRecipe();
-    $upload->Check(units());
+    $upload->Check(_UNITS);
     echo $upload->Save();
 }
 ?>
@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
                             <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="<?php echo $unit_name; ?>" name="<?php echo $unit_name; ?>" autocomplete="off" data-live-search="true">
                                 <?php
                                 echo "<option value='" . $f_unit . "'>" . $f_unit . "</option>";
-                                foreach (units() as $unit) {
+                                foreach (_UNITS as $unit) {
                                     if ($unit != $f_unit) {
                                         echo "<option value='" . $unit . "'>" . $unit . "</option>";
                                     }
@@ -86,7 +86,7 @@ if (isset($_POST["submit"])) {
                     <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db<?php echo $ingredients_counter; ?>" id="db<?php echo $ingredients_counter; ?>" placeholder="<?= _QUANTITY ?>" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $ingredients_counter; ?>" name="unit<?php echo $ingredients_counter; ?>" autocomplete="off" data-live-search="true">
                         <?php
-                        foreach (units() as $unit) {
+                        foreach (_UNITS as $unit) {
                             echo "<option value='" . $unit . "'>" . $unit . "</option>";
                         }
                         ?>
@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
                     <input type="number" class="form-control ui-autocomplete-input upload-ingredients-db" name="db1" id="db1" placeholder="<?= _QUANTITY ?>" min="1" max="5000" autocomplete="off">
                     <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit1" name="unit1" autocomplete="off" data-live-search="true">
                         <?php
-                        foreach (units() as $unit) {
+                        foreach (_UNITS as $unit) {
                             echo "<option value='" . $unit . "'>" . $unit . "</option>";
                         }
                         ?>
@@ -118,7 +118,7 @@ if (isset($_POST["submit"])) {
                     var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='<?= _INGREDIENT ?>'> ";
                     inputs += "<input type='number' pattern='\d*' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='<?= _QUANTITY ?>'> ";
                     inputs += "<select class='form-control upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off' data-live-search='true'>";
-                    <?php foreach (units() as $unit) {
+                    <?php foreach (_UNITS as $unit) {
                     echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t";
                 } ?>
                     inputs += "</select></div>";

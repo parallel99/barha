@@ -96,3 +96,19 @@ define("_PINCH", "pinch");
 define("_PACK", "pack");
 define("_TEASPOON", "Teaspoon");
 define("_CLOVES", "cloves");
+
+define("_UNITS", [
+    "piece",
+    "g",
+    "dkg",
+    "kg",
+    "liter",
+    "dl",
+    "cl",
+    "ml",
+    "tablespoon",
+    "cup",
+    "pinch",
+    "teaspoon",
+    "cloves",
+]);

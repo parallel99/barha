@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
 menu("recipe-upload");
 if (isset($_POST["submit"])) {
     $upload = new SaveRecipe();
-    $upload->Check(units());
+    $upload->Check(_UNITS);
     echo $upload->Update();
 }
 ?>
@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
                             data-live-search="true">
                         <?php
                         echo "<option value='" . $value->unit . "'>" . $value->unit . "</option>";
-                        foreach (units() as $unit) {
+                        foreach (_UNITS as $unit) {
                             if ($unit != $value->unit) {
                                 echo "<option value='" . $unit . "'>" . $unit . "</option>";
                             }
@@ -99,7 +99,7 @@ if (isset($_POST["submit"])) {
                 <select class="form-control ui-autocomplete-input upload-ingredients-unit" id="unit<?php echo $i; ?>"
                         name="unit<?php echo $i; ?>" autocomplete="off" data-live-search="true">
                     <?php
-                    foreach (units() as $unit) {
+                    foreach (_UNITS as $unit) {
                         echo "<option value='" . $unit . "'>" . $unit . "</option>";
                     }
                     ?>
@@ -113,7 +113,7 @@ if (isset($_POST["submit"])) {
                     var inputs = "<div class='form-group'><input type='text' class='form-control upload-ingredients-name' name='ingredients" + (length + 1) + "' id='ingredients" + (length + 1) + "' placeholder='<?= _INGREDIENT ?>'> ";
                     inputs += "<input type='number' class='form-control upload-ingredients-db' name='db" + (length + 1) + "' id='db" + (length + 1) + "' min='1' max='5000' placeholder='<?= _QUANTITY ?>'> ";
                     inputs += "<select class='form-control upload-ingredients-unit' id='unit" + (length + 1) + "' name='unit" + (length + 1) + "' autocomplete='off' data-live-search='true'>";
-                    <?php foreach (units() as $unit) {
+                    <?php foreach (_UNITS as $unit) {
                     echo "inputs +=" . "\"<option value='" . $unit . "'>" . $unit . "</option>\";\r\n\t\t\t\t\t\t\t";
                 } ?>
                     inputs += "</select></div>";
