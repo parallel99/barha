@@ -30,6 +30,8 @@ define("_USERNAME", "Username");
 define("_EMAIL", "E-mail");
 define("_PASSWORD", "Password");
 define("_FORGOT_PASSWORD", "Forgot your password?");
+define("_WRONG_EMAIL_OR_PASS", "Wrong email address or password!");
+define("_NO_EMAIL_CONFIRM", "Még nem erősítette meg az email címét!");//TODO fordítás
 
 //Sign up
 define("_PASSWORD_CONFIRM", "Confirm password");
@@ -52,6 +54,10 @@ define("_SIGN_UP_ERROR_7", "The password has to be 4 characters long minimum!");
 define("_SIGN_UP_ERROR_8", "The password can be 255 characters long maximum!");
 define("_SIGN_UP_ERROR_9", "This language is not supported by the website!");
 define("_SIGN_UP_ERROR_10", "This email is already taken!");
+
+//Activation
+define("_EMAIL_CONFIRM", "Email confirm");
+define("_INVALID_LINK", "Invalid link!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Preparation time: ");

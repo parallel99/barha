@@ -79,9 +79,9 @@ function login() {
     $msg = "";
 
     if (!$find_user) {
-        $msg = '<div class="alert alert-danger alert-dismissible fade show">Hibás email vagy jelszó!</div>';
+        $msg = '<div class="alert alert-danger alert-dismissible fade show">' . _WRONG_EMAIL_OR_PASS . '</div>';
     } elseif (!$valid) {
-        $msg = '<div class="alert alert-danger alert-dismissible fade show">Még nem erősítette meg az email címét!</div>';
+        $msg = '<div class="alert alert-danger alert-dismissible fade show">' . _NO_EMAIL_CONFIRM . '</div>';
     }
 
     return $msg;

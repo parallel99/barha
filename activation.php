@@ -28,7 +28,7 @@ if ($row == 1) {
 <html lang="<? echo $_SESSION["lang"] ?? "hu"; ?>">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
-    <title><?= _BARHA ?> | E-mail megerősítés</title>
+    <title><?= _BARHA ?> | <?= _EMAIL_CONFIRM ?></title>
 </head>
 <body>
 <?php
@@ -48,7 +48,7 @@ menu("none");
             }
         } else {
             echo "<h1>Sikertelen megerősítés</h1><hr>";
-            echo "<p>Érvénytelen link!</p>";
+            echo "<p>" . _INVALID_LINK . "</p>";
         }
         ?>
         <hr>

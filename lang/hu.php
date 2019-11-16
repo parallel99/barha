@@ -30,6 +30,8 @@ define("_USERNAME", "Felhasználónév");
 define("_EMAIL", "E-mail");
 define("_PASSWORD", "Jelszó");
 define("_FORGOT_PASSWORD", "Elfelejtetted a jelszavad?");
+define("_WRONG_EMAIL_OR_PASS", "Hibás email vagy jelszó!");
+define("_NO_EMAIL_CONFIRM", "Még nem erősítette meg az email címét!");
 
 //Sign up
 define("_PASSWORD_CONFIRM", "Jelszó megerősítése");
@@ -52,6 +54,10 @@ define("_SIGN_UP_ERROR_7", "A jelszónak minimum 4 karakter hosszúnak kell lenn
 define("_SIGN_UP_ERROR_8", "A jelszónak maximum 255 karakter hosszú lehet!");
 define("_SIGN_UP_ERROR_9", "Ilyen nyelvet nem támogat az oldal!");
 define("_SIGN_UP_ERROR_10", "Ez az email cím már foglalt!");
+
+//Activation
+define("_EMAIL_CONFIRM", "Email megerősítés");
+define("_INVALID_LINK", "Érvénytelen link!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Elkészítési idő: ");
