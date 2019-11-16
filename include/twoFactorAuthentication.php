@@ -16,3 +16,6 @@ $qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&
 
 $_SESSION['qrcode'] = $qrcode;
 $_SESSION['secret'] = $secret;
+
+echo '$(".auth-qr-code").attr("src", "' . $qrcode . '");';
+echo '$("#secret").text("' . $secret . '"");';

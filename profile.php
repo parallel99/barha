@@ -190,10 +190,10 @@ menu("profile");
             </div>
             <div class="modal-body">
                 Olvasd be a QR kódot a Google Authenticator alkalmazassal
-                <?php
-                echo "<img class=\"auth-qr-code\" src=" . $_SESSION['qrcode'] . " alt='Secret key'>";
-                echo "<p class=\"auth-secret small text-muted\">" . $_SESSION['secret'] . "</p>";
-                ?>
+
+                <img class="auth-qr-code" src="" alt='Secret key'>
+                <p class="auth-secret small text-muted" id="secret"></p>
+
                 <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
                 <h4 class="download-google-authenticator-text">Itt megteheted</h4>
                 <div class="row">
