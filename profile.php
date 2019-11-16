@@ -77,7 +77,7 @@ menu("profile");
     </script>
     <hr>
     <form method="POST" class="account-lang-change-form">
-        <h3><?= _CHANGE_LANG ?></h3>
+        <label class="h3" for="lang-select"><?= _CHANGE_LANG ?></label>
         <?php
         if (isset($_POST['account-lang-change'])) {
             if($_POST['lang-select'] == "hu" || $_POST['lang-select'] == "en"){
@@ -154,8 +154,8 @@ menu("profile");
         <h3><?= _DELETE_ACCOUNT ?></h3>
         <div class="account-delete-error-container"></div>
         <div class="form-group">
-            <label for="password"><?= _PASSWORD ?></label>
-            <input required type="password" name="password" id="passwordDA" maxlength="255" class="form-control" placeholder="<?= _PASSWORD ?>" autocomplete="off">
+            <label for="passwordDA"><?= _PASSWORD ?></label>
+            <input required type="password" name="passwordDA" id="passwordDA" maxlength="255" class="form-control" placeholder="<?= _PASSWORD ?>" autocomplete="off">
         </div>
         <button type="button" name="account-delete" id="account-delete" class="btn btn-danger"><?= _DELETE_ACCOUNT ?></button>
     </form>
