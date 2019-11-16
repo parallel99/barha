@@ -49,9 +49,8 @@ if (!isset($_GET['search'])) {
             </div>
         </div>
         <script>
-            $("advSearchBtn").click(function () {
-                alert("asdsad");
-                $("advSearchDiv").slideToggle();
+            $("#advSearchBtn").click(function () {
+                $("#advSearchDiv").slideToggle();
             });
         </script>
     </form>
