@@ -24,17 +24,13 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-outline-primary" type="button" id="#advSearchBtn">Részletes keresés</button>
             </span>
         </div>
+        <div class="input-group" id="advSearchDiv">
+            <p>Itt meg lesz sok dolog.</p>
+        </div>
         <script>
-            let clicked = false;
-            //TODO kitalalni hogy miert nem jo ez a fos
-            $(document).ready(function() {
-                $("#advSearchBtn").click(function(){
-                    alert("click");
-                    if (!clicked) {
-                        alert("if");
-                        $(".search").append("<div>Meg tobb dolog</div>");
-                    }
-                    clicked = true;
+            $(function () {
+                $('#advSearchBtn').live('click', function () {
+                    $('#advSearchDiv').slideToggle();
                 });
             });
         </script>
