@@ -16,17 +16,14 @@ menu("index");
     for ($i = 1; $i < 26; $i++) {
         $ingredients_name = 'ingredients' . $i;
         if (filter_has_var(INPUT_POST, $ingredients_name) && $_POST[$ingredients_name] != "") {
-
+          $sql = "SELECT  COUNT(*) as su FROM recipes WHERE status = 'accepted' AND ingredients -> $ingredients_name ->> 'name' = 'Alma' ORDER BY uploadtime DESC LIMIT 50;";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute();
+          $recipe = $stmt->fetch(PDO::FETCH_OBJ);
+          echo $recipe->su;
         }
     }
 
-
-    $sql = "SELECT ingredients -> ingredients1 ->> 'name' as hello FROM recipes WHERE status = 'accepted' ORDER BY uploadtime DESC LIMIT 50;";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $recipe = $stmt->fetch(PDO::FETCH_OBJ);
-    echo $recipe->hello;
-    
     if ($stmt->rowCount() == 0) {
         echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
     }
