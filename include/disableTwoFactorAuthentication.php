@@ -9,3 +9,6 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 
 echo "<input type=\"button\" class=\"btn btn-success\" id=\"enable-2-step-auth\" value=\"Engedélyezés\"><script>$(\"#disable-2-step-auth\").remove()</script>";
+
+echo '<script>$("#disable-2-step-auth").attr("value", "Engedélyezés");</script>';
+echo '<script>$("#disable-2-step-auth").attr("id", "enable-2-step-auth");</script>';
