@@ -78,8 +78,7 @@ define("_PENDING", "Feldolgozás alatt");
 define("_ERROR", "Hiba!");
 define("_ERROR_COLON", "Hiba: ");
 
-//Noscript TODO fordítás
-define("_NOSCRIPT", "Ide ki kell talani valamit.");
+define("_NOSCRIPT", "Az oldal használatához JavaScript szükséges.");
 
 //Units
 define("_UNITS", [
