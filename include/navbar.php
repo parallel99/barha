@@ -56,7 +56,7 @@ function menu($active) {
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-language" aria-hidden="true"></i><?= _LANGUAGE ?>
+                            <i class="fa fa-globe fa-fw" aria-hidden="true"></i><?= _LANGUAGE ?>
                         </a>
                         <form class="dropdown-menu profile-menu dropdown-menu-right" method="post" aria-labelledby="navbarDropdown">
                             <button type="submit" name="hu" class="dropdown-item"><?= _HU ?></button>
