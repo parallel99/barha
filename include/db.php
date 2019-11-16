@@ -8,6 +8,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "<div class=\"alert alert-danger\">Connection failed: " . $e->getMessage() . "</div>";
+    echo "<div class=\"alert alert-danger\">" . _ERROR_COLON . $e->getMessage() . "</div>";
     die();
 }
