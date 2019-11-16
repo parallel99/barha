@@ -316,7 +316,7 @@ textarea {
 }
 
 .recipe-list-container #advSearchDiv {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .recipe-list-container img {

@@ -25,21 +25,21 @@ if (!isset($_GET['search'])) {
             </span>
         </div>
         <div class="input-group" id="advSearchDiv">
-            <div class="col-sm-4 col">
+            <div class="col-sm col">
                 <label>Nyelv</label>
                 <select class="custom-select">
                     <option>Angol</option>
                     <option>Magyar</option>
                 </select>
             </div>
-            <div class="col-sm-4 col">
+            <div class="col-sm col">
                 <label>Elkészítési idő</label>
                 <select class="custom-select">
                     <option>1 óra</option>
                     <option>2 óra</option>
                 </select>
             </div>
-            <div class="col-sm-4 col">
+            <div class="col-sm col">
                 <label>Nehézség</label>
                 <select class="custom-select">
                     <option>Könnyű</option>
@@ -47,6 +47,9 @@ if (!isset($_GET['search'])) {
                     <option>Nehéz</option>
                 </select>
             </div>
+            <span class="input-group-btn" id="searchBtn-container">
+                <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
+            </span>
         </div>
         <script>
             $("#advSearchBtn").click(function () {
