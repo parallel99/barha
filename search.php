@@ -21,6 +21,7 @@ menu("index");
           $stmt->execute();
           $recipe = $stmt->fetch(PDO::FETCH_OBJ);
           echo $recipe->su;
+          echo "asd: ".$_POST[$ingredients_name];
         }
     }
 
