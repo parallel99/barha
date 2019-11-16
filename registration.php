@@ -50,7 +50,7 @@ menu("registration");
                 <option value="en"><?= _EN ?></option>
             </select>
         </div>
-        <div class="form-group" style="text-align: center">
+        <div class="form-group g-recaptcha-container">
             <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
         </div>
         <div class="form-check">
@@ -71,8 +71,8 @@ menu("registration");
     </form>
 </div>
 <!-- felhasználási feltételek modal -->
-<div class="modal fade" id="aszfModal" role="dialog">
-    <div class="modal-dialog">
+<div class="modal fade bd-example-modal-lg" id="aszfModal" role="dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title"><?= _T_AND_P2 ?></h4>
