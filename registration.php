@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     <title><?= _BARHA ?> | <?= _REGISTER ?></title>
     <!-- recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?explicit&hl=<?= _LANG ?>" async defer></script>
 </head>
 <body>
 <?php
@@ -27,11 +27,11 @@ menu("registration");
     ?>
     <form method="post" class="shadow" id="registrationForm">
         <div class="form-group">
-            <label for="name">Név</label>
+            <label for="name"><?= _NAME ?></label>
             <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? ""; ?>" placeholder="<?= _NAME ?>" required>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email"><?= _EMAIL ?></label>
             <input type="email" class="form-control" name="email" id="email"
                    value="<?php echo $_POST["email"] ?? ""; ?>" placeholder="<?= _EMAIL ?>" required>
         </div>
