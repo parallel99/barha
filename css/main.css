@@ -315,6 +315,10 @@ textarea {
     border-radius: .25rem !important;
 }
 
+.recipe-list-container #advSearchDiv {
+    padding: 20px;
+}
+
 .recipe-list-container img {
     max-width: 150px;
     border-radius: 10px;
