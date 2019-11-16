@@ -98,7 +98,7 @@ class SaveRecipe {
             $ingredients = json_encode($this->std);
             $url = urlencode($this->recipe_name) . "-" . date('ymdgis');
 
-            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, status, url, makingtime, lang) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, 'pending', :url, :makingtime, :lang)");
+            $stmt = $pdo->prepare("INSERT INTO recipes(name, ingredients, making, uploader, uploadtime, status, url, makingtime, lang, ingredientsteszt) VALUES (:name, :ingredients, :making, :uploader, CURRENT_TIMESTAMP, 'pending', :url, :makingtime, :lang, :teszt)");
             $stmt->bindParam(':name', $this->recipe_name, PDO::PARAM_STR);
             $stmt->bindParam(':ingredients', $ingredients, PDO::PARAM_STR);
             $stmt->bindParam(':making', $this->making, PDO::PARAM_STR);
@@ -106,6 +106,7 @@ class SaveRecipe {
             $stmt->bindParam(':url', $url, PDO::PARAM_STR);
             $stmt->bindParam(':makingtime', $this->making_time, PDO::PARAM_STR);
             $stmt->bindParam(':lang', $_SESSION['lang'], PDO::PARAM_STR);
+            $stmt->bindParam(':teszt', $ingredients, PDO::PARAM_STR);
             $stmt->execute();
 
             $this->msg = '<div class="alert alert-success alert-dismissible fade show">Sikeresen elküldte a receptet!</div>';
