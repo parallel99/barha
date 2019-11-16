@@ -37,7 +37,6 @@ menu("none");
         $Mail = new Mail($_POST['email'], $_POST['email'], "Új jelszó", "Új jelszó: " . $new_password);
         $Mail->Send();
 
-        //ez csak ideiglenes
         echo "<div class=\"alert alert-success\">Az új jelszót elküldtük emailben!</div>";
     }
 

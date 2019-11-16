@@ -31,7 +31,7 @@ define("_EMAIL", "E-mail");
 define("_PASSWORD", "Jelszó");
 define("_FORGOT_PASSWORD", "Elfelejtetted a jelszavad?");
 
-//Register
+//Sign up
 define("_PASSWORD_CONFIRM", "Jelszó megerősítése");
 define("_LANGUAGE", "Nyelv");
 define("_EN", "Angol");
@@ -39,7 +39,19 @@ define("_HU", "Magyar");
 define("_CLOSE", "Bezárás");
 define("_ACCEPT_OUR", "Elfogadom a ");
 define("_T_AND_P", "Felhasználási Feltételeket");
-define("_T_AND_P2", "Felhasználási Feltételeket");
+define("_T_AND_P2", "Felhasználási Feltételek");
+define("_SUCCESSFUL_SIGN_UP", "Sikeres regisztráció!");
+define("_SIGN_UP_ERROR_0", "Kérjük igazolja hogy nem robot!");
+define("_SIGN_UP_ERROR_1", "Nem fogadtad el a felhasználói feltételeket!");
+define("_SIGN_UP_ERROR_2", "A két jelszó nem egyezik!");
+define("_SIGN_UP_ERROR_3", "A névnek minimum 4 karakter hosszúnak kell lennie!");
+define("_SIGN_UP_ERROR_4", "A névnek maximum 255 karakter hosszú lehet!");
+define("_SIGN_UP_ERROR_5", "Az email címnek minimum 4 karakter hosszúnak kell lennie!");
+define("_SIGN_UP_ERROR_6", "Az email címnek maximum 512 karakter hosszú lehet!");
+define("_SIGN_UP_ERROR_7", "A jelszónak minimum 4 karakter hosszúnak kell lennie!");
+define("_SIGN_UP_ERROR_8", "A jelszónak maximum 255 karakter hosszú lehet!");
+define("_SIGN_UP_ERROR_9", "Ilyen nyelvet nem támogat az oldal!");
+define("_SIGN_UP_ERROR_10", "Ez az email cím már foglalt!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Elkészítési idő: ");

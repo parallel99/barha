@@ -31,7 +31,7 @@ define("_EMAIL", "E-mail");
 define("_PASSWORD", "Password");
 define("_FORGOT_PASSWORD", "Forgot your password?");
 
-//Register
+//Sign up
 define("_PASSWORD_CONFIRM", "Confirm password");
 define("_LANGUAGE", "Language");
 define("_EN", "English");
@@ -40,6 +40,18 @@ define("_CLOSE", "Close");
 define("_ACCEPT_OUR", "Accept our ");
 define("_T_AND_P", "Terms & Privacy");
 define("_T_AND_P2", "Terms & Privacy");
+define("_SUCCESSFUL_SIGN_UP", "Successful sign up!");
+define("_SIGN_UP_ERROR_0", "Please prove you aren't a robot!");
+define("_SIGN_UP_ERROR_1", "You didn't accept the Terms & Privacy!");
+define("_SIGN_UP_ERROR_2", "The two passwords are different!");
+define("_SIGN_UP_ERROR_3", "The name has to be 4 characters long minimum!");
+define("_SIGN_UP_ERROR_4", "The name can be 255 characters long maximum!");
+define("_SIGN_UP_ERROR_5", "The email address has to be 4 characters long minimum!");
+define("_SIGN_UP_ERROR_6", "The email address can be 512 character long maximum!");
+define("_SIGN_UP_ERROR_7", "The password has to be 4 characters long minimum!");
+define("_SIGN_UP_ERROR_8", "The password can be 255 characters long maximum!");
+define("_SIGN_UP_ERROR_9", "This language is not supported by the website!");
+define("_SIGN_UP_ERROR_10", "This email is already taken!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Preparation time: ");

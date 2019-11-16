@@ -45,7 +45,7 @@ menu("registration");
         </div>
         <div class="form-group">
             <label for="lang-select"><?= _LANGUAGE ?></label>
-            <select class="custom-select form-control" name="lang-select" id="lang-select">
+            <select class="custom-select form-control" name="lang-select" id="lang-select" required>
                 <option value="hu"><?= _HU ?></option>
                 <option value="en"><?= _EN ?></option>
             </select>
@@ -55,7 +55,7 @@ menu("registration");
         </div>
         <div class="form-check">
             <div class="custom-control custom-checkbox form-check-input">
-                <input type="checkbox" class="custom-control-input" id="aszf" name="aszf">
+                <input type="checkbox" class="custom-control-input" id="aszf" name="aszf" required>
                 <label class="custom-control-label" for="aszf"></label>
             </div>
             <label class="form-check-label small" for="aszf">
@@ -71,12 +71,12 @@ menu("registration");
     </form>
 </div>
 <!-- felhasználási feltételek modal -->
-<div class="modal fade bd-example-modal-lg" id="aszfModal" role="dialog">
+<div class="modal fade bd-example-modal-lg" id="aszfModal" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title"><?= _T_AND_P2 ?></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="<?= _CLOSE ?>">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu magna tellus. Duis ac lectus ac
@@ -121,46 +121,59 @@ function registration() {
     $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
     $lang = filter_input(INPUT_POST, 'lang-select', FILTER_SANITIZE_STRING);
 
-
-    if (isset($_POST['g-recaptcha-response'])) {
-        $captcha = $_POST['g-recaptcha-response'];
-    }
+    $captcha = $_POST['g-recaptcha-response'];
     $secretKey = getenv("GOOGLE_RECAPTCHA_SECRET_KEY");
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
     $response = file_get_contents($url);
     $responseKeys = json_decode($response, true);
-    if (!$responseKeys["success"]) {//TODO ide ki kell talani valamit
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>';
+
+    if (!$responseKeys["success"]) {//TODO ide ki kell talani valamit (google recaptcha)
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_0 . '</div>';
         $ok = false;
     }
 
     if (!filter_has_var(INPUT_POST, 'aszf')) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Nem fogadtad el a felhasználói feltételeket!</div>';
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_1 . '</div>';
         $ok = false;
     }
 
     if ($password1 != $password2) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A két jelszó nem egyezik!</div>';
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_2 . '</div>';
         $ok = false;
     }
 
-    if (mb_strlen($name) < 4 || mb_strlen($name) > 255) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A névnek minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
+    if (mb_strlen($name) < 4) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_3 . '</div>';
         $ok = false;
     }
 
-    if (mb_strlen($email) < 4 || mb_strlen($email) > 512) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Az email-nek minimum 4 karakternek, maximum 512 karakternek kell lennie!</div>';
+    if (mb_strlen($name) > 255) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_4 . '</div>';
         $ok = false;
     }
 
-    if (mb_strlen($password1) < 4 || mb_strlen($password1) > 255) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">A jelszónak minimum 4 karakternek, maximum 255 karakternek kell lennie!</div>';
+    if (mb_strlen($email) < 4) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_5 . '</div>';
         $ok = false;
     }
 
-    if($lang != "hu" && $lang != "en"){
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ilyen nyelvet nem támogat az oldal!</div>';
+    if (mb_strlen($email) > 512) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_6 . '</div>';
+        $ok = false;
+    }
+
+    if (mb_strlen($password1) < 4) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_7 . '</div>';
+        $ok = false;
+    }
+
+    if (mb_strlen($password1) > 255) {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_8 . '</div>';
+        $ok = false;
+    }
+
+    if ($lang != "hu" && $lang != "en") {
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_9 . '</div>';
         $ok = false;
     }
 
@@ -172,7 +185,7 @@ function registration() {
     $row = $getemail->rowCount();
 
     if ($row > 0) {
-        $msg .= '<div class="alert alert-danger alert-dismissible fade show">Ez az email cím már foglalt!</div>';
+        $msg .= '<div class="alert alert-danger alert-dismissible fade show">' . _SIGN_UP_ERROR_10 . '</div>';
         $ok = false;
     }
 
@@ -197,7 +210,7 @@ function registration() {
         $Mail = new Mail($name, $email, "E-mail megerősítés", confirm($name, $token));
         $Mail->Send();
 
-        $msg = '<div class="alert alert-success alert-dismissible fade show">Sikeres regisztráció!</div>';
+        $msg = '<div class="alert alert-success alert-dismissible fade show">' . _SUCCESSFUL_SIGN_UP . '</div>';
         $_POST = array();
         unset($_POST);
     }
