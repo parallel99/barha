@@ -28,8 +28,8 @@ if (!isset($_GET['search'])) {
             <p>Itt meg lesz sok dolog.</p>
         </div>
         <script>
-            $('#advSearchBtn').click(function(){
-                    $('#advSearchDiv').slideToggle();
+            $("#advSearchBtn").click(function () {
+                $("#advSearchDiv").slideToggle();
             });
         </script>
     </form>
