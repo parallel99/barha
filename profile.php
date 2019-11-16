@@ -219,28 +219,30 @@ menu("profile");
 </div>
 
 <script>
-    $('#auth-modal').modal('toggle');
-    $("body").css("padding-right", "0");
+    $("#enable-2-step-auth").click(function () {
+        $('#auth-modal').modal('toggle');
+        $("body").css("padding-right", "0");
 
-    $("#saveSecretKey").click(function () {
-        $("#enable-2-step-auth").remove();
-        $.ajax({
-            url: 'include/saveSecretKey.php',
-            type: 'post',
-            data: {},
-            success: function () {
-            },
-            error: function () {
-            }
-        });
-        $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-danger\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");
-        $("#disable-2-step-auth")
-            .mouseover(function () {
-                $("#disable-2-step-auth").val("Kikapcsolás");
-            })
-            .mouseout(function () {
-                $("#disable-2-step-auth").val("Engedélyezve🎉");
+        $("#saveSecretKey").click(function () {
+            $("#enable-2-step-auth").remove();
+            $.ajax({
+                url: 'include/saveSecretKey.php',
+                type: 'post',
+                data: {},
+                success: function () {
+                },
+                error: function () {
+                }
             });
+            $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-danger\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");
+            $("#disable-2-step-auth")
+                .mouseover(function () {
+                    $("#disable-2-step-auth").val("Kikapcsolás");
+                })
+                .mouseout(function () {
+                    $("#disable-2-step-auth").val("Engedélyezve🎉");
+                });
+        });
     });
 </script>
 
