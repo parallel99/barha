@@ -59,27 +59,26 @@ menu("registration");
                 <label class="custom-control-label" for="aszf"></label>
             </div>
             <label class="form-check-label small" for="aszf">
-                Elfogadom a
+                <?= _ACCEPT_OUR ?>
             </label>
-            <div class="aszf small" data-toggle="modal" data-target="#aszfModal">felhasználási feltételeket</div>
+            <div class="aszf small" data-toggle="modal" data-target="#aszfModal"><?= _T_AND_P ?></div>
             <label class="form-check-label small" for="aszf">
                 .
             </label>
         </div>
 
-        <button type="submit" name="submit" class="btn btn-primary">Regisztráció</button>
+        <button type="submit" name="submit" class="btn btn-primary"><?= _REGISTER ?></button>
     </form>
 </div>
-<!-- felhasználási feltételek ablak-->
+<!-- felhasználási feltételek modal -->
 <div class="modal fade" id="aszfModal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Felhasználási feltételek</h4>
+                <h4 class="modal-title"><?= _T_AND_P2 ?></h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p>PLS ez legyen a felhasználói feltételek helye.<br></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu magna tellus. Duis ac lectus ac
                     diam placerat vehicula id at neque. Suspendisse et consequat leo, vel euismod tortor. Phasellus
                     sagittis purus vel nibh laoreet aliquam. Quisque lacinia, ipsum vel finibus fringilla, orci nunc
@@ -89,7 +88,8 @@ menu("registration");
                     sodales. Sed efficitur dui et nulla vestibulum dapibus. Sed fringilla elit porta leo euismod
                     tincidunt. Sed consectetur suscipit nisi, quis viverra eros egestas luctus. Etiam vel ornare velit,
                     non tincidunt risus. Cras a velit quam. Curabitur gravida urna in fermentum sagittis. Praesent
-                    dignissim et quam sagittis euismod.</p>
+                    dignissim et quam sagittis euismod.
+                </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu magna tellus. Duis ac lectus ac
                     diam placerat vehicula id at neque. Suspendisse et consequat leo, vel euismod tortor. Phasellus
                     sagittis purus vel nibh laoreet aliquam. Quisque lacinia, ipsum vel finibus fringilla, orci nunc
@@ -99,7 +99,8 @@ menu("registration");
                     sodales. Sed efficitur dui et nulla vestibulum dapibus. Sed fringilla elit porta leo euismod
                     tincidunt. Sed consectetur suscipit nisi, quis viverra eros egestas luctus. Etiam vel ornare velit,
                     non tincidunt risus. Cras a velit quam. Curabitur gravida urna in fermentum sagittis. Praesent
-                    dignissim et quam sagittis euismod.</p>
+                    dignissim et quam sagittis euismod.
+                </p>
                 <p>A miénk lesz a veséd IS.</p>
             </div>
             <div class="modal-footer">
@@ -128,7 +129,7 @@ function registration() {
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
     $response = file_get_contents($url);
     $responseKeys = json_decode($response, true);
-    if (!$responseKeys["success"]) {
+    if (!$responseKeys["success"]) {//TODO ide ki kell talani valamit
         $msg .= '<div class="alert alert-danger alert-dismissible fade show">Hiba (ide ki kell talani valamit)</div>';
         $ok = false;
     }

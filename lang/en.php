@@ -11,7 +11,7 @@ define("_INGREDIENT", "Ingredient");
 define("_PROFILE", "Profile");
 define("_LOGOUT", "Logout");
 define("_SEARCH", "Search");
-define("_REGISTER", "Register");
+define("_REGISTER", "Sign up");
 define("_LOGIN", "Login");
 
 define("_YES", "Yes");
@@ -37,6 +37,9 @@ define("_LANGUAGE", "Language");
 define("_EN", "English");
 define("_HU", "Hungarian");
 define("_CLOSE", "Close");
+define("_ACCEPT_OUR", "Accept our ");
+define("_T_AND_P", "Terms & Privacy");
+define("_T_AND_P2", "Terms & Privacy");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Preparation time: ");

@@ -37,6 +37,9 @@ define("_LANGUAGE", "Nyelv");
 define("_EN", "Angol");
 define("_HU", "Magyar");
 define("_CLOSE", "Bezárás");
+define("_ACCEPT_OUR", "Elfogadom a ");
+define("_T_AND_P", "Felhasználási Feltételeket");
+define("_T_AND_P2", "Felhasználási Feltételeket");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Elkészítési idő: ");
