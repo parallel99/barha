@@ -63,7 +63,7 @@ function login() {
     if ($row == 1) {
         $find_user = true;
         if ($user->active == 1 && $find_user) {
-            //Ez meg nincs kész teljesen
+            //TODO Ez meg nincs kész teljesen
             if (!isset($user->secret_key)) {
                 $_SESSION['user'] = array('name' => $user->name, 'email' => $user->email, 'permission' => $user->permission);
                 $_SESSION['lang'] = $user->lang;

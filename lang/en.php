@@ -53,6 +53,7 @@ define("_SELECT", "Select");
 define("_UPLOAD", "Upload");
 define("_QUANTITY", "Quantity");
 define("_DIRECTIONS", "Directions");
+define("_MORE", "More");
 
 //Search
 define("_NO_RESULTS", "No results");

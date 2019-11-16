@@ -53,6 +53,7 @@ define("_SELECT", "Választ");
 define("_UPLOAD", "Feltöltés");
 define("_QUANTITY", "Mennyiség");
 define("_DIRECTIONS", "A recept elkészítésének módja");
+define("_MORE", "Tovább");
 
 //Search
 define("_NO_RESULTS", "Nincs találat");
