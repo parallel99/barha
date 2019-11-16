@@ -25,31 +25,35 @@ if (!isset($_GET['search'])) {
             </span>
         </div>
         <div class="input-group" id="advSearchDiv">
-            <div class="col-sm col">
-                <label>Nyelv</label>
-                <select class="custom-select">
-                    <option>Angol</option>
-                    <option>Magyar</option>
-                </select>
+            <div class="row">
+                <div class="col-sm col">
+                    <label>Nyelv</label>
+                    <select class="custom-select">
+                        <option>Angol</option>
+                        <option>Magyar</option>
+                    </select>
+                </div>
+                <div class="col-sm col">
+                    <label>Elkészítési idő</label>
+                    <select class="custom-select">
+                        <option>1 óra</option>
+                        <option>2 óra</option>
+                    </select>
+                </div>
+                <div class="col-sm col">
+                    <label>Nehézség</label>
+                    <select class="custom-select">
+                        <option>Könnyű</option>
+                        <option>Közepes</option>
+                        <option>Nehéz</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-sm col">
-                <label>Elkészítési idő</label>
-                <select class="custom-select">
-                    <option>1 óra</option>
-                    <option>2 óra</option>
-                </select>
+            <div class="row">
+                <span class="input-group-btn" id="searchBtn-container">
+                    <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
+                </span>
             </div>
-            <div class="col-sm col">
-                <label>Nehézség</label>
-                <select class="custom-select">
-                    <option>Könnyű</option>
-                    <option>Közepes</option>
-                    <option>Nehéz</option>
-                </select>
-            </div>
-            <span class="input-group-btn" id="searchBtn-container">
-                <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
-            </span>
         </div>
         <script>
             $("#advSearchBtn").click(function () {
