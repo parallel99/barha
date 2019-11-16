@@ -15,7 +15,6 @@ if (!isset($_SESSION['user'])) {
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/include/SaveRecipe.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/include/units.php';
 menu("recipe-upload");
 if (isset($_POST["submit"])) {
     $upload = new SaveRecipe();
