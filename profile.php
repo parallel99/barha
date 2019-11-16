@@ -34,9 +34,9 @@ menu("profile");
             $data = $stmt->fetch(PDO::FETCH_OBJ);
 
             if (isset($data->secret_key)) {
-                echo "<input type=\"button\" class=\"btn btn-primary\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">";
+                echo "<input type=\"button\" class=\"btn btn-succes\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">";
             } else {
-                echo "<input type=\"button\" class=\"btn btn-primary\" id=\"enable-2-step-auth\" value=\"Engedélyezés\">";
+                echo "<input type=\"button\" class=\"btn btn-danger\" id=\"enable-2-step-auth\" value=\"Engedélyezés\">";
             }
             ?>
         </div>
