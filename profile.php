@@ -16,6 +16,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 menu("profile");
 ?>
 <div class="account container shadow">
+
+    <!-- 2 factor authentication -->
+
     <form method="POST" class="account-2-step-auth-form">
         <h3><?= _2_STEP_AUTH ?></h3>
         <div class="form-group">
@@ -42,6 +45,31 @@ menu("profile");
             ?>
         </div>
         <script>
+            $("#enable-2-step-auth").click(function () {
+                $('#auth-modal').modal('toggle');
+                $("body").css("padding-right", "0");
+
+                $("#saveSecretKey").click(function () {
+                    $("#enable-2-step-auth").remove();
+                    $.ajax({
+                        url: 'include/saveSecretKey.php',
+                        type: 'post',
+                        data: {},
+                        success: function () {
+                        },
+                        error: function () {
+                        }
+                    });
+                    $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-danger\" id=\"disable-2-step-auth\" value=\"Engedélyezve\">");
+                    $("#disable-2-step-auth")
+                        .mouseover(function () {
+                            $("#disable-2-step-auth").val("Kikapcsolás");
+                        })
+                        .mouseout(function () {
+                            $("#disable-2-step-auth").val("Engedélyezve");
+                        });
+                });
+            });
             $("#enable-2-step-auth").click(function () {
                 $.ajax({
                     url: 'include/twoFactorAuthentication.php',
@@ -76,6 +104,9 @@ menu("profile");
             });
     </script>
     <hr>
+
+    <!-- lang change -->
+
     <form method="POST" class="account-lang-change-form">
         <label class="h3" for="lang-select"><?= _CHANGE_LANG ?></label>
         <?php
@@ -120,6 +151,9 @@ menu("profile");
         <button type="submit" name="account-lang-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
+
+    <!-- password change -->
+
     <form method="POST" class="account-password-change-form">
         <h3><?= _CHANGE_PASSWORD ?></h3>
         <div class="form-group">
@@ -137,6 +171,9 @@ menu("profile");
         <button type="submit" name="account-password-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
+
+    <!-- email change -->
+
     <form method="POST" class="account-email-change-form">
         <h3><?= _CHANGE_EMAIL ?></h3>
         <div class="form-group">
@@ -150,6 +187,9 @@ menu("profile");
         <button type="submit" name="account-email-change" class="btn btn-primary"><?= _SAVE ?></button>
     </form>
     <hr>
+
+    <!-- account delete -->
+
     <form method="POST" class="account-delete-form">
         <h3><?= _DELETE_ACCOUNT ?></h3>
         <div class="account-delete-error-container"></div>
@@ -159,6 +199,40 @@ menu("profile");
         </div>
         <button type="button" name="account-delete" id="account-delete" class="btn btn-danger"><?= _DELETE_ACCOUNT ?></button>
     </form>
+    <script>
+        $("#account-delete").click(function () {
+            $('.account-delete-error-container .alert').remove();
+            $.ajax({
+                url: 'include/accountDeletePasswordCheck.php',
+                type: 'post',
+                data: {
+                    "password": $("#passwordDA").val()
+                },
+                success: function (response) {
+                    $('.account-delete-error-container').append(response)
+                },
+                error: function () {}
+            });
+        });
+
+        $("#modal-delete-cancel").click(function () {
+            $("#passwordDA").val("");
+        });
+
+        $("#modal-delete").click(function () {
+            $.ajax({
+                url: 'include/deleteAccount.php',
+                type: 'post',
+                data: {
+                    "password": $("#passwordDA").val()
+                },
+                success: function (response) {
+                    $('.account-delete-error-container').append(response);
+                },
+                error: function () {}
+            });
+        });
+    </script>
 </div>
 
 <!-- deleteConfirmModal -->
@@ -182,105 +256,6 @@ menu("profile");
     </div>
 </div>
 
-<!-- 2factorAuthModal -->
-<div id="auth-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Google Authenticator</h5>
-            </div>
-            <div class="modal-body">
-                Olvasd be a QR kódot a Google Authenticator alkalmazassal
-
-                <img class="auth-qr-code" src="" alt='Secret key'>
-                <p class="auth-secret small text-muted" id="secret"></p>
-
-                <h4 class="download-google-authenticator-text">Még nincs letöltve?</h4>
-                <h4 class="download-google-authenticator-text">Itt megteheted</h4>
-                <div class="row">
-                    <div class="col-6">
-                        <a href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
-                                    alt='Szerezd meg: Google Play'
-                                    src='https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png'/></a>
-                    </div>
-                    <div class="col-6">
-                        <a href='https://apps.apple.com/us/app/google-authenticator/id388497605'><img
-                                    alt='Szerezd meg: App Store' src='/images/download-with-app-store.svg'/></a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégsem</button>
-                <button type="button" class="btn btn-primary" name="saveSecretKey" id="saveSecretKey"
-                        data-dismiss="modal">Kész
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $("#enable-2-step-auth").click(function () {
-        $('#auth-modal').modal('toggle');
-        $("body").css("padding-right", "0");
-
-        $("#saveSecretKey").click(function () {
-            $("#enable-2-step-auth").remove();
-            $.ajax({
-                url: 'include/saveSecretKey.php',
-                type: 'post',
-                data: {},
-                success: function () {
-                },
-                error: function () {
-                }
-            });
-            $('.account-2-step-auth-form').append("<input type=\"button\" class=\"btn btn-danger\" id=\"disable-2-step-auth\" value=\"Engedélyezve🎉\">");
-            $("#disable-2-step-auth")
-                .mouseover(function () {
-                    $("#disable-2-step-auth").val("Kikapcsolás");
-                })
-                .mouseout(function () {
-                    $("#disable-2-step-auth").val("Engedélyezve🎉");
-                });
-        });
-    });
-</script>
-
-<script>
-    $("#account-delete").click(function () {
-        $('.account-delete-error-container .alert').remove();
-        $.ajax({
-            url: 'include/accountDeletePasswordCheck.php',
-            type: 'post',
-            data: {
-                "password": $("#passwordDA").val()
-            },
-            success: function (response) {
-                $('.account-delete-error-container').append(response)
-            },
-            error: function () {}
-        });
-    });
-
-    $("#modal-delete-cancel").click(function () {
-        $("#passwordDA").val("");
-    });
-
-    $("#modal-delete").click(function () {
-        $.ajax({
-            url: 'include/deleteAccount.php',
-            type: 'post',
-            data: {
-                "password": $("#passwordDA").val()
-            },
-            success: function (response) {
-                $('.account-delete-error-container').append(response);
-            },
-            error: function () {}
-        });
-    });
-</script>
 </body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
 </html>
