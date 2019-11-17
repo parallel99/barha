@@ -16,60 +16,57 @@ if (isset($_SESSION['user'])) {
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 menu("registration");
-?>
-<div class="form-container">
-    <?php
-    if (isset($_POST['submit'])) {
-        $msg = registration();
-        echo $msg;
-        unset($msg);
-    }
-    ?>
-    <form method="post" class="shadow" id="registrationForm">
-        <div class="form-group">
-            <label for="name"><?= _NAME ?></label>
-            <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? ""; ?>" placeholder="<?= _NAME ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="email"><?= _EMAIL ?></label>
-            <input type="email" class="form-control" name="email" id="email"
-                   value="<?php echo $_POST["email"] ?? ""; ?>" placeholder="<?= _EMAIL ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="password1"><?= _PASSWORD ?></label>
-            <input type="password" class="form-control" name="password1" id="password1" placeholder="<?= _PASSWORD ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="password2"><?= _PASSWORD_CONFIRM ?></label>
-            <input type="password" class="form-control" name="password2" id="password2" placeholder="<?= _PASSWORD_CONFIRM ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="lang-select"><?= _LANGUAGE ?></label>
-            <select class="custom-select form-control" name="lang-select" id="lang-select" required>
-                <option value="hu"><?= _HU ?></option>
-                <option value="en"><?= _EN ?></option>
-            </select>
-        </div>
-        <div class="form-group g-recaptcha-container">
-            <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
-        </div>
-        <div class="form-check">
-            <div class="custom-control custom-checkbox form-check-input">
-                <input type="checkbox" class="custom-control-input" id="aszf" name="aszf" required>
-                <label class="custom-control-label" for="aszf"></label>
-            </div>
-            <label class="form-check-label small" for="aszf">
-                <?= _ACCEPT_OUR ?>
-            </label>
-            <div class="aszf small" data-toggle="modal" data-target="#aszfModal"><?= _T_AND_P ?></div>
-            <label class="form-check-label small" for="aszf">
-                .
-            </label>
-        </div>
 
-        <button type="submit" name="submit" class="btn btn-primary"><?= _REGISTER ?></button>
-    </form>
-</div>
+if (isset($_POST['submit'])) {
+    $msg = registration();
+    echo $msg;
+    unset($msg);
+}
+?>
+<form method="post" class="shadow mt-3" id="registrationForm">
+    <div class="form-group">
+        <label for="name"><?= _NAME ?></label>
+        <input type="text" class="form-control" name="name" id="name" value="<?php echo $_POST["name"] ?? ""; ?>" placeholder="<?= _NAME ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="email"><?= _EMAIL ?></label>
+        <input type="email" class="form-control" name="email" id="email"
+               value="<?php echo $_POST["email"] ?? ""; ?>" placeholder="<?= _EMAIL ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="password1"><?= _PASSWORD ?></label>
+        <input type="password" class="form-control" name="password1" id="password1" placeholder="<?= _PASSWORD ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="password2"><?= _PASSWORD_CONFIRM ?></label>
+        <input type="password" class="form-control" name="password2" id="password2" placeholder="<?= _PASSWORD_CONFIRM ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="lang-select"><?= _LANGUAGE ?></label>
+        <select class="custom-select form-control" name="lang-select" id="lang-select" required>
+            <option value="hu"><?= _HU ?></option>
+            <option value="en"><?= _EN ?></option>
+        </select>
+    </div>
+    <div class="form-group g-recaptcha-container">
+        <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
+    </div>
+    <div class="form-check mb-3">
+        <div class="custom-control custom-checkbox form-check-input">
+            <input type="checkbox" class="custom-control-input" id="aszf" name="aszf" required>
+            <label class="custom-control-label" for="aszf"></label>
+        </div>
+        <label class="form-check-label small" for="aszf">
+            <?= _ACCEPT_OUR ?>
+        </label>
+        <div class="aszf small" data-toggle="modal" data-target="#aszfModal"><?= _T_AND_P ?></div>
+        <label class="form-check-label small" for="aszf">
+            .
+        </label>
+    </div>
+
+    <button type="submit" name="submit" class="btn btn-primary w-100"><?= _REGISTER ?></button>
+</form>
 <!-- felhasználási feltételek modal -->
 <div class="modal fade bd-example-modal-lg" id="aszfModal" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg">

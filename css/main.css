@@ -48,11 +48,6 @@ textarea {
     margin: auto auto 25px;
 }
 
-#registrationForm button {
-    margin-top: 15px;
-    width: 100% !important;
-}
-
 #loginForm button {
     margin-top: 15px;
     width: 100% !important;
@@ -102,18 +97,6 @@ textarea {
 
 #forgottenPasswordForm button {
     margin: 0 0 15px 0;
-}
-
-#registrationForm {
-    margin-top: 15px;
-}
-
-#registrationForm button {
-    margin: 0 0 15px 0;
-}
-
-#registrationForm > div.form-check {
-    margin-bottom: 10px;
 }
 
 .custom-file-label {
