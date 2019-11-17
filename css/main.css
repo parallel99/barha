@@ -345,7 +345,7 @@ textarea {
     color: black;
 }
 
-.recipe-list-container .no-result {
+/*.recipe-list-container .no-result {TODO lehet hogy lehet torolni
     padding: 15px;
     border-radius: 10px;
     background-color: #fff;
@@ -355,7 +355,7 @@ textarea {
 
 .recipe-list-container .no-result h3 {
     margin-bottom: 0;
-}
+}*/
 
 .recipe-list-container .more-recipe {
     padding: 15px;
@@ -617,9 +617,9 @@ textarea {
         margin: 15px auto;
     }
 
-    .recipe-list-container .no-result {
+    /*.recipe-list-container .no-result {TODO lehet hogy lehet torolni
         margin: 15px auto;
-    }
+    }*/
 
     .recipe-list-container .more-recipe {
         margin: 15px auto;
