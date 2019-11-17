@@ -10,7 +10,7 @@ if (!isset($_SESSION['two-auth-user']) || isset($_SESSION['user'])) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php'; ?>
     <title><?= _BARHA ?> | <?= _LOGIN ?></title>
 </head>
-<body id="two-factor-body">
+<body id="two-factor-body" class="overflow-hidden">
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 menu("login");

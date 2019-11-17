@@ -1,14 +1,4 @@
-html {
-    height: fit-content;
-    min-height: 100%;
-}
-
 body {
-    height: fit-content;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
     background: #f8f9fa linear-gradient(40deg, #2096ff, #05ffa3) no-repeat fixed;
 }
 
@@ -128,16 +118,6 @@ textarea {
     display: flex;
     align-items: center;
     min-height: calc(100vh - 80px);
-}
-
-.activation-body {
-    overflow: hidden;
-}
-
-.activation-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .activation {
@@ -444,10 +424,6 @@ textarea {
 #auth-modal .download-google-authenticator-text {
     text-align: center;
     display: block;
-}
-
-#two-factor-body {
-    overflow-y: hidden;
 }
 
 #two-factor-form {
