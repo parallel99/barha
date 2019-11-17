@@ -36,6 +36,7 @@ menu("favourite");
             echo '<div class="alert alert-info mt-3" role="alert">' . _NO_RESULTS . '</div>';
         }
 
+
         foreach ($data as $row) {
             ?>
             <a class="media" href="recipe/<?php echo $row->url; ?>">

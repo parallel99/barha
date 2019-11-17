@@ -112,7 +112,7 @@ if (isset($_POST["submit"])) {
         </script>
         <div class="form-group">
             <label for="name"><?= _DIRECTIONS ?></label>
-            <textarea class="form-control" name="making" placeholder="<?= _DIRECTIONS ?>" rows="10" required><?php echo $recipe->making; ?></textarea>
+            <textarea class="form-control making-textarea" name="making" placeholder="<?= _DIRECTIONS ?>" rows="10" required><?php echo $recipe->making; ?></textarea>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-upload"><?= _SAVE ?></button>
     </form>

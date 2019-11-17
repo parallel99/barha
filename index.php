@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/navbar.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/include/ingredients.php';
 menu("index");
 ?>
-<h1 id="title"><?= _HOMEPAGE_TITLE ?></h1>
+<h1 id="title" class="text-center text-white mb-3 display-4"><?= _HOMEPAGE_TITLE ?></h1>
 
 <form method="post" class="shadow" id="mainForm" action="search">
     <div class="ingredients-group">

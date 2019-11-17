@@ -14,7 +14,7 @@ if (!isset($_GET['search'])) {
 }
 ?>
 <div class="container recipe-list-container">
-    <form method="get" class="row search">
+    <form method="get" class="row search shadow">
         <div class="input-group">
             <input type="text" class="form-control" name="search" id="search" placeholder="<?= _SEARCH ?>" value="<?php echo trim($_GET["search"]) ?? ""; ?>">
             <span class="input-group-btn" id="searchBtn-container">
