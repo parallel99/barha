@@ -3,7 +3,7 @@ body {
 }
 
 body, input, .ui-widget, .ui-autocomplete.ui-widget {
-    font-family: 'Kalam', inherit;
+    font-family: 'Kalam', sans-serif;
 }
 
 .making-textarea {
