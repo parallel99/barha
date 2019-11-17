@@ -40,14 +40,14 @@ menu("none");
         <?php
         if (isset($volt)) {
             if ($volt) {
-                echo "<h1>Sikertelen megerősítés</h1><hr>";
-                echo "<p>A megerősítés már megtörtént!</p>";
+                echo "<h1>" . _UNSUCCESSFUL_CONFIRMATION . "</h1><hr>";
+                echo "<p>" . _ALREADY_CONFIRMED . "</p>";
             } else {
-                echo "<h1>Sikeres megerősítés</h1><hr>";
-                echo "<p>Sikeresen megerősítette a regisztrációt!</p>";
+                echo "<h1>" . _SUCCESSFUL_CONFIRMATION . "</h1><hr>";
+                echo "<p>" . _REG_SUCCESSFULLY_CONFIRMED . "</p>";
             }
         } else {
-            echo "<h1>Sikertelen megerősítés</h1><hr>";
+            echo "<h1>" . _UNSUCCESSFUL_CONFIRMATION . "</h1><hr>";
             echo "<p>" . _INVALID_LINK . "</p>";
         }
         ?>

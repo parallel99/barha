@@ -58,6 +58,10 @@ define("_SIGN_UP_ERROR_10", "Ez az email cím már foglalt!");
 //Activation
 define("_EMAIL_CONFIRM", "Email megerősítés");
 define("_INVALID_LINK", "Érvénytelen link!");
+define("_UNSUCCESSFUL_CONFIRMATION", "Sikertelen megerősítés");
+define("_REG_SUCCESSFULLY_CONFIRMED", "Sikeresen megerősítette a regisztrációt!");
+define("_SUCCESSFUL_CONFIRMATION", "Sikeres megerősítés");
+define("_ALREADY_CONFIRMED", "A megerősítés már megtörtént!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Elkészítési idő: ");

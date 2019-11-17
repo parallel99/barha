@@ -31,7 +31,7 @@ define("_EMAIL", "E-mail");
 define("_PASSWORD", "Password");
 define("_FORGOT_PASSWORD", "Forgot your password?");
 define("_WRONG_EMAIL_OR_PASS", "Wrong email address or password!");
-define("_NO_EMAIL_CONFIRM", "Még nem erősítette meg az email címét!");//TODO fordítás
+define("_NO_EMAIL_CONFIRM", "You haven't confirmed your email address!");//TODO fordítás
 
 //Sign up
 define("_PASSWORD_CONFIRM", "Confirm password");
@@ -58,6 +58,10 @@ define("_SIGN_UP_ERROR_10", "This email is already taken!");
 //Activation
 define("_EMAIL_CONFIRM", "Email confirm");
 define("_INVALID_LINK", "Invalid link!");
+define("_UNSUCCESSFUL_CONFIRMATION", "Unsuccessful confirmation");
+define("_REG_SUCCESSFULLY_CONFIRMED", "The registration is successfully confirmed!");
+define("_SUCCESSFUL_CONFIRMATION", "Successful confirmation");
+define("_ALREADY_CONFIRMED", "The confirmation already happened!");
 
 //Recipe
 define("_PREPARATION_TIME_COLON", "Preparation time: ");
