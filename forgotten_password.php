@@ -51,13 +51,13 @@ menu("none");
     }
 
     ?>
-    <form method="post" class="shadow" id="forgottenPasswordForm">
-        <h1>Elfelejtett jelszó</h1>
+    <form method="post" class="shadow mt-3" id="forgottenPasswordForm">
+        <h1 class="h1 text-center mb-3">Elfelejtett jelszó</h1>
         <div class="form-group">
             <label for="email"><?= _EMAIL ?></label>
             <input type="email" class="form-control" name="email" id="email" placeholder="<?= _EMAIL ?>" autocomplete="email" required>
         </div>
-        <input type="submit" class="btn btn-primary" name="submit" value="Elfelejtettem a jelszavam">
+        <input type="submit" class="btn btn-primary w-100 mt-2" name="submit" value="Elfelejtettem a jelszavam">
     </form>
 </div>
 </body>

@@ -37,8 +37,8 @@ menu("login");
             <label for="password"><?= _PASSWORD ?></label>
             <input type="password" class="form-control" name="password" id="password" placeholder="<?= _PASSWORD ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary" name="submit"><?= _LOGIN ?></button>
-        <a href="forgotten_password" class="small"><?= _FORGOT_PASSWORD ?></a>
+        <button type="submit" class="btn btn-primary w-100 mt-1 mb-3" name="submit"><?= _LOGIN ?></button>
+        <a href="forgotten_password" class="small text-center"><?= _FORGOT_PASSWORD ?></a>
     </form>
 </div>
 <?php

@@ -18,7 +18,7 @@ menu("index");
             <input autofocus type="text" class="form-control" name="ingredients1" id="ingredients1" placeholder="<?= _INGREDIENTS ?>">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary"><?= _SEARCH ?></button>
+    <button type="submit" class="btn btn-primary w-100 mt-2"><?= _SEARCH ?></button>
 </form>
 <script>
     $('.ingredients-group').on('input', function () {

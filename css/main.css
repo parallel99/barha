@@ -12,10 +12,7 @@ body {
     background: #f8f9fa linear-gradient(40deg, #2096ff, #05ffa3) no-repeat fixed;
 }
 
-body,
-input,
-.ui-widget,
-.ui-autocomplete.ui-widget {
+body, input, .ui-widget, .ui-autocomplete.ui-widget {
     font-family: 'Kalam', cursive;
 }
 
@@ -36,7 +33,6 @@ textarea {
 .ui-autocomplete {
     max-height: 200px;
     overflow-y: auto;
-    /* prevent horizontal scrollbar */
     overflow-x: hidden;
 }
 
@@ -46,32 +42,6 @@ textarea {
     width: 400px;
     padding: 25px;
     margin: auto auto 25px;
-}
-
-#loginForm button {
-    margin-top: 15px;
-    width: 100% !important;
-}
-
-#mainForm button {
-    margin-top: 15px;
-    width: 100% !important;
-}
-
-#forgottenPasswordForm input[type=submit] {
-    margin-top: 15px;
-    width: 100% !important;
-}
-
-#forgottenPasswordForm h1 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.forgotten-password-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .form-group label {
@@ -87,7 +57,6 @@ textarea {
 }
 
 #loginForm a {
-    text-align: center;
     display: block;
 }
 
@@ -117,7 +86,7 @@ textarea {
 }
 
 .rejected-text {
-    color: #ff2655;
+    color: #d9534f;
     font-size: 25px;
     margin-top: 6px;
 }
@@ -205,7 +174,7 @@ textarea {
 }
 
 .aszf {
-    color: blue;
+    color: #007bff;
     font-style: italic;
     display: inline-block;
     cursor: pointer;
@@ -222,10 +191,6 @@ textarea {
 #aszfModal .modal-body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-align: justify;
-}
-
-.g-recaptcha-container {
-    text-align: center;
 }
 
 .g-recaptcha {
@@ -336,10 +301,6 @@ textarea {
     background-color: #fff;
     margin: 25px auto;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-}
-
-.recipe-list-container .more-recipe button {
-    width: 100%;
 }
 
 .recipe-container {

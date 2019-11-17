@@ -102,7 +102,7 @@ if (!isset($_GET['search'])) {
             }
 
             if ($stmt->rowCount() == 50) {
-                echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn\" id=\"more-recipe-btn\">" . _MORE . "</button></div>";
+                echo "</div><div class=\"more-recipe\"><button class=\"btn btn-primary more-recipe-btn w-100\" id=\"more-recipe-btn\">" . _MORE . "</button></div>";
             }
         }
         ?>

@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
             <option value="en"><?= _EN ?></option>
         </select>
     </div>
-    <div class="form-group g-recaptcha-container">
+    <div class="form-group g-recaptcha-container text-center">
         <div class="g-recaptcha" data-sitekey="6LfJWrgUAAAAAF-KDdVddakovbfI8KLip_99UOw-"></div>
     </div>
     <div class="form-check mb-3">
