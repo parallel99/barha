@@ -26,7 +26,7 @@ menu("index");
     }
 
     if ($stmt->rowCount() == 0) {
-        echo "<div class=\"no-result\"><h3>" . _NO_RESULTS . "</h3></div>";
+        echo '<div class="alert alert-info mt-3" role="alert">' . _NO_RESULTS . '</div>';
     }
 
 
