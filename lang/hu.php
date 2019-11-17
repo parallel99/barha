@@ -104,6 +104,7 @@ define("_PENDING", "Feldolgozás alatt");
 define("_ERROR", "Hiba!");
 define("_ERROR_COLON", "Hiba: ");
 
+//Noscript
 define("_NOSCRIPT", "Az oldal használatához JavaScript szükséges.");
 
 //Units

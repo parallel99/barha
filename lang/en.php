@@ -31,7 +31,7 @@ define("_EMAIL", "E-mail");
 define("_PASSWORD", "Password");
 define("_FORGOT_PASSWORD", "Forgot your password?");
 define("_WRONG_EMAIL_OR_PASS", "Wrong email address or password!");
-define("_NO_EMAIL_CONFIRM", "You haven't confirmed your email address!");//TODO fordítás
+define("_NO_EMAIL_CONFIRM", "You haven't confirmed your email address!");
 
 //Sign up
 define("_PASSWORD_CONFIRM", "Confirm password");
