@@ -8,7 +8,7 @@ body, input, .ui-widget, .ui-autocomplete.ui-widget {
 
 select {
     -webkit-appearance: none;
-    background: url('/images/arrow-down.svg') no-repeat right -4px;
+    background: url('/images/arrow-down.svg') no-repeat right 6px!important;
 }
 
 .making-textarea {
