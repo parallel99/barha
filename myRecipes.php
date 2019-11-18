@@ -95,9 +95,10 @@ if (!isset($_SESSION['user'])) {
                                 $stmt = $pdo->prepare("DELETE FROM recipes WHERE uploader = :email AND id = :id");
                                 $stmt->bindValue(':email', $_SESSION['user']['email'], PDO::PARAM_STR);
                                 $stmt->bindValue(':id', $row->id, PDO::PARAM_INT);
+                                $id = $row->id;
                                 if($stmt->execute()){
                                   $delfav = $pdo->prepare("UPDATE users SET favourite = array_remove(favourite, :id) WHERE recipes.id = ANY(users.favourite);");
-                                  $delfav->bindValue(':id', $row->id, PDO::PARAM_INT);
+                                  $delfav->bindValue(':id', $id, PDO::PARAM_INT);
                                   $delfav->execute();
                                 }
                                 $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Sikeresen törölte: '. $row->name. '</div>';
