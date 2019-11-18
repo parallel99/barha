@@ -59,6 +59,7 @@ if (!isset($_GET['search'])) {
         <script>
             $("#advSearchBtn").click(function () {
                 $("#advSearchDiv").slideToggle();
+                $('#searchBtn').toggle("slide:right");
             });
         </script>
     </form>
