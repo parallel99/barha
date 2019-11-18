@@ -24,7 +24,7 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-outline-primary" type="button" id="advSearchBtn">Részletes keresés</button>
             </span>
         </div>
-        <div class="input-group" id="advSearchDiv">
+        <div class="input-group pb-1" id="advSearchDiv">
             <div class="row">
                 <div class="col-sm-4 col">
                     <label>Nyelv</label>
@@ -49,8 +49,8 @@ if (!isset($_GET['search'])) {
                     </select>
                 </div>
                 <div class="col-sm-4 col">
-                    <span class="input-group-btn" id="searchBtn-container">
-                        <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
+                    <span class="input-group-btn m-0" id="searchBtn-container">
+                        <button class="btn btn-primary mt-3" type="submit" id="searchBtn"><?= _SEARCH ?></button>
                     </span>
                 </div>
             </div>
