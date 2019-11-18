@@ -6,6 +6,11 @@ body, input, .ui-widget, .ui-autocomplete.ui-widget {
     font-family: 'Kalam', sans-serif;
 }
 
+select {
+    -webkit-appearance: none;
+    background: url('/images/arrow-down.svg') no-repeat right 6px!important;
+}
+
 .making-textarea {
     resize: vertical;
     min-height: 50px;
@@ -330,7 +335,6 @@ body, input, .ui-widget, .ui-autocomplete.ui-widget {
 
 .upload-ingredients-unit {
     width: 220px;
-    padding: 1px;
 }
 
 .myrecipe-btn {

@@ -21,7 +21,7 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
             </span>
             <span class="input-group-btn" id="advSearchBtn-container">
-                <button class="btn btn-outline-primary" type="button" data-toggle="button" id="advSearchBtn">Részletes keresés</button>
+                <button class="btn btn-outline-secondary" type="button" data-toggle="button" id="advSearchBtn">Részletek</button>
             </span>
         </div>
         <div class="input-group pb-1" id="advSearchDiv">
