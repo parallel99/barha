@@ -29,6 +29,7 @@ menu("profile");
             // ezt az egeszet át tervezem írni a hétvegén
             // --> sok sikert hozzá, én helyette kalkulus-szozok
             // nagyon átláthatatlan ez az oldal
+            // nekem mondod (jól tudom)
 
             include $_SERVER['DOCUMENT_ROOT'] . '/include/db.php';
 
