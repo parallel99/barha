@@ -104,7 +104,7 @@ if (!isset($_SESSION['user'])) {
                                 header("Refresh: 0");
                                 die();
                             } catch (Exception $e) {
-                                $_SESSION["msg"] = '<div class="alert alert-success alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage(). '</div>';
+                                $_SESSION["msg"] = '<div class="alert alert-danger alert-dismissible fade show">Nem sikerült a törlés: '. $e->getMessage(). '</div>';
                                 header("Refresh: 0");
                                 die();
                             }
