@@ -21,7 +21,7 @@ if (!isset($_GET['search'])) {
                 <button class="btn btn-primary" type="submit" id="searchBtn"><?= _SEARCH ?></button>
             </span>
             <span class="input-group-btn" id="advSearchBtn-container">
-                <button class="btn btn-outline-primary" type="button" id="advSearchBtn">Részletes keresés</button>
+                <button class="btn btn-outline-primary" type="button" data-toggle="button" id="advSearchBtn">Részletes keresés</button>
             </span>
         </div>
         <div class="input-group pb-1" id="advSearchDiv">
@@ -51,7 +51,7 @@ if (!isset($_GET['search'])) {
                 </div>
                 <div class="col-sm-4">
                     <span class="input-group-btn m-0" id="searchBtn-container">
-                        <button class="btn btn-primary mt-3" type="submit" id="searchBtn"><?= _SEARCH ?></button>
+                        <button class="btn btn-primary mt-3" type="submit" id="searchBtn">Részletes keresés</button>
                     </span>
                 </div>
             </div>
