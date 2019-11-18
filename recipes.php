@@ -27,22 +27,23 @@ if (!isset($_GET['search'])) {
         <div class="input-group pb-1" id="advSearchDiv">
             <div class="row">
                 <div class="col-sm-4">
-                    <label class="w-100">Nyelv</label>
-                    <select class="custom-select mb-2 w-100">
+                    <label for="lang" class="w-100">Nyelv</label>
+                    <select name="lang" class="custom-select mb-2 w-100">
+                        <option>Mindegy</option>
                         <option>Angol</option>
                         <option>Magyar</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <label class="w-100">Elkészítési idő</label>
-                    <select class="custom-select mb-2 w-100">
+                    <label for="time" class="w-100">Elkészítési idő</label>
+                    <select name="time" class="custom-select mb-2 w-100">
                         <option>1 óra</option>
                         <option>2 óra</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <label class="w-100">Nehézség</label>
-                    <select class="custom-select w-100">
+                    <label for="difficulty" class="w-100">Nehézség</label>
+                    <select name="difficulty" class="custom-select w-100">
                         <option>Könnyű</option>
                         <option>Közepes</option>
                         <option>Nehéz</option>
