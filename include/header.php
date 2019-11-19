@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-<link rel="stylesheet" type="text/css" href="https://parallel99.000webhostapp.com/css/kinezet.css"/>
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
 <base href="https://barha.herokuapp.com"/>
 
