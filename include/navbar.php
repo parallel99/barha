@@ -20,7 +20,7 @@ function menu($active) {
 
     if (!isset($_SESSION['user'])) {
         ?>
-        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" aria-label="navbar">
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" aria-label="navbar">
             <a class="navbar-brand" href="/" aria-label="<?= _HOMEPAGE ?>">
                 <img src="/images/android-chrome-192x192.png" width="30" height="30" class="d-inline-block align-top" alt="<?= _BARHA ?>">
                 <span class="name"><?= _BARHA ?></span>
@@ -69,7 +69,7 @@ function menu($active) {
         <?php
     } else {
         ?>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top shadow-sm" aria-label="navbar">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top shadow-sm" aria-label="navbar">
             <a class="navbar-brand" href="/" aria-label="<?= _HOMEPAGE ?>">
                 <img src="/images/android-chrome-192x192.png" width="30" height="30" class="d-inline-block align-top" alt="<?= _BARHA ?>">
                 <span class="name"><?= _BARHA ?></span>
