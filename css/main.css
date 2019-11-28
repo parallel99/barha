@@ -4,6 +4,7 @@ body, html{
 
 body {
     background: #17b8e1 linear-gradient(40deg, #2096ff, #05ffa3) no-repeat fixed;
+    margin-top: 75px;
 }
 
 body, input, .ui-widget, .ui-autocomplete.ui-widget {
