@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 
-<base href="https://barha.herokuapp.com"/>
+<base href="https://barha-old.herokuapp.com"/>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
